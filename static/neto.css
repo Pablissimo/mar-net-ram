@@ -1,0 +1,35 @@
+  body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: purple;
+    background-color: white
+  }
+  
+  div
+  {
+    font-size: 20px;
+  }
+  
+  #ola1 
+  {
+    color: red
+  }
+  
+  #ola1:hover
+  {
+    color: blue
+  }
+  
+  .par
+  {
+    color: green
+  }
+  
+  .azul
+  {
+     border:2px solid rgba(0,0,255,128);
+  }
+  
+  .vermelho
+  {
+     border:2px solid rgba(255,0,0,128);;
+  }
