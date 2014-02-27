@@ -22,7 +22,7 @@ function atualizar_o_nome()
   var nome=$("#nome").val();
   if (nome)
   {   
-     seta('Oi '+nome); 
+     seta('Oi, '+nome); 
   }	 
   else
   {
