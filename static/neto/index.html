@@ -1,5 +1,24 @@
 <html>
+<head>
+    <title>Formul√°rio de Teste</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+    <LINK href="style.css" rel="stylesheet" type="text/css">
+</head>
 <body>
-Ol· mundo
+    <div id="qual_nome">
+        Qual seu nome?
+    </div>
+    <div id="form">
+        <form>
+            <input id="nome" type="text" name="nome" onkeyup="atualizar_o_nome()">
+            <button id="ok" type="button" onclick="grava_nome(); return false;">Ok</button>
+        </form>
+        
+        <div class="preto" id="zero_graus"></div>
+        <div class="rosa" id="noventa_graus"></div>
+        <div class="preto" id="cento_oitente_graus"></div>
+        <div class="rosa" id="duzentos_setenta_graus"></div>
+    </div>
 </body>
 </html>
