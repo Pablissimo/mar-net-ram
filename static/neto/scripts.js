@@ -34,3 +34,8 @@ function seta(texto_de_ola)
 {
   $("#zero_graus, #noventa_graus, #cento_oitente_graus, #duzentos_setenta_graus").html(texto_de_ola);
 }
+
+function alerta()
+{
+    alert ("Tem certeza que deseja denunciar?");
+}
