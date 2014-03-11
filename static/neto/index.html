@@ -1,67 +1,19 @@
-<html>
+<html ng-app>
 <meta charset="UTF-8">
 <head>
-    <title>Formulário de Teste</title>
+    <title>Angular</title>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 </head>
-<body>
-    <div class="container">
+<body>      
+    <div class="jumbotron">
         <div class="container">
-            <div class="pure-menu pure-menu-open pure-menu-horizontal"><!--Menu do Pure CSS-->
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#Quemsomos">Quem Somos</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="jumbotron">
-            <div class="container">
-                <h1>Saiba como cancelar notificações sobre tudo o que alguém faz no Facebook</h1>
-                    <p class="lead">A leitora Carolina entrou em contato informando que recebe notificações de tudo o que uma amigo dela faz Facebook. Toda vez que essa pessoa compartilha algo, atualiza status ou realiza procedimentos do tipo, Carolina é informada. A usuária gostaria de reverter essa situação.
-
-    Se você tem alguma dúvida sobre tecnologia, envie um e-mail para uoltecnologia@uol.com.br, que ela pode ser respondida.
-
-    Isso está ocorrendo porque, provavelmente, a leitora solicitou em algum momento para obter as notificações desse amigo. Com isso, qualquer atualização que ele faça, ela é informada. Para reverter a situação, basta seguir o procedimento abaixo.
-
-    1. Entre em seu perfil do Facebook com suas credenciais. Clique no botão de notificações e encontre o usuário em questão (aquele de quem você recebe as notificações). Repare que ele terá, em seu avatar, um símbolo de feed (circulado na imagem): é isso o que faz você receber os alertas constantes.  </p>
-                
-    <style scoped=""><!--os botões do Pure CSS só funcionaram quando eu coloquei assim-->
-
-        .button-verde,
-        .button-laranja,
-        .button-secondary {
-            color: white;
-            border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-        }
-
-        .button-verde {
-            background: rgb(28, 184, 65); /* this is a green */
-        }
-
-        .button-laranja {
-            background: rgb(223, 117, 20); /* this is an orange */
-        }
-
-        .button-secondary {
-            background: rgb(66, 184, 221); /* this is a light blue */
-        }
-
-    </style>
-                <button class="pure-button pure-button-primary" onclick="fadein()">Fade In</button>
-                <button class="pure-button pure-button-primary" onclick="fadeout()">Fade Out</button>
-                <button class="pure-button pure-button-primary" onclick="fadetoglle()">Fade Toglle</button>
-                <button class="pure-button pure-button-primary" onclick="fadeto()">Fade To</button>
-            </div>
-        </div>
-        <div id="footer" class="pure-menu pure-menu-open pure-menu-horizontal">
-             <h5>Desenvolvido por José Augusto</h5>
-        </div>
+            <input type="text" ng-model="yourName" placeholder="Digite seu nome aqui">
+            <h1>Hello, {{ yourName }}!</h1>
+         </div>
+    </div>
     </div>
 </body>
 </html>
