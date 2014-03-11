@@ -4,32 +4,20 @@
     <title>Formulário de Teste</title>
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
-    <script type="text/javascript" src="bootstrap-3.1.1-dist\css\bootstrap.js"></script>
-    
-    <LINK href="bootstrap-3.1.1-dist\css\bootstrap-theme.css" rel="stylesheet" type="text/css">
-    <LINK href="bootstrap-3.1.1-dist\css\bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
 </head>
 <body>
     <div class="container">
-    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            <a class="navbar-brand" href="#">Teste de Menu</a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a></li>
+            <div class="pure-menu pure-menu-open pure-menu-horizontal"><!--Menu do Pure CSS-->
+                <ul>
+                    <li><a href="#">Home</a></li>
                     <li><a href="#Quemsomos">Quem Somos</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </div>
         </div>
-    </div>
         
         <div class="jumbotron">
             <div class="container">
@@ -41,10 +29,37 @@
     Isso está ocorrendo porque, provavelmente, a leitora solicitou em algum momento para obter as notificações desse amigo. Com isso, qualquer atualização que ele faça, ela é informada. Para reverter a situação, basta seguir o procedimento abaixo.
 
     1. Entre em seu perfil do Facebook com suas credenciais. Clique no botão de notificações e encontre o usuário em questão (aquele de quem você recebe as notificações). Repare que ele terá, em seu avatar, um símbolo de feed (circulado na imagem): é isso o que faz você receber os alertas constantes.  </p>
-                <button class="btn btn-primary" onclick="alerta()">Denunciar</button>
+                
+    <style scoped=""><!--os botões do Pure CSS só funcionaram quando eu coloquei assim-->
+
+        .button-verde,
+        .button-laranja,
+        .button-secondary {
+            color: white;
+            border-radius: 4px;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-verde {
+            background: rgb(28, 184, 65); /* this is a green */
+        }
+
+        .button-laranja {
+            background: rgb(223, 117, 20); /* this is an orange */
+        }
+
+        .button-secondary {
+            background: rgb(66, 184, 221); /* this is a light blue */
+        }
+
+    </style>
+                <button class="pure-button pure-button-primary" onclick="corAzul()">Azul</button>
+                <button class="pure-button button-laranja" onclick="corLaranja()">Laranja</button>
+                <button class="button-verde pure-button" onclick="corVerde()">Verde</button>
+                <button class="pure-button pure-button-active" onclick="corBranco()">Branco</button>
             </div>
         </div>
-        <div class="footer">
+        <div id="footer" class="pure-menu pure-menu-open pure-menu-horizontal">
              <h5>Desenvolvido por José Augusto</h5>
         </div>
     </div>

@@ -1,42 +1,47 @@
 body {
-    background: #FFFFE0;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
 }
 
-#qual_nome {
-    font-family: fantasy, cursive,serif;
-    font-size: 30px;
-    margin: 15px;
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px !important;
 }
 
-#zero_graus {
-    float: left;
-    margin-bottom: 50px;
-    margin-left: 100px;
-    height: 250px;
-    width: 300px;
-    padding: 5px;
+.jumbotron {
+    margin-left: auto;
+    margin-right: auto;
+    width: 940px;
+    font-size: 19px;
+    text-align: justify;
 }
 
-input {
-    font-size: 30px;
-    font-family: cursive;
-    border-bottom-left-radius: 15px;
-    border-top-right-radius: 15px;
+#footer{
+    bottom: 0;
+    position: absolute;
 }
 
-.preto {
-    font-size: 30px;
-    background: #000;
-    border-radius: 35px;
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
     color: white;
-}
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
 
-.rosa {
-    font-size: 30px;
-    background: #F7BAD8;
-    border-radius: 35px;
-    color: white;
-}
+.button-success {
+            background: rgb(28, 184, 65); /* this is a green */
+        }
+
+        .button-error {
+            background: rgb(202, 60, 60); /* this is a maroon */
+        }
+
+        .button-warning {
+            background: rgb(223, 117, 20); /* this is an orange */
+        }
+
+        .button-secondary {
+            background: rgb(66, 184, 221); /* this is a light blue */
+        }

@@ -1,41 +1,30 @@
-﻿
-$( document ).ready(function() {
-  le();
-});
-
-function le()
+function corAzul()
 {
-   var nome = localStorage.getItem('nome'); 
-   if (nome)
-     $("#nome").val(nome);
+     document.bgColor='#48D1CC';
+     document.style.color="white";
 }
 
-
-function grava_nome()
+function corLaranja()
 {
-   var nome=$("#nome").val();
-   localStorage.setItem('nome', nome); 
+     document.bgColor='#FFA500';
 }
 
-function atualizar_o_nome()
+function corVerde()
 {
-  var nome=$("#nome").val();
-  if (nome)
-  {   
-     seta('Oi, '+nome); 
-  }	 
-  else
-  {
-     seta('');
-  }	 
+     document.bgColor='#7FFF00';
 }
 
-function seta(texto_de_ola)
+function corBranco()
 {
-  $("#zero_graus, #noventa_graus, #cento_oitente_graus, #duzentos_setenta_graus").html(texto_de_ola);
+     document.bgColor='white';
 }
 
-function alerta()
+function fadeout()
 {
-    alert ("Tem certeza que deseja denunciar?");
+    $(".lead").fadeOut();
+}
+
+function fadein()
+{
+    $(".lead").fadeIn();
 }
