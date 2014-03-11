@@ -1,30 +1,19 @@
-function corAzul()
-{
-     document.bgColor='#48D1CC';
-     document.style.color="white";
-}
-
-function corLaranja()
-{
-     document.bgColor='#FFA500';
-}
-
-function corVerde()
-{
-     document.bgColor='#7FFF00';
-}
-
-function corBranco()
-{
-     document.bgColor='white';
-}
-
 function fadeout()
 {
-    $(".lead").fadeOut();
+    $(".lead").fadeOut(3000);
 }
 
 function fadein()
 {
-    $(".lead").fadeIn();
+    $(".lead").fadeIn(5000);
+}
+
+function fadetoglle()
+{
+    $(".lead").fadeToggle(100);
+}
+
+function fadeto()
+{
+    $(".lead").fadeIn(100);
 }
