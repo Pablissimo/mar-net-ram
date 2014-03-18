@@ -1,43 +1,25 @@
 <!DOCTYPE html>
-<html ng-app="filtersApp">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Angular</title>
-  <script>
-    document.write('<base href="' + document.location + '" />');
-  </script>
-  <link rel="stylesheet" href="style.css" />
-  <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.4/angular.js" data-semver="1.2.1"></script>
-  <script src="app.js"></script>
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <title>Web Socket</title>
+
+  <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
 </head>
-<body ng-controller="controller">
-
-  <div class="container theme-showcase">
-    <h1>Clientes | Cidades | Fone</h1>
-    
-    <p>Data: {{data | date:'dd/MM/yyyy'}}</p>
-    
-    <p>Filtrar: <input type="text" ng-model="filtro" /></p>
-
-    <ul class="list-group">
-      <li class="list-group-item" ng-repeat="state in states | orderBy:'name' | filter:filtro">
-      {{state.name | uppercase}} - {{state.cidade | uppercase}} - Fone: {{state.fone}}
-      </li>
-    </ul>
-
-    <p>
-      <form ng-submit="addState()">
-        <input type="text" ng-model="nome" placeholder="Digite o Nome" />
-        <input type="text" ng-model="cidade" placeholder="Digite a cidade" />
-        <input type="text" ng-model="fone" placeholder="Digite o Fone" />
-        <input type="submit" value="Incluir" />
-      </form>
-    </p>
-  </div>
+<body>
+  <div id="page-wrapper">
+  <h1>Demonstração de WebSocket</h1>
+  
+  <div id="status">'Conectando...'</div>
+  
+  <ul id="messages"></ul>
+  
+  <form id="message-form" action="#" method="post">
+    <textarea id="message" placeholder="Escreva sua mensagem..." required></textarea>
+    <button type="submit">Enviar Mensagem</button>
+    <button type="button" id="close">Fechar Conecção</button>
+  </form>
+</div>
 </body>
-
 </html>
