@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Web Socket</title>
-
-  <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
-</head>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="jquery.js"></script>
+        <script src="app.js"></script>
+    </head>
 <body>
-  <div id="page-wrapper">
-  <h1>Demonstração de WebSocket</h1>
-  
-  <div id="status">'Conectando...'</div>
-  
-  <ul id="messages"></ul>
-  
-  <form id="message-form" action="#" method="post">
-    <textarea id="message" placeholder="Escreva sua mensagem..." required></textarea>
-    <button type="submit">Enviar Mensagem</button>
-    <button type="button" id="close">Fechar Conecção</button>
-  </form>
-</div>
+    
+    <div id="atividade1">
+        <h1>Atividade 1</h1>
+        <p>Contar Numeros: <output id="result"></output></p>
+        <button onclick="startWorker()">Começar Worker</button> 
+        <br><br>
+    </div>
+    <div id="atividade2">
+        <h1>Atividade 2</h1>
+        <input id="text1" type="text" placeholder="Digite um numero aqui"></input>
+        <input id="text2" type="text" placeholder="Digite um numero aqui"></input>
+        <button onclick="somarValores()">Multiplicar os Numeros</button>
+        <div id="conta"></div>
+    </div>
+    
+    
 </body>
 </html>
