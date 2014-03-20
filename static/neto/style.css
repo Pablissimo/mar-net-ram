@@ -42,6 +42,16 @@ ul li{
     margin-left: -36px;
 }
 
+ul{
+    background: #FFF;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    width: 600px;
+    list-style: none;
+    margin-left: -36px;
+}
+
 body{
     width: 940px;
     margin: 0 auto;
