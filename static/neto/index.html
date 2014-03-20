@@ -1,4 +1,4 @@
-<html manifest="cache.appcache">
+<html .manifest="cache.appcache">
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -6,21 +6,11 @@
         <script src="app.js"></script>
     </head>
 <body>
-    
-    <div id="atividade1">
-        <h1>Atividade 1</h1>
-        <p>Contar Numeros: <output id="result"></output></p>
-        <button onclick="startWorker()">Começar Worker</button> 
-        <br><br>
-    </div>
-    <div id="atividade2">
-        <h1>Atividade 2</h1>
-        <input id="text1" type="text" placeholder="Digite um numero aqui"></input>
-        <input id="text2" type="text" placeholder="Digite um numero aqui"></input>
-        <button onclick="somarValores()">Multiplicar os Numeros</button>
-        <div id="conta"></div>
-    </div>
-    
+    <h1>Local Storage</h1>
+    <ul id="lista" contenteditable="true">        
+        <li></li>
+    </ul>
+    <button id="limpar">Limpar</button>
     
 </body>
 </html>
