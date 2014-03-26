@@ -1,0 +1,7 @@
+c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\bin\AwsWebApp1.dll.config
+c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\bin\AwsWebApp1.dll
+c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\bin\AwsWebApp1.pdb
+c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\bin\AWSSDK.dll
+c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\bin\AWSSDK.xml
+c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\obj\Debug\AwsWebApp1.dll
+c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\obj\Debug\AwsWebApp1.pdb
