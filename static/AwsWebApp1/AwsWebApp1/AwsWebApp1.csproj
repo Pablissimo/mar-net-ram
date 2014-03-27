@@ -92,6 +92,19 @@
     <Content Include="test\index.html" />
     <Content Include="test\worker.js" />
     <Content Include="Web.config" />
+    <Content Include="webwork\doWork.js" />
+    <Content Include="webwork\doWork2.js" />
+    <Content Include="webwork\Exe1\doWork.js" />
+    <Content Include="webwork\Exe1\index.html" />
+    <Content Include="webwork\Exe1\JavaExt.js" />
+    <Content Include="webwork\Exe2\doWork2.js" />
+    <Content Include="webwork\Exe2\index2.html" />
+    <Content Include="webwork\Exe2\JavaExt2.js" />
+    <Content Include="webwork\index.html" />
+    <Content Include="webwork\index2.html" />
+    <Content Include="webwork\index3.html" />
+    <Content Include="webwork\JavaExt.js" />
+    <Content Include="webwork\JavaExt2.js" />
     <Content Include="worker.js" />
   </ItemGroup>
   <ItemGroup>
