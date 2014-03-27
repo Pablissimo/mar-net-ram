@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="startWorker()">Start Worker</button> 
+<br><br>
+
+<script>
+function startWorker()
+{
+	var myWorker = new Worker('worker.js');
+    // Recebe a mensagem do worker
+	myWorker.onmessage = function (event) {
+	    alert(event.data);
+	};
+
+	var message = 'Hello Word';
+
+
+	myWorker.postMessage(message);
+	
+
+}
+
+</script>
+
+</body>
+</html>

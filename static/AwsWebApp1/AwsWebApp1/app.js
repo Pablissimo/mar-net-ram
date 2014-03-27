@@ -1,5 +1,5 @@
 window.onload = function () {
-    window.applicationCache.UPDATEREADY;
+    var myWorker = new Worker('worker.js');
 };
 
 $(function () {
@@ -17,3 +17,17 @@ $(function () {
         window.location = window.location;
     });
 });
+
+function teste() {
+
+
+    var message = localStorage.getItem('dados');
+    // Recebe a mensagem do worker
+    myWorker.onmessage = function (event) {
+        alert(event.data);
+    };
+
+    myWorker.postMessage(message);
+    alert("ok");
+
+}
