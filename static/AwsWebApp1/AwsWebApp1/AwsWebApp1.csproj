@@ -89,9 +89,15 @@
     <Content Include="jquery.js" />
     <Content Include="style.css" />
     <Content Include="styles\styles.css" />
+    <Content Include="test\viewer.html" />
     <Content Include="test\index.html" />
     <Content Include="test\worker.js" />
     <Content Include="Web.config" />
+    <Content Include="webworkerneto\app.js" />
+    <Content Include="webworkerneto\index.html" />
+    <Content Include="webworkerneto\jquery.js" />
+    <Content Include="webworkerneto\style.css" />
+    <Content Include="webworkerneto\worker.js" />
     <Content Include="webwork\doWork.js" />
     <Content Include="webwork\doWork2.js" />
     <Content Include="webwork\Exe1\doWork.js" />
@@ -120,6 +126,9 @@
     <Compile Include="gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
+    <Compile Include="webworkerneto\gravar.ashx.cs">
+      <DependentUpon>gravar.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -134,6 +143,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="webworkerneto\gravar.ashx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

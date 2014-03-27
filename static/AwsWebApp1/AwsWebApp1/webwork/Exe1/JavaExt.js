@@ -9,10 +9,15 @@ function startWorker()
         if(typeof(worker)=="undefined")
         {
             worker = new Worker("doWork.js"); // Instanciando o objeto Worker
+            worker2 = new Worker("doWork.js"); // Instanciando o objeto Worker
         }
         worker.onmessage = function (event) //Evento para exibição de resultados
         {
-            document.getElementById("result").innerHTML=event.data; //Onde serão impressos os resultados no HTML
+            document.getElementById("result").innerHTML = event.data; //Onde serão impressos os resultados no HTML
+        };
+        worker2.onmessage = function (event) //Evento para exibição de resultados
+        {
+            document.getElementById("result2").innerHTML = event.data; //Onde serão impressos os resultados no HTML
         };
     }
     else
@@ -24,4 +29,5 @@ function startWorker()
 function stopWorker()
 { 
     worker.terminate();
+    worker2.terminate();
 }
