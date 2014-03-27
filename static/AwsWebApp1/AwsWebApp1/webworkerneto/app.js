@@ -1,7 +1,7 @@
 $(function () {
 
     $("#lista").keypress(function () {
-        localStorage.setItem('dados', $("#lista").html());
+        localStorage.setItem('dados', $("#lista").text());
     });
 
     if (localStorage.getItem('dados')) {

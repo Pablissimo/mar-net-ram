@@ -102,6 +102,9 @@
     <Content Include="sharedwebwork\sWork.js" />
     <Content Include="style.css" />
     <Content Include="styles\styles.css" />
+    <Content Include="Subworker_delegation\index.html" />
+    <Content Include="Subworker_delegation\subworker.js" />
+    <Content Include="Subworker_delegation\worker.js" />
     <Content Include="test\index.html" />
     <Content Include="test\worker.js" />
     <Content Include="Web.config" />

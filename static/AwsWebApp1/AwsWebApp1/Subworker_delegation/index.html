@@ -1,0 +1,13 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Teste Subworks</title>
+    <script>
+        var worker = new Worker('worker.js');
+        worker.postMessage('Teste subwork...');
+    </script>
+</head>
+<body>
+    Multi-Subworks...
+</body>
+</html>
