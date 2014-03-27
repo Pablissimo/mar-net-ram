@@ -12,6 +12,7 @@ function startWorker()
         }
         worker.onmessage = function (event) //Evento para exibição de resultados
         {
+            /*$("result").html(event.data); Igual a linha de baixo mas usando Jquery*/
             document.getElementById("result").innerHTML=event.data; //Onde serão impressos os resultados no HTML
         };
     }
