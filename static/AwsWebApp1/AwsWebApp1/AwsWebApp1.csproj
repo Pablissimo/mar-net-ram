@@ -87,6 +87,19 @@
     <Content Include="images\server.png" />
     <Content Include="index.html" />
     <Content Include="jquery.js" />
+    <Content Include="sharedwebwork\chat\viewer.html" />
+    <Content Include="sharedwebwork\chat\worker.js" />
+    <Content Include="sharedwebwork\Iframe\index.html" />
+    <Content Include="sharedwebwork\Iframe\inner.html" />
+    <Content Include="sharedwebwork\Iframe\inner2.html" />
+    <Content Include="sharedwebwork\Iframe\test.js" />
+    <Content Include="sharedwebwork\index.html" />
+    <Content Include="sharedwebwork\Sharedworker multi-core\core.js" />
+    <Content Include="sharedwebwork\Sharedworker multi-core\index.html" />
+    <Content Include="sharedwebwork\Sharedworker multi-core\worker.js" />
+    <Content Include="sharedwebwork\simples\index.html" />
+    <Content Include="sharedwebwork\simples\sWork.js" />
+    <Content Include="sharedwebwork\sWork.js" />
     <Content Include="style.css" />
     <Content Include="styles\styles.css" />
     <Content Include="test\viewer.html" />
@@ -137,6 +150,7 @@
     <Content Include="cache.appcache" />
     <Content Include="gravar.ashx" />
     <None Include="images\README" />
+    <Content Include="sharedwebwork\chat\index.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

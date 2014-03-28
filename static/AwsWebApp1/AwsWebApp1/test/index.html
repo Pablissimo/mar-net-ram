@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-    function openViewer() {
-        window.open('viewer.html');
-    }
-</script>
+    <meta charset="UTF-8" />
+    <title>MDN Example - Embedded worker</title>
+    <script type="text/js-worker">
+        var myVar = "Hello World!";
+    </script>
+    <script type="text/javascript">
+        function pageLog(sMsg) {
+            var oFragm = document.createDocumentFragment();
+            oFragm.appendChild(document.createTextNode(sMsg));
+            oFragm.appendChild(document.createElement("br"));
+            document.querySelector("#logDisplay").appendChild(oFragm);
+        }
+    </script>
+    <script type="text/js-worker">
+        onmessage = function (oEvent) {
+        postMessage(myVar);
+        };
+    </script>
+    <script type="text/javascript">;
+        var blob = new Blob(Array.prototype.map.call(document.querySelectorAll("script[type=\"text\/js-worker\"]"), function (oScript) { return oScript.textContent; }), { type: "text/javascript" });
+        document.worker = new Worker(window.URL.createObjectURL(blob));
+
+        document.worker.onmessage = function (oEvent) {
+            pageLog("Received: " + oEvent.data);
+        };
+        window.onload = function () { document.worker.postMessage(""); };
+    </script>
 </head>
-<body> 
-    <p><button type="button" onclick="openViewer()">Open a new viewer</button></p>
+<body>
+    <div id="logDisplay"></div>
 </body>
 </html>
