@@ -29,7 +29,6 @@ namespace AwsWebApp1
             dado["chave"] = context.Request.Params["chave"];
             dado["dados"] = context.Request.Params["dado"];   
             dados.PutItem(dado);
-
          
         }
 

@@ -5,3 +5,10 @@ c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\bin
 c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\bin\AWSSDK.xml
 c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\obj\Debug\AwsWebApp1.dll
 c:\users\qualiom\documents\visual studio 2013\Projects\AwsWebApp1\AwsWebApp1\obj\Debug\AwsWebApp1.pdb
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\bin\AwsWebApp1.dll.config
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\bin\AwsWebApp1.dll
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\bin\AwsWebApp1.pdb
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\bin\AWSSDK.dll
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\bin\AWSSDK.xml
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\obj\Debug\AwsWebApp1.dll
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\obj\Debug\AwsWebApp1.pdb
