@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -27,7 +27,7 @@ namespace AwsWebApp1
             Table dados = Table.LoadTable(client, tableName);
             var dado = new Document();
             dado["chave"] = context.Request.Params["chave"];
-            dado["dados"] = context.Request.Params["dado"];   
+            dado["dados"] = context.Request.Params["dado"];
             dados.PutItem(dado);
 
          
@@ -42,4 +42,3 @@ namespace AwsWebApp1
         }
     }
 }
-*/
