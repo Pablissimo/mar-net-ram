@@ -12,3 +12,4 @@ C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\bin\A
 C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\bin\AWSSDK.xml
 C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\obj\Debug\AwsWebApp1.dll
 C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\obj\Debug\AwsWebApp1.pdb
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\AwsWebApp1\AwsWebApp1\obj\Debug\AwsWebApp1.csprojResolveAssemblyReference.cache
