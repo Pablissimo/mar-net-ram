@@ -147,9 +147,6 @@
     <Compile Include="Formulario Ajax\gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
-    <Compile Include="gravar.ashx.cs">
-      <DependentUpon>gravar.ashx</DependentUpon>
-    </Compile>
     <Compile Include="webworkerneto\gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
@@ -159,7 +156,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cache.appcache" />
-    <Content Include="gravar.ashx" />
     <Content Include="Formulario Ajax\gravar.ashx" />
     <None Include="images\README" />
     <Content Include="sharedwebwork\chat\index.html" />
