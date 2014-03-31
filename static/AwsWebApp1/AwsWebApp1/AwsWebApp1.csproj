@@ -147,9 +147,6 @@
     <Compile Include="Formulario Ajax\gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
-    <Compile Include="webworkerneto\gravar.ashx.cs">
-      <DependentUpon>gravar.ashx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -165,7 +162,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="webworkerneto\gravar.ashx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -185,7 +181,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54368</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
