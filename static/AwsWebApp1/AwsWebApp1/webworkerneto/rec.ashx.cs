@@ -11,7 +11,7 @@ namespace AwsWebApp1
     /// <summary>
     /// Summary description for gravar
     /// </summary>
-    public class gravar : IHttpHandler
+    public class rec : IHttpHandler
     {
 
         private static AmazonDynamoDBClient cliente;
@@ -23,7 +23,7 @@ namespace AwsWebApp1
             config.ServiceURL = "http://dynamodb.us-east-1.amazonaws.com";
             cliente = new AmazonDynamoDBClient( config);
             
-            Table dados = Table.LoadTable(client, tableNomes);
+            Table dados = Table.LoadTable(cliente, tableNomes);
             var dado = new Document();
             dado["chave"] = context.Request.Params["chave"];
             dado["dados"] = context.Request.Params["dado"];
