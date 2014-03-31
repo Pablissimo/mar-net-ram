@@ -15,5 +15,5 @@
 
 var texto = localStorage.getItem('textolocal');
 var chave = localStorage.getItem('chavelocal');
-var jason = JSON.parse(texto, chave);
-alert(jason);
+var json = JSON.parse(texto, chave);
+alert(json);
