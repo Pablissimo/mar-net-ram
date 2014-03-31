@@ -102,7 +102,6 @@
     <Content Include="sharedwebwork\sWork.js" />
     <Content Include="style.css" />
     <Content Include="styles\styles.css" />
-    <Content Include="test\viewer.html" />
     <Content Include="test\index.html" />
     <Content Include="test\worker.js" />
     <Content Include="Web.config" />
@@ -136,9 +135,6 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="gravar.ashx.cs">
-      <DependentUpon>gravar.ashx</DependentUpon>
-    </Compile>
     <Compile Include="webworkerneto\gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
@@ -148,7 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cache.appcache" />
-    <Content Include="gravar.ashx" />
     <None Include="images\README" />
     <Content Include="sharedwebwork\chat\index.html" />
     <None Include="Web.Debug.config">
