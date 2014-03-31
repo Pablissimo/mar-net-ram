@@ -11,4 +11,4 @@
     if (localStorage.getItem('textolocal')) {
         $("#texto").val(localStorage.getItem('textolocal'));
     } $
-});
+});     
