@@ -82,11 +82,19 @@
   <ItemGroup>
     <Content Include="app.js" />
     <Content Include="Default.aspx" />
+    <Content Include="Formulario Ajax\index.html" />
+    <Content Include="Formulario Ajax\jquery.js" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
     <Content Include="index.html" />
     <Content Include="jquery.js" />
+    <Content Include="jqueryAjax\ajax.js" />
+    <Content Include="jqueryAjax\app.js" />
+    <Content Include="jqueryAjax\index.html" />
+    <Content Include="jqueryAjax\jquery.js" />
+    <Content Include="jqueryAjax\style.css" />
+    <Content Include="jqueryAjax\worker.js" />
     <Content Include="sharedwebwork\chat\viewer.html" />
     <Content Include="sharedwebwork\chat\worker.js" />
     <Content Include="sharedwebwork\Iframe\index.html" />
@@ -135,6 +143,9 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="gravar.ashx.cs">
+      <DependentUpon>gravar.ashx</DependentUpon>
+    </Compile>
     <Compile Include="webworkerneto\gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
@@ -144,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cache.appcache" />
+    <Content Include="gravar.ashx" />
     <None Include="images\README" />
     <Content Include="sharedwebwork\chat\index.html" />
     <None Include="Web.Debug.config">
