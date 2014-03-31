@@ -11,7 +11,7 @@ namespace AwsWebApp1
     /// <summary>
     /// Summary description for gravar
     /// </summary>
-    public class rec : IHttpHandler
+    public class gravar : IHttpHandler
     {
 
         private static AmazonDynamoDBClient client;
