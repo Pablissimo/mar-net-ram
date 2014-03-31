@@ -147,6 +147,9 @@
     <Compile Include="Formulario Ajax\gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
+    <Compile Include="webworkerneto\rec.ashx.cs">
+      <DependentUpon>rec.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -162,6 +165,7 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="webworkerneto\rec.ashx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
