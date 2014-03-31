@@ -5,3 +5,4 @@ C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebwo
 C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\bin\AWSSDK.xml
 C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\obj\Debug\GravarWebworker.dll
 C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\obj\Debug\GravarWebworker.pdb
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\obj\Debug\GravarWebworker.csprojResolveAssemblyReference.cache
