@@ -1,8 +1,0 @@
-C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\bin\GravarWebworker.dll.config
-C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\bin\GravarWebworker.dll
-C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\bin\GravarWebworker.pdb
-C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\bin\AWSSDK.dll
-C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\bin\AWSSDK.xml
-C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\obj\Debug\GravarWebworker.dll
-C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\obj\Debug\GravarWebworker.pdb
-C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\GravarWebworker\GravarWebworker\obj\Debug\GravarWebworker.csprojResolveAssemblyReference.cache
