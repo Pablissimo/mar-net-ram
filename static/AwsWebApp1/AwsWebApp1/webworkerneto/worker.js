@@ -14,7 +14,7 @@ self.addEventListener('message', function (e) {
     var dados = e.data;
     var chave = "3";
         var req = new XMLHttpRequest();
-        req.open('GET', 'gravar.ashx?action=SavePerson', false);
+        req.open('GET', 'rec.ashx?action=SavePerson', false);
 
         req.setRequestHeader('Content-Type', 'application/json;  charset=utf-8');
         req.onreadystatechange = function () {
