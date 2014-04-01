@@ -1,10 +1,13 @@
 ﻿
 function gravar()
 {
-    var elemento_da_chave = $("#chave"); // document.getElementById('chave') 
-    var chave = elemento_da_chave.val(); // elemento_da_chave.value
+    var elemento_da_chave = $("#chave1"); // document.getElementById('chave') JS
+    var chave = elemento_da_chave.val(); // elemento_da_chave.value JS
     localStorage.setItem('chavelocal', chave);
-    return
+    var elemento_texto = $("#texto1");
+    var texto = elemento_texto.val();
+    localStorage.setItem('textolocal',texto);
+    
 }
 
 function carregar()
@@ -14,7 +17,13 @@ function carregar()
 
 function inilializar()
 {
-    $("#chave").blur(gravar);
+    $("#chave1").blur(gravar);
+    if (localStorage.getItem('chavelocal')) {
+        $("#chave1").val(localStorage.getItem('chavelocal'));}
+    $("#texto1").blur(gravar);
+    if (localStorage.getItem('chavelocal')){
+        $("#texto1").val(localStorage.getItem('chavelocal'));}
+
 }
 
 $(function()
@@ -26,21 +35,6 @@ $(function()
 
 var chave, texto;
 
-
-function () {
-    
-    if (localStorage.getItem('chavelocal')) {
-        $("#chave").val(localStorage.getItem('chavelocal'));
-    }
-    $("#texto").blur(
-        function () {
-            texto = $("texto").val();
-            localStorage.setItem('textolocal', texto);
-    });
-    if (localStorage.getItem('textolocal')) {
-        $("#texto").val(localStorage.getItem('textolocal'));
-    } $
-});
 
 var x = { chave: chave, texto: texto };
 alert(x); 
