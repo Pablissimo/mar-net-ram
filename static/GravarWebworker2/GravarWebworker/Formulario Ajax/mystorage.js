@@ -7,7 +7,7 @@
         var dado = $("#dado" + i).val();
         localStorage.setItem(i, dado);
     }
-        }
+}
    
 function carregar()
 {
