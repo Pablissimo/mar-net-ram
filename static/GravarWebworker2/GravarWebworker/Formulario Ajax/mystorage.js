@@ -6,8 +6,7 @@
 
     var elemento_da_chave = $("#texto1"); // document.getElementById('chave') 
     var texto1 = elemento_da_chave.val(); // elemento_da_chave.value
-    localStorage.setItem('textolocal', texto1);
-   
+    localStorage.setItem('textolocal', texto1); 
 }
 
 function carregar()
