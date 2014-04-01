@@ -1,14 +1,14 @@
 ﻿function gravar()
 {
     var tamanhoArrayForm = $('#form').serializeArray().length;
-    
+
     for (var i = 1; i <= tamanhoArrayForm ; i++)
     {
         var dado = $("#dado" + i).val();
         localStorage.setItem(i, dado);
     }
-}
-
+        }
+   
 function carregar()
 {
     var tamanhoArrayForm = $('#form').serializeArray().length;
