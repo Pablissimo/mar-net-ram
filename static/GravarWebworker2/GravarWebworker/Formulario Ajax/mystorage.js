@@ -1,10 +1,19 @@
-﻿
-function gravar()
+﻿function gravar()
 {
-    var elemento_da_chave = $("#chave"); // document.getElementById('chave') 
-    var chave = elemento_da_chave.val(); // elemento_da_chave.value
-    localStorage.setItem('chavelocal', chave);
-    return
+
+    //localStorage.setItem('row_' + i, JSON.stringify(Objetos[i]));
+    //var numero = 1;
+   // eval("var chave" + numero);
+
+
+    var elemento_da_chave = eval($("#chave1")); // document.getElementById('chave') 
+    var chave1 = elemento_da_chave.val(); // elemento_da_chave.value
+    localStorage.setItem('chavelocal', chave1);
+
+    var elemento_da_chave = $("#texto1"); // document.getElementById('chave') 
+    var texto1 = elemento_da_chave.val(); // elemento_da_chave.value
+    localStorage.setItem('textolocal', texto1);
+    //numero++;
 }
 
 function carregar()
@@ -14,7 +23,9 @@ function carregar()
 
 function inilializar()
 {
-    $("#chave").blur(gravar);
+    $("#chave1").blur(gravar);
+    $("#texto1").blur(gravar);
+
 }
 
 $(function()
@@ -24,10 +35,10 @@ $(function()
 
 
 
-var chave, texto;
+//var chave, texto;
 
 
-function () {
+/*function () {
     
     if (localStorage.getItem('chavelocal')) {
         $("#chave").val(localStorage.getItem('chavelocal'));
@@ -42,5 +53,5 @@ function () {
     } $
 });
 
-var x = { chave: chave, texto: texto };
-alert(x); 
+var x = { chave1: chave, texto2: texto };
+alert(x); */
