@@ -23,8 +23,8 @@ function carregar()
 function inilializar()
 {
     $("#form").ready(carregar);
-    $(".chave").blur(gravar);
-    $(".dado").blur(gravar);
+    $(".chave").change(gravar);
+    $(".dado").change(gravar);
 }
 
 $(function()
