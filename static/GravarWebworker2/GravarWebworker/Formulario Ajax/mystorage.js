@@ -1,6 +1,7 @@
 ﻿function gravar()
 {
-
+    var cha = $(".chave").val();
+    alert(cha);
 
     //localStorage.setItem('row_' + i, JSON.stringify(Objetos[i]));
     //var numero = 1;
