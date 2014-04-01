@@ -83,7 +83,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Formulario Ajax\index.html" />
     <Content Include="Formulario Ajax\jquery.js" />
-    <Content Include="Formulario Ajax\localStorage.js" />
+    <Content Include="Formulario Ajax\mystorage.js" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
