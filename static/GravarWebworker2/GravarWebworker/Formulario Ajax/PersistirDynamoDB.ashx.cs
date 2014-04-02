@@ -12,7 +12,7 @@ namespace GravarWebworker
     {
 
         private static AmazonDynamoDBClient cliente;
-        private static string arrayDados = "dados";
+        private static string arrayDados = "dado";
 
         public void ProcessRequest(HttpContext context)
         {
@@ -24,7 +24,7 @@ namespace GravarWebworker
             var dado = new Document();
             dado["chave"] = context.Request.Params["chave"];
             dado["dados"] = context.Request.Params["dado"];
-            dados.PutItem(dado);
+            dados.PutItem(dado);         
         }
 
         public bool IsReusable
