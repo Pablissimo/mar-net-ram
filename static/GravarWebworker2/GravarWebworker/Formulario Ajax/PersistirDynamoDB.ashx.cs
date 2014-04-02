@@ -24,7 +24,7 @@ namespace GravarWebworker
             var dado = new Document();
             dado["chave"] = context.Request.Params["chave"];
             dado["dados"] = context.Request.Params["dado"];
-            dados.PutItem(dado);         
+            dados.PutItem(dado);
         }
 
         public bool IsReusable

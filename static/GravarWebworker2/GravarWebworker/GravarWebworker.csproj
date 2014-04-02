@@ -111,9 +111,6 @@
     <Compile Include="Formulario Ajax\gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
-    <Compile Include="Formulario Ajax\PersistirDynamoDB.ashx.cs">
-      <DependentUpon>PersistirDynamoDB.ashx</DependentUpon>
-    </Compile>
     <Compile Include="webworkerneto\rec.ashx.cs">
       <DependentUpon>rec.ashx</DependentUpon>
     </Compile>
@@ -123,7 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Formulario Ajax\gravar.ashx" />
-    <Content Include="Formulario Ajax\PersistirDynamoDB.ashx" />
     <None Include="images\README" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
