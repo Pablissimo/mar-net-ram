@@ -10,7 +10,6 @@
 
     var var_gravar = "chave=" + chave + "&dado=" + dado;
 
-    req.setRequestHeader('Content-Type', 'charset=utf-8');
     req.onreadystatechange = function () {
         if (req.readyState == 4 && req.status == 200) {
             self.postMessage({ 'Error': 'No', 'Message': 'Save Successful' });
