@@ -8,9 +8,7 @@ using Amazon.Runtime;
 
 namespace AwsWebApp1
 {
-    /// <summary>
-    /// Summary description for gravar
-    /// </summary>
+ 
     public class gravar : IHttpHandler
     {
 
