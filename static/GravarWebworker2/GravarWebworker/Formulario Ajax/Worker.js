@@ -1,14 +1,12 @@
 ﻿onmessage = function (e) {
-    var dados_string = e.data;
-
-    var chave = dados_string.substring(0,1);
-    var dado = dados_string.substring(2);
+    var m = e.data; // sem JSON (mais rapido)
+    //var m = JSON.parse(e.data); // com JSON (bom hovuer comunicacao com servidor, ou outra linguagem ou db/storage)
 
     var req = new XMLHttpRequest();
     req.open('POST', 'gravar.ashx', true);
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-    var var_gravar = "chave=" + chave + "&dado=" + dado;
+    var var_gravar = "chave=" + m.chave + "&dado=" + m.dado;
 
     req.onreadystatechange = function () {
         if (req.readyState == 4 && req.status == 200) {

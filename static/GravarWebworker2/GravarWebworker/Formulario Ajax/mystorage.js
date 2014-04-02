@@ -1,5 +1,8 @@
 ﻿function gravar()
 {
+    var qual_edit = $(this);
+    alert($.val());
+    return;
     var work = new Worker("Worker.js");
     var tamanhoArrayForm = $('#form').serializeArray().length;
 
@@ -12,18 +15,26 @@
             console.log('', e.data);
         }, false);
 
-        var string_dados = (i+" "+dado);
+        var mensagem = {
+            chave: i,
+            dado: dado
+        };
 
-        work.postMessage(string_dados);
+        work.postMessage(mensagem); // SEM JSON
 
+        // com JSON
+        //mensagem_json = JSON.stringify(mensagem);
+        //work.postMessage(mensagem_json);
+
+        mensagem = chave + ' ' + dado; // stringify
     };
     var i=1;
     work.onmessage = function (e) {
         i++;
         if(i == tamanhoArrayForm) {
             alert(e.data);
+        }
     }
-}
 }
    
 function carregar()
@@ -40,7 +51,7 @@ function carregar()
 function inilializar()
 {
     $("#form").ready(carregar);
-    $(".chave").change(gravar);
+   // $(".chave").change(gravar);
     $(".dado").change(gravar);
 }
 
