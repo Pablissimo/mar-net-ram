@@ -1,6 +1,5 @@
 ﻿function gravar()
 {
-    //var mensagem = "";
     var work = new Worker("Worker.js");
     var tamanhoArrayForm = $('#form').serializeArray().length;
 
@@ -16,10 +15,10 @@
         var string_dados = (i+" "+dado);
 
         work.postMessage(string_dados);
-        //mensagem += string_dados + " ";
+
     };
     work.onmessage = function (e) {
-        alert(e.data);
+       // alert(e.data);
     }
 }
    
