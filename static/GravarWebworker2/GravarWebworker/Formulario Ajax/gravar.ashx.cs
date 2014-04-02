@@ -8,7 +8,6 @@ using Amazon.Runtime;
 
 namespace AwsWebApp1
 {
- 
     public class gravar : IHttpHandler
     {
 
@@ -23,6 +22,7 @@ namespace AwsWebApp1
 
             Table dados = Table.LoadTable(client, tableNome);
             var dado = new Document();
+            
             dado["chave"] = context.Request.Params["chave"];
             dado["dados"] = context.Request.Params["dado"];
             dados.PutItem(dado);

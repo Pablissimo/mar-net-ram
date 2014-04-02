@@ -32,9 +32,9 @@
     work.onmessage = function (e) {
         i++;
         if(i == tamanhoArrayForm) {
-            alert(e.data);
-        }
+            //alert(e.data);
     }
+}
 }
    
 function carregar()
