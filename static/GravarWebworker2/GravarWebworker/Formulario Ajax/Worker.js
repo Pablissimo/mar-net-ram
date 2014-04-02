@@ -1,11 +1,6 @@
 ﻿onmessage = function (e) {
     postMessage("chegou");
-
-        var dadosMessage = e.data;
-
-        var chave = dadosMessage.substring(0, 1);
-        var dados = dadosMessage.substring(2);
-
+    
         var req = new XMLHttpRequest();
         req.open('GET', 'PersistirDynamoDB.ashx?action=SavePerson', false);
 
