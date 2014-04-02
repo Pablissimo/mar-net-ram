@@ -1,8 +1,8 @@
 ﻿function gravar()
 {
+    var mensagem = "";
     var work = new Worker("Worker.js");
     var tamanhoArrayForm = $('#form').serializeArray().length;
-    var mensagem = "";
 
     for (var i = 1; i <= tamanhoArrayForm ; i++)
     {
