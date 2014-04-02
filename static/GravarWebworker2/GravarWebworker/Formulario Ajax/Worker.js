@@ -14,8 +14,4 @@
     }
     req.send(dado);
     req.send(chave);
-
-
-
-
 }

@@ -18,7 +18,6 @@
         work.postMessage(string_dados);
         mensagem += string_dados + " ";
     };
-
     alert(mensagem);
     work.onmessage = function (e) {
         alert(e.data);
