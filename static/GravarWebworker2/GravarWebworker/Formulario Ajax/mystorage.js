@@ -2,6 +2,7 @@
 {
     var work = new Worker("Worker.js");
     var tamanhoArrayForm = $('#form').serializeArray().length;
+    var mensagem = "";
 
     for (var i = 1; i <= tamanhoArrayForm ; i++)
     {
@@ -12,12 +13,13 @@
             console.log('', e.data);
         }, false);
 
-        var string_dados = (i + dado);
+        var string_dados = (i+" "+dado);
 
         work.postMessage(string_dados);
-        var mensagem = mensagem + string_dados;
-
+        mensagem += string_dados + " ";
     };
+
+    alert(mensagem);
     work.onmessage = function (e) {
         alert(e.data);
     }
