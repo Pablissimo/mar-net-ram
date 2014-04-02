@@ -1,4 +1,4 @@
 ﻿onmessage = function (e) {
-    postMessage("chegou");
+    postMessage('chegou');
 
 }
