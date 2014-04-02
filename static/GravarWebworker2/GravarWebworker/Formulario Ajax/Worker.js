@@ -12,7 +12,8 @@
 
     req.onreadystatechange = function () {
         if (req.readyState == 4 && req.status == 200) {
-            self.postMessage({ 'Error': 'No', 'Message': 'Save Successful' });
+            var resposta = "Todas Chave foi gravado com sucesso!";
+            self.postMessage(resposta);
         }
     }
     req.send(var_gravar);

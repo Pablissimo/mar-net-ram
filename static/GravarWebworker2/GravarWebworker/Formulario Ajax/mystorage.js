@@ -18,8 +18,12 @@
         work.postMessage(string_dados);
         //mensagem += string_dados + " ";
     };
+    var i=1;
     work.onmessage = function (e) {
-        alert(e.data);
+        i++;
+        if(i == tamanhoArrayForm) {
+            alert(e.data);
+        }
     }
 }
    
