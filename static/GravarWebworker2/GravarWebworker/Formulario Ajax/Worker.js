@@ -12,7 +12,7 @@
 
     req.onreadystatechange = function () {
         if (req.readyState == 4 && req.status == 200) {
-            var resposta = "Todas Chave foi gravado com sucesso!";
+            var resposta = "Todas os campos foram gravado com sucesso!";
             self.postMessage(resposta);
         }
     }
