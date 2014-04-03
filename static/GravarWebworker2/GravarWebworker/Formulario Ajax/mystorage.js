@@ -1,41 +1,35 @@
 ﻿function gravar()
 {
     var qual_edit = $(this);
-    var dado_edit = $(qual_edit.val());
-    var chave_edit = $(qual_edit.attr('id'));
+     var dado_edit = qual_edit.val();
+    var chave_edit = qual_edit.attr('id');
+
     var work = new Worker("Worker.js");
-    var tamanhoArrayForm = $('#form').serializeArray().length;
 
-    for (var i = 1; i <= tamanhoArrayForm ; i++)
-    {
-        var dado = $("#dado" + i).val();
-        localStorage.setItem(i, dado);
+    localStorage.setItem(chave_edit, dado_edit);
 
-        work.addEventListener('message', function (e) {
-            console.log('', e.data);
-        }, false);
+    work.addEventListener('message', function (e) {
+        console.log('', e.data);
+    }, false);
 
-        var mensagem = {
-            chave: i,
-            dado: dado
-        };
-
-        work.postMessage(mensagem); // SEM JSON
-
-        //com JSON
-        //mensagem_json = JSON.stringify(mensagem);
-        //work.postMessage(mensagem_json);
-
-        //mensagem = chave + ' ' + dado; // stringify
+    var mensagem = {
+        chave: chave_edit,
+        dado: dado_edit
     };
-    var i=1;
-    work.onmessage = function (e) {
-        i++;
-        if(i == tamanhoArrayForm) {
-            alert(e.data);
-    }
-}
-}
+
+     work.postMessage(mensagem); // SEM JSON
+
+    //com JSON
+    //mensagem_json = JSON.stringify(mensagem);
+    //work.postMessage(mensagem_json);
+
+    //mensagem = chave + ' ' + dado; // stringify
+
+     work.onmessage = function (e) {
+         alert(e.data);
+     }
+};
+
    
 function carregar()
 {
@@ -51,7 +45,6 @@ function carregar()
 function inilializar()
 {
     $("#form").ready(carregar);
-   // $(".chave").change(gravar);
     $(".dado").change(gravar);
 }
 

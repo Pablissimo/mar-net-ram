@@ -1,4 +1,5 @@
 ﻿onmessage = function (e) {
+
     var m = e.data; // sem JSONs (mais rapido)
     //var m = JSON.parse(e.data); // com JSON (bom hovuer comunicacao com servidor, ou outra linguagem ou db/storage)
 
@@ -10,7 +11,7 @@
 
     req.onreadystatechange = function () {
         if (req.readyState == 4 && req.status == 200) {
-            var resposta = "Todas os campos foram gravado com sucesso!";
+            var resposta = ("O campo " + m.chave+" foi gravado com sucesso!");
             self.postMessage(resposta);
         }
     }
