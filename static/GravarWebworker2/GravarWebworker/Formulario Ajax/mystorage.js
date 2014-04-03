@@ -26,7 +26,10 @@
     //mensagem = chave + ' ' + dado; // stringify
 
      work.onmessage = function (e) {
-         alert(e.data);
+         $("#mensagemStatus").html(e.data);
+         setTimeout(function () {
+             $("#mensagemStatus").html("");
+         }, 1000); 
      }
 };
 
