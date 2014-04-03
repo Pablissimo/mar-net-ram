@@ -1,8 +1,7 @@
 ﻿function gravar()
 {
-    var qual_edit = $(this);
-    alert($.val());
-    return;
+    //var qual_edit = $(this);
+    //alert($qual_edit.val());
     var work = new Worker("Worker.js");
     var tamanhoArrayForm = $('#form').serializeArray().length;
 
@@ -22,17 +21,17 @@
 
         work.postMessage(mensagem); // SEM JSON
 
-        // com JSON
+        //com JSON
         //mensagem_json = JSON.stringify(mensagem);
         //work.postMessage(mensagem_json);
 
-        mensagem = chave + ' ' + dado; // stringify
+        //mensagem = chave + ' ' + dado; // stringify
     };
     var i=1;
     work.onmessage = function (e) {
         i++;
         if(i == tamanhoArrayForm) {
-            //alert(e.data);
+            alert(e.data);
     }
 }
 }

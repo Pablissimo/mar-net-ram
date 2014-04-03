@@ -1,5 +1,5 @@
 ﻿onmessage = function (e) {
-    var m = e.data; // sem JSON (mais rapido)
+    var m = e.data; // sem JSONs (mais rapido)
     //var m = JSON.parse(e.data); // com JSON (bom hovuer comunicacao com servidor, ou outra linguagem ou db/storage)
 
     var req = new XMLHttpRequest();
@@ -14,5 +14,5 @@
             self.postMessage(resposta);
         }
     }
-    req.send(var_gravar);
+    req.send(var_gravar);//Envia os dados armazenados na variavel "var_guardar" para o banco(tabela)
 }
