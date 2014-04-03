@@ -17,7 +17,7 @@
         dado: dado_edit
     };
 
-     work.postMessage(mensagem); // SEM JSON
+    work.postMessage(mensagem); // SEM JSON
 
     //com JSON
     //mensagem_json = JSON.stringify(mensagem);
