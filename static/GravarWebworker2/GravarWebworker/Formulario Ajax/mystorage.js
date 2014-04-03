@@ -1,7 +1,8 @@
 ﻿function gravar()
 {
-    //var qual_edit = $(this);
-    //alert($qual_edit.val());
+    var qual_edit = $(this);
+    var dado_edit = $(qual_edit.val());
+    var chave_edit = $(qual_edit.attr('id'));
     var work = new Worker("Worker.js");
     var tamanhoArrayForm = $('#form').serializeArray().length;
 
