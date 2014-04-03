@@ -1,9 +1,25 @@
-﻿function gravar()
+﻿function agendar_gravacao()
 {
     var qual_edit = $(this);
+    var id_timeout = qual_edit.attr('id_timeout');
+    if (id_timeout)
+        clearTimeout(id_timeout);
+
+    var id_timeout = setTimeout(function () { executar_gravacao(qual_edit); }, 2000);
+    qual_edit.attr('id_timeout', id_timeout)
+}
+
+function executar_gravacao(qual_edit)
+{
+    alert("timeout");
+    return;
+
     var dado_edit = qual_edit.val();
     var chave_edit = qual_edit.attr('id');
 
+    var dado_antigo = localStorage.getItem(chave_edit);
+    if (dado_edit == dado_antigo)
+        return;
     var work = new Worker("Worker.js");
 
     localStorage.setItem(chave_edit, dado_edit);
@@ -48,7 +64,8 @@ function carregar()
 function inilializar()
 {
     $("#form").ready(carregar);
-    $(".dado").change(gravar);
+    //$(".dado").change(gravar);
+    $(".dado").keypress(agendar_gravacao);
 }
 
 $(function()
