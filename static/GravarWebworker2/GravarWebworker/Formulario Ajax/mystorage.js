@@ -1,7 +1,7 @@
 ﻿function gravar()
 {
     var qual_edit = $(this);
-     var dado_edit = qual_edit.val();
+    var dado_edit = qual_edit.val();
     var chave_edit = qual_edit.attr('id');
 
     var work = new Worker("Worker.js");
@@ -37,8 +37,8 @@ function carregar()
 
     for (var i = 1; i <= tamanhoArrayForm ; i++)
     {
-        var dado = localStorage.getItem(i);
-        $("#dado" + i).val(dado);
+        var dado = localStorage.getItem("dado"+i); //dado1
+        $("#dado"+i).val(dado);
     }
 }
 
