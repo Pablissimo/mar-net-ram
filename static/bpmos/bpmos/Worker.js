@@ -11,7 +11,7 @@
 
     req.onreadystatechange = function () {
         if (req.readyState == 4 && req.status == 200) {
-            var resposta = ("O campo " + m.chave+" foi gravado com sucesso!");
+            var resposta = ("O campo foi gravado com sucesso!");
             self.postMessage(resposta);
         }
     }

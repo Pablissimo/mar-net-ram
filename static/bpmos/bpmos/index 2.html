@@ -1,30 +1,53 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Ajax</title>
+        <title>Formulario</title>
         <script src="jquery.js"></script>
         <script src="mystorage.js"></script>
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+        <link rel="stylesheet" type="text/css" href="animate.css">
     </head>
     <body>
-            <form id="form">
-                <div>
-                    <label>Texto 1</label>
-                    <input id="dado1" class="dado" name="dado1"/>
+        <div id="menuCores">
+            <ul>
+                <li class="corTema verde">Verde</li>
+                <li class="corTema vermelho">Vermelho</li>
+                <li class="corTema roxo">Púrpura</li>
+            </ul>
+        </div>
+        <div id="wraper_form">
+            <div id="conteudo_form">
+                <div id="titulo">
+                    <h1>Formulário Qualiom</h1>
                 </div>
-                <div>
-                    <label>Texto 2</label>
-                    <input id="dado2" class="dado" name="dado2"/>
-                </div>
-                <div>
-                    <label>Texto 3</label>
-                    <input id="dado3" class="dado" name="dado3"/>
-                </div>
-                <div>
-                    <label>Texto 4</label>
-                    <input id="dado4" class="dado" name="dado4" />
-                </div>
-
-                <div id="mensagemStatus" style="color:#A8A8A8;"></div>
-            </form>
+                <form id="form">
+                    <div class="campo">
+                        <label>Nome Equipe</label>
+                        <input id="dado1" class="dado" name="dado1" placeholder="Digite o Nome da Equipe" />
+                    </div>
+                    <div class="campo">
+                        <label>Chefe</label>
+                        <input id="dado2" class="dado" name="dado2" placeholder="Digite o nome do seu Chefe" />
+                    </div>
+                    <div class="campo">
+                        <label>Membro 1</label>
+                        <input id="dado3" class="dado" name="dado3" placeholder="Digite o nome do membro 1"/>
+                    </div>
+                    <div class="campo">
+                        <label>Membro 2</label>
+                        <input id="dado4" class="dado" name="dado4" placeholder="Digite o nome do membro 2" />
+                    </div>
+                    <div class="campo">
+                        <label>Membro 3</label>
+                        <input id="dado5" class="dado" name="dado5" placeholder="Digite o nome do membro 3" />
+                    </div>
+                    <div class="campo">
+                        <label>Membro 4</label>
+                        <input id="dado6" class="dado" name="dado6" placeholder="Digite o nome do membro 4" />
+                    </div>
+                    <div id="mensagemStatus" class="animated"></div>
+                </form>
+            </div>
+        </div>
     </body>
 </html> 

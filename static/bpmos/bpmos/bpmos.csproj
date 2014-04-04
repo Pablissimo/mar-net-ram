@@ -80,8 +80,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Array.js" />
-    <Content Include="css.css" />
+    <Content Include="animate.css" />
+    <Content Include="estilo.css" />
     <Content Include="Default.aspx" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
