@@ -1,0 +1,1 @@
+﻿$('.verde').addClass('defaultActive');

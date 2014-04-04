@@ -83,6 +83,7 @@
     <Content Include="animate.css" />
     <Content Include="estilo.css" />
     <Content Include="Default.aspx" />
+    <Content Include="formManipulation.js" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
