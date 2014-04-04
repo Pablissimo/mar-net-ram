@@ -80,6 +80,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bpmos\Array.js" />
+    <Content Include="bpmos\index.html" />
+    <Content Include="bpmos\jquery.js" />
+    <Content Include="bpmos\mystorage.js" />
+    <Content Include="bpmos\Worker.js" />
     <Content Include="Default.aspx" />
     <Content Include="Formulario Ajax\Array.js" />
     <Content Include="Formulario Ajax\index.html" />
@@ -89,12 +94,20 @@
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
+    <Content Include="saoazuldsv\Array.js" />
+    <Content Include="saoazuldsv\index.html" />
+    <Content Include="saoazuldsv\jquery.js" />
+    <Content Include="saoazuldsv\mystorage.js" />
+    <Content Include="saoazuldsv\Worker.js" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bpmos\gravar.ashx.cs">
+      <DependentUpon>gravar.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,13 +119,18 @@
     <Compile Include="Formulario Ajax\gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
+    <Compile Include="saoazuldsv\gravar.ashx.cs">
+      <DependentUpon>gravar.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Formulario Ajax\gravar.ashx" />
+    <Content Include="bpmos\gravar.ashx" />
     <None Include="images\README" />
+    <Content Include="saoazuldsv\gravar.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
