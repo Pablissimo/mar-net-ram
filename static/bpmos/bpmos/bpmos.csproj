@@ -81,14 +81,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="animate.css" />
+    <Content Include="csschange\estilo.css" />
+    <Content Include="csschange\estilo2.css" />
+    <Content Include="csschange\HtmlPage1.html" />
+    <Content Include="csschange\manipuladorCSS.js" />
     <Content Include="estilo.css" />
     <Content Include="Default.aspx" />
+    <Content Include="estiloAlternativo.css" />
+    <Content Include="estilosensitive.css" />
     <Content Include="formManipulation.js" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
     <Content Include="index 2.html" />
     <Content Include="jquery.js" />
+    <Content Include="manipuladorCSS.js" />
     <Content Include="mystorage.js" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config">
