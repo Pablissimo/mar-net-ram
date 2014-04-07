@@ -1,0 +1,156 @@
+﻿/*
+    FORMULÁRIO        
+*/
+body
+{
+    background:#003862;
+    color: white;
+    font-family: 'Myriad Pro';
+    margin:0;
+}
+#wraper_form
+{
+    width: 100%;
+    margin: 100px 0;
+}
+h1
+{
+    font-size:25px;
+    text-align: center;
+}
+#conteudo_form
+{
+    width: 30%;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px;
+    margin: auto;
+
+}
+#conteudo_form form{
+    width:90%;
+    margin: auto;
+}
+.campo
+{
+    margin: auto;
+}
+input
+{
+    width: 100%;
+    border-radius:5px;
+}
+#titulo
+{
+    width: 100%;
+}
+/*
+    RESPONSIVIDADE       
+ */
+@media screen and (max-width: 450px)
+{
+
+   h1   
+   { 
+       font-size: 99%;
+       text-align: center;
+   }
+   .campo label
+   {
+       font-size: 80%;
+   }
+   #wraper_form
+   {
+       margin: 50px 0;
+   }
+}
+@media screen and (max-width: 800px)
+ {
+   #wraper_form
+   {
+       margin: 40px 0;
+   }
+}
+@media screen and (max-width: 300px) 
+{
+   h1 
+   { 
+       font-size: 70%;
+       text-align: center;
+   }
+   .campo label
+   {
+       font-size: 50%;
+   }
+   #wraper_form
+   {
+        margin: 10px 0;
+   }
+}
+/*
+    MENU DE CORES 
+*/
+#menuCores
+{    
+    background-color:rgba(116, 181, 213, 0.30);
+    position:fixed;
+    width:100%;
+    top:0%;
+}
+#menuCores ul
+{
+    text-decoration:none;
+}
+#menuCores ul li
+{
+    display:inline;
+    padding:5px;
+    margin:0 5px;
+    border: 1px solid #fff;
+    border-radius:5px;
+}
+#menuCores ul li:hover
+{
+   cursor:pointer;
+}
+#menuCores .corTema
+{
+   font:normal 15px "Myriad Pro";
+}
+/*Botão Vermelho*/
+#menuCores .vermelho
+{
+    border-color:#ff0000;
+}
+#menuCores .vermelho:hover, .vermelhoActive
+{
+   background-color:rgba(181, 0, 11, 0.70);
+}
+/*Botão Verde*/
+#menuCores .verde
+{
+    border-color:rgba(14, 195, 17, 1);
+}
+#menuCores .verde:hover, .verdeActive
+{
+   background-color:rgba(14, 195, 17, 0.66);
+}
+/*Botão Roxo*/
+#menuCores .roxo
+{
+    border-color:rgba(91, 21, 104, 1);
+}
+#menuCores .roxo:hover, .roxoActive
+{
+   background-color:rgba(91, 21, 104, 0.54);
+}
+/*Botão .default*/
+#menuCores .default
+{
+    border-color:#0026ff;
+}
+#menuCores .default:hover, .defaultActive
+{
+   background-color:#003862;
+}
+/*Cores*/
