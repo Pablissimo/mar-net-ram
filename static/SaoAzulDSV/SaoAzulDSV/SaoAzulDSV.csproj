@@ -83,6 +83,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Formulario Ajax\Array.js" />
     <Content Include="Formulario Ajax\CSSTest1.css" />
+    <Content Include="Formulario Ajax\formScript.js" />
     <Content Include="Formulario Ajax\index.html" />
     <Content Include="Formulario Ajax\jquery.js" />
     <Content Include="Formulario Ajax\mystorage.js" />
