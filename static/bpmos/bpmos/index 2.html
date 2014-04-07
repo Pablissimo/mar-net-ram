@@ -5,23 +5,33 @@
         <script src="jquery.js"></script>
         <script src="mystorage.js"></script>
         <script src="formManipulation.js"></script>
+        <script src="manipuladorCSS.js"></script>
         <link rel="stylesheet" type="text/css" href="estilo.css">
         <link rel="stylesheet" type="text/css" href="animate.css">
     </head>
     <body>
-        <div id="menuCores">
-            <ul>
-                <li class="corTema verde">Verde</li>
-                <li class="corTema vermelho">Vermelho</li>
-                <li class="corTema roxo">Púrpura</li>
-                <li class="corTema default">Padrão</li>
-            </ul>
+        <div id="menuTopo">
+            <div id="menuCores">
+                <ul>
+                    <li class="Tema verde">Verde</li>
+                    <li class="Tema vermelho">Vermelho</li>
+                    <li class="Tema roxo">Púrpura</li>
+                </ul>
+            </div>
+            <div id="menuTema">
+                <ul>
+                    <li class="Tema alternativo">Alternativo</li>
+                    <li class="Tema sensitive">Sensitive</li>
+                    <li class="Tema padrao defaultActive">Padrão</li>
+                </ul>
+            </div>
         </div>
         <div id="wraper_form">
             <div id="conteudo_form">
                 <div id="titulo">
                     <h1>Formulário Qualiom</h1>
                 </div>
+                <hr>
                 <form id="form">
                     <div class="campo">
                         <label>Nome Equipe</label>
