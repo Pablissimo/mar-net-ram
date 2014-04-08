@@ -1,11 +1,11 @@
 ﻿$(function ()
 {
-    $('.default').ready(temaDefault);
-    $('#btt-top').click(black);
-    $('#btt-bot').click(temaVerde);
-    $('#btt-rigth').click(temaVermelho);
-    $('#btt-left').click(temaAmarelo);
-    $('#btt-reset').click(temaDefault);
+    //$('.default').ready(temaDefault);
+    //$('#btt-top').click(black);
+    //$('#btt-bot').click(temaVerde);
+    //$('#btt-rigth').click(temaVermelho);
+    //$('#btt-left').click(temaAmarelo);
+    //$('#btt-reset').click(temaDefault);
 
     $('#resetPos').click(moveDefault);
     $('#trl-top').click(moveTop);
@@ -15,43 +15,43 @@
 
 })
 
-function temaDefault()
-{
-    removeTema();
-    $('.default').addClass('defaultActive');
-}
-
-//function temaBlack()
+//function temaDefault()
 //{
 //    removeTema();
-//    $('body').addClass('black');
+//    $('.default').addClass('defaultActive');
 //}
 
-function temaVerde()
-{
-    removeTema();
-    $('body').addClass('verde');
-}
+////function temaBlack()
+////{
+////    removeTema();
+////    $('body').addClass('black');
+////}
 
-function temaVermelho()
-{
-    removeTema();
-    $('body').addClass('vermelho');
-}
+//function temaVerde()
+//{
+//    removeTema();
+//    $('body').addClass('verde');
+//}
 
-function temaAmarelo() {
-    removeTema();
-    $('body').addClass('amarelo');
-}
+//function temaVermelho()
+//{
+//    removeTema();
+//    $('body').addClass('vermelho');
+//}
 
-function removeTema()
-{
-    $('body').removeClass('verde');
-    $('body').removeClass('black');
-    $('body').removeClass('amarelo');
-    $('body').removeClass('vermelho');
-    $('body').removeClass('default');
-}
+//function temaAmarelo() {
+//    removeTema();
+//    $('body').addClass('amarelo');
+//}
+
+//function removeTema()
+//{
+//    $('body').removeClass('verde');
+//    $('body').removeClass('black');
+//    $('body').removeClass('amarelo');
+//    $('body').removeClass('vermelho');
+//    $('body').removeClass('default');
+//}
 
 
 

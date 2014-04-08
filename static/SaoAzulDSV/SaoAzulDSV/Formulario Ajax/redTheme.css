@@ -2,6 +2,7 @@
        Estilos formulario
 ***********************************/
 body {
+    background-color:#bb1b1b;
     padding:0px;
     margin:0px;
 	}
@@ -13,9 +14,7 @@ body {
     margin: 50px auto;
     font-size:14pt;
     color: #14130d;
-    background-color:#E0EEE0;
-    border: groove;
-    border-radius: 200px;
+    background-color:#fff397;
     position:static;
 }
 .dado{
@@ -116,11 +115,9 @@ input {
 /*Botao preto*/
 #btt-top
 {
-    /*top: 223px;
-    left: 340px;*/
     left:40px;
     color:#000;
-    background-color:rgba(0, 0, 0, 0.43);
+    background-color:#686363;
 }
 
 #btt-top:hover
@@ -168,8 +165,8 @@ input {
     left: 380px;*/
     left:80px;
     top:40px;
-    color:#ff0000;
-    background-color:rgba(255, 0, 0, 0.43);
+    color:#fff;
+    background-color:rgba(255, 0, 0, 1);
     
 }
 

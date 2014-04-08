@@ -2,9 +2,10 @@
        Estilos formulario
 ***********************************/
 body {
+    background-color:#ebd733;
     padding:0px;
     margin:0px;
-	}
+}
 
 #csstest
 {
@@ -49,13 +50,13 @@ input {
 
 @media screen and (max-width:450px){
     h3{color:#ff6a00;
-       text-align:center;
-       font:14pt Verdana, Sans-serif;
-      }
+        text-align:center;
+        font:14pt Verdana, Sans-serif;
+    }
     h1{
-       color:#ff6a00;
-       text-align:center;
-       font:25pt Verdana, Sans-serif;
+        color:#ff6a00;
+        text-align:center;
+        font:25pt Verdana, Sans-serif;
     }
     .btt, .trl
     {
@@ -82,7 +83,7 @@ input {
 
 .btt, .trl
 {
-   position:absolute;
+    position:absolute;
 }
 
 /***********************************
@@ -116,11 +117,9 @@ input {
 /*Botao preto*/
 #btt-top
 {
-    /*top: 223px;
-    left: 340px;*/
     left:40px;
     color:#000;
-    background-color:rgba(0, 0, 0, 0.43);
+    background-color:#686363;
 }
 
 #btt-top:hover
@@ -133,10 +132,10 @@ input {
 /*Botao amarelo*/
 #btt-left
 {
-   left: 0;
-   top:40px;
-   color:#ffd800;
-   background-color:rgba(255, 216, 0, 0.43);
+    left: 0;
+    top:40px;
+    color:#FFF;
+    background-color:rgba(255, 216, 0, 1);
 }
 
 #btt-left:hover
@@ -184,8 +183,8 @@ input {
 ********************/
 .trl
 {
-   width: 0; 
-   height: 0; 
+    width: 0; 
+    height: 0; 
 }
 
 #trl-top

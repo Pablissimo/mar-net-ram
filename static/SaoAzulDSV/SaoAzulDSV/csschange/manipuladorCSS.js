@@ -11,9 +11,9 @@
 })
 
 function mudar_estilo(nome) {
-    var estilo = $("style");
+    var estilo = document.getElementById("style");
     if (estilo)
-      estilo.remove(estilo);
+        estilo.parentNode.removeChild(estilo);
     $("head").append("<link rel='stylesheet' type='text/css' href='" + nome + ".css' id='style'>");
     localStorage.setItem("estilo", nome);
 }
