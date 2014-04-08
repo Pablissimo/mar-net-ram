@@ -1,10 +1,22 @@
-﻿$(function black() {
-    $("link[href=/Black theme.css]").attr("disabled", "disable");
-    $("link[href=/CSSTest1.css]").attr("disabled", "disable");
-    $('#btt-top').click(carregatheme);
+﻿$(function () {  //metodo de disabilitar CSS da pagina HTML
+
+    var estilo_inicial = localStorage.getItem("estilo");
+    if (!estilo_inicial)
+        estilo_inicial = 'CSSTest1';
+    mudar_estilo(estilo_inicial);
+
+    $("#btt-top").click(function () { mudar_estilo("Black theme"); });
+    $("#btt-reset").click(function () { mudar_estilo("CSSTest1"); });
+    $("#btt-rigth").click(function () { mudar_estilo("redTheme"); });
+    $("#btt-left").click(function () { mudar_estilo("yellowTheme"); });
+    $("#btt-bot").click(function () { mudar_estilo("greenTheme"); });
+
 })
 
-
-function carregatheme() {
-    $("link[href=./Black theme.css]").removeAttr("disabled");
+function mudar_estilo(nome) {
+    var estilo = document.getElementById("style");
+    if (estilo)
+        estilo.parentNode.removeChild(estilo);
+    $("head").append("<link rel='stylesheet' type='text/css' href='" + nome + ".css' id='style'>");
+    localStorage.setItem("estilo", nome);
 }
