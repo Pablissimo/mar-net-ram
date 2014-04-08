@@ -5,15 +5,26 @@
     $("#estilo").click(chamaEstilo);
     $("#estilo2").click(chamaEstilo2);
 
-    removejscssfile("somescript.js", "js") //remove all occurences of "somescript.js" on page
-    removejscssfile("somestyle.css", "css") //remove all occurences "somestyle.css" on page
+    //removejscssfile("somescript.js", "js") //remove all occurences of "somescript.js" on page
+    
 
 });
 
 function chamaEstilo()
 {
+
+    var estilo = document.getElementById("style2");
+    estilo.parentNode.removeChild(estilo);
+    return;
+
+    if ($("#style1").length > 0) {
+        $('head').append('<link rel="stylesheet" href="css/style1.css" type="text/css" />');
+    }
+
     //$("#style2").attr("disabled", true);
     //$("#style1").removeAttr("disabled");
+
+    //removejscssfile("estilo2.css", "css") //remove all occurences "somestyle.css" on page
 
 }
 
@@ -22,6 +33,15 @@ function chamaEstilo2()
     //$("#style1").attr("disabled", true);
     //$("#style2").removeAttr("disabled");
 
+    var estilo=$("style1");
+    estilo.parentNode.removeChild(estilo);
+    return;
+
+    if ($("#style2").length > 0)
+    {
+        $('head').append('<link rel="stylesheet" href="css/style2.css" type="text/css" />');
+    }
+    removejscssfile("estilo.css", "css") //remove all occurences "somestyle.css" on page
 }
 
 
