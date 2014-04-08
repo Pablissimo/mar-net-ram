@@ -1,34 +1,13 @@
-﻿body {
+﻿/***********************************
+       Estilos formulario
+***********************************/
+body {
     padding:0px;
     margin:0px;
 	}
-#menu ul {
-	padding:0px;
-	margin:0px;
-	float: left;
-	width: 100%;
-	background-color:#EDEDED;
-	list-style:none;
-	font:80% Tahoma;
-}
 
-#menu ul li { display: inline; }
-
-#menu ul li a {
-	background-color:#EDEDED;
-	color: #333;
-	text-decoration: none;
-	border-bottom:3px solid #EDEDED;
-	padding: 5px 15px;
-	float:left;
-}
-
-#menu ul li a:hover {
-	background-color:#D6D6D6;
-	color: #6D6D6D;
-	border-bottom:3px solid #EA0000;
-}
-#csstest{
+#csstest
+{
     text-align:center;
     width: 60%;
     margin: 50px auto;
@@ -56,7 +35,17 @@
     margin: auto;
     border:groove;
     padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 24px;
 }
+
+input {
+    width:100%;  
+}
+
+/***********************************
+    Controle de tamanho de tela
+***********************************/
 
 @media screen and (max-width:450px){
     h3{color:#ff6a00;
@@ -68,23 +57,236 @@
        text-align:center;
        font:25pt Verdana, Sans-serif;
     }
+    .btt, .trl
+    {
+        display:none;
+    }
 }
-input {
-    width:100%;  
-}
-/*#menu ul li{
-    display:inline;
-    background:#fbfbfb;
-    border-radius:600px;
-    text-align:center;
-    padding: 5px;
-}
-#menu a {
-    text-decoration:none;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    text-align:center;
-}*/
 
 
+/*WRAPPER-BTT e WRAPPER-TRL*/
+#wrapper-btt, #wrapper-trl 
+{
+    position: relative;
+}
+#wrapper-btt
+{    
+    top: -227px;
+    left: 42px;
+}
+#wrapper-trl
+{
+    top: -230px;
+    left: 652px;
+}
+
+.btt, .trl
+{
+   position:absolute;
+}
+
+/***********************************
+             Botoes
+***********************************/
+
+.btt
+{
+    line-height:42px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    font-weight:bold;
+}
+
+.btt:hover, .trl:hover
+{
+    cursor:pointer;
+}
+
+/*Botao preto*/
+#btt-top
+{
+    /*top: 223px;
+    left: 340px;*/
+    left:40px;
+    color:#000;
+    background-color:rgba(0, 0, 0, 0.43);
+}
+
+#btt-top:hover
+{
+    background-color:#000;
+    color:#fff;
+}
+
+
+/*Botao amarelo*/
+#btt-left
+{
+   /*top: 268px;
+   left: 300px;*/
+   top:40px;
+   color:#ffd800;
+   background-color:rgba(255, 216, 0, 0.43);
+}
+
+#btt-left:hover
+{
+    background-color:#ffd800;
+    color:#fff;
+}
+/*Botao verde*/
+#btt-bot
+{
+    /*top: 311px;
+    left: 339px;*/
+    top:80px;
+    left:40px;
+    color:#15c23c;
+    background-color:rgba(21, 194, 60, 0.43);
+}
+
+#btt-bot:hover
+{
+    background-color:#15c23c;
+    color:#fff;
+}
+
+/*Botao vermelho*/
+#btt-rigth
+{
+    /*top: 268px;
+    left: 380px;*/
+    left:80px;
+    top:40px;
+    color:#ff0000;
+    background-color:rgba(255, 0, 0, 0.43);
+    
+}
+
+#btt-rigth:hover
+{
+    background-color:#ff0000;
+    color:#fff;
+}
+
+/********************
+      Triangulos 
+********************/
+.trl
+{
+   width: 0; 
+   height: 0; 
+}
+
+#trl-top
+{
+    /*left: 969px;
+    top: 219px;*/
+    left:40px;
+    color:#000;
+    border-bottom: 40px solid #11d0c4; 
+    border-left: 20px solid transparent; 
+    border-right: 20px solid transparent;
+}
+
+#trl-bot
+{
+    /*left: 969px;
+    top: 299px;*/
+    top:80px;
+    left:40px;
+    border-top: 40px solid #11d0c4;
+    border-left: 20px solid transparent; 
+    border-right: 20px solid transparent; 
+   
+}
+
+#trl-rigth
+{
+    /*left: 1009px;
+    top: 259px;*/
+    left:80px;
+    top:40px;
+    border-left: 40px solid purple;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+#trl-left
+{
+    /*left: 928px;
+    top: 260px;*/
+    top:40px;
+    border-right: 40px solid purple;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+}
+
+
+#resetPos
+{
+    position: absolute;
+    left: 45px;
+    top: 45px;
+    line-height: 22px;
+    width: 30px;
+    height: 30px;
+    cursor:pointer;
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: #2c4776;
+}
+
+
+/**************************
+        TEMAS
+***************************/
+
+/*Default*/
+.default
+{
+    background-color:#E0EEE0;
+}
+
+/*Black*/
+.black
+{
+    background-color:#443c3c;
+}
+.blackActive 
+{
+    background-color:#686363;
+}
+
+/*Verde*/
+.verde
+{
+    background-color:#559728;
+}
+.verdeActive
+{
+    background-color:#124b06;
+}
+
+/*Vermelho*/
+.vermelho
+{
+    background-color:#bb1b1b;
+}
+
+.vermelhoActive
+{
+    background-color:#d74141;
+}
+
+/*Amarelo*/
+.amarelo
+{
+    background-color:#ebd733;
+}
+
+.amareloActive
+{
+    background-color:#e9ea49;
+}
