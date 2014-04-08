@@ -103,6 +103,16 @@ input {
     cursor:pointer;
 }
 
+#btt-reset
+{
+    /*top: 223px;
+    left: 340px;*/
+    left: 86px;
+    top: -87px;
+    color:#000;
+    background-color:rgba(0, 0, 0, 0.43);
+}
+
 /*Botao preto*/
 #btt-top
 {
@@ -249,15 +259,6 @@ input {
     background-color:#E0EEE0;
 }
 
-/*Black*/
-.black
-{
-    background-color:#443c3c;
-}
-.blackActive 
-{
-    background-color:#686363;
-}
 
 /*Verde*/
 .verde

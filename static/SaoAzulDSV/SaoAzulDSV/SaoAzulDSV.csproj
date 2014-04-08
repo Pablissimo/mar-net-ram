@@ -80,12 +80,19 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="csschange\estilo.css" />
+    <Content Include="csschange\estilo2.css" />
+    <Content Include="csschange\HtmlPage1.html" />
+    <Content Include="csschange\jquery.js" />
+    <Content Include="csschange\manipuladorCSS.js" />
     <Content Include="Default.aspx" />
     <Content Include="Formulario Ajax\Array.js" />
+    <Content Include="Formulario Ajax\Black theme.css" />
     <Content Include="Formulario Ajax\CSSTest1.css" />
     <Content Include="Formulario Ajax\formScript.js" />
     <Content Include="Formulario Ajax\index.html" />
     <Content Include="Formulario Ajax\jquery.js" />
+    <Content Include="Formulario Ajax\ManipuladorCSS.js" />
     <Content Include="Formulario Ajax\mystorage.js" />
     <Content Include="Formulario Ajax\Worker.js" />
     <Content Include="images\database.png" />
