@@ -6,12 +6,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{304ECE55-EA44-4E47-AD10-EB313DD9EC92}</ProjectGuid>
+    <ProjectGuid>{A3A5BDAB-BB00-40C0-8E69-86F0945EF0BB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>bpmos</RootNamespace>
-    <AssemblyName>bpmos</AssemblyName>
+    <RootNamespace>Teste</RootNamespace>
+    <AssemblyName>Teste</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -80,24 +80,17 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="animate.css" />
-    <Content Include="estilo.css" />
     <Content Include="Default.aspx" />
-    <Content Include="estiloAlternativo.css" />
-    <Content Include="estilosensitive.css" />
-    <Content Include="formManipulation.js" />
+    <Content Include="estilo.css" />
+    <Content Include="estilo2.css" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
-    <Content Include="index 2.html" />
     <Content Include="jquery.js" />
-    <Content Include="manipuladorCSS.js" />
-    <Content Include="mystorage.js" />
+    <Content Include="manipulaCSS.js" />
     <Content Include="styles\styles.css" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Worker.js" />
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -108,15 +101,11 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="gravar.ashx.cs">
-      <DependentUpon>gravar.ashx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="gravar.ashx" />
     <None Include="images\README" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -147,7 +136,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54368</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50472/</IISUrl>
+          <IISUrl>http://localhost:62522/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
