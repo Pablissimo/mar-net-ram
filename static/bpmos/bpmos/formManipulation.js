@@ -5,6 +5,7 @@
     $('.roxo').click(temaRoxo);
     $('.vermelho').click(temaVermelho);
     $('.padrao').click(temaDefault);
+    $('.sensitive').click(temaSensitive);
 })
 
 
@@ -53,4 +54,9 @@ function removeTema()
 function temaAlternativo() {
     removeTema();
     $('.alternativo').addClass('alternativoActive');
+}
+
+function temaSensitive() {
+    removeTema();
+    $('.sensitive').addClass('sensitiveActive');
 }

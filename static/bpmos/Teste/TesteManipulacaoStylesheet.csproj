@@ -88,7 +88,7 @@
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
     <Content Include="jquery.js" />
-    <Content Include="manipulaCSS.js" />
+    <Content Include="manipulaTemas.js" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>

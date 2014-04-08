@@ -84,7 +84,7 @@
     <Content Include="estilo.css" />
     <Content Include="Default.aspx" />
     <Content Include="estiloAlternativo.css" />
-    <Content Include="estilosensitive.css" />
+    <Content Include="estiloSensitive.css" />
     <Content Include="formManipulation.js" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
@@ -92,7 +92,9 @@
     <Content Include="index 2.html" />
     <Content Include="jquery.js" />
     <Content Include="manipuladorCSS.js" />
+    <Content Include="manipulaTemas.js" />
     <Content Include="mystorage.js" />
+    <Content Include="purple.css" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
