@@ -1,0 +1,220 @@
+﻿/*
+    FORMULÁRIO        
+*/
+body
+{
+    background:#fff;
+    font-family: 'Myriad Pro';
+    margin:0;
+}
+#wraper_form
+{
+    width: 100%;
+    margin: 100px 0;
+}
+h1
+{
+    font-size:40px;
+    text-align: center;
+    color: #DAA520;
+    box-shadow: #fff;
+    
+}
+#conteudo_form
+{
+    color:#fff;
+    width: 30%;
+    background-color:#363636;
+    border-radius: 30px;
+    padding: 15px;
+    margin: auto;
+    border: solid 3px #DAA520;
+
+}
+#conteudo_form form{
+    width:95%;
+    margin: auto;
+}
+.campo
+{
+    margin: auto;
+}
+input
+{
+    width: 100%;
+    background:#939393;
+    border:0px;
+    padding:5px;
+    color:#fff;
+}
+#titulo
+{
+    width: 100%;
+}
+
+hr{
+    border-color:#DAA520;
+}
+
+/*
+    RESPONSIVIDADE       
+ */
+@media screen and (max-width: 450px)
+{
+
+   h1   
+   { 
+       font-size: 99%;
+       text-align: center;
+   }
+   .campo label
+   {
+       font-size: 80%;
+   }
+   #wraper_form
+   {
+       margin: 50px 0;
+   }
+}
+@media screen and (max-width: 800px)
+ {
+   #wraper_form
+   {
+       margin: 40px 0;
+   }
+}
+@media screen and (max-width: 300px) 
+{
+   h1 
+   { 
+       font-size: 70%;
+       text-align: center;
+   }
+   .campo label
+   {
+       font-size: 50%;
+   }
+   #wraper_form
+   {
+        margin: 10px 0;
+   }
+}
+
+/*Botão Vermelho*/
+#menuCores .vermelho
+{
+    border-color:#ff0000;
+}
+#menuCores .vermelho:hover, .vermelhoActive
+{
+   background-color:rgba(181, 0, 11, 0.70);
+   color:white;
+}
+/*Botão Verde*/
+#menuCores .verde
+{
+    border-color:rgba(14, 195, 17, 1);
+}
+#menuCores .verde:hover, .verdeActive
+{
+   background-color:rgba(14, 195, 17, 0.66);
+   color:white;
+}
+/*Botão Roxo*/
+#menuCores .roxo
+{
+    border-color:rgba(91, 21, 104, 1);
+}
+#menuCores .roxo:hover, .roxoActive
+{
+   background-color:rgba(91, 21, 104, 0.54);
+   color:white;
+}
+/*Botão .default*/
+#menuCores .default
+{
+    border-color:#0026ff;
+}
+#menuCores .default:hover, .defaultActive
+{
+   background-color:#003862;
+   color:white;
+}
+/*Cores*/
+
+/*Config Menus*/
+/*Menu Cores*/
+#menuCores
+{    
+    float:left;
+}
+#menuCores ul
+{
+    text-decoration:none;
+}
+#menuCores ul li
+{
+    display:inline;
+    padding:5px;
+    margin:0 5px;
+    border: 1px solid #fff;
+    border-radius:5px;
+}
+#menuCores ul li:hover
+{
+   cursor:pointer;
+}
+#menuCores .Tema
+{
+   font:normal 15px "Myriad Pro";
+}
+
+
+/*Menu Topo*/
+#menuTopo{
+    background-color:#DAA520;
+    position:fixed;
+    width:100%;
+    bottom:0%;
+    color:white;
+}
+
+
+/*Menu Tema*/
+#menuTema
+{    
+    float:right;
+    margin-right:4%;
+}
+#menuTema ul
+{
+    text-decoration:none;
+}
+#menuTema ul li
+{
+    display:inline;
+    padding:5px;
+    margin:0 5px;
+    border: 1px solid #fff;
+    border-radius:5px;
+}
+#menuTema ul li:hover
+{
+   cursor:pointer;
+}
+#menuTema .Tema
+{
+   font:normal 15px "Myriad Pro";
+}   
+
+/*MENU ALTERNATIVO*/
+
+#menuTema .alternativo{
+   border-color:rgb(255,255,255); 
+}
+
+#menuTema .alternativo:hover, .alternativoActive
+{
+   background-color:rgb(0,0,0);
+   color:white;
+}
