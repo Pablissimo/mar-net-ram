@@ -86,6 +86,7 @@
     <Content Include="csschange\jquery.js" />
     <Content Include="csschange\manipuladorCSS.js" />
     <Content Include="Default.aspx" />
+    <Content Include="Formulario Ajax\add_input.js" />
     <Content Include="Formulario Ajax\Array.js" />
     <Content Include="Formulario Ajax\Black theme.css" />
     <Content Include="Formulario Ajax\CSSTest1.css" />
@@ -101,6 +102,9 @@
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
+    <Content Include="Input dinamico\adicionatemp.js" />
+    <Content Include="Input dinamico\indextemp.html" />
+    <Content Include="Input dinamico\jquery.js" />
     <Content Include="neto\adiciona_input.js" />
     <Content Include="neto\index.html" />
     <Content Include="neto\jquery.js" />

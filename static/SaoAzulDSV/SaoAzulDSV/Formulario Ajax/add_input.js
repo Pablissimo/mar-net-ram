@@ -1,9 +1,9 @@
-﻿$(function () { // quando carrega o html
+﻿$(function () { //quando carrega o html
     $("#adicionar").click(quando_clicar_no_botao);
 })
+
 var contador = 0;
-function adicionar(chave, dado)
-{
+function adicionar(chave, dado) {
     //$("#div_input").append("<div id='" + chave +"'><input class='dado' name='"+chave+"' placeholder='Escreva aqui' value='"+dado+"' onkeypress='quando_teclar_no_input(this);' /><button></div>");
     var agrupador = $("<div>");
     agrupador.attr("id", chave);
@@ -32,5 +32,6 @@ function quando_clicar_no_botao() {
     contador++;
     var chave = "dado" + contador;
     var dado = "";
-    adicionar(chave, dado);
+    adicionar(chave, dado);   
 }
+
