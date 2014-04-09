@@ -11,9 +11,6 @@
 
 function executar_gravacao(qual_edit)
 {
-    alert("timeout");
-    return;
-
     var dado_edit = qual_edit.val();
     var chave_edit = qual_edit.attr('id');
 
@@ -44,8 +41,8 @@ function executar_gravacao(qual_edit)
      work.onmessage = function (e) {
          $("#mensagemStatus").html(e.data);
          setTimeout(function () {
-             $("#mensagemStatus").html("");
-         }, 1000); 
+             $("#mensagemStatus").html(e.data);
+         }, 2000); 
      }
 };
 
