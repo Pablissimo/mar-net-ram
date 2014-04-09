@@ -101,6 +101,9 @@
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
+    <Content Include="Neto\adiciona_input.js" />
+    <Content Include="Neto\index.html" />
+    <Content Include="Neto\jquery.js" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
