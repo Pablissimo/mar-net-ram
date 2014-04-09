@@ -1,4 +1,16 @@
-﻿$(window).load(function () {
+﻿//$(function (e) {
+//    if (e.wich == 13 || e.keyCode == 13)
+//        if (!i) {
+//            var i = 0;
+//            $("#div_input").append("<input id='dado" + i + "' class='dado' name='dado" + i + "' placeholder='Escreva aqui' />");
+//            return;
+//        }
+//        //else
+//        //    i++;
+//        //    $("div_input").append("<input id='dado" + i + "' class='dado' name='dado" + i + "' placeholder='Escreva aqui' />");
+   
+//})
+$(window).load(function () {
     var i = 0;
     for (i = 1; i <= localStorage.getItem("contador"); i++) {
         $("#div_input").append("<label>Mensagem"+i+"</label><input id='dado" +i + "' class='dado' name='dado" + i + "' placeholder='Escreva aqui' /><br>");
@@ -9,7 +21,7 @@ $(function () {
     var contador = localStorage.getItem("contador");
     if (!contador) {
         contador = 1;
-        add(contador);
+    add(contador);
     }
 
     $(document).keypress(function (e) {

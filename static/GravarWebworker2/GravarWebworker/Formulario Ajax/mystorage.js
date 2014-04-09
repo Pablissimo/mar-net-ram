@@ -11,9 +11,6 @@
 
 function executar_gravacao(qual_edit)
 {
-    alert("timeout");
-    return;
-
     var dado_edit = qual_edit.val();
     var chave_edit = qual_edit.attr('id');
 
