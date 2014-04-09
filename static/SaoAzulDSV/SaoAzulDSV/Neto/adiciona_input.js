@@ -1,46 +1,65 @@
-﻿//$(function (e) {
-//    if (e.wich == 13 || e.keyCode == 13)
-//        if (!i) {
-//            var i = 0;
-//            $("#div_input").append("<input id='dado" + i + "' class='dado' name='dado" + i + "' placeholder='Escreva aqui' />");
-//            return;
-//        }
-//        //else
-//        //    i++;
-//        //    $("div_input").append("<input id='dado" + i + "' class='dado' name='dado" + i + "' placeholder='Escreva aqui' />");
-   
-//})
-$(window).load(function () {
-    var i = 0;
-    for (i = 1; i <= localStorage.getItem("contador"); i++) {
-        $("#div_input").append("<label>Mensagem"+i+"</label><input id='dado" +i + "' class='dado' name='dado" + i + "' placeholder='Escreva aqui' /><br>");
-    }
-});
-
-$(function () {
+﻿$(function () {
     var contador = localStorage.getItem("contador");
     if (!contador) {
         contador = 1;
-    add(contador);
+        localStorage.setItem("contador", contador);
+        localStorage.setItem("dado" + contador, contador);
     }
 
-    $(document).keypress(function (e) {
-        if (e.which == 13 && contador <10) {
-            add(++contador);
-            $("input").last().focus();
-        }
-    });
+    for (i = 1; i <= contador ; i++)
+    {
+        var valor =  pega_valor(contador);
+        add(i, valor);
+    }
 
-    $("#btt-remove").click(function () {
-        if (contador > 1) {
-            $(this).parents('input').remove();
-            contador--;
-            localStorage.setItem("contador", contador);
-        }
-    });    
+    // atribuicao de eventos
+    $(document).keypress(apertou_tecla);
+
 })
 
-function add(contar) {
-    $("#div_input").append("<label>Mensagem"+contar+"</label><input id='dado" + contar + "' class='dado' name='dado" + contar + "' placeholder='Escreva aqui' /><br>");
-    localStorage.setItem("contador", contar);
+function pega_valor(v)
+{
+    localStorage.getItem("dado"+ v);
+}
+
+function apertou_tecla(e)
+{
+    var contador = localStorage.getItem("contador");
+    if (e.which == 13) {
+        add(++contador);
+
+
+        //Gravar contador no LocalStorage
+        gravarLocalStorage(contador);
+
+        $("input").last().focus();
+
+    }
+}
+
+
+function gravarLocalStorage(c) //c = Contador
+{
+    //Contador
+    localStorage.setItem("contador", c);    
+    localStorage.setItem("dado"+c, c);
+}
+
+
+
+function add(e, valor)
+{
+    var label = "<label>Mensagem" + e + "</label>";
+    var input = "<input class='dado' name='dado" + e + "' placeholder='Escreva aqui' value='"+valor+"'/>";
+    var button = "<button onclick='removeCampo(" + e + ");'>Remove</button>";
+
+
+    $("#div_input").append("<div id='dado" +e+ "'>"+label+input+button+"</div>");
+}
+
+
+function removeCampo(e)
+{
+    var dado = $("#dado" + e);
+    dado.remove();
 }
