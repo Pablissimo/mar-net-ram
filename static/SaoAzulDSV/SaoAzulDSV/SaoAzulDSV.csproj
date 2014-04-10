@@ -80,12 +80,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adiciona_input.js" />
+    <Content Include="animate.css" />
     <Content Include="csschange\estilo.css" />
     <Content Include="csschange\estilo2.css" />
     <Content Include="csschange\HtmlPage1.html" />
     <Content Include="csschange\jquery.js" />
     <Content Include="csschange\manipuladorCSS.js" />
     <Content Include="Default.aspx" />
+    <Content Include="estilo.css" />
     <Content Include="Formulario Ajax\add_input.js" />
     <Content Include="Formulario Ajax\Array.js" />
     <Content Include="Formulario Ajax\Black theme.css" />
@@ -102,14 +105,21 @@
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
+    <Content Include="index 2.html" />
     <Content Include="Input dinamico\adicionatemp.js" />
     <Content Include="Input dinamico\indextemp.html" />
     <Content Include="Input dinamico\jquery.js" />
+    <Content Include="jquery.js" />
+    <Content Include="lixeira.png" />
+    <Content Include="manipuladorCSS.js" />
+    <Content Include="mystorage.js" />
     <Content Include="neto\adiciona_input.js" />
     <Content Include="neto\index.html" />
     <Content Include="neto\jquery.js" />
+    <Content Include="purple.css" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
+    <Content Include="Worker.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -120,7 +130,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="Formulario Ajax\gravar.ashx.cs">
+    <Compile Include="gravar.ashx.cs">
       <DependentUpon>gravar.ashx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -128,7 +138,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Formulario Ajax\gravar.ashx" />
+    <Content Include="gravar.ashx" />
     <None Include="images\README" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
