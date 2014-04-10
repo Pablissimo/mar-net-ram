@@ -1,0 +1,41 @@
+﻿body
+{
+   background-color:#bb1b1b;
+   padding:0px;
+   margin:0px;
+}
+
+#barraNavegacao
+{
+    background-color:rgba(194, 71, 71, 0.77);
+    height:40px;
+    position:fixed;
+    top:0%;
+    width:100%;
+}
+#barraNavegacao ul li
+{
+    display:inline;
+    text-decoration:none;
+    border:1px solid #ff0000;
+    padding:15px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+    color:#ff0000;
+    font-weight:bold;
+    cursor:pointer;
+    background-color:rgba(182, 49, 49, 0.90);
+}
+
+#baraNavegacao ul li:hover
+{
+    background-color:#6f1414;
+    color:#ffffff;
+}
+
+#div_input, #div_input div 
+{
+    background-color:#ffffff;
+}

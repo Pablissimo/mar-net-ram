@@ -1,0 +1,41 @@
+﻿#titleForm
+{
+    width:169px;
+    margin:50px auto 0;
+    color:#fff;
+    text-align:center;
+}
+#div_input
+{
+    width:169px;
+    margin:0 auto 50px;
+}
+
+#div_input div
+{
+    width:100%;
+    display: block;
+    border: 1px inset #ccc;
+}
+
+#div_input label
+{
+    display: none;
+}
+
+#div_input div input 
+{
+    border: none;
+    padding: 0;
+}
+
+#div_input div button
+{
+    border: none;
+    width:16px;
+    height:16px;
+    background-image:url('../img/trash.png');
+    background-repeat:no-repeat;
+    text-indent:-99999px;
+    cursor:pointer;
+}
