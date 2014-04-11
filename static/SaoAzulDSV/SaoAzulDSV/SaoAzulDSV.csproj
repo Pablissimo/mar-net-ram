@@ -80,6 +80,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="add.png" />
+    <Content Include="Add2.png" />
     <Content Include="adiciona_input.js" />
     <Content Include="animate.css" />
     <Content Include="csschange\estilo.css" />
