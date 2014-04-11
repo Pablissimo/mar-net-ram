@@ -67,4 +67,5 @@ function RemoveItem(painel, chave) {
     painel.remove();
     delete banco_de_dados.items[chave];
     localStorage.setItem('banco_de_dados', JSON.stringify(banco_de_dados));
+    $("input").last().focus();      //Adiciona Foco no ultimo input add
 }
