@@ -1,0 +1,23 @@
+﻿body {
+    width:90%;
+    margin:auto;
+}
+
+header{
+    width: 100%;
+}
+
+article{
+    width:69%;
+    float:left;
+}
+
+aside{
+    width:29%;
+    float:left;
+}
+
+footer{
+    width:100%;
+    clear:both;
+}
