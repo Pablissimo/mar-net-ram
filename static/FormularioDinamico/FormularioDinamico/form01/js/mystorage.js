@@ -39,9 +39,9 @@ function executar_gravacao(qual_edit)
     //mensagem = chave + ' ' + dado; // stringify
 
      work.onmessage = function (e) {
-         $("#mensagemStatus").html(e.data).removeClass('lightSpeedOut').addClass('lightSpeedIn');
+         $("#mensagemStatus").html(e.data);
          setTimeout(function () {
-             $("#mensagemStatus").html(e.data).removeClass('lightSpeedIn').addClass('lightSpeedOut');
+             $("#mensagemStatus").html(e.data);
          }, 2000); 
      }
 };

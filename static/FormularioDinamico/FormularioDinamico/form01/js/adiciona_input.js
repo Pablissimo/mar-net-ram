@@ -1,6 +1,6 @@
 ﻿var banco_de_dados = {
     contador: 1,
-    items: { chave1: "um" }
+    items: { chave1: "" }
 };
 $(function () {
     //carregar_Storage();
@@ -44,6 +44,7 @@ function AdcionaItem(chave, dado) {
         }
         else {
             GravaItem(chave, input.val());
+            agendar_gravacao(chave, input.val());
         }
     });// Ao precionar uma tecla ele grava no Local Storage.
     //var button = "<button onclick='removeCampo(" + e + ");'>Remove</button>";       //Var que guarda o Button
@@ -62,6 +63,7 @@ function AdcionaItem(chave, dado) {
 function GravaItem(chave, dado) {
     banco_de_dados.items[chave] = dado;
     localStorage.setItem('banco_de_dados', JSON.stringify(banco_de_dados)); // stringifly => serializa para json
+
 }
 function RemoveItem(painel, chave) {
     painel.remove();
@@ -69,3 +71,40 @@ function RemoveItem(painel, chave) {
     localStorage.setItem('banco_de_dados', JSON.stringify(banco_de_dados));
     $("input").last().focus();      //Adiciona Foco no ultimo input add
 }
+
+
+function agendar_gravacao(chave, input) {
+    var qual_edit = $("#"+chave);
+    var id_timeout = qual_edit.attr('id_timeout');
+    if (id_timeout)
+        clearTimeout(id_timeout);
+
+    var id_timeout = setTimeout(function () { executar_gravacao(chave, input); }, 2000);
+    qual_edit.attr('id_timeout', id_timeout)
+}
+
+
+function executar_gravacao(chave, input) {
+    var dado_edit = input;
+    var chave_edit = chave;
+
+    var work = new Worker("js/Worker.js");
+
+    work.addEventListener('message', function (e) {
+        console.log('', e.data);
+    }, false);
+
+    var mensagem = {
+        chave: chave_edit,
+        dado: dado_edit
+    };
+
+    work.postMessage(mensagem);
+
+    work.onmessage = function (e) {
+        $("#mensagemStatus").html(e.data);
+        setTimeout(function () {
+            $("#mensagemStatus").html("");
+        }, 2000);
+    }
+};
