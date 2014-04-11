@@ -1,0 +1,15 @@
+﻿body
+{
+    background-color:rgba(99, 31, 116, 0.99);
+    margin:0;
+}
+nav
+{
+    background-color:#33084a;
+    padding:20px;
+}
+
+nav a
+{    
+    color:#ffffff;
+}
