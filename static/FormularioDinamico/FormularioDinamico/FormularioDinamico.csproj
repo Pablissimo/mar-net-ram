@@ -88,6 +88,8 @@
     <Content Include="form01\js\adiciona_input.js" />
     <Content Include="form01\js\jquery.js" />
     <Content Include="form01\js\manipuladorTema.js" />
+    <Content Include="form01\js\mystorage.js" />
+    <Content Include="form01\js\Worker.js" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
@@ -103,11 +105,15 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="form01\js\gravar.ashx.cs">
+      <DependentUpon>gravar.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="form01\js\gravar.ashx" />
     <None Include="images\README" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

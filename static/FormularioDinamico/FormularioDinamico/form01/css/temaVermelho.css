@@ -1,4 +1,51 @@
-﻿body
+﻿article
+{
+    margin:50px auto 0;
+    color:#fff;
+    text-align:center;
+    font-size:35px;
+    width:30%;
+}
+#div_input
+{
+    width: 30%;
+    margin: 0 auto 50px;
+    border: 6px solid rgba(194, 53, 53, 0.87);
+    padding: 9px;
+    border-radius: 8px;
+}
+
+#div_input div
+{
+    width:100%;
+    display: block;
+}
+
+#div_input label
+{
+    display: none;
+}
+
+#div_input div input 
+{
+    border-radius:5px;
+    width:90%;
+    margin: 2px;
+}
+
+#div_input div button
+{
+    border: none;
+    width:16px;
+    height:16px;
+    background-image:url('../img/trash.png');
+    background-repeat:no-repeat;
+    text-indent:-99999px;
+    cursor:pointer;
+    margin-left: 12px;
+}
+
+body
 {
    background-color:rgba(186, 49, 49, 0.88);
    padding:0px;
@@ -15,7 +62,7 @@ nav
     width:100%;
     margin:2px;
 }
-nav ul li
+nav a
 {
     display:inline;
     text-decoration:none;
@@ -28,7 +75,7 @@ nav ul li
     background-color:#ac5252;
 }
 
-nav ul li:hover
+nav a:hover
 {
     background-color:#6f1414;
     color:#ffffff;
@@ -37,4 +84,8 @@ nav ul li:hover
 #div_input, #div_input div 
 {
     background-color:#ffffff;
+}
+
+#wrapper-form{
+    margin-top:15%;
 }
