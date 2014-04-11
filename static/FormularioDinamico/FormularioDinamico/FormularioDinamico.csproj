@@ -84,8 +84,8 @@
     <Content Include="form01\css\form.css" />
     <Content Include="form01\css\temaVermelho.css" />
     <Content Include="form01\img\trash.png" />
-    <Content Include="form01\js\adiciona_input.js" />
     <Content Include="form01\index.html" />
+    <Content Include="form01\js\adiciona_input.js" />
     <Content Include="form01\js\jquery.js" />
     <Content Include="form01\js\manipuladorTema.js" />
     <Content Include="images\database.png" />
