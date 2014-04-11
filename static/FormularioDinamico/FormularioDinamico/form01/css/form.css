@@ -1,14 +1,18 @@
 ﻿#titleForm
 {
-    width:169px;
     margin:50px auto 0;
     color:#fff;
     text-align:center;
+    font-size:35px;
+    width:30%;
 }
 #div_input
 {
-    width:169px;
-    margin:0 auto 50px;
+    width: 30%;
+    margin: 0 auto 50px;
+    border: 6px solid rgba(194, 53, 53, 0.87);
+    padding: 9px;
+    border-radius: 8px;
 }
 
 #div_input div
@@ -25,8 +29,8 @@
 
 #div_input div input 
 {
-    border: none;
-    padding: 0;
+    border-radius:5px;
+    width:96%;
 }
 
 #div_input div button

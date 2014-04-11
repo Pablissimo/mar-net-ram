@@ -1,6 +1,6 @@
 ﻿var banco_de_dados = {
     contador: 1,
-    items: { chave1: ""}
+    items: { chave1: "um" }
 };
 $(function () {
     //carregar_Storage();
@@ -15,12 +15,11 @@ $(function () {
     // atribuicao de eventos
     $(document).keypress(apertou_tecla);// Qualquer tecla que for precionada vai chamar a função
 })
-function apertou_tecla(e)
-{
+function apertou_tecla(e) {
     if (e.which == 13) {        // se a tecla clicada for o Enter
         var ultimo = $('input').last();
-        var val=ultimo.val();
-        if (val != "") {          
+        var val = ultimo.val();
+        if (val != "") {
             banco_de_dados.contador++;
             var chave = "chave" + banco_de_dados.contador;
             AdcionaItem(chave, "");// soma ao contador primeiro e depois chama a função de add
@@ -28,12 +27,11 @@ function apertou_tecla(e)
         }
     }
 }
-function AdcionaItem(chave, dado)
-{
+function AdcionaItem(chave, dado) {
     var painel = $('<div>');
     //var label = "<label>Mensagem " + banco_de_dados.contador + "</label>";     //Var que guarda o Label Mensagem
     var label = $("<label>");
-    label.html(chave );
+    label.html(chave);
 
     //var input = "<input class='dado' id='input" + e + "' placeholder='Escreva aqui'/>";     // Var que guarda o Input
     var input = $('<input>');
@@ -65,9 +63,8 @@ function GravaItem(chave, dado) {
     banco_de_dados.items[chave] = dado;
     localStorage.setItem('banco_de_dados', JSON.stringify(banco_de_dados)); // stringifly => serializa para json
 }
-function RemoveItem(painel, chave)
-{
+function RemoveItem(painel, chave) {
     painel.remove();
     delete banco_de_dados.items[chave];
-    localStorage.setItem('banco_de_dados', JSON.stringify(banco_de_dados)); 
+    localStorage.setItem('banco_de_dados', JSON.stringify(banco_de_dados));
 }
