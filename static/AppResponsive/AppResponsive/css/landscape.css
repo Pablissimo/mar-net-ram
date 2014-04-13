@@ -13,3 +13,28 @@ nav a
 {    
     color:#ffffff;
 }
+
+article
+{
+    width:70%;
+    float:left;
+}
+
+section
+{    
+    border:1px dashed #a166dc;
+}
+
+aside
+{
+    border:1px dashed #a166dc;
+    width:29%;
+    float:right;
+}
+footer
+{
+    clear:both; 
+    position:absolute;
+    bottom:3%;
+    text-align:center;
+}
