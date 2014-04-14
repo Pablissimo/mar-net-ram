@@ -1,0 +1,57 @@
+﻿body
+{
+    background-color:rgba(99, 31, 116, 0.99);
+    margin:0;
+    color:#c6c5c5;
+}
+nav
+{
+    background-color:#33084a;
+    padding:20px;
+}
+
+nav a
+{    
+    color:#ffffff;
+}
+
+article
+{
+    width:68%;
+    margin-left:10px;
+    float:left;
+}
+
+article section
+{    
+    border:1px double #a166dc;
+    padding:5px 10px;
+    font-family:"Myriad Pro";
+    margin:10px 0;
+    height:auto;
+}
+
+aside
+{
+    border:1px double #a166dc;
+    width:30%;
+    height:auto;
+    float:left;
+    margin:10px 10px 0 10px;
+}
+footer
+{
+    clear:both; 
+    position:relative;
+    bottom:0%;
+    background:#3c3349;
+    width:100%;
+    height:auto;
+    border-top:1px double #a166dc;
+    top:400px;
+}
+footer div
+{
+   text-align:center;
+   padding:75px 0;
+}
