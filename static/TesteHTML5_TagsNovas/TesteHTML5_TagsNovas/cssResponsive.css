@@ -43,6 +43,8 @@ footer{
     position: fixed;
     bottom:0px;
     padding:5px; 
+    text-align:center;
+    color:white;
 }
 
 header, aside, article, section, nav #menu_maior li, nav #menu_menor li, footer{
@@ -78,6 +80,11 @@ nav #menu_maior li a{
     text-decoration : none;
 }
 
+nav #menu_maior li:hover{
+    background:#ff6a00;
+    color:white;
+}
+
 
 
 
@@ -87,7 +94,7 @@ nav #menu_maior li a{
 
 article {
     width:100%;
-    background-color:#fff;
+    background-color:#b6ff00;
     margin-top: 70px;
     float:left;
     color: black;
@@ -123,17 +130,6 @@ nav{
     list-style:none;
 }
 
-nav #menu_menor li, nav #menu_menor ul li{
-    width:100px;
-    text-align: center;
-    background:black;
-    margin:3px;
-    padding:5px;
-    text-decoration : none;
-    border-radius: 15px;
-    background-color:#fff;
-}
-
 nav #menu_menor li a{
     text-decoration:none;
     width:600px;
@@ -143,8 +139,20 @@ nav #menu_menor li a{
     display:block;
 }
 
-#menu_menor:hover ul li a
-{
+nav #menu_menor li, nav #menu_menor ul li{
+    width:100px;
+    text-align: center;
+    background:black;
+    margin:1px;
+    padding:5px;
+    text-decoration : none;
+    border-radius: 15px;
+    background-color:#b6ff00;
+}
+
+    nav #menu_menor li:hover, nav #menu_menor ul li:hover {
+    background:#00ffff;
+    color:white;
 }
 
 #menu_menor ul{
