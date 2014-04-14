@@ -1,23 +1,153 @@
 ﻿body {
     width:90%;
     margin:auto;
+    background: blue;
 }
 
 header{
-    width: 100%;
+    width: 90%;
+    background:yellow;
+    top:0px;
+    padding:5px;
+    position:fixed;
 }
 
 article{
     width:69%;
+    background-color: black;
+    color: #FFF;
+    padding:5px;
     float:left;
+    margin-top:90px;
+    margin-bottom: 40px;
 }
 
 aside{
-    width:29%;
-    float:left;
+    width:26%;
+    float:right;
+    background:red;
+    padding:5px;
+    margin-top:90px;
+}
+
+section{
+    background: purple;
+    margin:5px;
+    text-align:justify;
+    padding: 5px;
 }
 
 footer{
+    width:90%;
+    background: green;
+    position: fixed;
+    bottom:0px;
+    padding:5px; 
+}
+
+header, aside, article, section, nav #menu_maior li, nav #menu_menor li, footer{
+    border-radius: 15px;
+}
+
+
+#menu_menor{
+    display:none;
+}
+
+nav{
+    padding:10px;
+}
+
+nav #menu_maior  {
+    list-style: none;
+
+}
+
+nav #menu_maior li{
+    display: inline;
+    text-decoration: none;
+    background:black;
+    width: 150px;
+    padding: 5px;
+}
+
+nav #menu_maior li a{
+    margin:3px;
+    padding:5px;
+    color:#FFF;
+    text-decoration : none;
+}
+
+
+
+
+/*Responsive*/
+
+@media screen and (max-width: 520px){
+
+article {
     width:100%;
-    clear:both;
+    background-color:#fff;
+    margin-top: 70px;
+    float:left;
+    color: black;
+    margin-bottom: 5px;
+}
+
+section{
+    padding: 5px;
+    color:white;
+    text-align:justify;
+}
+aside {
+    float:left;
+    width:100%;
+    background-color:#00ffff;
+    margin-top: 5px;
+    margin-bottom:40px;
+}
+footer, head{
+    position:fixed;
+}
+nav{
+    width:100px;
+}
+
+#menu_maior{
+    display:none;
+}
+
+#menu_menor{
+    display: inline;
+    padding: 0px;
+    list-style:none;
+}
+
+nav #menu_menor li, nav #menu_menor ul li{
+    width:100px;
+    text-align: center;
+    background:black;
+    margin:3px;
+    padding:5px;
+    text-decoration : none;
+    border-radius: 15px;
+    background-color:#fff;
+}
+
+nav #menu_menor li a{
+    text-decoration:none;
+    width:600px;
+}
+
+#menu_menor:hover ul, #menu_menor:hover ul li{
+    display:block;
+}
+
+#menu_menor:hover ul li a
+{
+}
+
+#menu_menor ul{
+    display:none;
+}
 }
