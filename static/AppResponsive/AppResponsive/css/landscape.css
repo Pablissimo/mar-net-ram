@@ -2,6 +2,7 @@
 {
     background-color:rgba(99, 31, 116, 0.99);
     margin:0;
+    color:#c6c5c5;
 }
 nav
 {
@@ -16,25 +17,41 @@ nav a
 
 article
 {
-    width:70%;
+    width:68%;
+    margin-left:10px;
     float:left;
 }
 
-section
+article section
 {    
-    border:1px dashed #a166dc;
+    border:1px double #a166dc;
+    padding:5px 10px;
+    font-family:"Myriad Pro";
+    margin:10px 0;
+    height:auto;
 }
 
 aside
 {
-    border:1px dashed #a166dc;
-    width:29%;
-    float:right;
+    border:1px double #a166dc;
+    width:30%;
+    height:auto;
+    float:left;
+    margin:10px 10px 0 10px;
 }
 footer
 {
     clear:both; 
-    position:absolute;
-    bottom:3%;
-    text-align:center;
+    position:relative;
+    bottom:0%;
+    background:#3c3349;
+    width:100%;
+    height:auto;
+    border-top:1px double #a166dc;
+    top:400px;
+}
+footer div
+{
+   text-align:center;
+   padding:75px 0;
 }
