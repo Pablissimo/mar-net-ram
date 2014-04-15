@@ -22,18 +22,7 @@ nav a
     margin:0 5px;
     text-decoration:none;
     border-radius:10px;
-    background-color:rgba(99, 31, 116, 0.44);
-    
-}
-
-nav a:nth-child(1)
-{
-    display:none;
-}
-
-nav a:nth-child(1):active
-{
-    display:none;
+    background-color:rgba(99, 31, 116, 0.44);    
 }
 
 nav a:hover
@@ -43,7 +32,7 @@ nav a:hover
     color:#fff;
 }
 
-nav a:nth-child(5)
+nav a:nth-child(4)
 {
     background-color:rgba(208, 8, 8, 0.87);
     color:#e4dfdf;
@@ -51,7 +40,7 @@ nav a:nth-child(5)
 }
 
 
-nav a:nth-child(5):hover
+nav a:nth-child(4):hover
 {
     background-color:rgb(55, 12, 12);
     color:#e4dfdf;
