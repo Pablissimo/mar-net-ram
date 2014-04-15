@@ -1,7 +1,15 @@
-﻿body {
+﻿*{ /*Reset CSS*/
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+}
+
+body {
     width:90%;
     margin:auto;
     font-family: Corbel;
+    background: purple;
 }
 
 header{
@@ -15,21 +23,41 @@ header{
 article{
     width:69%;
     color: #FFF;
-    padding:5px;
+    padding:10px;
     float:left;
-    margin-top:90px;
+    margin-top:60px;
     margin-bottom: 40px;
 }
 
 aside{
-    width:26%;
+    width:22%;
     float:right;
-    padding:5px;
-    margin-top:90px;
+    padding:10px;
     color: white;
+    margin-top:10px;
+    color:#fff;
+    text-align:justify;
 }
 
-article, aside, footer{
+aside:nth-of-type(1) /*Rápido acesso*/
+{    
+    margin-top:60px;
+    background-color:rgba(199, 57, 57, 0.83);
+    border:1px double #eb2424;
+}
+
+aside:nth-of-type(2) /*FACEBOOK*/
+{
+    background-color:#5d5aa0;
+    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+    animation: myfirst 5s;
+}
+aside:nth-of-type(3) /*Pessoas online*/
+{
+    background-color:#ff6a00;
+}
+
+article{
     background:#b6ff00;
     color:black;
 }
@@ -40,6 +68,19 @@ section{
     padding: 5px;
 }
 
+
+article section:nth-child(even)
+{
+    background-color:#f85df5;
+}
+
+
+article section:nth-child(odd)
+{
+    background-color:#8eebcf;
+}
+
+
 footer{
     width:90%;
     background: black;
@@ -48,6 +89,10 @@ footer{
     padding:5px; 
     text-align:center;
     color:white;
+}
+
+hr{
+    border-color:black;
 }
 
 header, aside, article, section, nav #menu_maior li, nav #menu_menor li, footer{
@@ -70,7 +115,6 @@ nav #menu_maior  {
 
 nav #menu_maior li{
     display: inline;
-    text-decoration: none;
     background:#b6ff00;
     width: 150px;
     padding: 5px;
@@ -80,16 +124,11 @@ nav #menu_maior li a{
     margin:3px;
     padding:5px;
     color:black;
-    text-decoration : none;
 }
 
 nav #menu_maior li:hover{
     background:#CD950C;
     color:white;
-}
-
-hr{
-    border-color:black;
 }
 
 
@@ -98,70 +137,90 @@ hr{
 
 @media screen and (max-width: 520px){
 
-article {
-    width:100%;
-    margin-top: 70px;
-    float:left;
-    margin-bottom: 5px;
-}
+    article {
+        width:100%;
+        margin-top: 70px;
+        float:left;
+        margin-bottom: 5px;
+    }
 
-section{
-    padding: 5px;
-    text-align:justify;
-}
-aside {
-    float:left;
-    width:100%;
-    margin-top: 5px;
-    margin-bottom:40px;
-}
-footer, head{
-    position:fixed;
-}
-nav{
-    width:100px;
-}
+    section{
+        padding: 5px;
+        text-align:justify;
+    }
+    aside {
+        float:left;
+        width:100%;
+        margin-top: 5px;
+    }
 
-#menu_maior{
-    display:none;
-}
+    aside:first-of-type
+    {
+        margin-top:5px;
+    }
+    aside:last-of-type
+    {
+         margin-bottom:40px;
+    }
 
-#menu_menor{
-    display: inline;
-    padding: 0px;
-    list-style:none;
-}
+    footer, head{
+        position:fixed;
+        background:black;
+    }
 
-nav #menu_menor li a{
-    text-decoration:none;
-    width:600px;
-    color:black;    
-}
+    article, aside{
+        background:#b6ff00;
+        color:black;
+    }
 
-#menu_menor:hover ul, #menu_menor:hover ul li{
-    display:block;
-}
+    nav{
+        width:100px;
+        height:30px;
+    }
+    
+    #menu_maior{
+        display:none;
+    }
 
-nav #menu_menor li, nav #menu_menor ul li{
-    width:100px;
-    text-align: center;
-    background:#b6ff00;
-    margin:1px;
-    padding:5px;
-    text-decoration : none;
-    border-radius: 15px;
-}
+    #menu_menor{
+        display: inline;
+    }
 
-nav #menu_menor li:hover, nav #menu_menor ul li:hover {
-    background:#CD950C;
-    color:white;
-}
+    nav #menu_menor li a{
+        width:600px;
+        color:#fff;  
+    }
 
-#menu_menor ul{
-    display:none;
-}
-article, aside, footer{
-    background:#b6ff00;
-    color:black;
-}
+    nav #menu_menor li, nav #menu_menor ul li{
+        width:100px;
+        text-align: center;
+        background:#9d0606;
+        margin:1px;
+        padding:5px;
+        border-radius: 15px;
+    }
+
+    #menu_menor ul{
+        visibility:hidden;
+        margin-top:-600px;
+        transition-duration: 0.15s;
+        -moz-transition-duration: 0.15s;
+        -webkit-transition-duration: 0.15s;
+        -o-transition-duration: 0.15s;
+    }
+
+    #menu_menor:hover ul{
+        visibility:visible;
+        margin-top:1px;
+        padding:0px;
+    }
+
+    nav #menu_menor li:hover, nav #menu_menor ul li:hover {
+        background:#CD950C;
+        color:white;
+    }
+    nav #menu_menor ul li:hover{
+        margin-left:15px;
+        background:#FF1493;
+    }
 }
