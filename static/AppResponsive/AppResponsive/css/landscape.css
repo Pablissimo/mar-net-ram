@@ -1,57 +1,128 @@
 ﻿body
 {
-    background-color:rgba(99, 31, 116, 0.99);
+    background-color:#e4dfdf;
     margin:0;
-    color:#c6c5c5;
+    color:#e4dfdf;
 }
 nav
 {
     background-color:#33084a;
     padding:20px;
+    position:fixed;
+    top:0%;
+    width:100%;
 }
 
 nav a
 {    
-    color:#ffffff;
+    color:#c6c5c5;
+    border:1px double #e4dfdf;
+    padding:5px;
+    margin:0 5px;
+    text-decoration:none;
+    border-radius:10px;
+    background-color:rgba(99, 31, 116, 0.44);
+    
+}
+
+nav a:nth-child(1)
+{
+    display:none;
+}
+
+nav a:nth-child(1):active
+{
+    display:none;
+}
+
+nav a:hover
+{
+    background-color:#302535;
+    border:1px double rgba(85, 151, 165, 0.82);
+    color:#fff;
+}
+
+
+nav a:nth-child(5)
+{
+    background-color:rgba(208, 8, 8, 0.87);
+    color:#e4dfdf;
+    font-size:16px;
+}
+
+
+nav a:nth-child(5):hover
+{
+    background-color:rgb(55, 12, 12);
+    color:#e4dfdf;
+    border:1px double #f80000;
+    font-weight:bold;
 }
 
 article
 {
-    width:68%;
+    width:73%;
     margin-left:10px;
     float:left;
+    margin-top:70px;
 }
+
 
 article section
 {    
-    border:1px double #a166dc;
+    border:1px double rgba(99, 31, 116, 0.44);
+    border-radius:15px;
     padding:5px 10px;
     font-family:"Myriad Pro";
-    margin:10px 0;
     height:auto;
 }
+
+aside ul li
+{
+    list-style: none;
+}
+
+svg
+{   
+    width:10px;
+    height:10px;
+}
+
+
+article section:nth-child(even)
+{
+    background:#38727a;
+}
+article section:nth-child(odd)
+{
+    
+    background-color:#455567;
+}
+
 
 aside
 {
     border:1px double #a166dc;
-    width:30%;
+    border-radius:15px;
+    width:24%;
     height:auto;
     float:left;
-    margin:10px 10px 0 10px;
+    margin:70px 10px 0 10px;
+    background-color:rgba(61, 58, 58, 0.97);
 }
 footer
 {
     clear:both; 
-    position:relative;
+    position:fixed;
     bottom:0%;
     background:#3c3349;
-    width:100%;
     height:auto;
     border-top:1px double #a166dc;
-    top:400px;
+    padding:10px;
+    text-align:center;
+    width:100%;
 }
-footer div
-{
-   text-align:center;
-   padding:75px 0;
-}
+
+
+
+
