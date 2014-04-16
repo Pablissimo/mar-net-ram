@@ -1,45 +1,89 @@
-﻿body {
+﻿*{ /*Reset CSS*/
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+}
+
+body {
     width:90%;
     margin:auto;
-    background: blue;
+    font-family: Corbel;
+    background: purple;
 }
 
 header{
     width: 90%;
-    background:yellow;
     top:0px;
     padding:5px;
     position:fixed;
+    background:black;
 }
 
 article{
     width:69%;
-    background-color: black;
     color: #FFF;
-    padding:5px;
+    padding:10px;
     float:left;
-    margin-top:90px;
+    margin-top:60px;
     margin-bottom: 40px;
 }
 
 aside{
-    width:26%;
+    width:22%;
     float:right;
-    background:red;
-    padding:5px;
-    margin-top:90px;
+    padding:10px;
+    color: white;
+    margin-top:10px;
+    color:#fff;
+    text-align:justify;
+}
+
+aside:nth-of-type(1) /*Rápido acesso*/
+{    
+    margin-top:60px;
+    background-color:rgba(199, 57, 57, 0.83);
+    border:1px double #eb2424;
+}
+
+aside:nth-of-type(2) /*FACEBOOK*/
+{
+    background-color:#5d5aa0;
+    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+    animation: myfirst 5s;
+}
+aside:nth-of-type(3) /*Pessoas online*/
+{
+    background-color:#ff6a00;
+}
+
+article{
+    background:#b6ff00;
+    color:black;
 }
 
 section{
-    background: purple;
     margin:5px;
     text-align:justify;
     padding: 5px;
 }
 
+
+article section:nth-child(even)
+{
+    background-color:#f85df5;
+}
+
+
+article section:nth-child(odd)
+{
+    background-color:#8eebcf;
+}
+
+
 footer{
     width:90%;
-    background: green;
+    background: black;
     position: fixed;
     bottom:0px;
     padding:5px; 
@@ -51,40 +95,23 @@ header, aside, article, section, nav #menu_maior li, nav #menu_menor li, footer{
     border-radius: 15px;
 }
 
-
-#menu_menor{
-    display:none;
-}
-
 nav{
     padding:10px;
 }
 
-nav #menu_maior  {
-    list-style: none;
-
-}
-
-nav #menu_maior li{
+nav a{
     display: inline;
-    text-decoration: none;
-    background:black;
+    background:#b6ff00;
     width: 150px;
     padding: 5px;
-}
-
-nav #menu_maior li a{
     margin:3px;
-    padding:5px;
-    color:#FFF;
-    text-decoration : none;
+    border-radius:5px;
 }
 
-nav #menu_maior li:hover{
-    background:#ff6a00;
+nav a:hover{
+    background:#CD950C;
     color:white;
 }
-
 
 
 
@@ -92,70 +119,85 @@ nav #menu_maior li:hover{
 
 @media screen and (max-width: 520px){
 
-article {
-    width:100%;
-    background-color:#b6ff00;
-    margin-top: 70px;
-    float:left;
-    color: black;
-    margin-bottom: 5px;
-}
+    article {
+        width:100%;
+        margin-top: 70px;
+        float:left;
+        margin-bottom: 5px;
+    }
 
-section{
-    padding: 5px;
-    color:white;
-    text-align:justify;
-}
-aside {
-    float:left;
-    width:100%;
-    background-color:#00ffff;
-    margin-top: 5px;
-    margin-bottom:40px;
-}
-footer, head{
-    position:fixed;
-}
-nav{
-    width:100px;
-}
+    section{
+        padding: 5px;
+        text-align:justify;
+    }
+    aside {
+        float:left;
+        width:100%;
+        margin-top: 5px;
+    }
 
-#menu_maior{
-    display:none;
-}
+    aside:first-of-type
+    {
+        margin-top:5px;
+    }
+    aside:last-of-type
+    {
+         margin-bottom:40px;
+    }
 
-#menu_menor{
-    display: inline;
-    padding: 0px;
-    list-style:none;
-}
+    footer, head{
+        position:fixed;
+        background:black;
+    }
 
-nav #menu_menor li a{
-    text-decoration:none;
-    width:600px;
-}
+    article, aside{
+        background:#b6ff00;
+        color:black;
+    }
 
-#menu_menor:hover ul, #menu_menor:hover ul li{
-    display:block;
-}
+    nav{
+        width:25px;
+        height:25px;
+        background-color:#9d0606;
+        background-image:url(menu.png);
+        background-size:cover;
+        margin-left:10px;
+        padding:6px;
+        text-align:initial;
+        border-radius: 8px;
+    }
 
-nav #menu_menor li, nav #menu_menor ul li{
-    width:100px;
-    text-align: center;
-    background:black;
-    margin:1px;
-    padding:5px;
-    text-decoration : none;
-    border-radius: 15px;
-    background-color:#b6ff00;
-}
+    nav a{
+        width:150px;
+        display:none;
+        transition-duration: 0.15s;
+        -moz-transition-duration: 0.15s;
+        -webkit-transition-duration: 0.15s;
+        -o-transition-duration: 0.15s; 
+    }
 
-    nav #menu_menor li:hover, nav #menu_menor ul li:hover {
-    background:#00ffff;
-    color:white;
-}
+    nav:hover a{
+        margin-left:10px;
+        width:150px;
+        display:block;
+        margin: 0 0 0 -15px;
+    }
 
-#menu_menor ul{
-    display:none;
-}
+    nav:hover {
+        background:#CD950C;
+        color:white;
+        background-image:url(menu.png);
+        background-size:contain;
+    }
+    nav a:hover{
+        margin-left:7px;
+        background:#FF1493;
+    }
+
+    nav a:nth-child(1)
+     {
+        padding-left:10px;
+        margin-top: 31px;
+    }
+
 }

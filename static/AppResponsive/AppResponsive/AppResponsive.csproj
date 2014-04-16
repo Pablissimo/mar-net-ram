@@ -85,6 +85,8 @@
     <Content Include="Default.aspx" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
+    <Content Include="img\nav.svg" />
+    <Content Include="img\menu.png" />
     <Content Include="images\server.png" />
     <Content Include="img\arrowIcon.svg" />
     <Content Include="styles\styles.css" />
