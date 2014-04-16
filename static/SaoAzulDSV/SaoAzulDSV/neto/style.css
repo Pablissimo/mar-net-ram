@@ -1,0 +1,20 @@
+﻿#div_input label {
+    display: none;
+}
+
+
+#div_input div {
+    display: block;
+    border: 1px inset #ccc;
+}
+
+#div_input div input {
+
+    border: none;
+    padding: 0;
+}
+
+#div_input div button {
+    border: none;
+    background: none;
+}
