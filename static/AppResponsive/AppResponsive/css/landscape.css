@@ -84,8 +84,10 @@ aside ul li
 
 svg
 {   
+    enable-background:new 0 0 512 512;
     width:10px;
     height:10px;
+    text-space-collapse:preserve;
 }
 
 
