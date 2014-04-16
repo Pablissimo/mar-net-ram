@@ -80,12 +80,19 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="animacoes.css" />
-    <Content Include="cssResponsive.css" />
+    <Content Include="css\Animacoes.css" />
+    <Content Include="css\ControleTela.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\ResponsiveStyle.css" />
     <Content Include="Default.aspx" />
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
+    <Content Include="img\cart.svg" />
+    <Content Include="img\faceBB.png" />
+    <Content Include="img\menu.png" />
+    <Content Include="img\menu.svg" />
+    <Content Include="img\shopcart.svg" />
     <Content Include="index.html" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config" />
@@ -101,7 +108,8 @@
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\html\" />
+    <Folder Include="js\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="images\README" />
