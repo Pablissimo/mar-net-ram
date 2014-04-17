@@ -1,0 +1,157 @@
+﻿*{ /*Reset CSS*/
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+}
+
+body {
+    width:90%;
+    margin:auto;
+    font-family: Corbel;
+    background: #d8e8d3;
+}
+
+header{
+    width: 90%;
+    top:0px;
+    padding:5px;
+    position:fixed;
+    background:#423f3f;
+    height: 53px;
+}
+
+article{
+    width:69%;
+    color: #FFF;
+    padding:10px;
+    float:left;
+    margin-top:74px;
+    margin-bottom: 40px;
+}
+article h1{
+    text-align:center;
+    color:#d8e8d3;
+}
+
+aside{
+    width:22%;
+    float:right;
+    padding:10px;
+    color: white;
+    margin-top:10px;
+    color:#fff;
+    text-align:justify;
+}
+aside h1{
+    text-align:center;
+}
+
+aside:nth-of-type(1) /*Rápido acesso*/
+{    
+    margin-top:74px;
+    background-color:rgba(199, 57, 57, 0.83);
+    border:1px double #eb2424;
+}
+
+aside:nth-of-type(2) /*FACEBOOK*/
+{    
+    background-image:url('../img/faceBB.png');
+    background-color:#5d5aa0;
+    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+    animation: myfirst 5s;
+    background-repeat: no-repeat;
+    height: 180px;
+    background-position-x: 66px;
+    background-position-y: 34px;
+    text-align: center;
+    font-size:21px;
+    font-weight: bold;
+}
+
+aside:nth-of-type(3) /*Pessoas online*/
+{
+    background-color:#ff6a00;
+}
+
+
+article{
+    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+    animation: myfirst 5s;
+    background:#423f3f;
+    color:black;
+}
+
+section{
+    margin:5px;
+    text-align:justify;
+    padding: 5px;
+}
+
+
+article section:nth-child(even)
+{
+    background-color:#f85df5;
+}
+
+
+article section:nth-child(odd)
+{
+    background-color:#8eebcf;
+}
+
+
+footer{
+    width:90%;
+    background: black;
+    position: fixed;
+    bottom:0px;
+    padding:5px; 
+    text-align:center;
+    color:white;
+}
+
+header, aside, article, section, nav #menu_maior li, nav #menu_menor li, footer{
+    border-radius: 15px;
+}
+
+nav{
+    padding:10px;
+}
+
+nav a{
+    display: inline;
+    background:#377bae;
+    width: 150px;
+    padding: 5px;
+    margin:3px;
+    border-radius:5px;
+    color:#e3e1ea;
+}
+
+nav a:hover{
+    background:#80dae0;
+    color:#37480c;
+}
+
+nav a:last-child
+{
+    float:right;
+    padding:17px;
+    width:0px;   
+    background-repeat:no-repeat;
+    background-image:url('../img/cart.svg');
+    background-size:contain;
+    background-color:transparent;
+    text-indent:-9999px;    
+
+    -moz-animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    -moz-animation-name: slidein;
+    -webkit-animation-name: slidein;
+
+
+}
+
+nav a:last-child:hover{
+}
