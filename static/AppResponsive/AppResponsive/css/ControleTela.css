@@ -64,7 +64,7 @@ and (max-width : 1000px)
         -webkit-transform:rotate(360deg);
     }
 
-     header nav:hover nav
+     header nav:hover div
     {
        visibility:visible;
        width:150px;
@@ -73,7 +73,7 @@ and (max-width : 1000px)
        
     }
 
-    header nav nav {
+    header nav div {
         width:150px;
         height:30px;
         margin:2px;
@@ -88,15 +88,15 @@ and (max-width : 1000px)
         -o-transition-duration: 0s;
 }
 
-    header nav nav:hover{
+    header nav div:hover{
 
     }
 
-    header nav nav a{
+    header nav div a{
         width:150px;
     }
     
-    nav nav:first-child{
+    nav div:first-child{
         margin-top:37px;
     }
 }
