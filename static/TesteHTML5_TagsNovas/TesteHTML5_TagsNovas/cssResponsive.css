@@ -1,0 +1,203 @@
+﻿*{ /*Reset CSS*/
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+}
+
+body {
+    width:90%;
+    margin:auto;
+    font-family: Corbel;
+    background: purple;
+}
+
+header{
+    width: 90%;
+    top:0px;
+    padding:5px;
+    position:fixed;
+    background:black;
+}
+
+article{
+    width:69%;
+    color: #FFF;
+    padding:10px;
+    float:left;
+    margin-top:60px;
+    margin-bottom: 40px;
+}
+
+aside{
+    width:22%;
+    float:right;
+    padding:10px;
+    color: white;
+    margin-top:10px;
+    color:#fff;
+    text-align:justify;
+}
+
+aside:nth-of-type(1) /*Rápido acesso*/
+{    
+    margin-top:60px;
+    background-color:rgba(199, 57, 57, 0.83);
+    border:1px double #eb2424;
+}
+
+aside:nth-of-type(2) /*FACEBOOK*/
+{
+    background-color:#5d5aa0;
+    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+    animation: myfirst 5s;
+}
+aside:nth-of-type(3) /*Pessoas online*/
+{
+    background-color:#ff6a00;
+}
+
+article{
+    background:#b6ff00;
+    color:black;
+}
+
+section{
+    margin:5px;
+    text-align:justify;
+    padding: 5px;
+}
+
+
+article section:nth-child(even)
+{
+    background-color:#f85df5;
+}
+
+
+article section:nth-child(odd)
+{
+    background-color:#8eebcf;
+}
+
+
+footer{
+    width:90%;
+    background: black;
+    position: fixed;
+    bottom:0px;
+    padding:5px; 
+    text-align:center;
+    color:white;
+}
+
+header, aside, article, section, nav #menu_maior li, nav #menu_menor li, footer{
+    border-radius: 15px;
+}
+
+nav{
+    padding:10px;
+}
+
+nav a{
+    display: inline;
+    background:#b6ff00;
+    width: 150px;
+    padding: 5px;
+    margin:3px;
+    border-radius:5px;
+}
+
+nav a:hover{
+    background:#CD950C;
+    color:white;
+}
+
+
+
+/*Responsive*/
+
+@media screen and (max-width: 520px){
+
+    article {
+        width:100%;
+        margin-top: 70px;
+        float:left;
+        margin-bottom: 5px;
+    }
+
+    section{
+        padding: 5px;
+        text-align:justify;
+    }
+    aside {
+        float:left;
+        width:100%;
+        margin-top: 5px;
+    }
+
+    aside:first-of-type
+    {
+        margin-top:5px;
+    }
+    aside:last-of-type
+    {
+         margin-bottom:40px;
+    }
+
+    footer, head{
+        position:fixed;
+        background:black;
+    }
+
+    article, aside{
+        background:#b6ff00;
+        color:black;
+    }
+
+    nav{
+        width:25px;
+        height:25px;
+        background-color:#9d0606;
+        background-image:url(menu.png);
+        background-size:cover;
+        margin-left:10px;
+        padding:6px;
+        text-align:initial;
+        border-radius: 8px;
+    }
+
+    nav a{
+        width:150px;
+        display:none;
+        transition-duration: 0.15s;
+        -moz-transition-duration: 0.15s;
+        -webkit-transition-duration: 0.15s;
+        -o-transition-duration: 0.15s; 
+    }
+
+    nav:hover a{
+        margin-left:10px;
+        width:150px;
+        display:block;
+        margin: 0 0 0 -15px;
+    }
+
+    nav:hover {
+        background:#CD950C;
+        color:white;
+        background-image:url(menu.png);
+        background-size:contain;
+    }
+    nav a:hover{
+        margin-left:7px;
+        background:#FF1493;
+    }
+
+    nav a:nth-child(1)
+     {
+        padding-left:10px;
+        margin-top: 31px;
+    }
+
+}
