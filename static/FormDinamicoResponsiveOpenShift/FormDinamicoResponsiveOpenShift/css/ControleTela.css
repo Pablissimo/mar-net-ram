@@ -1,0 +1,125 @@
+﻿* {
+    margin:0;
+    padding:0;
+    border:none;
+}
+
+@media only screen 
+and (max-width : 1082px)
+{    
+    article, aside
+    {
+        width:98%;
+        margin-top:60px;
+        clear:both; 
+    }
+}
+
+@media only screen 
+and (max-width : 1000px)
+{
+    article, aside
+    {
+        width:100%;
+        clear:both; 
+    }
+
+    article
+    {        
+        margin:60px 0 0 0;
+    }
+
+    aside
+    {        
+        margin:10px 0 10px 0;
+    }
+    aside:nth-of-type(2)
+    {
+        margin:5px 0 50px 0;
+    }
+}
+
+@media only screen and (max-width : 34.375em)
+ {
+    article
+    {        
+        margin:60px 0 0 0;
+    }
+
+    header nav{
+        width:30px;
+        height:40px;
+        margin-top:-5px;
+        margin-left:15px;
+        background-repeat:no-repeat;
+        background:url(../img/nav.svg) no-repeat;
+        background-size: contain;
+        position:fixed;
+        transition-duration: 0.15s;
+        -moz-transition-duration: 0.15s;
+        -webkit-transition-duration: 0.15s;
+        -o-transition-duration: 0.15s;
+}
+    header nav:hover{
+        -webkit-transform:rotate(360deg);
+    }
+
+     header nav:hover div
+    {
+       visibility:visible;
+       width:150px;
+       display:block;
+       margin-left:-10px;
+       
+    }
+
+    header nav div {
+        width:150px;
+        height:30px;
+        margin:2px;
+        background:none;
+        position:relative;
+        display:block;
+        margin-left:-600px;
+        visibility:hidden;
+        transition-duration:0s;
+        -moz-transition-duration:0s;
+        -webkit-transition-duration: 0s;
+        -o-transition-duration: 0s;
+}
+
+    header nav div:hover{
+
+    }
+
+    header nav div a{
+        width:150px;
+    }
+    
+    nav div:first-child{
+        margin-top:37px;
+    }
+
+    nav div a 
+    {
+        display:block;
+    }
+}
+
+@media only screen and (min-width : 1084px)
+{
+    aside
+    {
+        position:fixed;
+        right:0%;
+    }
+    aside:nth-of-type(2)
+    {
+        position:fixed;
+        right:0%;
+    }
+    article
+    {
+        margin-bottom:50px;
+    }
+}  

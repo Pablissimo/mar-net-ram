@@ -39,7 +39,7 @@ and (max-width : 1000px)
     }
 }
 
-@media only screen and (max-width : 550px)
+@media only screen and (max-width : 34.375em)
  {
     article
     {        
@@ -98,6 +98,11 @@ and (max-width : 1000px)
     
     nav div:first-child{
         margin-top:37px;
+    }
+
+    nav div a 
+    {
+        display:block;
     }
 }
 
