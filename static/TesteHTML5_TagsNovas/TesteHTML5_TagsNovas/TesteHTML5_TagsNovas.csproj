@@ -88,8 +88,9 @@
     <Content Include="images\database.png" />
     <Content Include="images\drive.png" />
     <Content Include="images\server.png" />
-    <Content Include="img\cart.svg" />
-    <Content Include="img\faceBB.png" />
+    <Content Include="img\cart.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="img\menu.png" />
     <Content Include="img\menu.svg" />
     <Content Include="img\shopcart.svg" />

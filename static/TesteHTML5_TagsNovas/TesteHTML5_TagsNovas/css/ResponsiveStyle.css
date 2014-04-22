@@ -55,10 +55,9 @@ aside:nth-of-type(1) /*Rápido acesso*/
 }
 
 aside:nth-of-type(2) /*FACEBOOK*/
-{    
-    background-image:url('../img/faceBB.png');
+{
     background-color:#5d5aa0;
-    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+    -webkit-animation: myfirst 5s;
     animation: myfirst 5s;
     background-repeat: no-repeat;
     height: 180px;
