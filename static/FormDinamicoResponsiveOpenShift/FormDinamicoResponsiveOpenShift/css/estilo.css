@@ -1,0 +1,194 @@
+﻿/*
+    FORMULÁRIO        
+*/
+body
+{
+    background:#003862;
+    color: white;
+    font-family: 'Myriad Pro';
+    margin:0;
+}
+#wraper_form
+{
+    width: 100%;
+    margin: 100px 0;
+}
+
+h1
+{
+    font-size:25px;
+    text-align: center;
+}
+
+#conteudo_form
+{
+    width: 30%;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px 15px 29px;
+    margin: auto;
+
+}
+
+#lblBtn button
+{
+    
+    background: #fff url("../img/Add3.png") no-repeat;
+    border-radius: 30px;
+    width: 21px;
+    height: 19px;
+    text-indent: -9999px;
+    margin-top: 3px;
+}
+
+#lblBtn
+{
+    float: right;
+}
+
+#conteudo_form form{
+    width:90%;
+    margin: auto;
+}
+
+.campo
+{
+    margin: auto;
+}
+
+#titulo
+{
+    width: 100%;
+}
+/*
+    RESPONSIVIDADE       
+ */
+@media screen and (max-width: 450px)
+{
+
+   h1   
+   { 
+       font-size: 99%;
+       text-align: center;
+   }
+   .campo label
+   {
+       font-size: 80%;
+   }
+   #wraper_form
+   {
+       margin: 50px 0;
+   }
+}
+@media screen and (max-width: 800px)
+ {
+   #wraper_form
+   {
+       margin: 40px 0;
+   }
+}
+@media screen and (max-width: 300px) 
+{
+   h1 
+   { 
+       font-size: 70%;
+       text-align: center;
+   }
+   .campo label
+   {
+       font-size: 50%;
+   }
+   #wraper_form
+   {
+        margin: 10px 0;
+   }
+}
+
+/*Menu Topo*/
+nav
+{
+    background-color:rgba(128, 128, 128, 0.80);
+    position:fixed;
+    width:100%;
+    top:0%;
+    color:white;
+    padding:20px 0;
+    text-decoration:none;
+}
+
+nav a
+{
+    display:inline;
+    padding:5px;
+    margin:0 5px;
+    border: 1px solid #fff;
+    border-radius:5px;
+}
+nav a:hover
+{
+   cursor:pointer;
+}
+nav .Tema
+{
+   font:normal 15px "Myriad Pro";
+}
+
+nav .alternativo{
+   border-color:rgb(255,255,255); 
+}
+
+nav .alternativo:hover, .alternativoActive  
+{
+   background-color:rgb(0,0,0);
+   color:white;
+}
+
+nav .padrao:hover
+{
+   background-color:#003862;
+   color:white;
+}
+
+
+#wraper_form #conteudo_form #div_input label {
+    display: none;
+}
+
+
+#wraper_form #conteudo_form #div_input div {
+    display: block;
+    background-color: white;
+    border-radius:5px;
+    padding:2px;
+    margin:5px;
+}
+
+#wraper_form #conteudo_form #div_input div input {
+    width: 95%;
+    border-radius:5px;
+    border: none;
+    padding: 0;
+
+}
+
+#wraper_form #conteudo_form #div_input div button {
+    background-image: url('../img/lixeira.png');
+    background-repeat:no-repeat;
+    text-indent:-99999px;
+    width:16px;
+    height:16px;
+    border:none;
+    border-radius:2px;
+    float:right;
+}
+
+footer
+{
+    position:absolute;
+    bottom:0%;
+    width:100%;
+    margin:auto;
+    background:#2f2d2d;
+    padding:10px;
+    text-align:center;
+}

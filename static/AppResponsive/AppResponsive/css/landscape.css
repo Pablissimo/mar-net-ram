@@ -54,11 +54,6 @@ nav a:nth-child(4):hover
     font-weight:bold;
 }
 
-nav div 
-{
-    display:block;
-}
-
 article
 {
     width:73%;
