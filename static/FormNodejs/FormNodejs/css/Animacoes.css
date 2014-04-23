@@ -1,0 +1,37 @@
+﻿
+    @keyframes myfirst
+    {
+        0%   {background-color:red;}
+        25%  {background-color:yellow;}
+        50%  {background-color:blue;}
+        100% {background-color:green;}
+    }
+
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes myfirst
+    {
+        0%   {background-color:red;}
+        25%  {background-color:yellow;}
+        50%  {background-color:blue;}
+        100% {background-color:green;}
+    }
+
+    @-webkit-keyframes slidein {
+      from {
+          margin-left:200px;
+      }
+
+      to {
+          margin-left:0px;
+      }
+    }
+
+    @keyframes slidein {
+      from {
+         margin-left:2000px;
+      }
+
+      to {
+        margin-left:0px;
+      }
+    }

@@ -15,7 +15,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9cb4bd5e-4e4a-478e-b589-a2253e6292e4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>server.js</StartupFile>
+    <StartupFile>serverLocal.js</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -34,9 +34,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="server.js" />
+    <Compile Include="cliente.js" />
+    <Compile Include="dataBase.js" />
+    <Compile Include="js\adiciona_input.js" />
+    <Compile Include="js\jquery.js" />
+    <Compile Include="js\manipuladorCSS.js" />
+    <Compile Include="js\mystorage.js" />
+    <Compile Include="js\Worker.js" />
+    <Compile Include="serverLocal.js" />
+    <Content Include="css\Animacoes.css" />
+    <Content Include="css\ControleTela.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\ResponsiveStyle.css" />
+    <Content Include="css\Style_form.css" />
+    <Content Include="img\add1.png" />
+    <Content Include="img\Add2.png" />
+    <Content Include="img\add3.png" />
+    <Content Include="img\lixeira.png" />
+    <Content Include="index.html" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="css\" />
+    <Folder Include="img\" />
+    <Folder Include="js\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>
