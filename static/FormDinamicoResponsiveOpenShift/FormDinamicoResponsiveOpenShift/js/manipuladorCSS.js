@@ -1,26 +1,19 @@
 ﻿$(function ()
 {        
-    var estilo_inicial = localStorage.getItem("estilo");
-    if (!estilo_inicial)
-        estilo_inicial = 'estilo';
-
-    mudar_estilo(estilo_inicial);
-
-    $(".alternativo").click(function () { remove_estilo(); });
-    $(".padrao").click(function () { mudar_estilo("estilo"); });
+    adiciona();
+    $("nav a:nth-child(1)").click(function () { estilo_css(true); });
+    $("nav a:nth-child(2)").click(function () {estilo_css(false) });
 });
 
-function mudar_estilo(nome)
+function adiciona()
 {
-    var estilo = document.getElementById("style");
-    if (estilo)
-        estilo.parentNode.removeChild(estilo);
-    $("head").append("<link rel='stylesheet' type='text/css' href='css/" + nome + ".css' id='style'>");
-    localStorage.setItem("estilo", nome);
+    $("head").append("<link rel='stylesheet' type='text/css' href='css/ResponsiveStyle.css' class='style'>");
+    $("head").append("<link rel='stylesheet' type='text/css' href='css/Animacoes.css' class='style'>");
+    $("head").append("<link rel='stylesheet' type='text/css' href='css/landscape.css' class='style'>");
+    $("head").append("<link rel='stylesheet' type='text/css' href='css/ControleTela.css' class='style'>");
 }
 
-function remove_estilo() {
-    var estilo = document.getElementById("style");
-    if (estilo)
-        estilo.parentNode.removeChild(estilo);
+function etilo(e) {
+    var style = $('.style').prop('disabled', e);
 }
+
