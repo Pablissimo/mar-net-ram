@@ -1,0 +1,10 @@
+{
+  "name": "FormCOmNodeJS",
+  "version": "0.0.0",
+  "description": "FormCOmNodeJS",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}

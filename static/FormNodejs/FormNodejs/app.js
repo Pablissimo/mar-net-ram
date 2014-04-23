@@ -1,0 +1,1 @@
+﻿var qualiom = new Object();
