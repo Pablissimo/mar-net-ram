@@ -7,7 +7,6 @@
 
 function adiciona()
 {
-    $("head").append("<link rel='stylesheet' type='text/css' href='css/ResponsiveStyle.css' class='style'>");
     $("head").append("<link rel='stylesheet' type='text/css' href='css/Animacoes.css' class='style'>");
     $("head").append("<link rel='stylesheet' type='text/css' href='css/landscape.css' class='style'>");
     $("head").append("<link rel='stylesheet' type='text/css' href='css/ControleTela.css' class='style'>");
