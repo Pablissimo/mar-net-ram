@@ -1,0 +1,10 @@
+{
+  "name": "TesteReplicacao",
+  "version": "0.0.0",
+  "description": "TesteReplicacao",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}
