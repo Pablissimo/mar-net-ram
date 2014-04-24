@@ -1,0 +1,97 @@
+﻿/*
+    FORMULÁRIO        
+*/
+
+#lblBtn button
+{
+    
+    background: #fff url("../img/add3.png") no-repeat;
+    border-radius: 30px;
+    width: 21px;
+    height: 19px;
+    text-indent: -9999px;
+    margin-top: 3px;
+}
+
+#lblBtn
+{
+    float: right;
+}
+
+#lblBtn label
+{
+    color: white;
+}
+
+.campo
+{
+    margin: auto;
+}
+
+#titulo
+{
+    width: 100%;
+}
+
+article #div_input div {
+    display: block;
+    background-color: white;
+    border-radius:5px;
+    padding:2px;
+    margin:5px;
+}
+
+article #div_input div input {
+    width: 95%;
+    border-radius:5px;
+    border: none;
+    padding: 0;
+
+}
+
+article #div_input div button {
+    background-image: url('../img/lixeira.png');
+    background-repeat:no-repeat;
+    text-indent:-99999px;
+    width:16px;
+    height:16px;
+    border:none;
+    border-radius:2px;
+    float:right;
+}
+
+article #div_input label {
+    display: none;
+}
+
+/*
+    RESPONSIVIDADE       
+ */
+@media screen and (max-width: 450px)
+{
+
+   h1   
+   { 
+       font-size: 99%;
+       text-align: center;
+   }
+   .campo label
+   {
+       font-size: 80%;
+   }
+}
+@media screen and (max-width: 800px)
+ {
+}
+@media screen and (max-width: 300px) 
+{
+   h1 
+   { 
+       font-size: 70%;
+       text-align: center;
+   }
+   .campo label
+   {
+       font-size: 50%;
+   }
+}
