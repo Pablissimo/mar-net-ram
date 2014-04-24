@@ -24,7 +24,7 @@ var ClasseAplicacao=function()
 
 
         //3
-        A.deletar(0);
+        A.deletar('A1');
         A.alterar(2, 'três');
 	
         //4

@@ -2,28 +2,6 @@
 var assert = require('assert');
 var qdb = require('./qualiomdb.js');
 
-exports['Caso Replicacao 1'] = function (test) {
-
-
-    var A = new qdb.QualiomDB('A');
-    var B = new qdb.QualiomDB('B');
-
-    //1
-    A.adicionar('um');
-
-    // sync
-    A.sync();
-    B.sync();
-    A.sync();
-
-
-    var esperado_um = [{ chave: 'A1', dado: 'um' }];
-    assert.deepEqual(esperado_um, A.pesquisar('um'), "dado UM banco A");
-    assert.deepEqual(esperado_um, B.pesquisar('um'), "dado UM banco B");
-
-}
-
-
 exports['Caso 1'] = function (test) {
 
 
