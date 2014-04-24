@@ -1,5 +1,5 @@
 ﻿
-var qdb = require("./qualiomdb.js")
+var qdb = require("./clienteDB.js")
 
 var ClasseAplicacao = function () {
 
