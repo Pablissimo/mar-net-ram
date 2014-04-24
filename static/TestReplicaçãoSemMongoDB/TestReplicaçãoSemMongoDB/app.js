@@ -12,30 +12,30 @@ var ClasseAplicacao=function()
         var B = new qdb.QualiomDB('B');
 	
         //1
-        A.adicionar('um');
-        A.adicionar('dois');
-        A.adicionar('tres');
-	
+        A.add('um');
+        A.add('dois');
+        A.add('tres');
+        
         //2
-        B.adicionar('um');
-        B.adicionar('dois');
-        B.adicionar('tres');
-        B.adicionar('quatro');
+        B.add('um');
+        B.add('dois');
+        B.add('tres');
+        B.add('quatro');
 
 
         //3
-        A.deletar;('A1');
-        A.alterar('A3', 'três');
+        A.delete(0);
+        A.update(2, 'três');
 	
         //4
-        B.alterar('B3', 'três');
+        B.update(2, 'três');
 	
         // sync
         A.sync();
         B.sync();
 	
-        A.listadados();
-        B.listadados();
+        A.listadados(A.db.length);
+        B.listadados(B.db.length);
 	
     };
 };

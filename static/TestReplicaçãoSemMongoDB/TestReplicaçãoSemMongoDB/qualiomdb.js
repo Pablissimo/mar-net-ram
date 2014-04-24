@@ -10,24 +10,28 @@
         return self.nome_banco + self.contador;
     }
 
-    self.adicionar = function (dado) {
+    self.add = function (dado) {
         var chave = self.gerarchave();
         self.db.push({chave: chave, dado: dado});
     };
 
 
-    self.deletar = function () {
-
+    self.delete = function (e) {
+        delete self.db[e];
     }
 
-    self.alterar = function () {
+    self.update = function (c, d) {
 
-    }
 
-    self.listadados = function (a) {
-        for (i=0; i<= db.length; i++) {
-            console.log(db[i]);
+        }
+}
+
+     self.listadados = function (e) {
+        for (i=0; i<= e; i++) {
+            console.log(self.db[i]);
         }
     }
 
-};
+    self.sync = function () {
+        
+    }
