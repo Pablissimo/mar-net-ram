@@ -28,7 +28,7 @@ var ClasseAplicacao=function()
         A.alterar('A3', 'três');
 	
         //4
-        B.alterar('B3', 'trêssssssssssssssssssssssssssssssss');
+        B.alterar('B3', 'três');
 	
         // sync
         A.sync();

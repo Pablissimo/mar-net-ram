@@ -15,7 +15,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>09e3713e-8e7c-4e82-b0e6-6844d6a3a253</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>debug_teste.js</StartupFile>
+    <StartupFile>app.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
