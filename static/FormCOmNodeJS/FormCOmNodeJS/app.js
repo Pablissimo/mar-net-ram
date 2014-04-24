@@ -1,11 +1,13 @@
 ﻿
 var qdb = require("./clienteDB.js")
 
-var ClasseAplicacao = function () {
+var ClasseAplicacao = function ()
+{
 
     var self = this;
 
-    self.teste_caso_1 = function () {
+    self.teste_caso_1 = function ()
+    {
         var A = new qdb.QualiomDB('A');
         var B = new qdb.QualiomDB('B');
 

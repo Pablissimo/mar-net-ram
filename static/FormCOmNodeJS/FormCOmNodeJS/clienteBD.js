@@ -1,33 +1,27 @@
-﻿exports.QualiomDB = function (banco) {
-    var self = this;
-    self.db = new Array();
-    self.nome_banco = banco;
-
-    self.contador = 0;
-
-    self.gerarchave = function (dado) {
-        self.contador++;
-        return self.nome_banco + self.contador;
+﻿var dados = (function () {
+    function dados() {
     }
+    return dados;
+})();
 
-    self.adicionar = function (dado) {
-        var chave = self.gerarchave();
-        self.db.push({ chave: chave, dado: dado });
+var CLiente = (function () {
+    function CLiente(nome_banco) {
+        this.nome_banco = nome_banco;
+        this.contador = 0;
+        this.db = [];
+    }
+    //Criar chave
+    CLiente.prototype.criarchave = function () {
+        this.contador++;
+        return this.nome_banco + this.contador.toString;
     };
 
-
-    self.deletar = function () {
-
-    }
-
-    self.alterar = function () {
-
-    }
-
-    self.listadados = function (a) {
-        for (i = 0; i <= db.length; i++) {
-            console.log(db[i]);
-        }
-    }
-
-};
+    CLiente.prototype.adicionar = function (dado) {
+        var reg = new dados();
+        reg.chave = this.criarchave();
+        reg.dado = dado;
+        this.db.push(reg);
+    };
+    return CLiente;
+})();
+//# sourceMappingURL=clienteBD.js.map
