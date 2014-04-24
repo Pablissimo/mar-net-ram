@@ -10,28 +10,37 @@
         return self.nome_banco + self.contador;
     }
 
-    self.add = function (dado) {
+    self.adicionar = function (dado) {
         var chave = self.gerarchave();
         self.db.push({chave: chave, dado: dado});
     };
 
 
-    self.delete = function (e) {
+    self.deletar = function (e) {
         delete self.db[e];
     }
 
-    self.update = function (c, d) {
+    self.alterar = function (c, d) {
 
+    }
 
+    self.pesquisar = function (dado) {
+        var retorno = new Array();
+        for (var index in self.db) {
+            var registro = self.db[index];
+            if (registro.dado == dado) {
+                retorno.push(registro);
+            }
         }
-}
+        return retorno;
+    }
 
-     self.listadados = function (e) {
-        for (i=0; i<= e; i++) {
-            console.log(self.db[i]);
-        }
+    self.listadados = function () {
+        return self.db;
     }
 
     self.sync = function () {
         
     }
+
+};
