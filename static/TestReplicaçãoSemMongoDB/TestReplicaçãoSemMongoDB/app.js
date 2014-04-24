@@ -25,17 +25,15 @@ var ClasseAplicacao=function()
 
         //3
         A.deletar('A1');
-        A.alterar(2, 'três');
+        A.alterar('A3', 'três');
 	
         //4
-        B.alterar(2, 'três');
+        B.alterar('B3', 'trêssssssssssssssssssssssssssssssss');
 	
         // sync
         A.sync();
         B.sync();
-	
-        A.listadados(A.db.length);
-        B.listadados(B.db.length);
+        A.sync();
 	
     };
 };

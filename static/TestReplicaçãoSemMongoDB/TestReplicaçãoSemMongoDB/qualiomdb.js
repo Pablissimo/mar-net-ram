@@ -16,12 +16,23 @@
     };
 
 
-    self.deletar = function (e) {
-        delete self.db[e];
+    self.deletar = function (chave) {
+        for (var index in self.db) {
+            var registro = self.db[index];
+            if (registro.chave == chave) {
+                delete registro.dado;
+                delete registro.chave;
+            }
+        }
     }
 
-    self.alterar = function (c, d) {
-
+    self.alterar = function (chave, dado) {
+        for (var index in self.db) {
+            var registro = self.db[index];
+            if (registro.chave == chave) {
+                registro.dado = dado;
+            }
+        }
     }
 
     self.pesquisar = function (dado) {
@@ -32,6 +43,14 @@
                 retorno.push(registro);
             }
         }
+        retorno.sort(function (a, b)
+        {
+            if (a.chave == a.b.chave)
+                return 0;
+            if (a.chave > a.b.chave)
+                return 1;
+            return -1;
+        });
         return retorno;
     }
 
@@ -40,7 +59,30 @@
     }
 
     self.sync = function () {
-        
+
+        var banco = banco_matriz;
+
+        var i;
+        var igual = false;
+        for (var index in banco) {
+            var registro = banco[index];
+
+
+            for (i = 0; i < self.db.length; i++) {
+                if (self.db[i].chave == registro.chave) {
+                    igual = true;
+                }
+            }
+
+
+            if (igual == false) {
+                self.db.push(registro);
+            }
+            igual = false;
+        }
     }
 
 };
+
+
+var banco_matriz = new exports.QualiomDB("matriz");
