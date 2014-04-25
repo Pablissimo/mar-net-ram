@@ -1,6 +1,6 @@
 ﻿    // UnitTest.js 
 var assert = require('assert');
-var qdb = require('./qualiomdb.js');
+var qdb = require('../qualiomdb.js');
 
 exports['Caso 1'] = function (test) {
 
