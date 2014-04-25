@@ -193,7 +193,7 @@ exports['Sync-02'] = function (test) {
 
 }
 
-exports['Sync'] = function (test) {
+exports['Sync-03'] = function (test) {
 
     var A = new qdb.QualiomDB('A');
     var B = new qdb.QualiomDB('B');
