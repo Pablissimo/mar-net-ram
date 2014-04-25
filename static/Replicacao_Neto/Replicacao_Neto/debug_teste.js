@@ -1,5 +1,5 @@
-﻿﻿var suite = require('./ReplicacaoTests.js');
+﻿﻿var suite = require('./QualiomDBTests.js');
 
-var unit = suite['Caso 1'];
+var unit = suite['Sync-01'];
 
 unit();
