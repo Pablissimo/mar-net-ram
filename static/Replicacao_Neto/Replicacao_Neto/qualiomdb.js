@@ -3,6 +3,7 @@
     self.db = new Array();
     self.log = new Array();
     self.nome_banco = banco;
+    self.indexLog = 0;
 
     self.contador = 0;
 
@@ -17,13 +18,11 @@
         self.log.push({ operacao: 'adicionar', chave: chave, dado: dado });
     };
 
-
     self.deletar = function (chave) {
         for (var index in self.db) {
             var registro = self.db[index];
             if (registro.chave == chave) {
-                delete registro.dado;
-                delete registro.chave;
+                delete self.db[index];
                 self.log.push({ operacao: 'deletar', chave: chave });
             }
         }
@@ -62,36 +61,45 @@
     }
 
 
-    self.adicionar_rep = function () {
-
+    self.adicionar_rep = function (dado, chave) {
+        exports.banco_matriz.db.push({ chave: chave, dado: dado });
     }
 
-    self.deletar_rep = function () {
-
+    self.alterar_rep = function (dado, chave) {
+        for (var index in exports.banco_matriz.db) {
+            var registro = exports.banco_matriz.db[index];
+            if (registro.chave == chave) {
+                registro.dado = dado;
+            }
+        }
     }
-
-    self.alterar_rep = function () {
-
+    self.deletar_rep = function (chave) {
+        for (var index in exports.banco_matriz.db) {
+            var registro = exports.banco_matriz.db[index];
+            if (registro.chave == chave) {
+                delete exports.banco_matriz.db[index];
+            }
+        }
     }
-
 
     self.sync = function () {
         for (var index in self.log) {
             var item = self.log[index];
 
             if (item.operacao == 'adicionar') {
-                banco_matriz.adicionar_rep()
+                exports.banco_matriz.adicionar_rep(item.dado, item.chave);
             }
 
-            if (item.operacao == 'deletar') {
-                banco_matriz.deletar_rep()
+            else if (item.operacao == 'alterar') {
+                exports.banco_matriz.alterar_rep(item.dado, item.chave);
             }
 
-            if (item.operacao == 'alterar') {
-                banco_matriz.alterar_rep()
+            else if  (item.operacao == 'deletar') {
+                exports.banco_matriz.deletar_rep(item.chave);
             }
         }
+        self.log = new Array();
     }
 };
 
-var banco_matriz = new exports.QualiomDB("matriz");
+exports.banco_matriz = new exports.QualiomDB("matriz");
