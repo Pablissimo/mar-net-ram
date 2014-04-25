@@ -1,6 +1,7 @@
 ﻿exports.QualiomDB = function (banco) {
     var self = this;
     self.db = new Array();
+    self.log = new Array();
     self.nome_banco = banco;
 
     self.contador = 0;
@@ -13,6 +14,7 @@
     self.adicionar = function (dado) {
         var chave = self.gerarchave();
         self.db.push({ chave: chave, dado: dado });
+        self.log.push({ operacao: 'adicionar', dado: dado });
     };
 
 
@@ -22,6 +24,7 @@
             if (registro.chave == chave) {
                 delete registro.dado;
                 delete registro.chave;
+                self.log.push({ operacao: 'deletar', chave: chave });
             }
         }
     }
@@ -31,6 +34,7 @@
             var registro = self.db[index];
             if (registro.chave == chave) {
                 registro.dado = dado;
+                self.log.push({ operacao: 'alterar', chave: chave, dado: dado });
             }
         }
     }
