@@ -126,6 +126,11 @@ exports['Deletar'] = function (test) {
 }
 
 
+
+
+
+
+
 exports['Sync-01'] = function (test) {
 
 
@@ -261,3 +266,6 @@ function assert_dado(A, B, dado, esperadoA, esperadoB, msg) {
     assert.deepEqual(esperadoA, atual_a, "dado " + dado + "banco A- " + msg);
     assert.deepEqual(esperadoB, atual_b, "dado " + dado + "banco B- " + msg);
 }
+
+
+

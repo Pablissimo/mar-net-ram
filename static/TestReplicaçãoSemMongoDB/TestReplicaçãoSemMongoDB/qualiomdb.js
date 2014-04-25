@@ -1,6 +1,7 @@
 ﻿exports.QualiomDB = function (banco) {
     var self = this;
     self.db = new Array();
+    self.log = new Array();
     self.nome_banco = banco;
 
     self.contador = 0;
@@ -12,7 +13,8 @@
 
     self.adicionar = function (dado) {
         var chave = self.gerarchave();
-        self.db.push({chave: chave, dado: dado});
+        self.db.push({ chave: chave, dado: dado });
+        self.log.push({ operacao: 'adicionar', chave: chave, dado: dado });
     };
 
 
@@ -22,6 +24,7 @@
             if (registro.chave == chave) {
                 delete registro.dado;
                 delete registro.chave;
+                self.log.push({ operacao: 'deletar', chave: chave });
             }
         }
     }
@@ -31,6 +34,7 @@
             var registro = self.db[index];
             if (registro.chave == chave) {
                 registro.dado = dado;
+                self.log.push({ operacao: 'alterar', chave: chave, dado: dado });
             }
         }
     }
@@ -43,11 +47,10 @@
                 retorno.push(registro);
             }
         }
-        retorno.sort(function (a, b)
-        {
-            if (a.chave == a.b.chave)
+        retorno.sort(function (a, b) {
+            if (a.chave == b.chave)
                 return 0;
-            if (a.chave > a.b.chave)
+            if (a.chave > b.chave)
                 return 1;
             return -1;
         });
@@ -58,30 +61,41 @@
         return self.db;
     }
 
-    self.sync = function () {
 
-        var banco = banco_matriz;
-
-        var i;
-        var igual = false;
-        for (var index in banco) {
-            var registro = banco[index];
-
-
-            for (i = 0; i < self.db.length; i++) {
-                if (self.db[i].chave == registro.chave) {
-                    igual = true;
-                }
-            }
-
-            if (igual == false) {
-                self.db.push(registro);
-            }
-            igual = false;
-        }
+    self.adicionar_rep = function ()
+    {
+        
     }
 
-};
+    self.deletar_rep = function () {
 
+    }
+
+    self.alterar_rep = function () {
+
+    }
+
+
+    self.sync = function () {
+        for (var index in self.log) {
+            var item = self.log[index];
+
+            if (item.operacao == 'adicionar')
+            {
+                banco_matriz.adicionar_rep()
+            }
+
+            if (item.operacao == 'deletar')
+            {
+                banco_matriz.deletar_rep()
+            }
+
+            if (item.operacao == 'alterar')
+            {
+                banco_matriz.alterar_rep()
+            }
+        }
+    }
+};
 
 var banco_matriz = new exports.QualiomDB("matriz");
