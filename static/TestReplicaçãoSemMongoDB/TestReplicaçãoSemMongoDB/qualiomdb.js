@@ -74,7 +74,6 @@
                 }
             }
 
-
             if (igual == false) {
                 self.db.push(registro);
             }
