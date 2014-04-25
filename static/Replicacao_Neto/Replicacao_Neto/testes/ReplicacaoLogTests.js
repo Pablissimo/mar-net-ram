@@ -79,6 +79,19 @@ exports['Caso_Rep_04'] = function (test) {
 
 }
 
+
+exports['Caso_Rep_05'] = function (test) {
+
+    var A = new qdb.QualiomDB('A');
+    var B = new qdb.QualiomDB('B');
+    var matriz = qdb.banco_matriz;
+
+    //1
+    A.adicionar('um');
+    A.sync();
+    assert_dado(A, B, matriz, 'um', [{ chave: 'A1', dado: 'um' }], [{ chave: 'A1', dado: 'um' }], [{ chave: 'A1', dado: 'um' }], 'fase 1');
+
+}
 function assert_dado(A, B, matriz, dado, esperadoA, esperadoB, esperadoMatriz, msg) {
     var atual_a = A.pesquisar(dado);
     var atual_b = B.pesquisar(dado);
