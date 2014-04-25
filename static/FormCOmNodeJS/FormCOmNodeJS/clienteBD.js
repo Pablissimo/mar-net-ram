@@ -1,27 +1,43 @@
-﻿var dados = (function () {
-    function dados() {
-    }
-    return dados;
-})();
+﻿exports.ClienteDB = function (banco)
+{
+    var self = this;
+    self.db = new Array();
+    self.nome_banco = banco;
 
-var CLiente = (function () {
-    function CLiente(nome_banco) {
-        this.nome_banco = nome_banco;
-        this.contador = 0;
-        this.db = [];
+    self.contador = 0;
+
+    self.gerarchave = function (dado)
+    {
+        self.contador++;
+        return self.nome_banco + self.contador;
     }
-    //Criar chave
-    CLiente.prototype.criarchave = function () {
-        this.contador++;
-        return this.nome_banco + this.contador.toString;
+
+    self.add = function (dado)
+    {
+        var chave = self.gerarchave();
+        self.db.push({ chave: chave, dado: dado });
     };
 
-    CLiente.prototype.adicionar = function (dado) {
-        var reg = new dados();
-        reg.chave = this.criarchave();
-        reg.dado = dado;
-        this.db.push(reg);
-    };
-    return CLiente;
-})();
-//# sourceMappingURL=clienteBD.js.map
+
+    self.delete = function (e)
+    {
+        delete self.db[e];
+    }
+
+    self.update = function (c, d)
+    {
+
+
+    }
+}
+
+self.listadados = function (e)
+{
+    for (i = 0; i <= e; i++) {
+        console.log(self.db[i]);
+    }
+}
+
+self.sync = function () {
+
+}

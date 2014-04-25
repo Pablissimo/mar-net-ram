@@ -1,7 +1,7 @@
-﻿{
-  "name": "TestReplicaçãoSemMongoDB",
+{
+  "name": "ReplicacaoBpmos",
   "version": "0.0.0",
-  "description": "TestReplicaçãoSemMongoDB",
+  "description": "ReplicacaoBpmos",
   "main": "app.js",
   "author": {
     "name": "Qualiom",

@@ -3,19 +3,16 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>TestReplicaçãoSemMongoDB</Name>
-    <RootNamespace>TestReplicaçãoSemMongoDB</RootNamespace>
-    <EnableTypeScript>true</EnableTypeScript>
-    <TypeScriptSourceMap>true</TypeScriptSourceMap>
-    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <Name>Replicacao_Neto</Name>
+    <RootNamespace>Replicacao_Neto</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>09e3713e-8e7c-4e82-b0e6-6844d6a3a253</ProjectGuid>
+    <ProjectGuid>49420cbf-0cef-4099-aacf-71deb86112a9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>testes\debug_teste.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -34,16 +31,24 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="debug_teste.js" />
     <Compile Include="qualiomdb.js" />
-    <Compile Include="QualiomDBTests.js">
+    <Compile Include="testes\debug_teste.js">
       <TestFramework>Default</TestFramework>
     </Compile>
-    <Compile Include="ReplicacaoTests.js">
+    <Compile Include="testes\QualiomDBTests.js">
+      <TestFramework>Default</TestFramework>
+    </Compile>
+    <Compile Include="testes\ReplicacaoLogTests.js">
+      <TestFramework>Default</TestFramework>
+    </Compile>
+    <Compile Include="testes\ReplicacaoTests.js">
       <TestFramework>Default</TestFramework>
     </Compile>
     <Content Include="package.json" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="testes\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
 </Project>
