@@ -62,45 +62,33 @@
     }
 
 
-
-
-    self.sync = function () {
-
     self.adicionar_rep = function () {
 
     }
 
+    self.deletar_rep = function () {
 
-            for (i = 0; i < banco_matriz.db.length; i++) {//for para todos os resgistros do banco_matriz
-                if (banco_matriz.db[i].chave == registro.chave) {//comparação de chaves para não ter replicações
-                    igual = true;// seta variavel igual como true se tiver alguma chave igual ja banco matriz
-                }
+    }
 
+    self.alterar_rep = function () {
 
-            if (igual == false) {//se não tiver nenhuma chave repetida
-                banco_matriz.db.push(registro);//registro é add no banco_matriz
-            }
-            igual = false;
-        }
+    }
 
 
-        //sync dos dados do banco_matriz para os outros bancos A, B ou "N".
-        //---------------------------------------------------------------
+    self.sync = function () {
+        for (var index in self.log) {
+            var item = self.log[index];
 
-
-        for (var index in banco_matriz.db) { //for para ler todos os registros do banco_matriz
-            var registro = banco_matriz.db[index];//atribui a registro o valor do array banco_matriz[index];
-
-
-            for (i = 0; i < self.db.length; i++) {//for para todos os resgistros do banco que está fazendo sync
-                if (self.db[i].chave == registro.chave) {//comparação de chaves para não ter replicações
-                    igual = true;// seta variavel igual como true se tiver alguma chave igual ja banco matriz
-                }
+            if (item.operacao == 'adicionar') {
+                banco_matriz.adicionar_rep()
             }
 
+            if (item.operacao == 'deletar') {
+                banco_matriz.deletar_rep()
+            }
 
-            if (igual == false) {//se não tiver nenhuma chave repetida
-                self.db.push(registro);//add o registro no banco que esta fazendo o sync
+            if (item.operacao == 'alterar') {
+                banco_matriz.alterar_rep()
             }
         }
     }
