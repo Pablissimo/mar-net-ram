@@ -1,0 +1,10 @@
+{
+  "name": "Replicacao_Neto",
+  "version": "0.0.0",
+  "description": "Replicacao_Neto",
+  "main": "app.js",
+  "author": {
+    "name": "Bernardo",
+    "email": ""
+  }
+}
