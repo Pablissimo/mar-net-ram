@@ -89,6 +89,9 @@ exports['Caso_Rep_05'] = function (test) {
     //1
     A.adicionar('um');
     A.sync();
+    A.adicionar('dois');
+    A.sync();
+    B.sync();
     assert_dado(A, B, matriz, 'um', [{ chave: 'A1', dado: 'um' }], [{ chave: 'A1', dado: 'um' }], [{ chave: 'A1', dado: 'um' }], 'fase 1');
 
 }
@@ -96,7 +99,7 @@ function assert_dado(A, B, matriz, dado, esperadoA, esperadoB, esperadoMatriz, m
     var atual_a = A.pesquisar(dado);
     var atual_b = B.pesquisar(dado);
     var atual_matriz = matriz.pesquisar(dado);
-    assert.deepEqual(esperadoA, atual_a, "dado " + dado + "banco A- " + msg);
-    assert.deepEqual(esperadoB, atual_b, "dado " + dado + "banco B- " + msg);
-    assert.deepEqual(esperadoMatriz, atual_matriz, "dado " + dado + " banco matriz- " + msg);
+    assert.deepEqual(esperadoA, atual_a, "dado " + dado + " banco A- " + msg);
+    assert.deepEqual(esperadoB, atual_b, "dado " + dado + " banco B- " + msg);
+    assert.deepEqual(esperadoMatriz, atual_matriz, " dado " + dado + " banco matriz- " + msg);
 }
