@@ -1,0 +1,10 @@
+﻿{
+  "name": "Correio_Replicação",
+  "version": "0.0.0",
+  "description": "Correio_Replicação",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}

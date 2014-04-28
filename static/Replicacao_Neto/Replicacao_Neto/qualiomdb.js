@@ -66,7 +66,7 @@
     self.adicionar_rep = function (dado, chave) {
         exports.banco_matriz.db.push({ chave: chave, dado: dado });
     }
-    
+
     self.alterar_rep = function (dado, chave) {
         for (var index in exports.banco_matriz.db) {
             var registro = exports.banco_matriz.db[index];
@@ -105,7 +105,7 @@
         }
         self.sync_matriz();
         self.indexLog = exports.banco_matriz.db.length;
-    }
+            }
 
 
     self.sync_matriz = function () {
