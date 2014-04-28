@@ -4,7 +4,6 @@
     self.log = new Array();
     self.nome_banco = banco;
     self.indexLog = 0;
-
     self.contador = 0;
 
     self.gerarchave = function (dado) {
