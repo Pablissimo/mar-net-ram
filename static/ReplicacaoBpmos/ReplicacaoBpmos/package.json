@@ -1,0 +1,10 @@
+{
+  "name": "ReplicacaoBpmos",
+  "version": "0.0.0",
+  "description": "ReplicacaoBpmos",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}

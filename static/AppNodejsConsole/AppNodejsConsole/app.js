@@ -1,6 +1,9 @@
-﻿var qdb = require("./qualiomdb.js")
+﻿
+var qdb = require("./qualiomdb.js");
 
 var ClasseAplicacao = function () {
+
+    
 
     var self = this;
 

@@ -1,10 +1,10 @@
-﻿{
-  "name": "TestReplicaçãoSemMongoDB",
+{
+  "name": "Replicacao_Neto",
   "version": "0.0.0",
-  "description": "TestReplicaçãoSemMongoDB",
+  "description": "Replicacao_Neto",
   "main": "app.js",
   "author": {
-    "name": "Qualiom",
+    "name": "Bernardo",
     "email": ""
   }
 }

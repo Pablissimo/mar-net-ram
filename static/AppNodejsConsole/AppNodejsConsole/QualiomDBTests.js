@@ -72,6 +72,7 @@ exports['Pesquisar-2'] = function (test) {
 
         var atual = A.pesquisar('um');
 
+        assert.equal(2, atual.length, "quantidade retornada invalida");
         assert.deepEqual(esperado, atual, "conteudo retornado invalido");
     }
     );
@@ -193,7 +194,7 @@ exports['Sync-02'] = function (test) {
 
 }
 
-exports['Sync-03'] = function (test) {
+exports['Sync'] = function (test) {
 
     var A = new qdb.QualiomDB('A');
     var B = new qdb.QualiomDB('B');
@@ -214,33 +215,6 @@ exports['Sync-03'] = function (test) {
     assert.deepEqual(esperado_dois_B, B.pesquisar('dois'), "dado dois banco B");
 
     //2
-    A.sync();
-
-    var esperado_um_A = [{ chave: 'A1', dado: 'um' }];
-    var esperado_um_B = [{ chave: 'B1', dado: 'um' }];
-    assert.deepEqual(esperado_um_A, A.pesquisar('um'), "sync dado um banco A");
-    assert.deepEqual(esperado_um_B, B.pesquisar('um'), "sync dado um banco B");
-
-    var esperado_dois_A = [{ chave: 'A2', dado: 'dois' }];
-    var esperado_dois_B = [];
-    assert.deepEqual(esperado_dois_A, A.pesquisar('dois'), "sync dado dois banco A");
-    assert.deepEqual(esperado_dois_B, B.pesquisar('dois'), "sync dado dois banco B");
-
-
-    //3
-    B.sync();
-
-    var esperado_um_A = [{ chave: 'A1', dado: 'um' }];
-    var esperado_um_B = [{ chave: 'A1', dado: 'um' }, { chave: 'B1', dado: 'um' }];
-    assert.deepEqual(esperado_um_A, A.pesquisar('um'), "sync dado um banco A");
-    assert.deepEqual(esperado_um_B, B.pesquisar('um'), "sync dado um banco B");
-
-    var esperado_dois_A = [{ chave: 'A2', dado: 'dois' }];
-    var esperado_dois_B = [{ chave: 'A2', dado: 'dois' }];
-    assert.deepEqual(esperado_dois_A, A.pesquisar('dois'), "sync dado dois banco A");
-    assert.deepEqual(esperado_dois_B, B.pesquisar('dois'), "sync dado dois banco B");
-
-    //4
     A.sync();
 
     var esperado_um_A = [{ chave: 'A1', dado: 'um' }, { chave: 'B1', dado: 'um' }];

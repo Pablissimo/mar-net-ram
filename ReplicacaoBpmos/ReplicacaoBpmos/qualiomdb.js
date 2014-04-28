@@ -62,40 +62,77 @@
     }
 
 
-    self.adicionar_rep = function ()
+    self.pesquisar_rep = function (d)
     {
-        
+        var retorno = new Array();
+        for (var index in exports.banco_matriz.db) {
+            var registro = exports.banco_matriz.db[index];
+            if (registro.dado == d) {
+                retorno.push(registro);
+            }
+        }
+        retorno.sort(function (a, b) {
+            if (a.chave == b.chave)
+                return 0;
+            if (a.chave > b.chave)
+                return 1;
+            return -1;
+        });
+        return retorno;
     }
 
-    self.deletar_rep = function () {
-
+    self.adicionar_rep = function (c, d)
+    {
+        exports.banco_matriz.db.push({chave:c, dado:d});
     }
 
-    self.alterar_rep = function () {
+    self.deletar_rep = function (c, d)
+    {
+        for (var index in exports.banco_matriz.db)
+        {
+            var registroBM = exports.banco_matriz.db[index];
+            if (registroBM.chave == c)
+            {
+                delete registroBM.dado;
+                delete registroBM.chave;
+            }
+        }
+    }
 
+    self.alterar_rep = function (c, d)
+    {
+        for (var index in exports.banco_matriz.db)
+        {                       
+            var registroBM = exports.banco_matriz.db[index];
+            if (registroBM.chave == c)
+            {
+                registroBM.dado = d;
+
+            }
+        }
     }
 
 
     self.sync = function () {
         for (var index in self.log) {
             var item = self.log[index];
-
+          
             if (item.operacao == 'adicionar')
             {
-                banco_matriz.adicionar_rep()
+                exports.banco_matriz.adicionar_rep(item.chave, item.dado);
             }
 
             if (item.operacao == 'deletar')
             {
-                banco_matriz.deletar_rep()
+                exports.banco_matriz.deletar_rep(item.chave, item.dado);
             }
 
             if (item.operacao == 'alterar')
             {
-                banco_matriz.alterar_rep()
+                exports.banco_matriz.alterar_rep(item.chave, item.dado);
             }
         }
     }
 };
 
-var banco_matriz = new exports.QualiomDB("matriz");
+exports.banco_matriz = new exports.QualiomDB("matriz");

@@ -4,7 +4,10 @@
     self.log = new Array();
     self.nome_banco = banco;
     self.indexLog = 0;
+    self.UltimoIndexSync = 0;
+    self.assinantes = new Array();
     self.contador = 0;
+    self.mensagem = new Array();
 
     self.gerarchave = function (dado) {
         self.contador++;
@@ -82,23 +85,41 @@
     }
 
     self.sync = function () {
-        for (var index in self.log) {
-            var item = self.log[index];
+        for (i = self.indexLog; i < self.log.length; i++) {
+            var item = self.log[i];
 
             if (item.operacao == 'adicionar') {
                 exports.banco_matriz.adicionar_rep(item.dado, item.chave);
+                exports.banco_matriz.log.push({ operacao: 'adicionar', chave: item.chave, dado: item.dado });
             }
 
             else if (item.operacao == 'alterar') {
                 exports.banco_matriz.alterar_rep(item.dado, item.chave);
+                exports.banco_matriz.log.push({ operacao: 'alterar', chave: item.chave, dado: item.dado });
             }
 
             else if  (item.operacao == 'deletar') {
                 exports.banco_matriz.deletar_rep(item.chave);
+                exports.banco_matriz.log.push({ operacao: 'deletar', chave: item.chave, dado: item.dado });
             }
         }
-        self.log = new Array();
+        self.sync_matriz();
+        self.indexLog = exports.banco_matriz.db.length;
+            }
+
+
+    self.sync_matriz = function () {
+        for (i = self.UltimoIndexSync; i < exports.banco_matriz.log.length; i++) {
+            var item = exports.banco_matriz.log[i];
+            var subchave = item.chave;
+            if (self.nome_banco != subchave.slice(0, 1)) {
+                self.db.push({chave: item.chave, dado: item.dado});
+            };
+        }
+        self.UltimoIndexSync = exports.banco_matriz.log.length;
     }
 };
+
+
 
 exports.banco_matriz = new exports.QualiomDB("matriz");
