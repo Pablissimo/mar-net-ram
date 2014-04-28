@@ -1,0 +1,10 @@
+{
+  "name": "PubsubWorker",
+  "version": "0.0.0",
+  "description": "PubsubWorker",
+  "main": "server.js",
+  "author": {
+    "name": "danillo",
+    "email": ""
+  }
+}

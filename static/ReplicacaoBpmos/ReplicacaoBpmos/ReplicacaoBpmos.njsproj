@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0d464d01-3768-4d65-a82b-b94db22ae1aa</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>debug.js</StartupFile>
+    <StartupFile>TestCases\debug_teste.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -33,14 +33,19 @@
     <Compile Include="app.js" />
     <Compile Include="debug.js" />
     <Compile Include="qualiomdb.js" />
-    <Compile Include="QualiomDBTests.js">
+    <Compile Include="TestCases\QualiomDBTests.js">
       <TestFramework>Default</TestFramework>
     </Compile>
-    <Compile Include="ReplicacaoTests.js">
+    <Compile Include="TestCases\debug_teste.js" />
+    <Compile Include="TestCases\ReplicacaoTests.js" />
+    <Compile Include="TestCases\TestLogs.js">
       <TestFramework>Default</TestFramework>
     </Compile>
     <Content Include="package.json" />
     <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TestCases\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
 </Project>

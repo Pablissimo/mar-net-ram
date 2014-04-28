@@ -1,6 +1,6 @@
 ﻿    // UnitTest.js 
 var assert = require('assert');
-var qdb = require('./qualiomdb.js');
+var qdb = require('../qualiomdb.js');
 
 exports['Conectar'] = function (test) {
 
@@ -124,11 +124,6 @@ exports['Deletar'] = function (test) {
     assert.deepEqual(esperado_um_A, A.pesquisar('um'), "dado um banco A");
     assert.deepEqual(esperado_um_B, B.pesquisar('um'), "dado um banco B");
 }
-
-
-
-
-
 
 
 exports['Sync-01'] = function (test) {
@@ -266,6 +261,3 @@ function assert_dado(A, B, dado, esperadoA, esperadoB, msg) {
     assert.deepEqual(esperadoA, atual_a, "dado " + dado + "banco A- " + msg);
     assert.deepEqual(esperadoB, atual_b, "dado " + dado + "banco B- " + msg);
 }
-
-
-

@@ -3,14 +3,14 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>bpmosReplicacao</Name>
-    <RootNamespace>bpmosReplicacao</RootNamespace>
+    <Name>PubsubWorker</Name>
+    <RootNamespace>PubsubWorker</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>f490a727-b2f1-4be0-8009-064014b8379c</ProjectGuid>
+    <ProjectGuid>1a162fb1-fa2f-4748-8098-2fb313facd94</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>server.js</StartupFile>
     <SearchPath>
@@ -31,8 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="server.js" />
+    <Compile Include="worker.js" />
+    <Content Include="index.html" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="viewer.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>
