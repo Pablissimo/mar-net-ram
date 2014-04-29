@@ -1,43 +1,46 @@
 ﻿exports.QualiomDB = function (banco) {
     var self = this;
-    self.db = new Array();
-    self.log = new Array();
-    self.nome_banco = banco;
-    self.indexLog = 0;
-    self.contador = 0;
+    self.db = new Array();//array do banco
+    self.log = new Array();//array do log/historico
+    self.nome_banco = banco;//nome do banco de dados para geracao da chave
+    self.indexLog = 0;//qual o ultimo item enviado para o banco matriz
+    self.contador = 0;// contador da chave
 
-    self.gerarchave = function (dado) {
+    self.gerarchave = function (dado) {//gerador de chaves
         self.contador++;
         return self.nome_banco + self.contador;
     }
 
-    self.adicionar = function (dado) {
+    self.adicionar = function (dado) {// adiciona um dado no proprio banco
         var chave = self.gerarchave();
-        self.db.push({ chave: chave, dado: dado });
-        self.log.push({ operacao: 'adicionar', chave: chave, dado: dado });
+        self.db.push({ chave: chave, dado: dado });//grava o dado no banco
+        self.log.push({ operacao: 'adicionar', chave: chave, dado: dado }); //historia
     };
 
-    self.deletar = function (chave) {
+    self.deletar = function (chave) {//deleta um dado no proprio banco
         for (var index in self.db) {
             var registro = self.db[index];
-            if (registro.chave == chave) {
-                delete self.db[index];
-                self.log.push({ operacao: 'deletar', chave: chave });
+            if (registro.chave == chave) {//compara a chave do registro com a chave que vai ser excluida
+                delete self.db[index];//exclui
+                self.log.push({ operacao: 'deletar', chave: chave });//historia
             }
         }
     }
 
-    self.alterar = function (chave, dado) {
+    self.alterar = function (chave, dado) {//altera um dado no proprio banco
         for (var index in self.db) {
             var registro = self.db[index];
-            if (registro.chave == chave) {
-                registro.dado = dado;
-                self.log.push({ operacao: 'alterar', chave: chave, dado: dado });
+            if (registro.chave == chave) {//comparação de chaves
+                registro.dado = dado;// altera dado
+                self.log.push({ operacao: 'alterar', chave: chave, dado: dado });//historia
             }
         }
     }
 
-    self.pesquisar = function (dado) {
+
+
+
+    self.pesquisar = function (dado) {//pesquisa o dado no banco
         var retorno = new Array();
         for (var index in self.db) {
             var registro = self.db[index];
@@ -45,7 +48,7 @@
                 retorno.push(registro);
             }
         }
-        retorno.sort(function (a, b) {
+        retorno.sort(function (a, b) {//ordena o array de retorno
             if (a.chave == b.chave)
                 return 0;
             if (a.chave > b.chave)
@@ -55,16 +58,18 @@
         return retorno;
     }
 
+
+
     self.listadados = function () {
         return self.db;
     }
 
 
-    self.adicionar_rep = function (dado, chave) {
+    self.adicionar_rep = function (dado, chave) {//adiciona no banco matriz
         exports.banco_matriz.db.push({ chave: chave, dado: dado });
     }
 
-    self.alterar_rep = function (dado, chave) {
+    self.alterar_rep = function (dado, chave) {//altera no banco matriz
         for (var index in exports.banco_matriz.db) {
             var registro = exports.banco_matriz.db[index];
             if (registro.chave == chave) {
@@ -72,7 +77,7 @@
             }
         }
     }
-    self.deletar_rep = function (chave) {
+    self.deletar_rep = function (chave) {//deleta no banco matriz
         for (var index in exports.banco_matriz.db) {
             var registro = exports.banco_matriz.db[index];
             if (registro.chave == chave) {
@@ -87,25 +92,25 @@
 
             if (item.operacao == 'adicionar') {
                 exports.banco_matriz.adicionar_rep(item.dado, item.chave);
-                exports.banco_matriz.log.push({ operacao: 'adicionar', chave: item.chave, dado: item.dado });
+                exports.banco_matriz.log.push({ operacao: 'adicionar', chave: item.chave, dado: item.dado });//historico do banco matriz
             }
 
             else if (item.operacao == 'alterar') {
                 exports.banco_matriz.alterar_rep(item.dado, item.chave);
-                exports.banco_matriz.log.push({ operacao: 'alterar', chave: item.chave, dado: item.dado });
+                exports.banco_matriz.log.push({ operacao: 'alterar', chave: item.chave, dado: item.dado });//historico do banco matriz
             }
 
             else if  (item.operacao == 'deletar') {
                 exports.banco_matriz.deletar_rep(item.chave);
-                exports.banco_matriz.log.push({ operacao: 'deletar', chave: item.chave, dado: item.dado });
+                exports.banco_matriz.log.push({ operacao: 'deletar', chave: item.chave, dado: item.dado });//historico do banco matriz
             }
         }
-        self.sync_matriz();
-        self.indexLog = self.db.length;
+        self.sync_matriz();//adiciona no banco as mensagens que foram enviado por outro banco
+        self.indexLog = self.db.length;//Seta o ultimo registro que foi enviado para o matriz
     }
 
 
-    self.sync_matriz = function () {
+    self.sync_matriz = function () {//Se tiver alguma mensagem para o banco que está consutando ele pega o dado e grava em seu banco
         var outrosbancos = new Array();
         for (var i in exports.banco_matriz.log) {
             var item = exports.banco_matriz.log[i];
@@ -134,10 +139,10 @@
                 }
             }
             else {
-                outrosbancos.push({ operacao: item.operacao, chave: item.chave, dado: item.dado });
+                outrosbancos.push({ operacao: item.operacao, chave: item.chave, dado: item.dado });//Se não ele adiciona em outro array para os outros bancos, sem a mensagem que já foi sincronizada pelo banco atual
             };  
         }
-        exports.banco_matriz.log = outrosbancos;
+        exports.banco_matriz.log = outrosbancos; //atribui ao log do banco matriz as mensagens que não foram sincronizadas.
     }
 };
 
