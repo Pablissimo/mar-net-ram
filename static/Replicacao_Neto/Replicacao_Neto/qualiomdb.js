@@ -37,9 +37,6 @@
         }
     }
 
-
-
-
     self.pesquisar = function (dado) {//pesquisa o dado no banco
         var retorno = new Array();
         for (var index in self.db) {
@@ -48,6 +45,7 @@
                 retorno.push(registro);
             }
         }
+
         retorno.sort(function (a, b) {//ordena o array de retorno
             if (a.chave == b.chave)
                 return 0;
@@ -58,12 +56,9 @@
         return retorno;
     }
 
-
-
     self.listadados = function () {
         return self.db;
     }
-
 
     self.adicionar_rep = function (dado, chave) {//adiciona no banco matriz
         exports.banco_matriz.db.push({ chave: chave, dado: dado });
@@ -77,6 +72,7 @@
             }
         }
     }
+
     self.deletar_rep = function (chave) {//deleta no banco matriz
         for (var index in exports.banco_matriz.db) {
             var registro = exports.banco_matriz.db[index];
@@ -145,7 +141,5 @@
         exports.banco_matriz.log = outrosbancos; //atribui ao log do banco matriz as mensagens que não foram sincronizadas.
     }
 };
-
-
 
 exports.banco_matriz = new exports.QualiomDB("matriz");
