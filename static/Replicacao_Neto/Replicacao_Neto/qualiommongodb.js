@@ -1,4 +1,6 @@
-﻿exports.QualiomDB = function (banco) {
+﻿var mongodb = require('mongodb');
+
+exports.QualiomDB = function (banco) {
     var self = this;
     self.db = new Array();//array do banco
     self.log = new Array();//array do log/historico
@@ -6,16 +8,50 @@
     self.indexLog = 0;//qual o ultimo item enviado para o banco matriz
     self.contador = 0;// contador da chave
 
-    self.gerarchave = function (dado) {//gerador de chaves
+
+    self.conectar = function (banco, callback) {
+
+        self.nome_banco = banco;
+        var dbServer = new mongodb.Server(process.env.OPENSHIFT_MONGODB_DB_HOST || "127.0.0.1", parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT || 27017));
+        self.db = new mongodb.Db(banco, dbServer, { safe: false, auto_reconnect: true });
+        var dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME || 'qualiom';
+        var dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || 'qualiom';
+
+        self.db.open(function (err, db_open) {
+            if (err) {
+                erro = err;
+                callback();
+            };
+            self.db.authenticate(dbUser, dbPass, { authdb: "admin" }, function (err, res) {
+                if (err) { erro = err; };
+                self.collection = self.db.collection(banco);
+                callback();
+            });
+        });
+    };
+
+    self.gerarchave = function (dado, callback) {
         self.contador++;
         return self.nome_banco + self.contador;
     }
 
-    self.adicionar = function (dado) {// adiciona um dado no proprio banco
+    self.adicionar = function (dado, callback) {
         var chave = self.gerarchave();
-        self.db.push({ chave: chave, dado: dado });//grava o dado no banco
-        self.log.push({ operacao: 'adicionar', chave: chave, dado: dado }); //historia
+        self.collection.insert(
+         { "_id": chave, "dado": dado },
+         callback);
     };
+
+    //self.gerarchave = function (dado) {//gerador de chaves
+    //    self.contador++;
+    //    return self.nome_banco + self.contador;
+    //}
+
+    //self.adicionar = function (dado) {// adiciona um dado no proprio banco
+    //    var chave = self.gerarchave();
+    //    self.db.push({ chave: chave, dado: dado });//grava o dado no banco
+    //    self.log.push({ operacao: 'adicionar', chave: chave, dado: dado }); //historia
+    //};
 
     self.deletar = function (chave) {//deleta um dado no proprio banco
         for (var index in self.db) {

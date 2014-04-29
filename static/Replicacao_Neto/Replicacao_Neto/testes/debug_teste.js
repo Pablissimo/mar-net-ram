@@ -1,5 +1,5 @@
-﻿var suite = require('./ReplicacaoTests');
+﻿var suite = require('./QualiomDBMongoTests.js');
 
-var unit = suite['Caso 1'];
+var unit = suite['Conectar-MDB'];
 
 unit();
