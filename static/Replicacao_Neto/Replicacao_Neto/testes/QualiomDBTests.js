@@ -184,7 +184,7 @@ exports['Sync-02'] = function (test) {
     assert.deepEqual(esperado_B, B.pesquisar('um'), "banco B- fase 3");
 
     // fase 4 - tudo sincronizado
-    A.sync();
+    A.sync_matriz();
 
     var esperado_A = [{ chave: 'A1', dado: 'um' }, { chave: 'B1', dado: 'um' }];
     var esperado_B = [{ chave: 'A1', dado: 'um' }, { chave: 'B1', dado: 'um' }];
