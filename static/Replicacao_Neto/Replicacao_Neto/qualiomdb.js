@@ -4,10 +4,7 @@
     self.log = new Array();
     self.nome_banco = banco;
     self.indexLog = 0;
-    self.UltimoIndexSync = 0;
-    self.assinantes = new Array();
     self.contador = 0;
-    self.mensagem = new Array();
 
     self.gerarchave = function (dado) {
         self.contador++;
@@ -104,19 +101,43 @@
             }
         }
         self.sync_matriz();
-        self.indexLog = exports.banco_matriz.db.length;
-            }
+        self.indexLog = self.db.length;
+    }
 
 
     self.sync_matriz = function () {
-        for (i = self.UltimoIndexSync; i < exports.banco_matriz.log.length; i++) {
+        var outrosbancos = new Array();
+        for (var i in exports.banco_matriz.log) {
             var item = exports.banco_matriz.log[i];
             var subchave = item.chave;
             if (self.nome_banco != subchave.slice(0, 1)) {
-                self.db.push({chave: item.chave, dado: item.dado});
-            };
+                if (item.operacao == 'adicionar') {
+                    self.db.push({ chave: item.chave, dado: item.dado });
+                }
+
+                else if (item.operacao == 'alterar') {
+                    for (var index in self.db) {
+                        var registro = self.db[index];
+                        if (registro.chave == item.chave) {
+                            registro.dado = item.dado;
+                        }
+                    }
+                }
+
+                else if (item.operacao == 'deletar') {
+                    for (var index in self.db) {
+                        var registro = self.db[index];
+                        if (registro.chave == item.chave) {
+                            delete self.db[index];
+                        }
+                    }
+                }
+            }
+            else {
+                outrosbancos.push({ operacao: item.operacao, chave: item.chave, dado: item.dado });
+            };  
         }
-        self.UltimoIndexSync = exports.banco_matriz.log.length;
+        exports.banco_matriz.log = outrosbancos;
     }
 };
 

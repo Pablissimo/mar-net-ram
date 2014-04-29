@@ -1,5 +1,5 @@
-﻿var suite = require('./ReplicacaoLogTests');
+﻿var suite = require('./ReplicacaoTests');
 
-var unit = suite['Caso_Rep_05'];
+var unit = suite['Caso 1'];
 
 unit();
