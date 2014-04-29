@@ -32,7 +32,11 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="qualiomdb.js" />
+    <Compile Include="qualiommongodb.js" />
     <Compile Include="testes\debug_teste.js">
+      <TestFramework>Default</TestFramework>
+    </Compile>
+    <Compile Include="testes\QualiomDBMongoTests.js">
       <TestFramework>Default</TestFramework>
     </Compile>
     <Compile Include="testes\QualiomDBTests.js">
