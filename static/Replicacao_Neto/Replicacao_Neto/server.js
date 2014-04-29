@@ -78,4 +78,4 @@ var ClasseAplicacao=function()
 var app=new ClasseAplicacao();
 app.conecta_banco_dados(app.inicia_servidor);
 
-
+ 
