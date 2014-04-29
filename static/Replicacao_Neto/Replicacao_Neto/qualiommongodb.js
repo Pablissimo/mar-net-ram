@@ -37,7 +37,7 @@ exports.QualiomDB = function (banco) {
 
     self.adicionar = function (dado, callback) {
         var chave = self.gerarchave();
-        self.collection.insert( 
+        self.collection.insert(
          { "_id": chave, "dado": dado },
          callback);
     };
