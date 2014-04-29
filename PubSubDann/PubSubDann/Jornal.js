@@ -1,11 +1,16 @@
-﻿var Jornal = (function () {
-    Jornal.prototype.delivery() = function () {
+﻿
 
-        this.publish('Jornal recebido!');
+var Jornal = (function () {
+
+    Jornal.prototype.chave() = function () {        
 
     };
 
+    Jornal.prototype.delivery() = function () {
 
+        publicador.prototype.publish('Mensagem Teste');
+
+    };
 });
 
 exports.Jornal = Jornal;

@@ -1,25 +1,19 @@
 ﻿// UnitTest.js 
 var assert = require('assert');
-var pubsub = require('../PubSub.js');
 var jornal = require('../Jornal.js');
-
+var pubsub = require('../PubSub.js');
+var publicador = new pubsub.Publisher();
 
 
 exports['Case_01'] = function (test) {
 
-    var pub = new pubsub.PubSub();
+    var atual1 = 'Teste';
+    var esperado1 = publicador.prototype.visitSubscribers('publish', 'Teste');
+    
+    assert.deepEqual();
 
-    var atual = pub.publish("Mensagem 1");
-    //var esperado = ;
-
-
-
-    assert.ok(true, "This shouldn't fail");
-}
-
-exports['Case_02'] = function (test) {
-
-
-    assert.ok(1 === 1, "This shouldn't fail");
-    assert.ok(false, "This should fail");
+    var atual1 = 'Teste';
+    var esperado1 = publicador.prototype.visitSubscribers('publish','Teste');
+    
+    assert.deepEqual(atual1, esperado1[1].publication, "Erro Fase 1");
 }

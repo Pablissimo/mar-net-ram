@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9d62602a-dc47-4f63-b128-b07467a53195</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>Tests\debug.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -31,10 +31,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="Jornal.js" />
     <Compile Include="PubSub.js" />
     <Compile Include="Tests\debug.js" />
-    <Compile Include="Jornal.js" />
-    <Compile Include="Tests\testes_de_criacao.js" />
+    <Compile Include="Tests\testes_de_criacao.js">
+      <TestFramework>Default</TestFramework>
+    </Compile>
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
