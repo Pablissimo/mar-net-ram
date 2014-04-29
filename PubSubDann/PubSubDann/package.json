@@ -1,8 +1,8 @@
 {
-  "name": "PubsubWorker",
+  "name": "PubSubDann",
   "version": "0.0.0",
-  "description": "PubsubWorker",
-  "main": "server.js",
+  "description": "PubSubDann",
+  "main": "app.js",
   "author": {
     "name": "danillo",
     "email": ""
