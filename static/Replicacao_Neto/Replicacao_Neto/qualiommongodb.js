@@ -40,7 +40,9 @@ var QualiomDB = function () {
          { "_id": chave, "dado": dado },
          callback);
     };
-
+    self.desconecta = function () {
+        db.close();
+    }
 };
 
 module.exports.QualiomDB = QualiomDB;
