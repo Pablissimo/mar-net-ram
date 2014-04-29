@@ -5,7 +5,8 @@ var qdb = require('../qualiommongodb.js');
 exports['Conectar-MDB'] = function (test) {
 
     assert.doesNotThrow(function () {
-        var A = new qdb.QualiomDB('A');
+        var A = new qdb.QualiomDB();
+        A.conectar('A', function () {});
     }
     );
 }

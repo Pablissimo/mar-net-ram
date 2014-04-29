@@ -2,7 +2,7 @@
 
 exports.QualiomDB = function (banco) {
     var self = this;
-    self.db = new Array();//array do banco
+    self.db = null;//array do banco
     self.log = new Array();//array do log/historico
     self.nome_banco = banco;//nome do banco de dados para geracao da chave
     self.indexLog = 0;//qual o ultimo item enviado para o banco matriz
@@ -37,7 +37,7 @@ exports.QualiomDB = function (banco) {
 
     self.adicionar = function (dado, callback) {
         var chave = self.gerarchave();
-        self.collection.insert(
+        self.collection.insert( 
          { "_id": chave, "dado": dado },
          callback);
     };
