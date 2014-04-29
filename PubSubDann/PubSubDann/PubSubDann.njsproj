@@ -33,7 +33,7 @@
     <Compile Include="app.js" />
     <Compile Include="PubSub.js" />
     <Compile Include="Tests\debug.js" />
-    <Compile Include="Tests\Email.js" />
+    <Compile Include="Tests\Jornal.js" />
     <Compile Include="Tests\testes_de_criacao.js">
       <TestFramework>Default</TestFramework>
     </Compile>
