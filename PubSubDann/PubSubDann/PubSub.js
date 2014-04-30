@@ -46,10 +46,14 @@
     //Lista/valida Subscriber (assinante);
     Publisher.prototype.listaSubscriber = function (codSubscriber) {
         var sub = '';                             //cod do subscriber (assinante)
-        for (var i in subscribers) {
-            if (subscribers[i] == codSubscriber) {
-                sub = subscribers[i];
-                break;
+        if (codSubscriber == 'subscribers') {
+            sub = subscribers.toString();
+         }else{
+            for (var i in subscribers) {
+                if (subscribers[i] == codSubscriber) {
+                    sub = subscribers[i];
+                    break;
+                }
             }
         }
         return sub;

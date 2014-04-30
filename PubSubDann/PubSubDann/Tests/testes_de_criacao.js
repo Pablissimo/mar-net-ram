@@ -57,13 +57,14 @@ exports['Case_03'] = function (test) {
     assert.deepEqual(atual2, esperado2, "Erro Fase 2");
 
     //2 --> Cancelamento de Assinatura.
+    publicador.prototype.unsubscribe('A');
     publicador.prototype.unsubscribe('E');
-    var atual3 = publicador.prototype.listaSubscriber('E');
+    var atual3 = publicador.prototype.listaSubscriber('A');
     var esperado3 = '';
     assert.deepEqual(atual3, esperado3, "Erro Fase 3");
     
-    //3 --> Envio da Mensagem para quem é Assinante.
-    var atual4 = publicador.prototype.listaSubscriber('A');
-    var esperado4 = '';
+    //3 --> Relação de Assinantes que recebem Mensagem (Pleonasmo).
+    var atual4 = publicador.prototype.listaSubscriber('subscribers');
+    var esperado4 = 'C,H,R,L,S';
     assert.deepEqual(atual4, esperado4, "Erro Fase 4");
 }
