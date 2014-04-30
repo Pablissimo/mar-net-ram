@@ -1,57 +1,67 @@
 ﻿var Publisher = (function () {
-
-    var Publisher = function () {
-
+    //Construtor
+    function Publisher() {        
     }
-    
+
+    //Coleção de Assinantes
     var subscribers = new Array();
 
-    Publisher.prototype.publish = function () {
+    //Mensagem para quem é Assinante. 
+    var subPubCollection = new Array();
 
-
+    //Método de Publicar
+    Publisher.prototype.publish = function (publication) {
+        return this.visitSubscribers('publish', publication);
+    }
+    //Método de Assinar
+    Publisher.prototype.subscribe = function (subscriber) {
+        subscribers.push(subscriber);
     }
 
-    Publisher.prototype.subscriber = function () {
+    //Método de remover Assinatura
+    Publisher.prototype.unsubscribe = function (subscriber) {
 
-        
+        this.visitSubscribers('unsubscribe', subscriber);
     }
 
-    Publisher.prototype.subscribe = function () {
-
-
+    /*------------------------------------------------------------- 
+       Método que realiza a manutenção da Coleção de Subscribers,
+       e envia Mensagem para quem é Assinante. 
+    --------------------------------------------------------------*/
+    Publisher.prototype.visitSubscribers = function (action, arg) {
+        var i;                                     //action = publish/unsubscribe
+        var max = subscribers.length;              //arg = publication/subscriber
+        for (i = 0; i < max; i++) {
+            if (action === 'publish') {
+                subPubCollection.push({ subscriber: subscribers[i], publication: arg });
+            } else {
+                if (subscribers[i] === arg) {
+                    subscribers.splice(i, 1);
+                }
+            }
+        }
+        return subPubCollection;
     }
-
-    Publisher.prototype.unsubscribe = function(){
-
-
+    
+    //Lista/valida Subscriber (assinante);
+    Publisher.prototype.listaSubscriber = function (codSubscriber) {
+        var sub = '';                             //cod do subscriber (assinante)
+        if (codSubscriber == 'subscribers') {
+            sub = subscribers.toString();
+         }else{
+            for (var i in subscribers) {
+                if (subscribers[i] == codSubscriber) {
+                    sub = subscribers[i];
+                    break;
+                }
+            }
+        }
+        return sub;
     }
-
-
-
+    return Publisher;
 })
 
+exports.Publisher = Publisher;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var pubsub = require('./PubSub.js');
+var publicador = new pubsub.Publisher();
