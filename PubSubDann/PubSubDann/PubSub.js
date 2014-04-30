@@ -4,7 +4,9 @@
     }
 
     //Coleção de Assinantes
-    var subscribers = new Array();    
+    var subscribers = new Array();
+
+    //Mensagem para quem é Assinante. 
     var subPubCollection = new Array();
 
     //Método de Publicar
@@ -25,7 +27,7 @@
     //Método que realiza a manutenção da Coleção de Subscribers
     Publisher.prototype.visitSubscribers = function (action, arg) {
         var i;                                     //action = publish/unsubscribe
-        var max = subscribers.length; 
+        var max = subscribers.length;              //arg = publication/subscriber
         for (i = 0; i < max; i++) {
             if (action === 'publish') {
                 subPubCollection.push({ subscriber: subscribers[i], publication: arg });
