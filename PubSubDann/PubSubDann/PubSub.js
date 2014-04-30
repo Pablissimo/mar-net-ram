@@ -61,6 +61,3 @@ exports.Publisher = Publisher;
 
 var pubsub = require('./PubSub.js');
 var publicador = new pubsub.Publisher();
-
-
-
