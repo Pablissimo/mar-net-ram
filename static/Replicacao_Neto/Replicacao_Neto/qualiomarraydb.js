@@ -1,4 +1,5 @@
-﻿exports.QualiomDB = function () {
+﻿"use strict";
+exports.QualiomDB = function () {
     var self = this;
     self.db = new Array();//array do banco
     self.log = new Array();//array do log/historico

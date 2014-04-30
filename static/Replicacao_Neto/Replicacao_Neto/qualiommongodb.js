@@ -1,4 +1,5 @@
-﻿    // https://github.com/openshift-quickstart/openshift-mongo-node-express-example/blob/master/server.js  
+﻿"use strict";
+//https://github.com/openshift-quickstart/openshift-mongo-node-express-example/blob/master/server.js  
 
 var mongodb = require('mongodb');
 
@@ -48,7 +49,7 @@ var QualiomDB = function () {
     };
 
     self.listadados = function () {
-        return self.collection.find('A').toArray;
+        return self.collection.find();
     }
 
     self.apagarTUDO = function () {
