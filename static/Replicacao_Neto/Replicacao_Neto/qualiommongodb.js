@@ -47,6 +47,10 @@ var QualiomDB = function () {
          callback);
     };
 
+    self.listadados = function () {
+        self.collection.find();
+    }
+
     self.apagarTUDO = function () {
         self.collection.remove();
     }
