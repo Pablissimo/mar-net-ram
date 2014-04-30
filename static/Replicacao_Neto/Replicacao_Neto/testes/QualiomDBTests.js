@@ -3,21 +3,22 @@ var assert = require('assert');
 var qdb_array = require('../qualiomarraydb.js');
 var qdb_mongo = require('../qualiommongodb.js');
 
-
 function TesteParametrizado(casos, testes) {
+    var criaTeste = function (n, f, p) {
+        exports[n] = function () { f(p); }
+    }
     for (var caso in casos) {
+        var param = casos[caso];
         for (var teste in testes) {
-            exports[caso + "-" + teste] = function ()
-            {
-                testes[teste](casos[caso]);
-            }
+            var fn = testes[teste];
+            criaTeste(caso + "-" + teste, fn, param);
         }
     }
 }
 
 TesteParametrizado(
     {
-        //"array": qdb_array,
+        "array": qdb_array,
         "mongo": qdb_mongo
     },
     {
