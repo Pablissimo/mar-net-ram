@@ -31,20 +31,36 @@ TesteParametrizado(
             });
         },
 
-        "limpar_dados": function (qdb) {
+        "Adicionar_dados": function (qdb) {
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB();
                 A.conectar('A', function (err) {
 
-                    A.apagarTUDO();
+                    A.adicionar('um');
+                    A.adicionar('dois');
 
-                    var esperado = [];
+                    var esperado = [{ _id: 'A1', dado: 'um' }];
                     var atual = A.listadados();
 
-                    assert.deepEqual(esperado, atual, "nao deveria ter dados");
+                    assert.deepEqual(esperado, atual, "deveria ter dados");
                 });
             });            
-        }
+        }//,
+
+        //"limpar_dados": function (qdb) {
+        //    assert.doesNotThrow(function () {
+        //        var A = new qdb.QualiomDB();
+        //        A.conectar('A', function (err) {
+
+        //            A.apagarTUDO();
+
+        //            var esperado = [];
+        //            var atual = A.listadados('A');
+
+        //            assert.deepEqual(esperado, atual, "nao deveria ter dados");
+        //        });
+        //    });            
+        //}
     }
 );
 

@@ -48,7 +48,7 @@ var QualiomDB = function () {
     };
 
     self.listadados = function () {
-        self.collection.find();
+        return self.collection.find('A').toArray;
     }
 
     self.apagarTUDO = function () {

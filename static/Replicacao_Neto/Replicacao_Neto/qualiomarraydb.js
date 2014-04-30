@@ -18,7 +18,7 @@
 
     self.adicionar = function (dado) {// adiciona um dado no proprio banco
         var chave = self.gerarchave();
-        self.db.push({ chave: chave, dado: dado });//grava o dado no banco
+        self.db.push({ _id: chave, dado: dado });//grava o dado no banco
         self.log.push({ operacao: 'adicionar', chave: chave, dado: dado }); //historia
     };
 
