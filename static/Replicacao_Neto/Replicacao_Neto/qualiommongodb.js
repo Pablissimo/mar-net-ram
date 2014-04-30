@@ -44,6 +44,10 @@ var QualiomDB = function () {
          { "_id": chave, "dado": dado },
          callback);
     };
+
+    self.listadados = function () {
+        
+    }
 };
 
 module.exports.QualiomDB = QualiomDB;
