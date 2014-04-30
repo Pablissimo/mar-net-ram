@@ -46,6 +46,10 @@ var QualiomDB = function () {
          { "_id": chave, "dado": dado },
          callback);
     };
+
+    self.apagarTUDO = function (banco) {
+        db.collection.remove()
+    }
 };
 
 module.exports.QualiomDB = QualiomDB;

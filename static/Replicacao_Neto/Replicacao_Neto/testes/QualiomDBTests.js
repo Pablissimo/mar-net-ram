@@ -31,7 +31,6 @@ TesteParametrizado(
         },
 
         "limpar_dados": function (qdb) {
-            return;
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB('A');
                 A.apagarTUDO();
