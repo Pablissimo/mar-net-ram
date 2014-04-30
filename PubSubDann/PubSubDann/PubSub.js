@@ -39,6 +39,17 @@
         }
         return subscribersCollection;
     }
+    
+    Publisher.prototype.listaSubscriber = function (codSubscriber) {
+        var sub = '';
+        for (var i in subscribers) {
+            if (subscribers[i] == codSubscriber) {
+                sub = subscribers[i];
+                break;
+            }
+        }
+        return sub;
+    }
     return Publisher;
 })
 
