@@ -1,4 +1,5 @@
-﻿    // UnitTest.js 
+﻿//"use strict";
+    // UnitTest.js 
 var assert = require('assert');
 var qdb_array = require('../qualiomarraydb.js');
 var qdb_mongo = require('../qualiommongodb.js');
@@ -39,7 +40,7 @@ TesteParametrizado(
                     A.adicionar('um');
                     A.adicionar('dois');
 
-                    var esperado = [{ _id: 'A1', dado: 'um' }];
+                    var esperado = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
                     var atual = A.listadados();
 
                     assert.deepEqual(esperado, atual, "deveria ter dados");
