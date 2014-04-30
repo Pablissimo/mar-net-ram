@@ -1,10 +1,15 @@
-﻿exports.QualiomDB = function (banco) {
+﻿exports.QualiomDB = function () {
     var self = this;
     self.db = new Array();//array do banco
     self.log = new Array();//array do log/historico
-    self.nome_banco = banco;//nome do banco de dados para geracao da chave
     self.indexLog = 0;//qual o ultimo item enviado para o banco matriz
     self.contador = 0;// contador da chave
+
+    self.conectar=function(banco, callback)
+    {
+        self.nome_banco = banco;//nome do banco de dados para geracao da chave
+        callback();
+    };
 
     self.gerarchave = function (dado) {//gerador de chaves
         self.contador++;

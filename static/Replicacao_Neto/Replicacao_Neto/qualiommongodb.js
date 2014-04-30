@@ -15,17 +15,19 @@ var QualiomDB = function () {
         var dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || 'qualiom';
 
         self.db.open(function (err, db_open) {
-            if (err) {
-                erro = err;
-                callback();
-            };
+            if (err) 
+                callback(err);
             self.db.authenticate(dbUser, dbPass, { authdb: "admin" }, function (err, res) {
-                if (err) { erro = err; };
+            if (err) {
+                    callback(err);
+                }
+                else {
                 self.collection = self.db.collection(banco);
                 try {
                     callback();
                 } finally {
-                    db.close();
+                        //self.db.close();
+                    }
                 }
             });
         });
@@ -45,8 +47,8 @@ var QualiomDB = function () {
          callback);
     };
 
-    self.listadados = function () {
-        
+    self.apagarTUDO = function (banco) {
+        db.collection.remove()
     }
 };
 
