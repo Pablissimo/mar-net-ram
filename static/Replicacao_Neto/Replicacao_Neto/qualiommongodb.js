@@ -1,4 +1,5 @@
-﻿    // https://github.com/openshift-quickstart/openshift-mongo-node-express-example/blob/master/server.js  
+﻿"use strict";
+//https://github.com/openshift-quickstart/openshift-mongo-node-express-example/blob/master/server.js  
 
 var mongodb = require('mongodb');
 
@@ -15,14 +16,20 @@ var QualiomDB = function () {
         var dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || 'qualiom';
 
         self.db.open(function (err, db_open) {
-            if (err) {
-                erro = err;
-                callback();
-            };
+            if (err) 
+                callback(err);
             self.db.authenticate(dbUser, dbPass, { authdb: "admin" }, function (err, res) {
-                if (err) { erro = err; };
-                self.collection = self.db.collection(banco);
-                callback();
+                if (err) {
+                    callback(err);
+                }
+                else {
+                    self.collection = self.db.collection(banco);
+                    try {
+                        callback();
+                    } finally {
+                      //  self.db.close();
+                    }
+                }
             });
         });
         db.close();
@@ -41,8 +48,14 @@ var QualiomDB = function () {
          { "_id": chave, "dado": dado },
          callback);
     };
-    self.desconecta = function () {
-        db.close();
+
+    self.listadados = function (callback) {
+        var pesquisa_stream_ou_cursor = self.collection.find();
+        pesquisa_stream_ou_cursor.toArray(callback);
+    }
+
+    self.apagarTUDO = function () {
+        self.collection.remove();
     }
 };
 

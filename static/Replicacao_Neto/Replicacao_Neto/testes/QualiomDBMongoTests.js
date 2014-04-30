@@ -3,6 +3,8 @@ var assert = require('assert');
 var qdb = require('../qualiommongodb.js');
 var mongodb = require('mongodb');
 
+return;
+
 exports['TestarConexaoMongoDB'] = function (test) {
 
     var banco = "qualiom";
@@ -31,7 +33,6 @@ exports['Conectar-MDB'] = function (test) {
     assert.doesNotThrow(function () {
         var A = new qdb.QualiomDB();
         A.conectar('A', function () {
-            A.desconecta();
         });
     }
     );
@@ -48,7 +49,6 @@ exports['listadados-MDB'] = function (test) {
 
             assert.deepEqual(esperado, atual, "nao deveria ter dados");
 
-            A.desconecta();
         });
     }
     );
@@ -67,7 +67,6 @@ exports['Adicionar-MDB'] = function (test) {
 
             assert.equal(1, atual.length, "quantidade retornada invalida");
             assert.deepEqual(esperado, atual, "conteudo retornado invalido");
-            A.desconecta();
         });
     });
 }

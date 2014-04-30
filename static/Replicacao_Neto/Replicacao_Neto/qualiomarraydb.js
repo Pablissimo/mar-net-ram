@@ -1,10 +1,16 @@
-﻿exports.QualiomDB = function (banco) {
+﻿"use strict";
+exports.QualiomDB = function () {
     var self = this;
     self.db = new Array();//array do banco
     self.log = new Array();//array do log/historico
-    self.nome_banco = banco;//nome do banco de dados para geracao da chave
     self.indexLog = 0;//qual o ultimo item enviado para o banco matriz
     self.contador = 0;// contador da chave
+
+    self.conectar=function(banco, callback)
+    {
+        self.nome_banco = banco;//nome do banco de dados para geracao da chave
+        callback();
+    };
 
     self.gerarchave = function (dado) {//gerador de chaves
         self.contador++;
@@ -13,7 +19,7 @@
 
     self.adicionar = function (dado) {// adiciona um dado no proprio banco
         var chave = self.gerarchave();
-        self.db.push({ chave: chave, dado: dado });//grava o dado no banco
+        self.db.push({ _id: chave, dado: dado });//grava o dado no banco
         self.log.push({ operacao: 'adicionar', chave: chave, dado: dado }); //historia
     };
 
@@ -25,6 +31,10 @@
                 self.log.push({ operacao: 'deletar', chave: chave });//historia
             }
         }
+    }
+
+    self.apagarTUDO = function () {
+        self.db = new Array();
     }
 
     self.alterar = function (chave, dado) {//altera um dado no proprio banco
@@ -56,8 +66,8 @@
         return retorno;
     }
 
-    self.listadados = function () {
-        return self.db;
+    self.listadados = function (callback) {
+        callback(null, self.db);
     }
 
     self.adicionar_rep = function (dado, chave) {//adiciona no banco matriz
@@ -138,8 +148,7 @@
                 outrosbancos.push({ operacao: item.operacao, chave: item.chave, dado: item.dado });//Se não ele adiciona em outro array para os outros bancos, sem a mensagem que já foi sincronizada pelo banco atual
             };  
         }
-        exports.banco_matriz.log = outrosbancos; //atribui ao log do banco matriz as mensagens que não foram sincronizadas.
+        exports.banco_matriz.log = outrosbancos; //atribui ao log do banco matriz as mensagens que não foram sincronizadas.   
     }
 };
-
 exports.banco_matriz = new exports.QualiomDB("matriz");

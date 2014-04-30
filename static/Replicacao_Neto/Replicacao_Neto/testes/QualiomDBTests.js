@@ -1,27 +1,78 @@
-﻿    // UnitTest.js 
+﻿//"use strict";
+    // UnitTest.js 
 var assert = require('assert');
-var qdb = require('../qualiomdb.js');
+var qdb_array = require('../qualiomarraydb.js');
+var qdb_mongo = require('../qualiommongodb.js');
 
-exports['Conectar'] = function (test) {
-
-    assert.doesNotThrow(function () {
-        var A = new qdb.QualiomDB('A');
+function TesteParametrizado(casos, testes) {
+    var criaTeste = function (n, f, p) {
+        exports[n] = function () { f(p); }
     }
-    );
+    for (var caso in casos) {
+        var param = casos[caso];
+        for (var teste in testes) {
+            var fn = testes[teste];
+            criaTeste(caso + "-" + teste, fn, param);
+        }
+    }
 }
 
-exports['listadados'] = function (test) {
+TesteParametrizado(
+    {
+       // "array": qdb_array,
+        "mongo": qdb_mongo
+    },
+    {
+        "Conectar": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function (err) {
+                    assert.equal(null, err, err);
+                });
+            });
+        },
 
-    assert.doesNotThrow(function () {
-        var A = new qdb.QualiomDB('A');
+        "Adicionar_dados": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function (err) {
 
-        var esperado = [];
-        var atual = A.listadados();
+                    A.adicionar('um');
+                    A.adicionar('dois');
 
-        assert.deepEqual(esperado, atual, "nao deveria ter dados");
+                    var esperados = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
+
+                    var cursor = A.listadados();
+                    for (var esperado in esperados) {
+                        var atual = cursor.next();
+                        assert.deepEqual(esperado, atual, "deveria ter dados");
+                    }
+// toarray - problema no CLOSE()
+                    A.listadados(function (err, atual) {
+                        assert.deepEqual(esperado, atual, "deveria ter dados");
+                    });
+                });
+            });            
+        }//,
+
+        //"limpar_dados": function (qdb) {
+        //    assert.doesNotThrow(function () {
+        //        var A = new qdb.QualiomDB();
+        //        A.conectar('A', function (err) {
+
+        //            A.apagarTUDO();
+
+        //            var esperado = [];
+        //            var atual = A.listadados('A');
+
+        //            assert.deepEqual(esperado, atual, "nao deveria ter dados");
+        //        });
+        //    });            
+        //}
     }
-    );
-}
+);
+
+return;
 
 exports['Adicionar'] = function (test) {
 
