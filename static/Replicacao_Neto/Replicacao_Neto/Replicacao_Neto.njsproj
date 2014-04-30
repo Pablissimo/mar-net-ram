@@ -121,7 +121,7 @@
     <Compile Include="node_modules\mongodb\node_modules\kerberos\test\win32\security_buffer_descriptor_tests.js" />
     <Compile Include="node_modules\mongodb\node_modules\kerberos\test\win32\security_buffer_tests.js" />
     <Compile Include="node_modules\mongodb\node_modules\kerberos\test\win32\security_credentials_tests.js" />
-    <Compile Include="qualiomdb.js" />
+    <Compile Include="qualiomarraydb.js" />
     <Compile Include="qualiommongodb.js" />
     <Compile Include="server.js" />
     <Compile Include="testes\Conecta_MongoDB_Test.js">

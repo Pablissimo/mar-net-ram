@@ -22,7 +22,11 @@ var QualiomDB = function () {
             self.db.authenticate(dbUser, dbPass, { authdb: "admin" }, function (err, res) {
                 if (err) { erro = err; };
                 self.collection = self.db.collection(banco);
-                callback();
+                try {
+                    callback();
+                } finally {
+                    db.close();
+                }
             });
         });
     };
@@ -40,9 +44,6 @@ var QualiomDB = function () {
          { "_id": chave, "dado": dado },
          callback);
     };
-    self.desconecta = function () {
-        db.close();
-    }
 };
 
 module.exports.QualiomDB = QualiomDB;
