@@ -66,8 +66,8 @@ exports.QualiomDB = function () {
         return retorno;
     }
 
-    self.listadados = function () {
-        return self.db;
+    self.listadados = function (callback) {
+        callback(null, self.db);
     }
 
     self.adicionar_rep = function (dado, chave) {//adiciona no banco matriz

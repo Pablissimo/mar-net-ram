@@ -19,7 +19,7 @@ function TesteParametrizado(casos, testes) {
 
 TesteParametrizado(
     {
-        "array": qdb_array,
+       // "array": qdb_array,
         "mongo": qdb_mongo
     },
     {
@@ -40,10 +40,17 @@ TesteParametrizado(
                     A.adicionar('um');
                     A.adicionar('dois');
 
-                    var esperado = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
-                    var atual = A.listadados();
+                    var esperados = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
 
-                    assert.deepEqual(esperado, atual, "deveria ter dados");
+                    var cursor = A.listadados();
+                    for (var esperado in esperados) {
+                        var atual = cursor.next();
+                        assert.deepEqual(esperado, atual, "deveria ter dados");
+                    }
+// toarray - problema no CLOSE()
+                    A.listadados(function (err, atual) {
+                        assert.deepEqual(esperado, atual, "deveria ter dados");
+                    });
                 });
             });            
         }//,
