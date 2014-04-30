@@ -6,53 +6,46 @@ var qdb_mongo = require('../qualiommongodb.js');
 
 function TesteParametrizado(casos, testes) {
     for (var caso in casos) {
-        var param = casos[caso];
         for (var teste in testes) {
-            var fn = testes[teste];
-            exports[caso + "-" + teste] = function () { fn(param); }
+            exports[caso + "-" + teste] = function ()
+            {
+                testes[teste](casos[caso]);
+            }
         }
     }
 }
 
 TesteParametrizado(
     {
-        "array": qdb_array,
+        //"array": qdb_array,
         "mongo": qdb_mongo
     },
     {
         "Conectar": function (qdb) {
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB();
-                A.conectar('A', function () {
-                    A.desconecta();
+                A.conectar('A', function (err) {
+                    assert.equal(null, err, err);
                 });
             });
+        },
+
+        "limpar_dados": function (qdb) {
+            return;
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB('A');
+                A.apagarTUDO();
+
+                var esperado = [];
+                var atual = A.listadados();
+
+                assert.deepEqual(esperado, atual, "nao deveria ter dados");
+            });            
         }
     }
 );
 
 return;
-
-exports['Conectar'] = function (test) {
-
-    assert.doesNotThrow(function () {
-        var A = new qdb.QualiomDB('A');
-    }
-    );
-}
-
-exports['listadados'] = function (test) {
-
-    assert.doesNotThrow(function () {
-        var A = new qdb.QualiomDB('A');
-
-        var esperado = [];
-        var atual = A.listadados();
-
-        assert.deepEqual(esperado, atual, "nao deveria ter dados");
-    }
-    );
-}
 
 exports['Adicionar'] = function (test) {
 

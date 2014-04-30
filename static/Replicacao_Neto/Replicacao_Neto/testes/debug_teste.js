@@ -1,5 +1,5 @@
-﻿var suite = require('./QualiomDBMongoTests.js');
+﻿var suite = require('./QualiomDBTests.js');
 
-var unit = suite['TestarConexaoMongoDB'];
+var unit = suite['mongo-Conectar'];
 
 unit();

@@ -3,6 +3,8 @@ var assert = require('assert');
 var qdb = require('../qualiommongodb.js');
 var mongodb = require('mongodb');
 
+return;
+
 exports['TestarConexaoMongoDB'] = function (test) {
 
     var banco = "qualiom";
