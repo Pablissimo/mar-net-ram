@@ -25,6 +25,7 @@ var QualiomDB = function () {
                 callback();
             });
         });
+        db.close();
     };
 
     self.contador = 0;
