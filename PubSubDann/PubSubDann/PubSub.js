@@ -58,7 +58,5 @@ exports.Publisher = Publisher;
 var pubsub = require('./PubSub.js');
 var publicador = new pubsub.Publisher();
 
-//var subscriber = publicador.prototype.subscribe('D');
-//var teste1 = publicador.prototype.publish('Teste');
 
 
