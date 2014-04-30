@@ -1,6 +1,6 @@
 ﻿var Publisher = (function () {
-    function Publisher() {
-        
+    //Construtor
+    function Publisher() {        
     }
 
     //Coleção de Assinantes
@@ -24,7 +24,10 @@
         this.visitSubscribers('unsubscribe', subscriber);
     }
 
-    //Método que realiza a manutenção da Coleção de Subscribers
+    /*------------------------------------------------------------- 
+       Método que realiza a manutenção da Coleção de Subscribers,
+       e envia Mensagem para quem é Assinante. 
+    --------------------------------------------------------------*/
     Publisher.prototype.visitSubscribers = function (action, arg) {
         var i;                                     //action = publish/unsubscribe
         var max = subscribers.length;              //arg = publication/subscriber
@@ -40,8 +43,9 @@
         return subPubCollection;
     }
     
+    //Lista/valida Subscriber (assinante);
     Publisher.prototype.listaSubscriber = function (codSubscriber) {
-        var sub = '';
+        var sub = '';                             //cod do subscriber (assinante)
         for (var i in subscribers) {
             if (subscribers[i] == codSubscriber) {
                 sub = subscribers[i];
