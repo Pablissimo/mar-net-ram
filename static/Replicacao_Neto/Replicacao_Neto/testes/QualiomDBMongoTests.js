@@ -1,42 +1,37 @@
 ﻿    // UnitTest.js 
 var assert = require('assert');
-var qdb = require('../qualiommongodb.js');
-var mongodb = require('mongodb');
+var qdb_array = require('../qualiomdb.js');
+var qdb_mongo = require('../qualiommongodb.js');
 
-exports['TestarConexaoMongoDB'] = function (test) {
-
-    var banco = "qualiom";
-    var ip_servidor = process.env.OPENSHIFT_MONGODB_DB_HOST || "127.0.0.1";
-    var porta_servidor=parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT || 27017);
-    var dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME || 'qualiom';
-    var dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || 'qualiom';
-
-    var dbServer = new mongodb.Server(ip_servidor, porta_servidor);
-
-    var db = new mongodb.Db(banco, dbServer, { safe: false, auto_reconnect: true });
-    var conectou = false;
-
-    db.open(function (err, db_open) {
-        assert.equal(null, err, err);
-        db.authenticate(dbUser, dbPass, { authdb: "admin" }, function (err, res) {
-            assert.equal(null, err, err);
-            db.close();
-        });
-    });
-
-}
-
-exports['Conectar-MDB'] = function (test) {
-
-    assert.doesNotThrow(function () {
-        var A = new qdb.QualiomDB();
-        A.conectar('A', function () {
-            A.desconecta();
-        });
+function TesteParametrizado(casos, testes) {
+    for (var caso in casos) {
+        var param = casos[caso];
+        for (var teste in testes) {
+            var fn = testes[teste];
+            exports[caso + "-" + teste] = function () { fn(param); }
+        }
     }
-    );
 }
 
+TesteParametrizado(
+    {
+        "array": qdb_array,
+        "mongo": qdb_mongo
+    },
+    {
+        "Conectar": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function () {
+                    A.desconecta();
+                });
+            }
+        );
+        }
+    }
+);
+
+return;
 exports['listadados-MDB'] = function (test) {
 
     assert.doesNotThrow(function () {
