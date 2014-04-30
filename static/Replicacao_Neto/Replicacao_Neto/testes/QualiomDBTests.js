@@ -1,6 +1,37 @@
 ﻿    // UnitTest.js 
 var assert = require('assert');
-var qdb = require('../qualiomdb.js');
+var qdb_array = require('../qualiomarraydb.js');
+var qdb_mongo = require('../qualiommongodb.js');
+
+
+function TesteParametrizado(casos, testes) {
+    for (var caso in casos) {
+        var param = casos[caso];
+        for (var teste in testes) {
+            var fn = testes[teste];
+            exports[caso + "-" + teste] = function () { fn(param); }
+        }
+    }
+}
+
+TesteParametrizado(
+    {
+        "array": qdb_array,
+        "mongo": qdb_mongo
+    },
+    {
+        "Conectar": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function () {
+                    A.desconecta();
+                });
+            });
+        }
+    }
+);
+
+return;
 
 exports['Conectar'] = function (test) {
 
