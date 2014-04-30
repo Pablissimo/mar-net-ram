@@ -7,13 +7,13 @@ var publicador = new pubsub.Publisher();
 
 exports['Case_01'] = function (test) {
 
-    //1
+    //1 --> Inscrição de Assinante.
     publicador.prototype.subscribe('D');
     var atual1 = publicador.prototype.listaSubscriber('D');
     var esperado1 = 'D';    
     assert.deepEqual(atual1, esperado1, "Erro Fase 1");
 
-    //2
+    //2 --> Envio de Mensagem para quem é Assinante.
     var atual2 = publicador.prototype.visitSubscribers('publish', 'Teste')[0].publication;
     var esperado2 = 'Teste';    
     assert.deepEqual(atual2, esperado2, "Erro Fase 2");
@@ -22,14 +22,14 @@ exports['Case_01'] = function (test) {
 
 exports['Case_02'] = function (test) {
 
-    //1
+    //1 --> Inscrição de Assinantes.
     publicador.prototype.subscribe('C');
     publicador.prototype.subscribe('A');
     var atual1 = publicador.prototype.listaSubscriber('C');
     var esperado1 = 'C';
     assert.deepEqual(atual1, esperado1, "Erro Fase 1");
 
-    //2
+    //2 --> Cancelamento de Assinatura.
     publicador.prototype.unsubscribe('A');
     var atual2 = publicador.prototype.listaSubscriber('A');
     var esperado2 = '';
@@ -38,7 +38,7 @@ exports['Case_02'] = function (test) {
 
 exports['Case_03'] = function (test) {
 
-    //1 --> Lista de todos os assinantes
+    //1 --> Inscrição dos Assinantes.
     publicador.prototype.subscribe('C');
     publicador.prototype.subscribe('H');
     publicador.prototype.subscribe('A');
@@ -51,13 +51,19 @@ exports['Case_03'] = function (test) {
     var esperado1 = 'C';
     assert.deepEqual(atual1, esperado1, "Erro Fase 1");
 
-    //2 --> Publicação da mensagem para quem é assinante.
+    //2 --> Publicação da Mensagem.
     var atual2 = publicador.prototype.visitSubscribers('publish', 'Mensagem 1')[0].publication;
-    var esperado2 = 'Teste';
+    var esperado2 = 'Mensagem 1';
     assert.deepEqual(atual2, esperado2, "Erro Fase 2");
 
-    //3 --> Mensagem para quem é Assinante  
-    var atual2 = publicador.prototype.listaSubscriber('A');
-    var esperado2 = '';
-    assert.deepEqual(atual2, esperado2, "Erro Fase 2");
+    //2 --> Cancelamento de Assinatura.
+    publicador.prototype.unsubscribe('E');
+    var atual3 = publicador.prototype.listaSubscriber('E');
+    var esperado3 = '';
+    assert.deepEqual(atual3, esperado3, "Erro Fase 3");
+    
+    //3 --> Envio da Mensagem para quem é Assinante.
+    var atual4 = publicador.prototype.listaSubscriber('A');
+    var esperado4 = '';
+    assert.deepEqual(atual4, esperado4, "Erro Fase 4");
 }
