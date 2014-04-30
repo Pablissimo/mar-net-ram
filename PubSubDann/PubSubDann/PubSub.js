@@ -1,4 +1,4 @@
-﻿var Publisher = (function (pub) {
+﻿var Publisher = (function () {
     //Construtor
     function Publisher() {        
     }
@@ -17,7 +17,8 @@
     }
 
     //Método de Publicar
-    Publisher.prototype.publish = function (publication) {
+    Publisher.prototype.publish = function (publication, pub) {
+        this.regPublisher(pub);
         return this.visitSubscribers('publish', publication);
     }
     //Método de Assinar
