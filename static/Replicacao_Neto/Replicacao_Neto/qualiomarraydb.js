@@ -32,6 +32,10 @@
         }
     }
 
+    self.apagarTUDO = function () {
+        self.db = new Array();
+    }
+
     self.alterar = function (chave, dado) {//altera um dado no proprio banco
         for (var index in self.db) {
             var registro = self.db[index];

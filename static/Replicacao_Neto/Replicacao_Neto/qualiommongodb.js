@@ -26,7 +26,7 @@ var QualiomDB = function () {
                     try {
                         callback();
                     } finally {
-                        //self.db.close();
+                        self.db.close();
                     }
                 }
             });
@@ -47,8 +47,8 @@ var QualiomDB = function () {
          callback);
     };
 
-    self.apagarTUDO = function (banco) {
-        db.collection.remove()
+    self.apagarTUDO = function () {
+        self.collection.remove();
     }
 };
 

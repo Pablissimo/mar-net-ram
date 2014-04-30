@@ -33,13 +33,16 @@ TesteParametrizado(
 
         "limpar_dados": function (qdb) {
             assert.doesNotThrow(function () {
-                var A = new qdb.QualiomDB('A');
-                A.apagarTUDO();
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function (err) {
 
-                var esperado = [];
-                var atual = A.listadados();
+                    A.apagarTUDO();
 
-                assert.deepEqual(esperado, atual, "nao deveria ter dados");
+                    var esperado = [];
+                    var atual = A.listadados();
+
+                    assert.deepEqual(esperado, atual, "nao deveria ter dados");
+                });
             });            
         }
     }
