@@ -3,14 +3,22 @@
     function Publisher() {        
     }
 
+    var publishersCollection = new Array();
+
     //Coleção de Assinantes
     var subscribers = new Array();
 
     //Mensagem para quem é Assinante. 
     var subPubCollection = new Array();
 
+    //Método de Registrar Publicador.
+    Publisher.prototype.regPublisher = function (pub) {
+        publishersCollection.push(pub);
+    }
+
     //Método de Publicar
-    Publisher.prototype.publish = function (publication) {
+    Publisher.prototype.publish = function (publication, pub) {
+        this.regPublisher(pub);
         return this.visitSubscribers('publish', publication);
     }
     //Método de Assinar
