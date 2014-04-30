@@ -138,8 +138,7 @@
                 outrosbancos.push({ operacao: item.operacao, chave: item.chave, dado: item.dado });//Se não ele adiciona em outro array para os outros bancos, sem a mensagem que já foi sincronizada pelo banco atual
             };  
         }
-        exports.banco_matriz.log = outrosbancos; //atribui ao log do banco matriz as mensagens que não foram sincronizadas.
+        exports.banco_matriz.log = outrosbancos; //atribui ao log do banco matriz as mensagens que não foram sincronizadas.   
     }
 };
-
 exports.banco_matriz = new exports.QualiomDB("matriz");
