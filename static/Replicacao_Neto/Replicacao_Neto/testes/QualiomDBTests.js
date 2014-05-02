@@ -36,13 +36,13 @@ TesteParametrizado(
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB();
                 A.conectar('A', function (err) {
-
+                    A.apagarTUDO();
                     A.adicionar('um');
                     A.adicionar('dois');
 
                     var esperado = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
 
-                    A.listadados(function (err, atual) {
+                    A.listar(function (err, atual) {
                         assert.equal(null, err, "nao devia ter erro");
                         assert.deepEqual(esperado, atual, "deveria ter dados");
                     });
@@ -58,9 +58,47 @@ TesteParametrizado(
                     A.apagarTUDO();
 
                     var esperado = [];
-                    A.listadados(function (err, atual) {
+                    A.listar(function (err, atual) {
                         assert.equal(null, err, "nao devia ter erro");
                         assert.deepEqual(esperado, atual, "deveria não ter dados");
+                    });
+                });
+            });
+        },
+
+        "alterar_dados": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function (err) {
+
+                    A.apagarTUDO();
+
+                    //1
+                    var esperado_vazio = [];
+                    A.listar(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado_vazio, atual, "deveria não ter dados");
+                    });
+
+                    //2
+                    A.adicionar('um');
+                    A.adicionar('dois');
+
+                    var esperado_adicionar = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
+
+                    A.listar(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado_adicionar, atual, "deveria ter dado um e dois");
+                    });
+
+                    //3
+                    A.alterar('A1', 'Mudança do Charles= Bbababababababa');
+
+                    var esperado_alterar = [{ _id: 'A1', dado: 'Mudança do Charles= Bbababababababa' }, { _id: 'A2', dado: 'dois' }];
+
+                    A.listar(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado_alterar, atual, "deveria ter dados charles");
                     });
                 });
             });

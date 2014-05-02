@@ -31,7 +31,7 @@ var QualiomDB = function () {
                     } finally {
                         setTimeout(function () {
                             self.db.close();
-                        }, 1000);
+                        }, 2000);
                         //self.db.close();
                     }
                 }
@@ -53,13 +53,24 @@ var QualiomDB = function () {
          callback);
     };
 
-    self.listadados = function (callback) {
-        var pesquisa_stream_ou_cursor = self.collection.find();
+    self.listar = function (callback) {
+        var pesquisa_stream_ou_cursor = self.collection.find().sort({_id:1});
         pesquisa_stream_ou_cursor.toArray(callback);
     }
 
     self.apagarTUDO = function () {
         self.collection.remove();
+    }
+
+    self.alterar = function (chave, dadoalterado) {
+        self.collection.update(
+           { _id:  chave},
+           {
+               _id: chave,
+               dado: dadoalterado
+           },
+           { upsert: false }
+        )
     }
 };
 
