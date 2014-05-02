@@ -1,4 +1,5 @@
-﻿exports.QualiomDB = function () {
+﻿"use strict";
+exports.QualiomDB = function () {
     var self = this;
     self.db = new Array();//array do banco
     self.log = new Array();//array do log/historico
@@ -65,8 +66,8 @@
         return retorno;
     }
 
-    self.listadados = function () {
-        return self.db;
+    self.listadados = function (callback) {
+        callback(null, self.db);
     }
 
     self.adicionar_rep = function (dado, chave) {//adiciona no banco matriz

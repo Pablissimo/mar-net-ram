@@ -1,4 +1,5 @@
-﻿    // https://github.com/openshift-quickstart/openshift-mongo-node-express-example/blob/master/server.js  
+﻿"use strict";
+//https://github.com/openshift-quickstart/openshift-mongo-node-express-example/blob/master/server.js  
 
 var mongodb = require('mongodb');
 
@@ -26,11 +27,12 @@ var QualiomDB = function () {
                     try {
                         callback();
                     } finally {
-                        self.db.close();
+                      //  self.db.close();
                     }
                 }
             });
         });
+        db.close();
     };
 
     self.contador = 0;
@@ -47,9 +49,9 @@ var QualiomDB = function () {
          callback);
     };
 
-    self.listadados = function () {
-        var pesquisa = self.collection.find();
-        return pesquisa;
+    self.listadados = function (callback) {
+        var pesquisa_stream_ou_cursor = self.collection.find();
+        pesquisa_stream_ou_cursor.toArray(callback);
     }
 
     self.apagarTUDO = function () {
