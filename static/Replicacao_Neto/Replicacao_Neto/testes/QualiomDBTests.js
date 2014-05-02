@@ -52,17 +52,21 @@ TesteParametrizado(
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB();
                 A.conectar('A', function (err) {
+
                     A.apagarTUDO();
+
                     var esperado = [];
-                    var atual = A.listadados('A');
-                    assert.deepEqual(esperado, atual, "nao deveria ter dados");
+                    A.listadados(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado, atual, "deveria não ter dados");
+                    });
                 });
-            });            
+            });
         }
     }
 );
 
-
+return;
 
 exports['Adicionar'] = function (test) {
 
@@ -80,8 +84,6 @@ exports['Adicionar'] = function (test) {
     }
     );
 }
-
-return;
 
 exports['Pesquisar'] = function (test) {
 
