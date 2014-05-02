@@ -25,10 +25,8 @@
     Publisher.prototype.subscribe = function (subscriber) {
         subscribers.push(subscriber);
     }
-
     //Método de remover Assinatura
     Publisher.prototype.unsubscribe = function (subscriber) {
-
         this.visitSubscribers('unsubscribe', subscriber);
     }
 
