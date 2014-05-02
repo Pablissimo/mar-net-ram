@@ -40,7 +40,7 @@ var QualiomDB = function () {
 
     self.contador = 0;
 
-    self.gerarchave = function (dado, callback) {
+    self.gerarchave = function (dado) {
         self.contador++;
         return self.nome_banco + self.contador;
     }
@@ -55,6 +55,14 @@ var QualiomDB = function () {
     self.listadados = function (callback) {
         var pesquisa_stream_ou_cursor = self.collection.find();
         pesquisa_stream_ou_cursor.toArray(callback);
+    }
+
+    self.alterar = function (chave, dadoAlterado) {
+        self.collection.update(
+            {_id:chave},
+            { _id:chave, dado:dadoAlterado},
+            { upsert: true }
+            )
     }
 
     self.apagarTUDO = function () {

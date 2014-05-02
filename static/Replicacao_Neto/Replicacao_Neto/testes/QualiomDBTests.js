@@ -37,9 +37,12 @@ TesteParametrizado(
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB();
                 A.conectar('A', function (err) {
+
                     A.adicionar('um');
                     A.adicionar('dois');
+
                     var esperado = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
+
                     A.listadados(function (err, atual) {
                         assert.equal(null, err, "nao devia ter erro");
                         assert.deepEqual(esperado, atual, "deveria ter dados");
@@ -52,13 +55,30 @@ TesteParametrizado(
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB();
                 A.conectar('A', function (err) {
-
                     A.apagarTUDO();
-
                     var esperado = [];
                     A.listadados(function (err, atual) {
                         assert.equal(null, err, "nao devia ter erro");
                         assert.deepEqual(esperado, atual, "deveria não ter dados");
+                    });
+                });
+            });
+        },
+
+        "alterar_dados": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function (err) {
+                    A.apagarTUDO();
+
+                    A.adicionar('um');
+                    A.adicionar('dois');
+
+                    A.alterar('A2', 'DOIS');
+                    var esperado = [{_id:'A1', dado:'um'}, {_id:'A2', dado:'DOIS'}];
+                    A.listadados(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado, atual, "deveria ter dados");
                     });
                 });
             });
