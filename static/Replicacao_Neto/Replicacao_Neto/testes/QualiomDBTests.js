@@ -48,22 +48,23 @@ TesteParametrizado(
                     });
                 });
             });            
-        }//,
+        },
 
-        //"limpar_dados": function (qdb) {
-        //    assert.doesNotThrow(function () {
-        //        var A = new qdb.QualiomDB();
-        //        A.conectar('A', function (err) {
+        "limpar_dados": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function (err) {
 
-        //            A.apagarTUDO();
+                    A.apagarTUDO();
 
-        //            var esperado = [];
-        //            var atual = A.listadados('A');
-
-        //            assert.deepEqual(esperado, atual, "nao deveria ter dados");
-        //        });
-        //    });            
-        //}
+                    var esperado = [];
+                    A.listadados(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado, atual, "deveria não ter dados");
+                    });
+                });
+            });
+        }
     }
 );
 
