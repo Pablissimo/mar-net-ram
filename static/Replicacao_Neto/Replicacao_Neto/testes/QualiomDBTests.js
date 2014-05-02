@@ -1,5 +1,6 @@
 ﻿//"use strict";
     // UnitTest.js 
+
 var assert = require('assert');
 var qdb_array = require('../qualiomarraydb.js');
 var qdb_mongo = require('../qualiommongodb.js');
@@ -36,38 +37,32 @@ TesteParametrizado(
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB();
                 A.conectar('A', function (err) {
-
                     A.adicionar('um');
                     A.adicionar('dois');
-
                     var esperado = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
-
                     A.listadados(function (err, atual) {
                         assert.equal(null, err, "nao devia ter erro");
                         assert.deepEqual(esperado, atual, "deveria ter dados");
                     });
                 });
             });            
-        }//,
+        },
 
-        //"limpar_dados": function (qdb) {
-        //    assert.doesNotThrow(function () {
-        //        var A = new qdb.QualiomDB();
-        //        A.conectar('A', function (err) {
-
-        //            A.apagarTUDO();
-
-        //            var esperado = [];
-        //            var atual = A.listadados('A');
-
-        //            assert.deepEqual(esperado, atual, "nao deveria ter dados");
-        //        });
-        //    });            
-        //}
+        "limpar_dados": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function (err) {
+                    A.apagarTUDO();
+                    var esperado = [];
+                    var atual = A.listadados('A');
+                    assert.deepEqual(esperado, atual, "nao deveria ter dados");
+                });
+            });            
+        }
     }
 );
 
-return;
+
 
 exports['Adicionar'] = function (test) {
 
@@ -85,6 +80,8 @@ exports['Adicionar'] = function (test) {
     }
     );
 }
+
+return;
 
 exports['Pesquisar'] = function (test) {
 

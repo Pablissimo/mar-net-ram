@@ -20,7 +20,9 @@ exports['TestarConexaoMongoDB'] = function (test) {
     db.open(function (err, db_open) {
         assert.equal(null, err, err);
         global.db = db;
-        setInterval(function () { global.db.close(); }, 1000);
+        setInterval(function () {
+            global.db.close()
+        }, 1000);
         db.authenticate(dbUser, dbPass, { authdb: "admin" }, function (err, res) {
             assert.equal(null, err, err);
         });

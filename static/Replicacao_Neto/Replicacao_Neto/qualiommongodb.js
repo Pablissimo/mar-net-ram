@@ -32,7 +32,6 @@ var QualiomDB = function () {
                         setTimeout(function () {
                             self.db.close();
                         }, 1000);
-                        //self.db.close();
                     }
                 }
             });
