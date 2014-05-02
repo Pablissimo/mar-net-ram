@@ -1,0 +1,10 @@
+{
+  "name": "qualiom_HTTP",
+  "version": "0.0.0",
+  "description": "qualiom_HTTP",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}
