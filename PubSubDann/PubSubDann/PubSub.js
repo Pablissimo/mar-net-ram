@@ -1,4 +1,7 @@
-﻿var Publisher = (function () {
+﻿var pubsub = require('./PubSub.js');
+var publicador = new pubsub.Publisher();
+
+var Publisher = (function () {
     //Construtor
     function Publisher() {        
     }
@@ -69,5 +72,3 @@
 
 exports.Publisher = Publisher;
 
-var pubsub = require('./PubSub.js');
-var publicador = new pubsub.Publisher();

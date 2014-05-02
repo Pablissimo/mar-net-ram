@@ -32,7 +32,7 @@ TesteParametrizado(
             });
         },
 
-        "Adicionar_dados": function (qdb) {
+       "Adicionar_dados": function (qdb) {
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB();
                 A.conectar('A', function (err) {
@@ -40,15 +40,10 @@ TesteParametrizado(
                     A.adicionar('um');
                     A.adicionar('dois');
 
-                    var esperados = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
+                    var esperado = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
 
-                    var cursor = A.listadados();
-                    for (var esperado in esperados) {
-                        var atual = cursor.next();
-                        assert.deepEqual(esperado, atual, "deveria ter dados");
-                    }
-// toarray - problema no CLOSE()
                     A.listadados(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
                         assert.deepEqual(esperado, atual, "deveria ter dados");
                     });
                 });

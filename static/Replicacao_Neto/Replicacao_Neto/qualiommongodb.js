@@ -15,6 +15,8 @@ var QualiomDB = function () {
         var dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME || 'qualiom';
         var dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || 'qualiom';
 
+        process.on('exit', function () { self.db.close(); });
+
         self.db.open(function (err, db_open) {
             if (err) 
                 callback(err);
@@ -27,12 +29,14 @@ var QualiomDB = function () {
                     try {
                         callback();
                     } finally {
-                      //  self.db.close();
+                        setTimeout(function () {
+                            self.db.close();
+                        }, 1000);
+                        //self.db.close();
                     }
                 }
             });
         });
-        db.close();
     };
 
     self.contador = 0;
