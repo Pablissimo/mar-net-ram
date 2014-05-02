@@ -41,7 +41,7 @@ var QualiomDB = function () {
 
     self.contador = 0;
 
-    self.gerarchave = function (dado, callback) {
+    self.gerarchave = function (dado) {
         self.contador++;
         return self.nome_banco + self.contador;
     }

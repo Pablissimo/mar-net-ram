@@ -89,7 +89,7 @@ TesteParametrizado(
                     A.listar(function (err, atual) {
                         assert.equal(null, err, "nao devia ter erro");
                         assert.deepEqual(esperado_adicionar, atual, "deveria ter dado um e dois");
-                    });
+                });
 
                     //3
                     A.alterar('A1', 'Mudança do Charles= Bbababababababa');
