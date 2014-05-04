@@ -1,0 +1,10 @@
+{
+  "name": "Projeto_Express",
+  "version": "0.0.0",
+  "description": "Projeto_Express",
+  "main": "app.js",
+  "author": {
+    "name": "Bernardo",
+    "email": ""
+  }
+}

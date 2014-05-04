@@ -1,0 +1,10 @@
+{
+  "name": "Basico_Typescript",
+  "version": "0.0.0",
+  "description": "Basico_Typescript",
+  "main": "app.js",
+  "author": {
+    "name": "Bernardo",
+    "email": ""
+  }
+}
