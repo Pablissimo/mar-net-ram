@@ -2,9 +2,9 @@
 var app = express();
 
 app.get('/hello.txt', function (req, res) {
-    res.send('Teste de Requisição HTTP');
+    res.send(req.ip);
 });
 
-var server = app.listen(2000, function () {
-    console.log('Escutando a porta %d', server.address().port);
+var server = app.listen(1000, function () {
+    console.log('O Server está escutando a porta %d', server.address().port);
 });
