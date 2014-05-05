@@ -1,0 +1,13 @@
+{
+  "name": "CJS",
+  "version": "0.0.0",
+  "description": "CJS",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "^4.1.1"
+  }
+}
