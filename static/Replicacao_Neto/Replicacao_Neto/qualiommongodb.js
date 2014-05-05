@@ -27,12 +27,11 @@ var QualiomDB = function () {
                     try {
                         callback();
                     } finally {
-                      //  self.db.close();
+                       //self.db.close();
                     }
                 }
             });
         });
-        db.close();
     };
 
     self.contador = 0;
