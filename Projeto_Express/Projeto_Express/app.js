@@ -2,7 +2,7 @@
 var app = express();
 
 app.get('/hello.txt', function (req, res) {
-    res.send(req.ip);
+    res.send('Resposta');
 });
 
 var server = app.listen(1000, function () {
