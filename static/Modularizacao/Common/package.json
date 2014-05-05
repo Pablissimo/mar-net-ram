@@ -1,0 +1,10 @@
+{
+  "name": "Common",
+  "version": "0.0.0",
+  "description": "Common",
+  "main": "app.js",
+  "author": {
+    "name": "JoseFernando",
+    "email": ""
+  }
+}
