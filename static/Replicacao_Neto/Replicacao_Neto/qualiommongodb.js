@@ -15,6 +15,8 @@ var QualiomDB = function () {
         var dbUser = process.env.OPENSHIFT_MONGODB_DB_USERNAME || 'qualiom';
         var dbPass = process.env.OPENSHIFT_MONGODB_DB_PASSWORD || 'qualiom';
 
+        process.on('exit', function () { self.db.close(); });
+
         self.db.open(function (err, db_open) {
             if (err) 
                 callback(err);
@@ -27,7 +29,10 @@ var QualiomDB = function () {
                     try {
                         callback();
                     } finally {
-                       //self.db.close();
+                        setTimeout(function () {
+                            self.db.close();
+                        }, 2000);
+                        //self.db.close();
                     }
                 }
             });
@@ -36,7 +41,7 @@ var QualiomDB = function () {
 
     self.contador = 0;
 
-    self.gerarchave = function (dado, callback) {
+    self.gerarchave = function (dado) {
         self.contador++;
         return self.nome_banco + self.contador;
     }
@@ -48,13 +53,24 @@ var QualiomDB = function () {
          callback);
     };
 
-    self.listadados = function (callback) {
-        var pesquisa_stream_ou_cursor = self.collection.find();
+    self.listar = function (callback) {
+        var pesquisa_stream_ou_cursor = self.collection.find().sort({_id:1});
         pesquisa_stream_ou_cursor.toArray(callback);
     }
 
     self.apagarTUDO = function () {
         self.collection.remove();
+    }
+
+    self.alterar = function (chave, dadoalterado) {
+        self.collection.update(
+           { _id:  chave},
+           {
+               _id: chave,
+               dado: dadoalterado
+           },
+           { upsert: false }
+        )
     }
 };
 

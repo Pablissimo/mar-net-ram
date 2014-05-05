@@ -4,7 +4,6 @@ var jornal = require('../Jornal.js');
 var pubsub = require('../PubSub.js');
 var publicador = new pubsub.Publisher();
 
-
 exports['Case_01'] = function (test) {
 
     //1 --> Inscrição de Assinante.
@@ -18,7 +17,6 @@ exports['Case_01'] = function (test) {
     var esperado2 = 'Teste';    
     assert.deepEqual(atual2, esperado2, "Erro Fase 2");
 }
-
 
 exports['Case_02'] = function (test) {
 

@@ -32,43 +32,77 @@ TesteParametrizado(
             });
         },
 
-        "Adicionar_dados": function (qdb) {
+       "Adicionar_dados": function (qdb) {
             assert.doesNotThrow(function () {
                 var A = new qdb.QualiomDB();
                 A.conectar('A', function (err) {
-
+                    A.apagarTUDO();
                     A.adicionar('um');
                     A.adicionar('dois');
 
-                    var esperados = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
+                    var esperado = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
 
-                    //var cursor = A.listadados();
-                    //for (var esperado in esperados) {
-                    //    var atual = cursor.next();
-                    //    assert.deepEqual(esperado, atual, "deveria ter dados");
-                    //}
-// toarray - problema no CLOSE()
-                    A.listadados(function (err, atual) {
+                    A.listar(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
                         assert.deepEqual(esperado, atual, "deveria ter dados");
                     });
                 });
             });            
-        }//,
+        },
 
-        //"limpar_dados": function (qdb) {
-        //    assert.doesNotThrow(function () {
-        //        var A = new qdb.QualiomDB();
-        //        A.conectar('A', function (err) {
+        "limpar_dados": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function (err) {
 
-        //            A.apagarTUDO();
+                    A.apagarTUDO();
 
-        //            var esperado = [];
-        //            var atual = A.listadados('A');
+                    var esperado = [];
+                    A.listar(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado, atual, "deveria não ter dados");
+                    });
+                });
+            });
+        },
 
-        //            assert.deepEqual(esperado, atual, "nao deveria ter dados");
-        //        });
-        //    });            
-        //}
+        "alterar_dados": function (qdb) {
+            assert.doesNotThrow(function () {
+                var A = new qdb.QualiomDB();
+                A.conectar('A', function (err) {
+
+                    A.apagarTUDO();
+
+                    //1
+                    var esperado_vazio = [];
+                    A.listar(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado_vazio, atual, "deveria não ter dados");
+                    });
+
+                    //2
+                    A.adicionar('um');
+                    A.adicionar('dois');
+
+                    var esperado_adicionar = [{ _id: 'A1', dado: 'um' }, { _id: 'A2', dado: 'dois' }];
+
+                    A.listar(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado_adicionar, atual, "deveria ter dado um e dois");
+                });
+
+                    //3
+                    A.alterar('A1', 'Mudança do Charles= Bbababababababa');
+
+                    var esperado_alterar = [{ _id: 'A1', dado: 'Mudança do Charles= Bbababababababa' }, { _id: 'A2', dado: 'dois' }];
+
+                    A.listar(function (err, atual) {
+                        assert.equal(null, err, "nao devia ter erro");
+                        assert.deepEqual(esperado_alterar, atual, "deveria ter dados charles");
+                    });
+                });
+            });
+        },
     }
 );
 
