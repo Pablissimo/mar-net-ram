@@ -1,6 +1,10 @@
 ﻿//CommonJS
+    //http://addyosmani.com/writing-modular-js/
 
-function Soma() {
+
+function Class_Somar() {
+   this.metodo_somar = function (a, b) {
+        return (a + b);
+    }
 }
-
-module.exports = Soma;
+module.exports = Class_Somar;
