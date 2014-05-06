@@ -33,6 +33,7 @@
     <Content Include="js\page2.js" />
     <Content Include="page1.html" />
     <Content Include="page2.html" />
+    <None Include="js\lib\require.intellisense.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
