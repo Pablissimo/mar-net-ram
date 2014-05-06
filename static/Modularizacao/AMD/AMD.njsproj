@@ -36,6 +36,8 @@
       <TestFramework>Default</TestFramework>
     </Compile>
     <Compile Include="tests\debugger.js" />
+    <Compile Include="Valores.js" />
+    <Content Include="index.html" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
