@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0d0eabee-c90a-4617-8a00-dc8be86b114b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Local.js</StartupFile>
+    <StartupFile>Navegador.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -30,7 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Local.js" />
+    <Compile Include="Navegador.js" />
     <Compile Include="Servidor.js" />
     <Compile Include="soma.js" />
     <Content Include="package.json" />
