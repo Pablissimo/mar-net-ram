@@ -2,9 +2,8 @@
     //http://addyosmani.com/writing-modular-js/
 
 
-function Class_Somar() {
+exports.Class_Somar = function() {
    this.metodo_somar = function (a, b) {
         return (a + b);
     }
 }
-module.exports = Class_Somar;

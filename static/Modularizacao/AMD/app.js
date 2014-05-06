@@ -1,4 +1,4 @@
-﻿define(["Soma"], function (Soma) {
+﻿define("mod_app", function (Soma) {
 
 
     var resultado = Soma.somar(A, B);

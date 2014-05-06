@@ -4,18 +4,30 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-</head>
+    <script src="require.js"></script>
+    <script >
+
+        var modulo_soma = require('./soma');
+        var A = new modulo_soma.classe_soma();
+
+        A.metodo_somar(1, 2);
+
+
+
+
+    </script>
 <body>
-    <form>
+    <form action=" ">
+        <label for=" a">
+A</label>
+        <input type="text" name="A" /><br />
+        <label for="B">B</label>
+        <input type="text" name="B" /><br />
+        <label for="R">Resultado</label>
+        <input type="text" name="R" /><br />
+        <input type="submit" name="calular" value="Calcular" /> <br />
         <input type="radio" name="navegador" value="navegador">Navegador<br>
         <input type="radio" name="Servidor" value="servidor">Servidor
-        <label for="A">A</label>
-        <input type="text" name="A" />
-        <label for="B">B</label>
-        <input type="text" name="B" />
-        <label for="R">Resultado</label>
-        <input type="text" name="R" />
-        <input type="submit" />
     </form>
 </body>
 </html>
