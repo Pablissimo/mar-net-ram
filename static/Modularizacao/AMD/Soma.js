@@ -5,7 +5,7 @@
 //);
 
 
-define('counter', function () {
+define('soma', function () {
     var current = 0;
     function next() {
         return current + 1;

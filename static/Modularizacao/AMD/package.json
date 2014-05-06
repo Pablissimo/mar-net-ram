@@ -6,5 +6,9 @@
   "author": {
     "name": "Qualiom",
     "email": ""
+  },
+  "devDependencies": {
+    "requirejs": "2.1.11",
+    "almond" : "0.2.9"
   }
 }
