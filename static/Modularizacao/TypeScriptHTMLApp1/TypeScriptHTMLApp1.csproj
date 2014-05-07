@@ -19,6 +19,7 @@
   <ItemGroup>
     <Content Include="app.css" />
     <Content Include="index.html" />
+    <TypeScriptCompile Include="jquery.d.ts" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
