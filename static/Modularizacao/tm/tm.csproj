@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <ProjectGuid>{4BE02C17-30EF-46E1-92F0-5A5B548019FB}</ProjectGuid>
+    <ProjectGuid>{889DBDE5-8646-49A4-8261-A71195F935FE}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <OutputPath>bin</OutputPath>
@@ -17,17 +17,14 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
-    <Content Include="index.html" />
-    <TypeScriptCompile Include="cap11\log.ts" />
-    <TypeScriptCompile Include="cap11\main.ts" />
-    <TypeScriptCompile Include="identificador.ts" />
-    <TypeScriptCompile Include="jquery.d.ts" />
+    <Content Include="js\A.js" />
+    <Content Include="js\B.js" />
+    <Content Include="js\C.js" />
+    <Content Include="js\D.js" />
+    <Content Include="js\E.js" />
     <Content Include="qualiom_require.js" />
+    <Content Include="tm.html" />
     <Content Include="web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="modulo_soma.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
@@ -37,21 +34,12 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="js\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\tm\tm.csproj">
-      <Project>{889dbde5-8646-49a4-8261-a71195f935fe}</Project>
-      <Name>tm</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>TypeScriptHTMLApp1</RootNamespace>
+    <RootNamespace>tm</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -59,11 +47,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>56969</DevelopmentServerPort>
+          <DevelopmentServerPort>63310</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56969/</IISUrl>
+          <IISUrl>http://localhost:63310/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -77,12 +65,7 @@
     <TypeScriptTarget>ES5</TypeScriptTarget>
     <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
-    <TypeScriptModuleKind>amd</TypeScriptModuleKind>
-    <TypeScriptSourceRoot>C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\TypeScriptHTMLApp1</TypeScriptSourceRoot>
-    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
-    <TypeScriptOutDir>C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\TypeScriptHTMLApp1\js</TypeScriptOutDir>
-    <TypeScriptMapRoot>C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\TypeScriptHTMLApp1\js</TypeScriptMapRoot>
-    <TypeScriptNoImplicitAny>True</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptTarget>ES5</TypeScriptTarget>
