@@ -1,6 +1,6 @@
 ﻿module Module_soma {
 
-    class Classe_Soma {
+  export class Classe_Soma {
 
 
         public somar(a, b) {
