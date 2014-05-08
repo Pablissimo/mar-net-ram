@@ -1,2 +1,2 @@
-﻿import log = require("./log");
-log.message("hello");  
+﻿//import log = require("./log");
+//log.message("hello");  

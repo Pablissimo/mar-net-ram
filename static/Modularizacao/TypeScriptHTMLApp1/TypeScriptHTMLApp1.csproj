@@ -23,6 +23,7 @@
     <TypeScriptCompile Include="cap11\main.ts" />
     <TypeScriptCompile Include="identificador.ts" />
     <TypeScriptCompile Include="jquery.d.ts" />
+    <Content Include="jquery.js" />
     <Content Include="qualiom_require.js" />
     <Content Include="web.config" />
   </ItemGroup>

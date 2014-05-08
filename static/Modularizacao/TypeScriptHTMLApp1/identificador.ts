@@ -1,13 +1,8 @@
-﻿
-import mod_soma = require('modulo_soma');
+﻿import mod_soma = require('modulo_soma');
 
 var obj = new mod_soma.Classe_Soma();
 
-alert(obj.somar(1, 2));
-
-
-/*
-
+//alert(obj.somar(1, 2));
 
 $("#calcular").click(calcular());
 
@@ -15,18 +10,19 @@ $("#calcular").click(calcular());
 
 function calcular() {
 
-    if ($('#navegador').prop('checked') == true)
-    {
-        msoma.
-        var obj = new msoma.Classe_Soma();
+    if ($('#navegador').prop('checked') == true) {
+        var a:number = $("#A").val();
+        var b:number = $("#B").val();
+        var objeto:any = { a: a, b: b };
+        var objeto_json:string = JSON.stringify(objeto);
+        var resultado: any = obj.somar(objeto_json);
 
-        var a = $("#A").val();
-        var b = $("#B").val();
-        var resultado = a + b;                
+        var resultado_objeto: any = JSON.parse(resultado);
 
-        $("#R").val(resultado);
+        $("#R").val(resultado_objeto.resultado);
     }
-    else{
+    else if ($('#servidor').prop('checked') == true) {
+        //Requisição para servidor
     }
 
-};*/
+};
