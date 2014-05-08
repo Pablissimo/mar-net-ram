@@ -1,4 +1,4 @@
-﻿module Module_soma {
+﻿export module Module_soma {
 
   export class Classe_Soma {
 
