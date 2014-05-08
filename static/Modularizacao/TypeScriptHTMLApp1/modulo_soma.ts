@@ -1,4 +1,5 @@
-﻿
+﻿module Module_soma {
+
 export class Classe_Soma {
 
     public somar(json: string) {
