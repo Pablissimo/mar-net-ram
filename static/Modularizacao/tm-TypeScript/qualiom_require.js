@@ -17,13 +17,14 @@ function require(module_name) {
     }
 }
 
-function getCurrentModuleName() {
+function getCurrentModuleName()
+{
     var sid = document.currentScript.id;
     return sid.substring(7);
 }
 
 function define(dependencias, modulo_func) {
-
+    
     var module_name = getCurrentModuleName();
     modules_info[module_name].dependencias = dependencias;
     modules_info[module_name].func = modulo_func;
@@ -147,7 +148,7 @@ function IncludeJS(sId, fileUrl, source, callback) {
 function IncludeJSSRC(sId, fileUrl) {
 
     var oHead = document.getElementsByTagName('HEAD').item(0);
-
+   
     var oScript = document.createElement("script");
     oScript.language = "javascript";
     oScript.type = "text/javascript";
