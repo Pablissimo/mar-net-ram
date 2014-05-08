@@ -1,0 +1,23 @@
+{
+  "name": "CreateNPMPackage",
+  "version": "0.0.0",
+  "description": "CreateNPMPackage",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  },    
+    "main": "./lib/qualiom_require",
+    "keywords": [
+    "upper",
+    "case",
+    "file"
+  ],
+    "bin": {
+    "qualiom_require": "./bin/uppercaseme"
+  },
+    "dependencies": {},
+    "engines": {
+    "node": "*"
+  }
+}

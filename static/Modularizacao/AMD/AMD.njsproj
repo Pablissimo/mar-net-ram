@@ -85,6 +85,7 @@
     <Compile Include="node_modules\express\node_modules\type-is\node_modules\mime\mime.js" />
     <Compile Include="node_modules\express\node_modules\type-is\node_modules\mime\test.js" />
     <Compile Include="node_modules\express\node_modules\utils-merge\index.js" />
+    <Compile Include="node_modules\qualiom_require\qualiom_require.js" />
     <Compile Include="node_modules\requirejs\bin\r.js" />
     <Compile Include="node_modules\requirejs\require.js" />
     <Compile Include="Servidor.js" />
@@ -208,6 +209,9 @@
     <Content Include="node_modules\express\node_modules\utils-merge\README.md" />
     <Content Include="node_modules\express\package.json" />
     <Content Include="node_modules\express\Readme.md" />
+    <Content Include="node_modules\qualiom_require\bin\qualiom_require" />
+    <Content Include="node_modules\qualiom_require\package.json" />
+    <Content Include="node_modules\qualiom_require\README.md" />
     <Content Include="node_modules\requirejs\package.json" />
     <Content Include="node_modules\requirejs\README.md" />
     <Content Include="package.json" />
@@ -261,6 +265,8 @@
     <Folder Include="node_modules\express\node_modules\type-is\node_modules\mime\" />
     <Folder Include="node_modules\express\node_modules\type-is\node_modules\mime\types\" />
     <Folder Include="node_modules\express\node_modules\utils-merge\" />
+    <Folder Include="node_modules\qualiom_require\" />
+    <Folder Include="node_modules\qualiom_require\bin\" />
     <Folder Include="node_modules\requirejs\" />
     <Folder Include="node_modules\requirejs\bin\" />
     <Folder Include="tests\" />
