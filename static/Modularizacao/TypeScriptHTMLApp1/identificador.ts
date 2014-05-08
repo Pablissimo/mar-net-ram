@@ -4,25 +4,25 @@ var obj = new mod_soma.Classe_Soma();
 
 //alert(obj.somar(1, 2));
 
-$("#calcular").click(calcular());
+$("#calcular").click(calcular);
 
-
-
+/// <summary>Repeat <tt>str</tt> several times.</summary>
 function calcular() {
 
     if ($('#navegador').prop('checked') == true) {
-        var a:number = $("#A").val();
-        var b:number = $("#B").val();
-        var objeto:any = { a: a, b: b };
-        var objeto_json:string = JSON.stringify(objeto);
-        var resultado: any = obj.somar(objeto_json);
+        var a: number = parseInt($("#A").val());
+        var b: number = parseInt($("#B").val());
 
-        var resultado_objeto: any = JSON.parse(resultado);
+        var resultado: number = obj.somar(a, b);
 
-        $("#R").val(resultado_objeto.resultado);
+        $("#R").val(resultado.toString());
+     
     }
     else if ($('#servidor').prop('checked') == true) {
-        //Requisição para servidor
+        alert("Em manutenção, tente outra vez na opção navegador"); 
     }
 
+    else {
+        alert("Escolha uma opção valida");
+    }
 };

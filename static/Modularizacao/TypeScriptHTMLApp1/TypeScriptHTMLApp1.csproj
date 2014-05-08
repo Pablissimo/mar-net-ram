@@ -84,6 +84,8 @@
     <TypeScriptOutDir>C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\TypeScriptHTMLApp1\js</TypeScriptOutDir>
     <TypeScriptMapRoot>C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\TypeScriptHTMLApp1\js</TypeScriptMapRoot>
     <TypeScriptNoImplicitAny>True</TypeScriptNoImplicitAny>
+    <DefineConstants>
+    </DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptTarget>ES5</TypeScriptTarget>
