@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeScriptHTMLApp1", "TypeS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "require sample", "require sample\require sample.csproj", "{4E0232DB-262B-472B-9EDC-8087B4CE2711}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tm", "tm\tm.csproj", "{889DBDE5-8646-49A4-8261-A71195F935FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4E0232DB-262B-472B-9EDC-8087B4CE2711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E0232DB-262B-472B-9EDC-8087B4CE2711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E0232DB-262B-472B-9EDC-8087B4CE2711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{889DBDE5-8646-49A4-8261-A71195F935FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889DBDE5-8646-49A4-8261-A71195F935FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889DBDE5-8646-49A4-8261-A71195F935FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889DBDE5-8646-49A4-8261-A71195F935FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

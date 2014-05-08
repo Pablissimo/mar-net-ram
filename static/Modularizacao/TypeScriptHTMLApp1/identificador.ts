@@ -1,9 +1,32 @@
-﻿import Classe_Soma = Module_soma.Classe_Soma;
+﻿
+import mod_soma = require('modulo_soma');
 
-var a, b;
-if ($('#navegador').prop('checked') == true)
-{
-    var classe_soma = new Classe_Soma;
-    classe_soma.somar(1,2);
-}
+var obj = new mod_soma.Classe_Soma();
 
+alert(obj.somar(1, 2));
+
+
+/*
+
+
+$("#calcular").click(calcular());
+
+
+
+function calcular() {
+
+    if ($('#navegador').prop('checked') == true)
+    {
+        msoma.
+        var obj = new msoma.Classe_Soma();
+
+        var a = $("#A").val();
+        var b = $("#B").val();
+        var resultado = a + b;                
+
+        $("#R").val(resultado);
+    }
+    else{
+    }
+
+};*/

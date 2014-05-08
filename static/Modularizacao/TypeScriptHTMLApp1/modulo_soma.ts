@@ -1,12 +1,9 @@
-﻿export module Module_soma {
+﻿module Module_soma {
 
   export class Classe_Soma {
 
-
-        public somar(a, b) {
+    public somar(a: number, b: number) {
             return a + b;
         }
 
     }
-
-}
