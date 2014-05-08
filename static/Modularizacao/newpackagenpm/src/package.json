@@ -1,0 +1,16 @@
+{
+  "name": "qualiom_require",
+  "version": "0.0.3",
+  "description": "qualiom_require",
+  "main": "app.js",
+  "author": {
+    "name": "danillo, Ramon",
+    "email": ""
+  },    
+    "main": "./qualiom_require",
+    "keywords": [
+    "upper",
+    "case",
+    "file"
+  ]
+}

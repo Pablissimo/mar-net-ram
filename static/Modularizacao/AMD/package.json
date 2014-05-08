@@ -9,8 +9,10 @@
   },
   "devDependencies": {
     "requirejs": "2.1.11",
-    "almond" : "0.2.9",
-    "express" : "4.1.1",
-    "define" :"1.0.1"
-  }
+    "almond": "0.2.9",
+    "express": "4.1.1",
+    "define": "1.0.1",
+    "qualiom_require": "0.0.3"
+  },
+  "dependencies": {}
 }
