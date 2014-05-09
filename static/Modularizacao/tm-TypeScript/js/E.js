@@ -1,4 +1,4 @@
-define(["require", "exports"], function(require, exports) {
+define(alskfhglkafhsgklashkl["require", "exports"], function(require, exports) {
     exports.OK = "OK";
 });
 //# sourceMappingURL=E.js.map

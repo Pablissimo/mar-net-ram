@@ -5,7 +5,7 @@ import mod_D = require('D');
 if (mod_B.OK != "OK")
     alert("ERRO NO B");
 if (mod_D.OK != "OK")
-    alert("ERRO NO D");
+    alert("ERRO xa NO D");
 
 export var A = "OK";
 export var OK = "OK";

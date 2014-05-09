@@ -1,4 +1,4 @@
-﻿var modules = modules || {};
+var modules = modules || {};
 var modules_info = modules_info || {};
 
 var timeout_load_module;
