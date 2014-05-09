@@ -19,9 +19,8 @@ function require(module_name) {
 
 function getCurrentModuleName()
 {
-    //var arrScripts = document.getElementsByTagName('script');
-    //var strScriptTagId = arrScripts[arrScripts.length - 1].id;
-    //return strScriptTagId.substring(7);
+    var arrScripts = document.getElementsByTagName('script');
+    var strScriptTagId = arrScripts[arrScripts.length - 1].id;
 
     var sid = document.currentScript.id;
     return sid.substring(7);
