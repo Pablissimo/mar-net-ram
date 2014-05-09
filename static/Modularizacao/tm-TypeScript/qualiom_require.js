@@ -19,8 +19,25 @@ function require(module_name) {
 
 function getCurrentModuleName()
 {
-    var sid = document.currentScript.id;
-    return sid.substring(7);
+    //if (navigator.appName.indexOf("Microsoft") != -1 || navigator.appName.indexOf("Netscape") != -1) {
+    //    alert('Implementar para Internet Explorer.');
+
+    //    var arrScripts = document.getElementsByTagName('script');
+    //    var strScriptTagId = arrScripts[arrScripts.length - 1].id;
+
+    //    return strScriptTagId.substring(7);
+
+    //} else {
+    //    var sid = document.currentScript.id;
+    //    return sid.substring(7);
+    //}
+
+    var arrScripts = document.getElementsByTagName('script');
+    var strScriptTagId = arrScripts[arrScripts.length - 1].id;
+    return strScriptTagId.substring(7);
+
+    //var sid = document.currentScript.id;
+    //return sid.substring(7);
 }
 
 function define(dependencias, modulo_func) {

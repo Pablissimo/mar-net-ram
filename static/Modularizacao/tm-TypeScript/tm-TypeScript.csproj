@@ -17,6 +17,7 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="moduralizacao.txt" />
     <TypeScriptCompile Include="js\A.ts" />
     <TypeScriptCompile Include="js\B.ts" />
     <TypeScriptCompile Include="js\C.ts" />

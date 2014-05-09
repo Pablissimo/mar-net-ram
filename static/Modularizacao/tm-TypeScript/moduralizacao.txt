@@ -1,0 +1,23 @@
+
+
+1) Utilização qualiom_require.js
+	- Para usar o pacote "qualiom_require.js" basta fazer o import do script "qualiom_require.js" no seu html, 
+	  Ex.: <script src="qualiom_require.js"></script> em seguida, requisitar o primeiro módulo utilizando a função "require()"
+	  Ex.: <script>require("A");</script>.
+	
+2) Intellisense
+	- Atualmente, deve utilizar TypeScript.
+
+3) Depuração
+	- Atualmente, utiliza-se apenas o navegador Internet Explorer.
+	- Depuração com Chrome, fazer mapeamento do diretório do projeto.
+
+4) AMD
+	- Na ausência da cláusula "export" o AMD não é gerado corretamente.
+
+5) Identificação de Escopo
+	- 
+
+
+
+
