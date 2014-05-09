@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "express": "^4.1.1",
-    "pinf-loader-js": "^0.4.5"
+    "pinf-loader-js": "^0.4.5",
+    "require": "^0.5.0"
   }
 }

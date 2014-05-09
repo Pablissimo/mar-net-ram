@@ -1,0 +1,9 @@
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\newpackagenpm\obj\Debug\src\lib\qualiom_require.js
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\newpackagenpm\obj\Debug\src\bin\qualiom_require
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\newpackagenpm\obj\Debug\src\package.json
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\newpackagenpm\obj\Debug\src\README.md
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\newpackagenpm\obj\Debug\app.js
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\newpackagenpm\obj\Debug\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\newpackagenpm\obj\Debug\node_modules\qualiom_require\lib\qualiom_require.js
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\newpackagenpm\obj\Debug\src\qualiom_require.js
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\newpackagenpm\obj\Debug\newpackagenpm.njsprojResolveAssemblyReference.cache

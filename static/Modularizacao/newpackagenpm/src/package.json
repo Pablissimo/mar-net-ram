@@ -1,10 +1,10 @@
 {
   "name": "qualiom_require",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "qualiom_require",
   "main": "app.js",
   "author": {
-    "name": "danillo, Ramon",
+    "name": "qualiom, danillo, Ramon",
     "email": ""
   },    
     "main": "./qualiom_require",

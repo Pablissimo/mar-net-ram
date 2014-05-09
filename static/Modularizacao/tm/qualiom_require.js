@@ -19,8 +19,13 @@ function require(module_name) {
 
 function getCurrentModuleName()
 {
+    //var arrScripts = document.getElementsByTagName('script');
+    //var strScriptTagId = arrScripts[arrScripts.length - 1].id;
+    //return strScriptTagId.substring(7);
+
     var sid = document.currentScript.id;
     return sid.substring(7);
+
 }
 
 function define(dependencias, modulo_func) {
