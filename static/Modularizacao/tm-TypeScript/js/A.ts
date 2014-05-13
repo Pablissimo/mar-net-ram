@@ -6,7 +6,7 @@ if (mod_B.OK != "OK")
 if (mod_D.OK != "OK")
     alert("ERROx NO D");
 
-export var A = "OK";
-export var OK = "OK";
+export var A = "Ossud";
+export var OK = "OsssK";
 
-document.write('A');
+document.write('Azdd');
