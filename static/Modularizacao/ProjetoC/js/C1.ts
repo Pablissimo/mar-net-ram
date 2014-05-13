@@ -1,19 +1,13 @@
 ﻿/// <reference path="../../projetoe/js/e1.ts" />
+import mod_E1 = require("E1");
 
-import mod_E2 = ModuleE2;
 
-if (mod_E2.OK != "OK")
-    alert("ERRO NO E2");
+    if (mod_E1.OK != "OK")
+        alert("ERRO NO E");
 
-export class C1
-{
-    public C1()
-    {
-    }
-    
     public OK()
     {
         return "OK";
     }    
 
-}
+document.write('C1'); 
