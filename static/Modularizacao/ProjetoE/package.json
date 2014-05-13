@@ -1,0 +1,10 @@
+{
+  "name": "ProjetoE",
+  "version": "0.0.0",
+  "description": "ProjetoE",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}
