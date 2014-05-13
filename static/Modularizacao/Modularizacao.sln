@@ -24,6 +24,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoB", "ProjetoB\ProjetoB.csproj", "{8987A1A8-55F1-4BCD-A563-44F18EFA6F5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoC", "ProjetoC\ProjetoC.csproj", "{55AF7BD1-BDB0-4437-BAD0-EB906D47213E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{28744FA0-C303-4AE7-8695-E6765D117066} = {28744FA0-C303-4AE7-8695-E6765D117066}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoD", "ProjetoD\ProjetoD.csproj", "{38CBE959-7B12-45B1-9E85-6119C8320C08}"
 EndProject
