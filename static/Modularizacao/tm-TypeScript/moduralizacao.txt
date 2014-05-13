@@ -1,5 +1,3 @@
-
-
 1) Utilização qualiom_require.js
 	- Para usar o pacote "qualiom_require.js" basta fazer o import do script "qualiom_require.js" no seu html, 
 	  Ex.: <script src="qualiom_require.js"></script> em seguida, requisitar o primeiro módulo utilizando a função "require()"
@@ -16,8 +14,58 @@
 	- Na ausência da cláusula "export" o AMD não é gerado corretamente.
 
 5) Identificação de Escopo
-	- 
+	- Classes
+		- Em typescript não é necessário criar uma função anõnima na criação de uma classe de modo "var = Greeter (function()){".
+		- Em typescript na criação de uma classe, há a necessidade de se usar um "constructor".			
+	
+		Typescript
+				class className {
+					nameData: string;
+					constructor(name: string) {
+						this.nameData = name;
+					}
+				}
+		Javascript
+				function className(parameters){
+				var x;
+					this.x = parameters;
+			}
+    
+	- Declaração de variáveis
+		- Em typescript as variáveis tem sempre que vir com o tipo definido.
+		- Tipos
+			var tipo_Boolean: boolean = true;
+			var tipo_numerico: number = 6;
+			var tipo_string: string = 'neto';
+			var tipo_array: number[] = [1, 0, 10];
+			enum Cores { Vermelho, Amarelo, Azul };
+			var c: Cores = Cores.Amarelo;
 
+	- Função
+		TypeScript
+			function functionName(parameters) {
+				return;
+			}
+		JavaScript
+			function functionName(parameters) {
+				return;
+			}
+		- Função em typescript pode ser criada a partir de um membro de instância da classe, no protótipo, ou como uma função estática.
+	
+6) Compilação TypeScript
+		
+		- Instalação/Configuração 
+			Instalar o NodeJS (http://nodejs.org/)
+			Instalar o Jake, a ferramenta usada para construtir o compilador(https://github.com/mde/jake). 
+			Para instalar o pacote baixado use o seguinte comando no CMD "npm instalar-g jake".
+		- Execução 
+			Para usar o jake, execute um dos seguintes comandos no diretório com o seu clone do repositório Git:
+				jake local - Isso cria o compilador. A saída é incorporada / local no diretório público
+				jake clean - Exclui o compilador de construção
+				jake LKG - Isso substitui o LK (última conhecido bom) versão do compilador com o que se construiu. Este é um passo de inicialização para ser executado sempre que o compilador construído atinge um estado estável.
+				jake tests - Isso cria a infra-estrutura de teste, usando o compilador construído.
+				jake runTests - Isso executa os testes, usando o compilador construído e infra-estrutura de teste construída. Você também pode substituir o host ou especificar um teste para este comando. Use host = <hostname> ou test = <testPath>.
+				jake baseline-accept - Substitui os resultados do teste de linha de base com os resultados obtidos a partir de runTests Jake.
+				jake-T - lista os comandos acima		
 
-
-
+				
