@@ -1,5 +1,11 @@
-﻿export var E2 = "OK";
-export var OK = "OK";
+﻿import E1 = require("E1");
 
-document.write('E2');
- 
+export class Circulo extends E1.FiguraGeometrica {
+    raio: number;
+    constructor(raio: number) {
+        this.raio = raio;
+    }
+    calcularArea():number {
+        return 0;
+    }
+}
