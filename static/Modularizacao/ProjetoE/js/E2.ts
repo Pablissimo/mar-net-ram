@@ -1,11 +1,11 @@
 ﻿import E1 = require("E1");
 
 export class Circulo extends E1.FiguraGeometrica {
-    raio: number;
-    constructor(raio: number) {
-        this.raio = raio;
+    //area: number;
+    constructor() { 
+        super();
     }
-    calcularArea():number {
-        return 0;
+    calcularArea(area: number):number {
+        return (3.14 * (area * area));
     }
 }

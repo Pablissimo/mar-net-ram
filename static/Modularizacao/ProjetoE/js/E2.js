@@ -8,11 +8,12 @@
 define("E2",["require", "exports", "E1"], function(require, exports, E1) {
     var Circulo = (function (_super) {
         __extends(Circulo, _super);
-        function Circulo(raio) {
-            this.raio = raio;
+        //area: number;
+        function Circulo() {
+            _super.call(this);
         }
-        Circulo.prototype.calcularArea = function () {
-            return 0;
+        Circulo.prototype.calcularArea = function (area) {
+            return (3.14 * (area * area));
         };
         return Circulo;
     })(E1.FiguraGeometrica);

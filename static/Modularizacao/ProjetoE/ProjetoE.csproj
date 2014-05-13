@@ -25,6 +25,7 @@
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="js\E1.ts" />
     <TypeScriptCompile Include="js\E2.ts" />
+    <TypeScriptCompile Include="js\E3.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
