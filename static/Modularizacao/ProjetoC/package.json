@@ -1,0 +1,10 @@
+{
+  "name": "ProjetoC",
+  "version": "0.0.0",
+  "description": "ProjetoC",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}
