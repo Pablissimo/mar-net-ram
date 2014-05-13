@@ -1,5 +1,17 @@
-﻿export var E1 = "OK";
-export var OK = "OK";
+﻿export module ModuleE1
+{
+    export class E1
+    {
+        public E1()
+        {
+        }
 
-document.write('E1');
- 
+        public OK()
+        {
+            document.write('E1');
+            return "OK";
+        }
+
+    }
+}
+
