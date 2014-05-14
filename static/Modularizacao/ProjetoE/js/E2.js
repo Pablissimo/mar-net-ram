@@ -10,7 +10,7 @@ define("E2",["require", "exports", "E1"], function(require, exports, E1) {
         __extends(Circulo, _super);
         //area: number;
         function Circulo() {
-            _super.call(this);
+         _super.call(this);
         }
         Circulo.prototype.calcularArea = function (area) {
             return (3.14 * (area * area));
