@@ -6,9 +6,8 @@
 
      var html = 'app.ts - iniciado com sucesso <br';
 
-     //var circulo = new E2.Circulo(10);
-     // html = html + 'e2.circulo = ' + circulo.calcularArea().toString();
-
+  //   var circulo = new E2.Circulo(11.2);
+    // html = html + 'e2.circulo = ' + circulo.calcularArea().toString()+"<br>";
 
      el.innerHTML = html;
  };

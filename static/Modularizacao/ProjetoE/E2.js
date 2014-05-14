@@ -5,7 +5,7 @@
     d.prototype = new __();
 };
  // adaptação qualiom 
-define("E2",["require", "exports", "../ProjetoE/E1"], function(require, exports, E1) {
+define("../ProjetoE/E2",["require", "exports", "../ProjetoE/E1"], function(require, exports, E1) {
     var Circulo = (function (_super) {
         __extends(Circulo, _super);
         //area: number;

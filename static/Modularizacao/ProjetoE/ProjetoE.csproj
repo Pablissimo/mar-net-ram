@@ -22,7 +22,6 @@
   <ItemGroup>
     <TypeScriptCompile Include="E1.ts" />
     <TypeScriptCompile Include="E2.ts" />
-    <TypeScriptCompile Include="E3.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">

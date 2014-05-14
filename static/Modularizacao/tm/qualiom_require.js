@@ -54,13 +54,19 @@ function agenda_inicializacao_modulos() {
 function inicializacao_modulos() {
     for (var module in modules_info) {
         var info = modules_info[module];
-        inicia_modulo(info);
+        if (!inicia_modulo(info)) {
+            agenda_inicializacao_modulos();
+            break;
+        }
     }
 }
 
 function inicia_modulo(info) {
 
     var argumentos = [];
+
+    if (info.dependencias == null)
+        return false;
 
     for (var i = 0; i < info.dependencias.length; i++) {
         var depname = info.dependencias[i];
@@ -70,7 +76,8 @@ function inicia_modulo(info) {
             argumentos.push(info.exports);
         else {
             var depinfo = modules_info[depname];
-            inicia_modulo(depinfo);
+            if (!inicia_modulo(depinfo))
+                return false;
             argumentos.push(depinfo.exports);
         }
     }
@@ -84,6 +91,7 @@ function inicia_modulo(info) {
             })(i);
         info.inicializado = true;
     }
+    return true;
 }
 
 function IncludeJSSRC(sId, fileUrl) {
