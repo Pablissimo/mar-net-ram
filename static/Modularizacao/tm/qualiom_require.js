@@ -3,7 +3,7 @@ var modules_info = modules_info || {};
 
 var timeout_load_module;
 
-function require(module_name, after_initialize) {
+function q_require(module_name, after_initialize) {
     if (typeof module_name !== 'string')
         throw 'Require só suporta um módulo';
 
@@ -71,7 +71,7 @@ function inicia_modulo(info) {
     for (var i = 0; i < info.dependencias.length; i++) {
         var depname = info.dependencias[i];
         if (depname == 'require')
-            argumentos.push(require);
+            argumentos.push(q_require);
         else if (depname == "exports")
             argumentos.push(info.exports);
         else {
@@ -95,32 +95,43 @@ function inicia_modulo(info) {
 }
 
 function IncludeJSSRC(sId, fileUrl) {
-    var oScript = document.createElement("script");
-    oScript.language = "javascript";
-    oScript.type = "text/javascript";
-    oScript.defer = true;
-    oScript.id = sId;
-    oScript.src = fileUrl;
-
-    document.body.appendChild(oScript);
-}
-
-window.onload=function()
-{
-    var data_main_ok = false;
-    var scripts=document.body.getElementsByTagName('script');
-    for (var i = 0; i < scripts.length; i++) {
-        var script = scripts[i];
-        if (script.getAttribute('src').indexOf('qualiom_require.js')>=0) {
-            var data_main = script.getAttribute('data-main');
-            require(data_main);
-            data_main_ok = true;
-        }
+    if (typeof window === "undefined")
+        require(fileUrl);
+    else {
+        var oScript = document.createElement("script");
+        oScript.language = "javascript";
+        oScript.type = "text/javascript";
+        oScript.defer = true;
+        oScript.id = sId;
+        oScript.src = fileUrl;
+        document.body.appendChild(oScript);
     }
-    if (!data_main_ok)
-        throw "Faltou data-main na inclusao do módulo"
-   var oHead = document.getElementsByTagName('HEAD').item(0);
 }
 
-window.require = require;
-window.define = define;
+if (typeof global !== "undefined") {
+    global.define = define;
+}
+
+if (typeof exports !== "undefined") {
+    exports['require'] = q_require;
+}
+
+if (typeof window !== "undefined") {
+    window.require = q_require;
+    window.define = define;
+    window.onload = function () {
+        var data_main_ok = false;
+        var scripts = document.body.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; i++) {
+            var script = scripts[i];
+            if (script.getAttribute('src').indexOf('qualiom_require.js') >= 0) {
+                var data_main = script.getAttribute('data-main');
+                require(data_main);
+                data_main_ok = true;
+            }
+        }
+        if (!data_main_ok)
+            throw "Faltou data-main na inclusao do módulo"
+        var oHead = document.getElementsByTagName('HEAD').item(0);
+    }
+}
