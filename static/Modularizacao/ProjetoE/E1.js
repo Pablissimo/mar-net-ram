@@ -1,4 +1,5 @@
-﻿define(["require", "exports"], function(require, exports) {
+﻿ // adaptação qualiom 
+define("E1",["require", "exports"], function(require, exports) {
     var FiguraGeometrica = (function () {
         function FiguraGeometrica() {
         }
