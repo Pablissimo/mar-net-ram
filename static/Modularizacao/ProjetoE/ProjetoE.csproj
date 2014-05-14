@@ -20,8 +20,7 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="E1.ts" />
-    <TypeScriptCompile Include="E2.ts" />
+    <TypeScriptCompile Include="E.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">

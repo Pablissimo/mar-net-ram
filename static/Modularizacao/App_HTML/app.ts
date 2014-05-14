@@ -1,13 +1,13 @@
-﻿
-//import E2 = require("../ProjetoE/E2");
+﻿import A = require("../ProjetoA/A");
 
  export function inicia(){
      var el = document.getElementById('content');
+     
+     var html = 'app.ts - iniciado com sucesso<br>';
 
-     var html = 'app.ts - iniciado com sucesso <br';
+     var a = new A.ClasseA();
 
-  //   var circulo = new E2.Circulo(11.2);
-    // html = html + 'e2.circulo = ' + circulo.calcularArea().toString()+"<br>";
+     html = html + a.hola();
 
      el.innerHTML = html;
  };
