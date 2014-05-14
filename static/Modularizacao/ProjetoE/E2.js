@@ -4,16 +4,18 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
- // adaptação qualiom 
-define("E2",["require", "exports", "E1"], function(require, exports, E1) {
+define(["require", "exports", "../ProjetoE/E1"], function(require, exports, E1) {
     var Circulo = (function (_super) {
         __extends(Circulo, _super);
         //area: number;
-        function Circulo() {
-         _super.call(this);
+        //public raio: number;
+        function Circulo(raio) {
+            _super.call(this);
+            this.raio = raio;
+            //this.raio = raio;
         }
-        Circulo.prototype.calcularArea = function (area) {
-            return (3.14 * (area * area));
+        Circulo.prototype.calcularArea = function () {
+            return (3.14 * (this.raio * this.raio));
         };
         return Circulo;
     })(E1.FiguraGeometrica);

@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="D1.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">

@@ -1,6 +1,6 @@
 ﻿export class FiguraGeometrica {
     constructor() { }
-    calcularArea(area: number):number {
+    calcularArea():number {
         return 0;
     }
 }

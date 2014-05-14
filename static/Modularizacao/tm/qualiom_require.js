@@ -12,24 +12,16 @@ function require(module_name) {
         modules[module_name] = modulo_exports;
         modules_info[module_name] = { name: module_name, exports: modulo_exports, dependencias: null, func: null, inicializado: false };
 
-        var arq_modulo = "js/" + module_name + ".js";
+        var arq_modulo = module_name + ".js";
         IncludeJSSRC("js_mod_" + module_name, arq_modulo);
     }
 }
 
-function getCurrentModuleName()
-{
-    var arrScripts = document.getElementsByTagName('script');
-    var strScriptTagId = arrScripts[arrScripts.length - 1].id;
-
-    var sid = document.currentScript.id;
-    return sid.substring(7);
-
-}
-
-function define(dependencias, modulo_func) {
+function define(module_name, dependencias, modulo_func) {
     
-    var module_name = getCurrentModuleName();
+    if ((typeof module_name !== 'string') || (typeof dependencias !== 'array') || (typeof modulo_func !== 'function'))
+        alert('Compilador Typescript não tem a adaptação para AMD');
+
     modules_info[module_name].dependencias = dependencias;
     modules_info[module_name].func = modulo_func;
     var argumentos = [];

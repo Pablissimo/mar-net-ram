@@ -1,0 +1,15 @@
+{
+  "name": "App_Express",
+  "version": "0.0.0",
+  "description": "App_Express",
+  "main": "server_express.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}

@@ -17,15 +17,12 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
-    <Content Include="index.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
-    <TypeScriptCompile Include="js\E1.ts" />
-    <TypeScriptCompile Include="js\E2.ts" />
-    <TypeScriptCompile Include="js\E3.ts" />
+    <TypeScriptCompile Include="E1.ts" />
+    <TypeScriptCompile Include="E2.ts" />
+    <TypeScriptCompile Include="E3.ts" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.Debug.config">
@@ -53,7 +50,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63315</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63315/</IISUrl>
+          <IISUrl>http://localhost:63315/ProjetoE</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
