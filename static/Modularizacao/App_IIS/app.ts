@@ -1,4 +1,4 @@
-import A = require("../ProjetoA/A");
+﻿import A = require("../ProjetoA/A");
 
  export function inicia(){
      var el = document.getElementById('content');
@@ -7,7 +7,7 @@ import A = require("../ProjetoA/A");
 
      var a = new A.ClasseA();
      
-     //Edição feita pela Ferramenta de Desenvolvimento Chrome.
+     //Edição feita pela Ferramenta de Desenvolvimento Chrome.....
 
      html = html + a.hola();
 
