@@ -1,4 +1,5 @@
-define(["require", "exports", 'C'], function(require, exports, mod_C) {
+ // adaptação qualiom 
+define("../Teste_AMD_Browser_TS/B",["require", "exports", 'C'], function(require, exports, mod_C) {
     if (mod_C.OK != "OK")
         alert("ERRO NO B");
 

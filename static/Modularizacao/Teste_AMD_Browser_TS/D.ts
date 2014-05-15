@@ -1,4 +1,4 @@
-import mod_E = require('E');
+import mod_E = require('../Teste_AMD_Browser_TS/E');
 
     if (mod_E.OK != "OK")
         alert("ERRO NO E");

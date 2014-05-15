@@ -1,4 +1,4 @@
-define(["require", "exports", 'E'], function (require, exports, E) {
+define("../Teste_AMD_Browser_JS/C",["require", "exports", 'E'], function (require, exports, E) {
 
 
     if (E.OK != "ok")

@@ -1,5 +1,5 @@
-import mod_B = require('B');
-import mod_D = require('D');
+import mod_B = require('../Teste_AMD_Browser_TS/B');
+import mod_D = require('../Teste_AMD_Browser_TS/D');
 
 if (mod_B.OK != "OK")
     alert("ERRO NO B");

@@ -1,4 +1,4 @@
-import mod_C = require('C');
+import mod_C = require('../Teste_AMD_Browser_TS/C');
 
 
 if (mod_C.OK != "OK")

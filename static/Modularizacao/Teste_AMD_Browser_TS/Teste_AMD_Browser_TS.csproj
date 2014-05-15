@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <ProjectGuid>{889DBDE5-8646-49A4-8261-A71195F935FE}</ProjectGuid>
+    <ProjectGuid>{69B0BBC8-819E-4D3E-820E-2277C488CA53}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <OutputPath>bin</OutputPath>
@@ -17,11 +17,12 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="js\A.js" />
-    <Content Include="js\B.js" />
-    <Content Include="js\C.js" />
-    <Content Include="js\D.js" />
-    <Content Include="js\E.js" />
+    <Content Include="moduralizacao.txt" />
+    <TypeScriptCompile Include="A.ts" />
+    <TypeScriptCompile Include="B.ts" />
+    <TypeScriptCompile Include="C.ts" />
+    <TypeScriptCompile Include="D.ts" />
+    <TypeScriptCompile Include="E.ts" />
     <Content Include="qualiom_require.js" />
     <Content Include="tm.html" />
     <Content Include="web.config" />
@@ -39,7 +40,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>tm</RootNamespace>
+    <RootNamespace>tm_TypeScript</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -49,9 +50,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63310</DevelopmentServerPort>
+          <DevelopmentServerPort>52236</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:63310/tm</IISUrl>
+          <IISUrl>http://localhost:52236/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -74,4 +75,8 @@
     <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>

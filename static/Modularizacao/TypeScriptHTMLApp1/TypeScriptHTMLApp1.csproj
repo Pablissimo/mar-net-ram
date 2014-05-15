@@ -40,7 +40,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\tm\tm.csproj">
+    <ProjectReference Include="..\tm\Teste_AMD_Browser_JS.csproj">
       <Project>{889dbde5-8646-49a4-8261-a71195f935fe}</Project>
       <Name>tm</Name>
     </ProjectReference>

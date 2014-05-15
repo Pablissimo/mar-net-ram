@@ -1,4 +1,4 @@
-define(["require", "exports", 'B', 'D'], function (require, exports, B, D) {
+define("../Teste_AMD_Browser_JS/A",["require", "exports", 'B', 'D'], function (require, exports, B, D) {
 
     if (B.OK != "ok")
         alert("ERRO NO B");

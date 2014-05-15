@@ -1,0 +1,10 @@
+{
+  "name": "qlib",
+  "version": "0.0.0",
+  "description": "qlib",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}

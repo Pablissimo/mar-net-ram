@@ -40,7 +40,7 @@ function define(module_name, dependencias, modulo_func) {
     agenda_inicializacao_modulos();
     for (var i = 0; i < dependencias.length; i++) {
         if (dependencias[i] != 'require' && dependencias[i] != "exports")
-            require(dependencias[i]);
+            q_require(dependencias[i]);
     }
 
 }
