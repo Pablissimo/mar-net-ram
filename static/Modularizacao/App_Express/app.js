@@ -1,10 +1,19 @@
-﻿var E2 = require("../ProjetoE/E2");
+﻿ // adaptação qualiom 
+define("../App_Express/app",["require", "exports", "../ProjetoA/A"], function(require, exports, A) {
+    function inicia() {
+        var el = document.getElementById('content');
 
-window.onload = function () {
-    var el = document.getElementById('content');
+        var html = 'app.ts - iniciado com sucesso<br>';
 
-    var circulo = new E2.Circulo(10);
+        var a = new A.ClasseA();
 
-    el.innerText = ('e2.circulo = ' + circulo.calcularArea().toString());
-};
+        html = html + a.hola();
+
+        el.innerHTML = html;
+    }
+    exports.inicia = inicia;
+    ;
+
+    exports.inicia();
+});
 //# sourceMappingURL=app.js.map

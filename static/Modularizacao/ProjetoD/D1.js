@@ -4,7 +4,8 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-define(["require", "exports", "../ProjetoE/E1"], function(require, exports, mod_E1) {
+ // adaptação qualiom 
+define("../ProjetoD/D1",["require", "exports", "../ProjetoE/E1"], function(require, exports, E1) {
     var Retangulo = (function (_super) {
         __extends(Retangulo, _super);
         function Retangulo(altura, largura) {
@@ -13,10 +14,10 @@ define(["require", "exports", "../ProjetoE/E1"], function(require, exports, mod_
             this.largura = largura;
         }
         Retangulo.prototype.calcularArea = function () {
-            return (this.altura * this.largura);
+            return this.largura * this.altura;
         };
         return Retangulo;
-    })(mod_E1.FiguraGeometrica);
+    })(E1.FiguraGeometrica);
     exports.Retangulo = Retangulo;
 });
 //# sourceMappingURL=D1.js.map

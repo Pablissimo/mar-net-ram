@@ -17,5 +17,4 @@ exports['Caso_E'] = function (test) {
             var e_obj = new mod_e.ClasseE();
             assert.equal("E - ok<br>", e_obj.hola());
         });
-
 }
