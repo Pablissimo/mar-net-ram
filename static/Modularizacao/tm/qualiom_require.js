@@ -3,24 +3,35 @@ var modules_info = modules_info || {};
 
 var timeout_load_module;
 
-function require(module_name) {
+function q_require(module_name, after_initialize) {
+    if (typeof module_name !== 'string')
+        throw 'Require só suporta um módulo';
 
-    if (typeof modules[module_name] === "undefined") {
+    var mod = modules[module_name];
+    var modinfo = modules_info[module_name];
+
+    if (typeof mod === "undefined") {
         curr_module_name = module_name;
-
         var modulo_exports = {};
         modules[module_name] = modulo_exports;
-        modules_info[module_name] = { name: module_name, exports: modulo_exports, dependencias: null, func: null, inicializado: false };
-
+        modinfo = { name: module_name, exports: modulo_exports, dependencias: null, func: null, inicializado: false, callbacks: [] };
+        modules_info[module_name] = modinfo;
         var arq_modulo = module_name + ".js";
         IncludeJSSRC("js_mod_" + module_name, arq_modulo);
+    }
+
+    if (typeof after_initialize !== "undefined") {
+        if (modinfo.inicializado)
+            after_initialize()
+        else
+            modinfo.callbacks.push(after_initialize);
     }
 }
 
 function define(module_name, dependencias, modulo_func) {
     
-    if ((typeof module_name !== 'string') || (typeof dependencias !== 'array') || (typeof modulo_func !== 'function'))
-        alert('Compilador Typescript não tem a adaptação para AMD');
+    if ((typeof module_name !== 'string') || (typeof dependencias !== 'object') || (typeof modulo_func !== 'function'))
+        throw 'Compilador Typescript não tem a adaptação para AMD';
 
     modules_info[module_name].dependencias = dependencias;
     modules_info[module_name].func = modulo_func;
@@ -43,7 +54,10 @@ function agenda_inicializacao_modulos() {
 function inicializacao_modulos() {
     for (var module in modules_info) {
         var info = modules_info[module];
-        inicia_modulo(info);
+        if (!inicia_modulo(info)) {
+            agenda_inicializacao_modulos();
+            break;
+        }
     }
 }
 
@@ -51,108 +65,73 @@ function inicia_modulo(info) {
 
     var argumentos = [];
 
+    if (info.dependencias == null)
+        return false;
+
     for (var i = 0; i < info.dependencias.length; i++) {
         var depname = info.dependencias[i];
         if (depname == 'require')
-            argumentos.push(require);
+            argumentos.push(q_require);
         else if (depname == "exports")
             argumentos.push(info.exports);
         else {
             var depinfo = modules_info[depname];
-            inicia_modulo(depinfo);
+            if (!inicia_modulo(depinfo))
+                return false;
             argumentos.push(depinfo.exports);
         }
     }
     if (!info.inicializado) {
         info.func.apply(info.func, argumentos);
+        for (var i = 0; i < info.callbacks.length; i++)
+            (function(idx){
+                setTimeout(function () {
+                    info.callbacks[idx](info.exports);
+                },1);
+            })(i);
         info.inicializado = true;
     }
-}
-
-function load_dependence(dependencias, index, argumentos, modulo_func, modulo_exports) {
-    if (index < dependencias.length) {
-        var nome_modulo_dependencia = dependencias[index];
-
-        var modulo_dependencia = modules[nome_modulo_dependencia] || (modules[nome_modulo_dependencia] = {});
-        if (nome_modulo_dependencia == "require") {
-            argumentos.push(require);
-            load_dependence(dependencias, index + 1, argumentos, modulo_func, modulo_exports);
-        }
-        else if (nome_modulo_dependencia == "exports") {
-            argumentos.push(modulo_exports);
-            load_dependence(dependencias, index + 1, argumentos, modulo_func, modulo_exports);
-        }
-        else if (typeof modulo_dependencia === 'undefined') {
-            require(nome_modulo_dependencia,
-                function () {
-                    argumentos.push(modulo_dependencia);
-                    load_dependence(dependencias, index + 1, argumentos, modulo_func, modulo_exports);
-                }
-                );
-        }
-        else {
-            argumentos.push(modulo_dependencia); // ja fora carregado
-            load_dependence(dependencias, index + 1, argumentos, modulo_func, modulo_exports);
-        }
-    }
-    else {
-        modulo_func.apply(modulo_func, argumentos);
-    }
-}
-
-
-
-
-
-function GetHttpRequest() {
-    if (window.XMLHttpRequest) // Gecko
-        return new XMLHttpRequest();
-    else if (window.ActiveXObject) // IE
-        return new ActiveXObject("MsXml2.XmlHttp");
-}
-
-function AjaxPage(sId, url, prefix_source, callback) {
-    var oXmlHttp = GetHttpRequest();
-    oXmlHttp.onreadystatechange = oXmlHttp.OnReadyStateChange = function () {
-        if (oXmlHttp.readyState == 4) {
-            if (oXmlHttp.status == 200 || oXmlHttp.status == 304) {
-                IncludeJS(sId, url, prefix_source + oXmlHttp.responseText, callback);
-            }
-            else {
-                alert('XML request error: ' + oXmlHttp.statusText + ' (' + oXmlHttp.status + ')');
-            }
-        }
-    }
-    oXmlHttp.open('GET', url, true);
-    oXmlHttp.send(null);
-}
-
-function IncludeJS(sId, fileUrl, source, callback) {
-    if ((source != null) && (!document.getElementById(sId))) {
-        var oHead = document.getElementsByTagName('HEAD').item(0);
-        var oScript = document.createElement("script");
-        oScript.language = "javascript";
-        oScript.type = "text/javascript";
-        oScript.id = sId;
-        oScript.defer = true;
-        oScript.text = source;
-        oHead.appendChild(oScript);
-        window.setTimeout(callback, 1);
-    }
+    return true;
 }
 
 function IncludeJSSRC(sId, fileUrl) {
-
-    var oHead = document.getElementsByTagName('HEAD').item(0);
-   
-    var oScript = document.createElement("script");
-    oScript.language = "javascript";
-    oScript.type = "text/javascript";
-    oScript.defer = true;
-    oScript.id = sId;
-    oScript.src = fileUrl;
-    oHead.appendChild(oScript);
+    if (typeof window === "undefined")
+        require(fileUrl);
+    else {
+        var oScript = document.createElement("script");
+        oScript.language = "javascript";
+        oScript.type = "text/javascript";
+        oScript.defer = true;
+        oScript.id = sId;
+        oScript.src = fileUrl;
+        document.body.appendChild(oScript);
+    }
 }
 
-window.require = require;
-window.define = define;
+if (typeof global !== "undefined") {
+    global.define = define;
+}
+
+if (typeof exports !== "undefined") {
+    exports['require'] = q_require;
+}
+
+if (typeof window !== "undefined") {
+    window.require = q_require;
+    window.define = define;
+    window.onload = function () {
+        var data_main_ok = false;
+        var scripts = document.body.getElementsByTagName('script');
+        for (var i = 0; i < scripts.length; i++) {
+            var script = scripts[i];
+            if (script.getAttribute('src').indexOf('qualiom_require.js') >= 0) {
+                var data_main = script.getAttribute('data-main');
+                require(data_main);
+                data_main_ok = true;
+            }
+        }
+        if (!data_main_ok)
+            throw "Faltou data-main na inclusao do módulo"
+        var oHead = document.getElementsByTagName('HEAD').item(0);
+    }
+}

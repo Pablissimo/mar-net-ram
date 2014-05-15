@@ -1,14 +1,23 @@
-﻿
-//import E2 = require("../ProjetoE/E2");
+﻿import A = require("../ProjetoA/A");
 
+<<<<<<< HEAD
 export var ok = 5;
  
 window.onload = () => {
     var el = document.getElementById('content');
+=======
+ export function inicia(){
+     var el = document.getElementById('content');
+     
+     var html = 'app.ts - iniciado com sucesso<br>';
+>>>>>>> 8a7f72ae91cc341f79ae8d6ffa71b5d6cad2bb67
 
-    var text = 'ok<br>';
+     var a = new A.ClasseA();
 
-    //  var circulo = new E2.Circulo(10);
-    // text = e2.circulo = ' + circulo.calcularArea().toString();
-    el.innerHTML = text;
-};
+     html = html + a.hola();
+
+     el.innerHTML = html;
+ };
+
+
+inicia();

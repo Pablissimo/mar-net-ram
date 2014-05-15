@@ -1,0 +1,10 @@
+{
+  "name": "TestCorreio",
+  "version": "0.0.0",
+  "description": "TestCorreio",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}
