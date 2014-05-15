@@ -1,7 +1,7 @@
 ﻿
 //import E2 = require("../ProjetoE/E2");
 
-export var ok = 2;
+export var ok = 5;
  
 window.onload = () => {
     var el = document.getElementById('content');
