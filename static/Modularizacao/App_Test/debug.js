@@ -1,4 +1,4 @@
-﻿var suite = require('./Test');
+﻿var suite = require('../App_Test/Test');
 
 var unit = suite['Caso_1'];
 

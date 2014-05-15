@@ -1,11 +1,11 @@
 ﻿var assert = require('assert');
-var qualiom = require('../tm/qualiom_require.js');
+var qualiom = require('../qlib/qualiom_require.js');
 
 exports['Caso_1'] = function (test) {
 
     qualiom.require('../App_Test/app',
         function (app) {
-            assert.equal('app.ts - iniciado com sucesso<br>', app.valor());
+            assert.equal('app.ts - iniciado com sucesso<br>A - ok<br>B - ok<br>C - ok<br>E - ok<br>D - ok<br>E - ok<br>', app.valor());
         })
     
 }
