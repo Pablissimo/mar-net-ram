@@ -17,8 +17,7 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="index.html" />
-    <Content Include="app\hello.js" />
+    <Content Include="cod\hello.js" />
     <Content Include="tests\hello.js" />
     <Content Include="tests\intern.js" />
     <Content Include="node_modules\intern\bin\intern-client.js" />
