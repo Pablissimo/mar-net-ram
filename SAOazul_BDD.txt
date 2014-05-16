@@ -1,0 +1,109 @@
+Funcionalidade: Vender doces
+     Para quando uma doce for vendido
+     Eu, como vendedor
+     Desejo decrementar um item no estoque
+
+Cenário: Baixa 1 bala do estoque
+     Dado que cliente pede 1 bala
+     E tenho 10 balas em estoque
+     Quando ele compra realiza a compra
+     Então eu fico com 9 balas em estoque
+.....................Marcllo/Danillo...............................
+
+Funcionalidade: Adicionar campo
+	Para quando um campo for adicionado
+	Eu, como usuário
+	Desejo acrescentar um novo campo em branco
+
+Cenário: Adiciona um campo no fim do formulário 
+	Dado que eu solicito o acréscimo de um campo
+	E o formulário possui 1 campo 
+	Quando o novo campo é inserido
+	Então o formulário ficará com 2 campos
+
+Cenário: Adiciona um campo no meio do formulario
+	Dado que eu solicito o acréscimo de um campo 
+	E eu solicito o acréscimo após o terceiro campo, num total de dez campos
+	Quando o novo campo é inserido
+	Então o novo campo será o quarto campo, agora num total de onze campos
+
+------------------------Danillo/Marcello------------------------------------------------
+
+Funcionalidade: Adicionar um Player ao Team
+				Para quando um Player é adicionado
+				Eu, como usuário
+				Desejo inserir um novo Player		
+
+Cenário: Adiciona um Player ao Team
+		 Dado que eu clico no adiciona Player
+		 E o Team possui 0 Players 
+		 Quando o novo Player é inserido
+		 Então o Team ficará com 1 Player local 
+		 
+------------------------Danillo/Marcello------------------------------------------------
+
+Funcionalidade: Remover um Player do Team
+				Para quando um Player é removido
+				Eu, como usuário
+				Desejo remover um Player		
+
+Cenário: Remover um Player do Team
+		 Dado que eu clico no remover Player
+		 E o Team possui 1 ou mais Players 
+		 Quando o Player é removido
+		 Então o Team ficará com menos 1 Player
+
+------------------------Marcello/Danillo------------------------------------------------
+
+Funcionalidade: Alterar um Player do Team
+				Para quando um Player é alterado
+				Eu, como usuário
+				Desejo alterar um Player		
+
+Cenário: Alterar um Player do Team
+		 Dado que eu seleciono o Player
+		 E faço as alteração no Player
+		 Quando eu confirmar a alteração do Player
+		 Então o Player que fora selecionado ficará alterado	
+		 
+------------------------Marcello/Danillo------------------------------------------------
+
+Funcionalidade: Buscar um Player no Team
+				Para quando um Player é buscado
+				Eu, como usuário
+				Desejo buscar um Player		
+
+Cenário: Buscar um Player no Team
+		 Dado que eu informo o identificador do Player desejado
+		 Quando eu clicar no buscar Player
+		 Então o Player desejado será mostrado
+
+------------------------Danillo/Marcelo------------------------------------------------
+
+Funcionalidade: Sincronizar Players
+				Para quando um Player é sincronizado
+				Eu, como sistema
+				Desejo Sincronizar Players
+Depende de: Buscar Player
+
+Cenário: Sincronizar Players
+		 Dado que eu Sincronizo Players 
+		 Quando ocorre alteração no campo de Player
+		 Então eu Busco Player alterado/criado com o Buscar Players
+		 E retorno permitido ou não permitido
+		 	 
+------------------------Danillo/Marcelo------------------------------------------------
+
+Funcionalidade: Gravar Player no Banco
+				Para quando um Player é gravado no Banco
+				Eu, como sistema
+				Desejo gravar Players no Banco	
+Depende de: Sincronizar Players
+
+Cenário: Gravar Player no Banco com Internet
+		 Dado que eu gravo Players 
+		 Quando ocorre alteração no campo de Player
+		 E o Sincronizar Players não ter dado falha
+		 Então os Players alterados/criados serão gravados
+
+		 
