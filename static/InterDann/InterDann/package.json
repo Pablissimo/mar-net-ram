@@ -1,0 +1,13 @@
+{
+  "name": "InterDann",
+  "version": "0.0.0",
+  "description": "InterDann",
+  "main": "app.js",
+  "author": {
+    "name": "danillo",
+    "email": ""
+  },
+  "devDependencies": {
+    "intern": "^1.7.0"
+  }
+}
