@@ -1,0 +1,15 @@
+{
+  "name": "MochaBDD",
+  "version": "0.0.0",
+  "description": "MochaBDD",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  },
+  "devDependencies": {
+    "should": "^3.3.1",
+    "mocha" : "1.18.2",
+    "browserify" : "4.1.3"
+  }
+}
