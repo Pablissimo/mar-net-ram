@@ -1,0 +1,12 @@
+{
+  "name": "phantomjs-example",
+  "version": "0.1.0",
+  "SAUCE_USERNAME":"josenetodesign",
+  "SAUCE_ACCESS_KEY":"48fb379c-4688-4263-8b54-8ab228410ddf",
+  "scripts": {
+    "test": "intern-runner config=tests/intern"
+  },
+  "devDependencies": {
+    "intern": "~1.7.0"
+  }
+}
