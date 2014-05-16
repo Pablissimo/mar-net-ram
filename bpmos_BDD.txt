@@ -1,0 +1,107 @@
+Funcionalidade: Adicionar player
+	Para quando 1 player for adicionado
+	Eu, como usuario
+	Desejo adicionar 1 player no team
+
+Cenário: Adicionar 1 player no team
+	Dado que eu adiciono um player
+	E tenho 0 player no team
+	Quando eu adiciono o player
+	Então eu passo a ter 1 player no team
+
+Cenário: Adicionar 2 player no team
+	Dado que eu adiciono um player
+	E tenho 1 player no team
+	Quando eu adiciono 1 player
+	E digito seus dados
+	Então eu passo a ter 2 player no team
+	Quando eu adiciono 1 player
+	E digito seus dados
+	Então eu passo a ter 3 player no team
+
+-------------------------------------------------------------
+
+Funcionalidade: Alterar player
+	Para quando alterar 1 player
+	Eu, como usuario
+	Desejo alterar 1 player do team
+
+Cenário: Alterar 1 player no team
+	Dado que eu altero 1 player
+	E tenho 1 player no team
+	Quando eu procurar 1 player
+	E encontrar o player
+	E alterar 1 player
+	Então eu tenho uma alteração do player no team
+
+Cenário: Alterar 1 player no team que não existe
+	Dado que eu altero 1 player
+	E tenho 1 player no team
+	Quando eu procurar 1 player
+	E não encontrar o player
+	Então eu não tenho alteração do player no team
+
+Cenário: Alterar 2 player no team
+	Dado que eu altero 1 player
+	E tenho 4 player no team
+	Quando eu procurar 1 player
+	E encontrar o player
+	E alterar 1 player
+	Então eu tenho um 1 player com alteração no team
+	Quando eu procurar 1 player
+	E encontrar o player
+	E alterar 1 player
+	Então eu tenho um 2 player com alteração no team
+
+
+-------------------------------------------------------------
+
+Funcionalidade: Excluir player
+	Para quando excluir 1 player
+	Eu, como usuario
+	Desejo excluir 1 player do team
+
+Cenário: Excluir 1 player no team
+	Dado que eu excluo 1 player
+	E tenho 1 player no team
+	Quando eu procurar o player
+	E encontrar o player
+	E excluir o player
+	Então eu passo a ter 0 player no team
+
+Cenário: Excluir 1 player no team que não existe
+	Dado que eu excluo 1 player
+	E tenho 1 player no team
+	Quando eu procurar o player
+	E encontrar o player
+	E não encontrar o player
+	Então eu continuo a ter 1 player no team
+
+
+-------------------------------------------------------------
+
+Funcionalidade: Salvar dados do Player ou Team
+	Para quando estiver digitando os dados do player
+	Eu, como usuario
+	Desejo salvar os dados digitados sem perder nada
+
+Cenário: Salvar dados do Player ou Team ao perder a conexão com a internet
+	Dado que eu digito os dados do player ou team
+	E tenho dados digitados
+	Quando perder a conexão com a internet 
+	E eu continuar digitando os dados
+	E a conexão com a internet voltar
+	Então tenho os dados do player salvos sem perdas
+
+Cenário: Salvar dados do Player ou Team ao acabar energia
+	Dado que eu digito os dados do player ou team
+	E tenho dados digitados
+	Quando a energia acabar
+	E não tiver concluido a digitação do player ou team
+	Então tenho os dados do player ou team salvos até o ponto onde parei
+	Quando a energia voltar
+	E concluir a digitação do player ou team
+	Então tenho os dados do player ou team salvos sem perdas
+
+
+
