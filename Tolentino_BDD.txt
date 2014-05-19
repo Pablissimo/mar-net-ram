@@ -1,0 +1,62 @@
+#language: pt-br
+
+Negócio: Lista de Compras de Supermercado que a mãe passou
+Metaforas: 
+   Lista - É a lista do que a mãe quer que a gente compre
+   Produto - É um item da lista de supermercado
+   
+Funcionalidade: Cadastro de produtos
+  Para manter a [[lista]] atualizada
+  Eu, como usuário,
+  Desejo poder adicionar, remover e alterar [[produtos]] da [[lista]]
+  
+	Cenario: Listar produtos existentes
+	  Dado que eu quero acessar a [[Lista]]
+	  Quando entrar no programa de Cadastro de Produto
+	  Então a [[Lista] atual deverá ser mostrada
+	  E um [Produto] sem nome deverá ser adicionado automaticamente ao final da lista para possibilitar [[Cadastrar um novo Produto]]
+  
+	Cenario: Cadastrar um novo [[Produto]]
+	  Dado que eu quero cadastrar um <Produto>
+	  Quando eu selecionar o <Produto> cujo nome está em branco
+	  E digitar o nome do <Produto> que quero cadastrar
+	  Então o <Produto> será automaticamente adicionado à [[Lista]]
+
+	Cenario: Modificar um <Produto>
+	  Dado que eu quero alterar o nome do <Produto>
+	  Quando eu selecionar o <Produto>
+	  E modificar seu nome 
+	  Então a modificação no <Produto> será automaticamente gravada na [[Lista]]
+
+	Cenario: Apagar um <Produto>
+	  Dado que eu quero remover um <Produto>
+	  Quando eu selecionar o <Produto>
+	  E eu clicar no botão remover
+	  E confirmar
+	  Então o <Produto> será removido da [[Lista]]
+
+Funcionalidade: Trabalhar desconectado da internet
+    Para as todas <operação> listar, adicionar, modificar e apagar algum <Produto> da <Lista>
+	  Exemplo de <Lista>:
+	  | Lista | Produto |
+	  | Almoço | Arroz  |
+	  | Almoço | Feijão |
+	  | Almoço | Oleo   |	 	
+	  | Lanche | Bolacha |
+	  | Lanche | Leite   |
+	  
+	Eu, como usuário,
+	Desejo que algumas delas possam ser feitas, mesmo se não houver internet disponível
+
+    Cenario: Modificação quando a internet está disponível
+	  Dado a internet está disponível	  
+	  Quando for feita alguma <Modificação> no banco de dados
+	  Então ela deverá ser enviada para o servidor central imediatamente
+
+	  
+    Cenario: Pesquisa quando a internet está disponível
+	  Dado a internet está disponível	  
+	  Quando for feita alguma <Modificação> no banco de dados
+	  Então ela deverá ser enviada para o servidor central imediatamente
+	  
+Cenario: A internet está indisponível
