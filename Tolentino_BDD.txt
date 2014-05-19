@@ -73,19 +73,13 @@ Funcionalidade: Edição concomitante
 	Desejo que minhas modificações sejam enviadas o mais rápido possível para outros usuários
 	E que modificações de outros usuários me sejam mostradas o mais rápido possível
 
-    Cenario: Eu realizo uma <operação>
-	  Dado a internet está disponível	  
-	  Quando for feita alguma <operação> 
-	  Então a <operação> precisa ser registrada como pendente
-	  E atualizar as informações que precisam ser mantidas no navegador para permitir acesso off-line
+    Cenario: Eu modifico a <Lista>
+	  Dado que eu modifiquei um <Produto>
+	  Quando a <operação> for sincronizada com o servidor
+	  Então a <operação> deverá ser enviada a todos os usuários que estão acessando essa lista
+	  E a tela desses usuários deve ser atualizada
 
-    Cenario: on-line
-	  Dado a internet está disponível	  
-	  Quando for feita alguma <operação> 
-	  Então deve-se sincronizar cada <operação> que fora registrada como pendente com o servidor
-	  E, se houver <operação conflitante>, registrá-la pra resolução futura
-	  E atualizar as informações que precisam ser mantidas no navegador para permitir acesso off-line
-	  E sincronizar o <Produto>  com o servidor
-	  
-	  
-Cenario: A internet está indisponível
+    Cenario: Outro usuário a <Lista>
+	  Dado que outro usuário modificou um <Produto> da lista que estou acessando
+	  Quando a <operação> for sincronizada com o servidor
+	  Então a <operação> deverá também ser atualizada na minha tela.
