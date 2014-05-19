@@ -3,7 +3,7 @@
 Negócio: Lista de Compras de Supermercado que a mãe passou
 Metaforas: 
    Lista - É a lista do que a mãe quer que a gente compre
-   Produto - É um item da lista de supermercado
+   Produto - É um item da lista de supermercado   
    
 Funcionalidade: Cadastro de produtos
   Para manter a [[lista]] atualizada
@@ -35,28 +35,57 @@ Funcionalidade: Cadastro de produtos
 	  E confirmar
 	  Então o <Produto> será removido da [[Lista]]
 
-Funcionalidade: Trabalhar desconectado da internet
-    Para as todas <operação> listar, adicionar, modificar e apagar algum <Produto> da <Lista>
-	  Exemplo de <Lista>:
-	  | Lista | Produto |
-	  | Almoço | Arroz  |
-	  | Almoço | Feijão |
-	  | Almoço | Oleo   |	 	
-	  | Lanche | Bolacha |
-	  | Lanche | Leite   |
-	  
+Funcionalidade: Trabalhar off-line
+    Para cada <operação> de algum <Produto> da <Lista>
+	  Exemplos de <Lista>:
+	    | Lista  | Produto |
+	    | Almoço | Arroz   | 
+	    | Almoço | Feijão  | 
+	    | Almoço | Oleo    |	 	
+	    | Lanche | Bolacha |
+	    | Lanche | Leite   |
+	  Exemplos de <operação>:
+	    | operação  | Lista  | Produto(antes) | Produto(depois) |
+	    | adicionar | Almoço |                | Macarrão        |
+	    | apagar    | Almoço | Oleo           |                 |
+	    | modificar | Almoço | Feijão         | Feijão Preto    |
+	    	  
 	Eu, como usuário,
 	Desejo que algumas delas possam ser feitas, mesmo se não houver internet disponível
 
-    Cenario: Modificação quando a internet está disponível
-	  Dado a internet está disponível	  
-	  Quando for feita alguma <Modificação> no banco de dados
-	  Então ela deverá ser enviada para o servidor central imediatamente
+    Cenario: off-line
+	  Dado a internet não está disponível	  
+	  Quando for feita alguma <operação> 
+	  Então a <operação> precisa ser registrada como pendente
+	  E atualizar as informações que precisam ser mantidas no navegador para permitir acesso off-line
 
-	  
-    Cenario: Pesquisa quando a internet está disponível
+    Cenario: on-line
 	  Dado a internet está disponível	  
-	  Quando for feita alguma <Modificação> no banco de dados
-	  Então ela deverá ser enviada para o servidor central imediatamente
+	  Quando for feita alguma <operação> 
+	  Então deve-se sincronizar cada <operação> que fora registrada como pendente com o servidor
+	  E, se houver <operação conflitante>, registrá-la pra resolução futura
+	  E atualizar as informações que precisam ser mantidas no navegador para permitir acesso off-line
+	  E sincronizar o <Produto>  com o servidor
+
+Funcionalidade: Edição concomitante
+    Para cada <operação> feita em algum <Produto> da <Lista>
+	Eu, como usuário,
+	Desejo que minhas modificações sejam enviadas o mais rápido possível para outros usuários
+	E que modificações de outros usuários me sejam mostradas o mais rápido possível
+
+    Cenario: Eu realizo uma <operação>
+	  Dado a internet está disponível	  
+	  Quando for feita alguma <operação> 
+	  Então a <operação> precisa ser registrada como pendente
+	  E atualizar as informações que precisam ser mantidas no navegador para permitir acesso off-line
+
+    Cenario: on-line
+	  Dado a internet está disponível	  
+	  Quando for feita alguma <operação> 
+	  Então deve-se sincronizar cada <operação> que fora registrada como pendente com o servidor
+	  E, se houver <operação conflitante>, registrá-la pra resolução futura
+	  E atualizar as informações que precisam ser mantidas no navegador para permitir acesso off-line
+	  E sincronizar o <Produto>  com o servidor
+	  
 	  
 Cenario: A internet está indisponível
