@@ -1,0 +1,10 @@
+{
+  "name": "PhantomTESTE",
+  "version": "0.0.0",
+  "description": "PhantomTESTE",
+  "main": "server.js",
+  "author": {
+    "name": "Ramon",
+    "email": ""
+  }
+}
