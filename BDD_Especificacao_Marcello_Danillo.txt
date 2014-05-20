@@ -1,0 +1,116 @@
+#language: pt-br
+
+Negócio: Lista de Compras de Supermercado que a mãe passou
+Metaforas: 
+   Lista - É a lista do que a mãe quer que a gente compre
+   Produto - É um item da lista de supermercado   
+   
+Funcionalidade: Cadastro de produtos
+  Para manter a [[lista]] atualizada
+  Eu, como usuário,
+  Desejo poder adicionar, remover e alterar [[produtos]] da [[lista]]
+  
+	Cenario: Listar produtos existentes
+	  Dado que eu quero acessar a [[Lista]]
+	  Quando entrar no programa de Cadastro de Produto
+	  Então a [[Lista] atual deverá ser mostrada
+	  E um [Produto] sem nome deverá ser adicionado automaticamente ao final da lista para possibilitar [[Cadastrar um novo Produto]]      
+  
+	Cenario: Cadastrar um novo [[Produto]]
+	  Dado que eu quero cadastrar um <Produto>
+	  Quando eu selecionar o <Produto> cujo nome está em branco
+	  E digitar o nome do <Produto> que quero cadastrar
+	  E o nome do <Produto> estiver válido
+	  Então o <Produto> será automaticamente adicionado à [[Lista]]
+
+	Cenario: Modificar um <Produto>
+	  Dado que eu quero alterar o nome do <Produto>
+	  Quando eu selecionar o <Produto>
+	  E modificar seu nome 
+	  E o nome do <Produto> estiver válido
+	  Então a modificação no <Produto> será automaticamente gravada na [[Lista]]
+
+	Cenario: Apagar um <Produto>
+	  Dado que eu quero remover um <Produto>
+	  Quando eu selecionar o <Produto>
+	  E eu clicar no botão remover
+	  E confirmar
+	  Então o <Produto> será removido da [[Lista]]
+
+Funcionalidade: Trabalhar off-line
+    Para cada <operação> de algum <Produto> da <Lista>
+	  Exemplos de <Lista>:
+	    | Lista  | Produto |
+	    | Almoço | Arroz   | 
+	    | Almoço | Feijão  | 
+	    | Almoço | Oleo    |	 	
+	    | Lanche | Bolacha |
+	    | Lanche | Leite   |
+	  Exemplos de <operação>:
+	    | operação  | Lista  | Produto(antes) | Produto(depois) |
+	    | adicionar | Almoço |                | Macarrão        |
+	    | apagar    | Almoço | Oleo           |                 |
+	    | modificar | Almoço | Feijão         | Feijão Preto    |
+	    	  
+	Eu, como usuário,
+	Desejo que algumas delas possam ser feitas, mesmo se não houver internet disponível
+
+    Cenario: off-line
+	  Dado a internet não está disponível	  
+	  Quando for feita alguma <operação> 
+	  Então a <operação> se tornará uma <operação pendente> do sistema
+	  E atualizar as informações que precisam ser mantidas no navegador para permitir acesso off-line
+
+    Cenario: on-line
+	  Dado a internet está disponível	  
+	  Quando for feita alguma <operação> 
+	  Então o sistema deve <Sincronizar> cada <operação pendente>
+	  E <Sincronizar> esta <operação>
+	  E atualizar as informações que precisam ser mantidas no navegador para permitir acesso off-line
+
+Funcionalidade: Sincronizar
+    Para permitir trabalhar off-line
+	Eu, como usuário
+	Desejo receber as modificações de outros usuários
+	E que minhas modificações feitas em off-line sejam enviadas para o servidor
+
+	Cenario: Geral
+	  Dado que eu fiz alguma <operação> enquanto estava off-line
+	  Quando eu ficar online
+	  E, ou quando optar por sincronizar agora
+	  E, ou se houver alguma programação automatica
+	  Então mesclar cada <operação feita por outros usuarios> com cada <operação> que fiz
+	  E, se houver conflitos, encaminhar para [[resolução de conflitos]],
+	  E enviar cada <operação> que fiz para o servidor
+
+Funcionalidade: Resolução de conflitos
+    Para permitir trabalhar off-line
+	Eu, como usuário,
+	Desejo que conflitos entre cada <operação> minha e cada <operação feita por outros usuários> possam ser resolvidos
+	
+	Cenario: Há conflitos
+	  Dado que eu fiz alguma <operação> que gerou conflitos
+	  Quando eu acessar o sistema 
+	  Então preciso escolher entre minhas modificações e as modificações de outros usuarios
+	  E ter opção de alterar a informação que gerou o conflito
+	  E a <operação de resolução do conflito> poderá ser trabalhada on-line ou off-line
+	
+Funcionalidade: Edição concomitante
+    Para cada <operação> feita em algum <Produto> da <Lista>
+	Eu, como usuário,
+	Desejo que minhas modificações sejam enviadas o mais rápido possível para outros usuários
+	E que modificações de outros usuários me sejam mostradas o mais rápido possível
+
+    Cenario: Eu modifico a <Lista>
+	  Dado que eu modifiquei um <Produto>
+	  Quando a <operação> for sincronizada com o servidor
+	  Então a <operação> deverá ser enviada a todos os usuários que estão acessando essa lista
+	  E a tela desses usuários deve ser atualizada
+
+    Cenario: Outro usuário a <Lista>
+	  Dado que outro usuário modificou um <Produto> da lista que estou acessando
+	  Quando a <operação> for sincronizada com o servidor
+	  Então a <operação> deverá também ser atualizada na minha tela.
+
+	  
+	  
