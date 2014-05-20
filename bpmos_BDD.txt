@@ -1,5 +1,7 @@
+Negócio: Cadastrar Team de Players
+
 Funcionalidade: Adicionar player
-	Para quando 1 player for adicionado
+	Para adicionar 1 player 
 	Eu, como usuario
 	Desejo adicionar 1 player no team
 
@@ -48,6 +50,7 @@ Cenário: Alterar 2 player no team
 	E encontrar o player
 	E alterar 1 player
 	Então eu tenho um 1 player com alteração no team
+	E
 	Quando eu procurar 1 player
 	E encontrar o player
 	E alterar 1 player

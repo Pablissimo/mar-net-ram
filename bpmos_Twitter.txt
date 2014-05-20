@@ -1,0 +1,104 @@
+Negócio: NewTwitter
+
+Metáforas: 
+[[Confirmar minha conta de Email fornecida]] kgfkhfkfkkjgj
+
+Funcionalidade: Cadastro
+	Para: Efetuar o cadastro no Twitter
+	Eu como: Usuario
+	Desejo: Me cadastrar no Twitter 
+
+	Cenário1: Efetuar cadastro no Twitter
+	Dado: Que clico em inscrever-se no Twitter
+	Quando: Digito as informacoes requisitadas
+	E: Clico em criar minha conta
+	E: [[Confirmar minha conta de Email fornecida]]
+	Então: Estarei cadastrado no Twitter
+---------------------------------------------------------------------------------------------	
+Funcionalidade: Login
+	Para: Efetuar o Login
+	Eu como: Usuario
+	Desejo: Acessar o Twitter
+
+	Cenário1: Efetuar login no Twitter
+	Dado: Que ja sou cadastrado 
+	Quando: Digito o meu Nome de usuario/Email e Senha
+	E: Clicar em Entrar
+	Então: Terei acesso ao Twitter
+---------------------------------------------------------------------------------------------	
+Funcionalidade: Pesquisar contatos/recursos
+	Para: Encontrar pessoas/recursos no Twitter   
+	Eu como: Usuario
+	Desejo: Realizar uma determinada ação com o resultado obtido
+
+	Cenário1: Realizar uma pesquisa de um contato existente
+	Dado: Que vou pesquisar uma pessoa cadastrada no Twitter
+	Quando: Informo o nome do contato a ser pesquisado
+	E: Clico em Buscar(icone lupa)
+	Então: A pesquisa retorna uma lista de resultados encontrados 
+	
+	Cenário2: Realizar uma pesquisa de um recurso existente
+	Dado: Que vou pesquisar um recurso do Twitter
+	Quando: Informo o nome do recurso a ser pesquisado
+	E: Clico em Buscar
+	Então: A pesquisa retorna uma lista de resultados encontrados 
+	
+	Cenário3: Realizar uma pesquisa de um contato/recurso inexistente
+	Dado: Que vou pesquisar uma pessoa cadastrada no Twitter
+	Quando: Informo o nome do contato/recurso a ser pesquisado
+	E: Clico em Buscar
+	Então: A pesquisa retorna uma mensagem de consulta inválida
+---------------------------------------------------------------------------------------------		
+Funcionalidade: Seguir pessoas
+	Para: Seguir pessoas no Twitter
+	Eu como: Usuario
+	Desejo: Receber Tweets dos meus seguidos na minha Timeline 
+	
+	Cenário1: Seguir uma pessoa no Twitter pelo Buscar
+	Dado: Que pesquiso* o contato desejado  
+	Quando: Encontro o contato desejado
+	E: Clico em Seguir
+	Então: Estarei seguindo o contato desejado 
+	E: Receberei os Tweets do contato em minha Timeline	
+	
+	Cenário2: Seguir uma pessoa no Twitter pelo Quem seguir
+	Dado: Que tenho uma lista de Quem seguir  
+	Quando: Clico em Seguir no contato desejado
+	Então: Estarei seguindo o contato desejado 
+	E: Receberei os Tweets do contato em minha Timeline	
+---------------------------------------------------------------------------------------------		
+Funcionalidade: Publicar Tweet 
+	Para: Twittar  
+	Eu como: Usuario 	
+	Desejo: Expor ao publico, meus sentimentos, pensamento e atividades do dia a dia
+
+	Cenário1: Publicar um novo Tweet 
+	Dado: Que tenho um Tweet de até 140 caracteres
+	Quando: Digito meu Tweet 
+	E: Clico em Tweetar
+	Então: O Tweet será publicado em minha Timeline	
+	
+	Cenário2: Publicar um novo Tweet direcionado a um contato especifico
+	Dado: Que tenho uma Tweet de até 140 caracteres
+	Quando: Digito @NomeDoContato seguido de meu Tweet
+	E: Clico em Tweetar
+	Então: O Tweet será publicado em minha Timeline
+	E: O Tweet será publicado na Timeline do contato mensionado
+	
+	Cenário3: Publicar Retweet 
+	Dado: Que publico um Retweet de um contato seguido
+	Quando: Clico em Retweetar 
+	Então: O Retweet será publicado em minha Timeline	
+	E: O Retweet será publicado na Timeline dos meus seguidores
+---------------------------------------------------------------------------------------------		
+Funcionalidade: 
+	Para: 
+	Eu como:
+	Desejo: 
+
+	Cenário:
+	Dado: 
+	Quando:
+	E: 
+	Então: 
+
