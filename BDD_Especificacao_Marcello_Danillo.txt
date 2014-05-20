@@ -1,0 +1,49 @@
+Especificação: QualiomDB
+	
+	//Requisição
+	Quando o usuário fizer modificação de um <Produto>
+	Então o sistema irá enviar <Requisição> ao servidor de aplicação
+	
+	//Abrir Coneção
+	Quando o servidor de aplicação receber uma <Requição> de um <Banco de Dados>	
+	Então o mesmo irá sincronizar com os bancos
+	E abrir a <Conecção Com Banco> desejado
+	E enviar o critério da <Requisição> ao <Banco de Dados> desejado
+	
+	//Buscar Item no Banco
+	Quando o <Banco de Dados> receber o critério de pesquisa da <Requisição>
+	Então o mesmo irá buscar 
+	E retornar o <Item Desejado> da <Requisição> para o servidor de aplicação
+	E <Fechar a Conecção Com Banco>	
+	
+	//Listar Item no Banco
+	Quando o <Banco de Dados> receber o critério de pesquisa da <Requisição>
+	Então o mesmo irá listar 
+	E retornar uma <Lista de Itens> para o servidor de aplicação
+	E <Fechar a Conecção Com Banco>	
+	
+	//Adicionar Item no Banco
+	Quando o <Banco de Dados> receber o <Item> da <Requisição>
+	Então o mesmo irá buscar 
+	E retornar o <Item Desejado> da <Requisição> para o servidor de aplicação
+	E <Fechar a Conecção Com Banco>	
+	
+	
+	//Resposta
+	Quando o servidor de aplicação receber o <Item Desejado> do <Banco de Dados>
+	Então o mesmo irá enviar a o <Item Desejado> em forma de <Resposta> para o requisitante
+	
+	
+	//Log 
+	
+	//Sync
+	
+	
+	
+
+		  
+
+	
+
+
+	  
