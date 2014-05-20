@@ -1,85 +1,116 @@
-#language: pt-br
+Ôªø#language: pt-br
 
-NegÛcio: Lista de Compras de Supermercado que a m„e passou
+Neg√≥cio: Lista de Compras de Supermercado que a m√£e passou
 Metaforas: 
-   Lista - … a lista do que a m„e quer que a gente compre
-   Produto - … um item da lista de supermercado   
+   Lista - √â a lista do que a m√£e quer que a gente compre
+   Produto - √â um item da lista de supermercado   
    
 Funcionalidade: Cadastro de produtos
   Para manter a [[lista]] atualizada
-  Eu, como usu·rio,
+  Eu, como usu√°rio,
   Desejo poder adicionar, remover e alterar [[produtos]] da [[lista]]
   
 	Cenario: Listar produtos existentes
 	  Dado que eu quero acessar a [[Lista]]
 	  Quando entrar no programa de Cadastro de Produto
-	  Ent„o a [[Lista] atual dever· ser mostrada
-	  E um [Produto] sem nome dever· ser adicionado automaticamente ao final da lista para possibilitar [[Cadastrar um novo Produto]]
+	  Ent√£o a [[Lista] atual dever√° ser mostrada
+	  E um [Produto] sem nome dever√° ser adicionado automaticamente ao final da lista para possibilitar [[Cadastrar um novo Produto]]      
   
 	Cenario: Cadastrar um novo [[Produto]]
 	  Dado que eu quero cadastrar um <Produto>
-	  Quando eu selecionar o <Produto> cujo nome est· em branco
+	  Quando eu selecionar o <Produto> cujo nome est√° em branco
 	  E digitar o nome do <Produto> que quero cadastrar
-	  Ent„o o <Produto> ser· automaticamente adicionado ‡ [[Lista]]
+	  E o nome do <Produto> estiver v√°lido
+	  Ent√£o o <Produto> ser√° automaticamente adicionado √† [[Lista]]
 
 	Cenario: Modificar um <Produto>
 	  Dado que eu quero alterar o nome do <Produto>
 	  Quando eu selecionar o <Produto>
 	  E modificar seu nome 
-	  Ent„o a modificaÁ„o no <Produto> ser· automaticamente gravada na [[Lista]]
+	  E o nome do <Produto> estiver v√°lido
+	  Ent√£o a modifica√ß√£o no <Produto> ser√° automaticamente gravada na [[Lista]]
 
 	Cenario: Apagar um <Produto>
 	  Dado que eu quero remover um <Produto>
 	  Quando eu selecionar o <Produto>
-	  E eu clicar no bot„o remover
+	  E eu clicar no bot√£o remover
 	  E confirmar
-	  Ent„o o <Produto> ser· removido da [[Lista]]
+	  Ent√£o o <Produto> ser√° removido da [[Lista]]
 
 Funcionalidade: Trabalhar off-line
-    Para cada <operaÁ„o> de algum <Produto> da <Lista>
+    Para cada <opera√ß√£o> de algum <Produto> da <Lista>
 	  Exemplos de <Lista>:
 	    | Lista  | Produto |
-	    | AlmoÁo | Arroz   | 
-	    | AlmoÁo | Feij„o  | 
-	    | AlmoÁo | Oleo    |	 	
+	    | Almo√ßo | Arroz   | 
+	    | Almo√ßo | Feij√£o  | 
+	    | Almo√ßo | Oleo    |	 	
 	    | Lanche | Bolacha |
 	    | Lanche | Leite   |
-	  Exemplos de <operaÁ„o>:
-	    | operaÁ„o  | Lista  | Produto(antes) | Produto(depois) |
-	    | adicionar | AlmoÁo |                | Macarr„o        |
-	    | apagar    | AlmoÁo | Oleo           |                 |
-	    | modificar | AlmoÁo | Feij„o         | Feij„o Preto    |
+	  Exemplos de <opera√ß√£o>:
+	    | opera√ß√£o  | Lista  | Produto(antes) | Produto(depois) |
+	    | adicionar | Almo√ßo |                | Macarr√£o        |
+	    | apagar    | Almo√ßo | Oleo           |                 |
+	    | modificar | Almo√ßo | Feij√£o         | Feij√£o Preto    |
 	    	  
-	Eu, como usu·rio,
-	Desejo que algumas delas possam ser feitas, mesmo se n„o houver internet disponÌvel
+	Eu, como usu√°rio,
+	Desejo que algumas delas possam ser feitas, mesmo se n√£o houver internet dispon√≠vel
 
     Cenario: off-line
-	  Dado a internet n„o est· disponÌvel	  
-	  Quando for feita alguma <operaÁ„o> 
-	  Ent„o a <operaÁ„o> precisa ser registrada como pendente
-	  E atualizar as informaÁıes que precisam ser mantidas no navegador para permitir acesso off-line
+	  Dado a internet n√£o est√° dispon√≠vel	  
+	  Quando for feita alguma <opera√ß√£o> 
+	  Ent√£o a <opera√ß√£o> se tornar√° uma <opera√ß√£o pendente> do sistema
+	  E atualizar as informa√ß√µes que precisam ser mantidas no navegador para permitir acesso off-line
 
     Cenario: on-line
-	  Dado a internet est· disponÌvel	  
-	  Quando for feita alguma <operaÁ„o> 
-	  Ent„o deve-se sincronizar cada <operaÁ„o> que fora registrada como pendente com o servidor
-	  E, se houver <operaÁ„o conflitante>, registr·-la pra resoluÁ„o futura
-	  E atualizar as informaÁıes que precisam ser mantidas no navegador para permitir acesso off-line
-	  E sincronizar o <Produto>  com o servidor
+	  Dado a internet est√° dispon√≠vel	  
+	  Quando for feita alguma <opera√ß√£o> 
+	  Ent√£o o sistema deve <Sincronizar> cada <opera√ß√£o pendente>
+	  E <Sincronizar> esta <opera√ß√£o>
+	  E atualizar as informa√ß√µes que precisam ser mantidas no navegador para permitir acesso off-line
 
-Funcionalidade: EdiÁ„o concomitante
-    Para cada <operaÁ„o> feita em algum <Produto> da <Lista>
-	Eu, como usu·rio,
-	Desejo que minhas modificaÁıes sejam enviadas o mais r·pido possÌvel para outros usu·rios
-	E que modificaÁıes de outros usu·rios me sejam mostradas o mais r·pido possÌvel
+Funcionalidade: Sincronizar
+    Para permitir trabalhar off-line
+	Eu, como usu√°rio
+	Desejo receber as modifica√ß√µes de outros usu√°rios
+	E que minhas modifica√ß√µes feitas em off-line sejam enviadas para o servidor
+
+	Cenario: Geral
+	  Dado que eu fiz alguma <opera√ß√£o> enquanto estava off-line
+	  Quando eu ficar online
+	  E, ou quando optar por sincronizar agora
+	  E, ou se houver alguma programa√ß√£o automatica
+	  Ent√£o mesclar cada <opera√ß√£o feita por outros usuarios> com cada <opera√ß√£o> que fiz
+	  E, se houver conflitos, encaminhar para [[resolu√ß√£o de conflitos]],
+	  E enviar cada <opera√ß√£o> que fiz para o servidor
+
+Funcionalidade: Resolu√ß√£o de conflitos
+    Para permitir trabalhar off-line
+	Eu, como usu√°rio,
+	Desejo que conflitos entre cada <opera√ß√£o> minha e cada <opera√ß√£o feita por outros usu√°rios> possam ser resolvidos
+	
+	Cenario: H√° conflitos
+	  Dado que eu fiz alguma <opera√ß√£o> que gerou conflitos
+	  Quando eu acessar o sistema 
+	  Ent√£o preciso escolher entre minhas modifica√ß√µes e as modifica√ß√µes de outros usuarios
+	  E ter op√ß√£o de alterar a informa√ß√£o que gerou o conflito
+	  E a <opera√ß√£o de resolu√ß√£o do conflito> poder√° ser trabalhada on-line ou off-line
+	
+Funcionalidade: Edi√ß√£o concomitante
+    Para cada <opera√ß√£o> feita em algum <Produto> da <Lista>
+	Eu, como usu√°rio,
+	Desejo que minhas modifica√ß√µes sejam enviadas o mais r√°pido poss√≠vel para outros usu√°rios
+	E que modifica√ß√µes de outros usu√°rios me sejam mostradas o mais r√°pido poss√≠vel
 
     Cenario: Eu modifico a <Lista>
 	  Dado que eu modifiquei um <Produto>
-	  Quando a <operaÁ„o> for sincronizada com o servidor
-	  Ent„o a <operaÁ„o> dever· ser enviada a todos os usu·rios que est„o acessando essa lista
-	  E a tela desses usu·rios deve ser atualizada
+	  Quando a <opera√ß√£o> for sincronizada com o servidor
+	  Ent√£o a <opera√ß√£o> dever√° ser enviada a todos os usu√°rios que est√£o acessando essa lista
+	  E a tela desses usu√°rios deve ser atualizada
 
-    Cenario: Outro usu·rio a <Lista>
-	  Dado que outro usu·rio modificou um <Produto> da lista que estou acessando
-	  Quando a <operaÁ„o> for sincronizada com o servidor
-	  Ent„o a <operaÁ„o> dever· tambÈm ser atualizada na minha tela.
+    Cenario: Outro usu√°rio a <Lista>
+	  Dado que outro usu√°rio modificou um <Produto> da lista que estou acessando
+	  Quando a <opera√ß√£o> for sincronizada com o servidor
+	  Ent√£o a <opera√ß√£o> dever√° tamb√©m ser atualizada na minha tela.
+
+	  
+	  
