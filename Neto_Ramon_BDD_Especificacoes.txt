@@ -1,7 +1,7 @@
 ﻿#language: pt-br
 
 Negócio: Lista de Compras de Supermercado que a mãe passou
-Metaforas: 
+Metaforas 
    Lista - É a lista do que a mãe quer que a gente compre
    Produto - É um item da lista de supermercado   
    
