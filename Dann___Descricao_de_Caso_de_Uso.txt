@@ -1,0 +1,34 @@
+Nome:
+Cadastro de produtos.
+
+Descrição:
+Lista de Compras de Supermercado que a mãe passou.
+
+Atores:
+1. Filho.
+
+Pré-condição:
+O sistema possui uma base de dados denominada "Lista de produtos" e
+não possui um Produto com o mesmo nome já cadastrado.
+
+Fluxo Principal:
+1. O Filho clica no botão "Adicionar produto".
+2. O Sistema exibe o campo para o "Nome do produto" em branco.
+3. O Filho informa o "Nome do Produto".
+4. O Sistema Adiciona o "Nome do Produto" na "Lista de produtos".
+5. O Sitema disponibiliza o Produto na "Lista de Produtos".
+
+Fluxo Alternativo:
+3.1 O Filho informa o "Nome do Produto" - Falha
+3.2 O Sistema exibe mensagem de erro "Nome do Produto inválido"
+3.3 O Sistema retorna ao passo 3.
+4.1 O Sistema Adiciona o "Nome do Produto" na "Lista de Produtos" - Falha.
+4.2 O Sistema exibe mensagem de erro "Erro ao sincronizar produto".
+4.3 O Sistema retorna ao passo 4.
+
+Pós-condição:
+O produto deve ter sido adicionado na "Lista de produtos".
+
+
+
+
