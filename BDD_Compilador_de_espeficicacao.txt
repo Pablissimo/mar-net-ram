@@ -68,7 +68,7 @@ Especificação: BDD_Compilador_de_espeficicacao_linha
 	  E o <evento atual> for valido
 	  E <garantia atual> atual for nula
 	  Então a linha deverá ser considerada como uma <condição> que continua o <evento atual>
-	  E a <evento> deverá ser adicionado <Especificação atual>.<events>.<conditions>
+	  E a <condição> deverá ser adicionado <Especificação atual>.<events>.<conditions>
 	  E a linha será válida
 	  
 	Quando a linha começar com a palavra "E"
