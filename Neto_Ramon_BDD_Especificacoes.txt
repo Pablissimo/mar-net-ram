@@ -1,5 +1,9 @@
 ﻿#language: pt-br
 
+--------------------------------------------------------------------------------------------------------------------------
+									FUNCIONALIDADE
+--------------------------------------------------------------------------------------------------------------------------
+
 Negócio: Lista de Compras de Supermercado que a mãe passou
 Metaforas: 
    Lista - É a lista do que a mãe quer que a gente compre
@@ -112,65 +116,69 @@ Funcionalidade: Edição concomitante
 	  Quando a <operação> for sincronizada com o servidor
 	  Então a <operação> deverá também ser atualizada na minha tela.
 
-	  
-	Especificação: Skins
+--------------------------------------------------------------------------------------------------------------------
+												ESPECIFICAÇÕES
+--------------------------------------------------------------------------------------------------------------------
+Especificação: Skins
 
-	Quando crio uma nova skin
-	Então eu tenho uma nova skin disponivel
+	Quando criar uma nova skin
+	Então eu terei uma nova skin disponivel
 	
 	Quando eu entrar na aplicação
-	Então será carregada uma skin padrão
+	Então será carregado a skin padrão
 	
-	Quando possuo uma skins disponíveis para troca
+	Quando possuo skins disponíveis para troca
 	Então eu posso alternar entre as skins
 
 	Quando eu selecionar uma skin diferente da atual
 	Então a skin atual será removida
 	E a skin selecionada será aplicada
-	
-	  
-	Especificação: Banco de Dados (BD)
+		  
+Especificação: Banco de Dados (DB)
 
-	Quando for criado um BD
+	Quando for criado um DB
 	Então ele será criado vazio
+	E terei um DB disponivel para armazenar dados
 	
 	Quando um usuario executar uma <operação> na lista
 	E estiver on-line
-	Então terá que ser gravado no BD imediatamente
-	E o BD deve enviar as auterações para todos os usuario o mais rapido possivel
-	mas não deve ser enviado para quem enviou a <operação>
+	Então terá que ser sincronizado com o DB 
+	E o DB enviará as auterações para todos os usuario assim que sincronizado
+	mas não deve ser enviado para quem realizou a <operação>
 	
 	Quando um usuario realizar uma <operação> na lista
 	E estiver off-line
-	Então a <operação> será gravada em um log para envio futuro
+	Então a <operação> será registrada em um log 
+	E sincronizada assim que reestabelecido a conexão
 	
 	Quando um usuario realizar uma <operação>
 	E gerar conflitos
 	Então será aberto uma tela para <resolução de conflitos>
-	E terei que escolher quais modificações quero
+	E terei que  mesclar as <operações>
+	E selecionar quais <operações> desejo salvar
 	E ter a opção de alterar a informação com conflito
 	E gravar no log a <resolução de conflitos>
 	
-	Quando um usuario estiver trabalhando off-line
-	E a conexão com a internet voltar
-	E for realizada a sincronização com o BD através do log
+	Quando um usuario estiver trabalhando off-line 
+	E for reestabelecido a conexão 
+	E for realizada a sincronização com o DB através do log
 	E não ocorrer conflitos em cada <operação>
-	Então cada <operação> será gravada na orderm do log do usuario no BD
-	E os outros usuários terão que receber as modificação através do log do BD
+	Então cada <operação> será gravada na orderm do log do usuario no DB
+	E os outros usuários terão que receber as modificação através do log do DB
 	mas não deve ser enviado para quem enviou cada <operação>
 	
 	Quando um usuario estiver trabalhando off-line
 	E a conexão com a internet voltar
-	E for realizada a sincronização com o BD através do log
+	E for realizada a sincronização com o DB através do log
 	E ocorrer conflitos nas <operação>
 	E ter feito a <resolução de conflitos>
-	Então cada <operação> será gravada na orderm do log do usuario no BD
-	E os outros usuários receberem as modificação através do log do BD
+	Então cada <operação> será gravada na orderm do log do usuario no DB
+	E os outros usuários receberem as modificação através do log do DB
 	mas não deve ser enviado para quem enviou cada <operação>
 	
 	Quando um usuario estiver trabalhando on-line
 	E outro usuario que estava trabalhando off-line
-	E enviar o seu log para o BD
+	E enviar o seu log para o DB
 	
-	Quando um usuario realizar uma pesquisa no BD
-	Então o BD terá que retornar o resultado da pesquisa
+	Quando um usuario realizar uma pesquisa no DB
+	Então o DB terá que retornar o resultado da pesquisa
