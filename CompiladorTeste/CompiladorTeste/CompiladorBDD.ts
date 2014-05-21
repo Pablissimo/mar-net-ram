@@ -57,8 +57,9 @@
         if (b) // Quando a linha começar com a palavra "Especificação:"
         {
             //Então o resto da linha deve ser a < Especificação >
+            var especificacao = this.linha.substring(14).trim();;
             var e = new BDD_Espeficicacao();
-            e.title = this.linha.substring(14).trim();
+            e.title = especificacao;
             //E deve - se considerar essa < Especificação > como a < Especificação atual >
             this.especificacao_atual = e;
             //E <evento atual> deverá ficar nulo
