@@ -1,1 +1,2 @@
-﻿require("./TesteCompiladorBDD")["Test 1"]();
+﻿var mod = require("./TesteCompiladorBDD");
+mod["Test 1"]();
