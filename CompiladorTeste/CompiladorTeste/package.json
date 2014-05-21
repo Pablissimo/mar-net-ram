@@ -1,0 +1,10 @@
+{
+  "name": "CompiladorTeste",
+  "version": "0.0.0",
+  "description": "CompiladorTeste",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}

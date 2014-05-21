@@ -1,0 +1,1 @@
+﻿require("./TesteCompiladorBDD")["Test 1"]();
