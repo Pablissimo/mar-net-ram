@@ -6,26 +6,9 @@
               "Então ela deverá estar vazia\r\n";
 var arquivo_string = arquivo.trim();
 
-
-
 var var_JSON_Collection = [{}];
 
-
-
-//var obj_JS = {
-//    specifications: [{
-//        title: "",
-//        events: [{
-//            conditions: [{}],
-//            ensures: [{}]
-//        }]
-//    }]
-//}
-
-//var i=0;
-//obj_JS.specifications[i].
 Compila(arquivo_string);
-
 
 function Compila(arquivo_string) {
     var especificacao_atual = "";
