@@ -34,9 +34,12 @@ Especificação: QualiomDB
 	Então o mesmo irá enviar a o <Item Desejado> em forma de <Resposta> para o requisitante
 	
 	
-	//Log 
+	//Log
+	Quando o usuário fizer modificações no <Banco de Dados> estando on-line ou off-line
+	Então as modificações vão ser armazenadas em um log e depois enviado para o servidor
 	
 	//Sync
+	Quando o usuário estiver a algum tempo off-line
 	
 	
 	
