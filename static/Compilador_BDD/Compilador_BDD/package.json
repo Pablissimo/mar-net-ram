@@ -1,0 +1,10 @@
+{
+  "name": "Compilador_BDD",
+  "version": "0.0.0",
+  "description": "Compilador_BDD",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}
