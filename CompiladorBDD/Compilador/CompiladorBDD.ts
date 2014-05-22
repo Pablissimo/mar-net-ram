@@ -1,14 +1,16 @@
-﻿export class BDD_Compilador_de_espeficicacao {
+﻿import bdd = require("./bdd");
+
+export class BDD_Compilador_de_espeficicacao {
 
     linha: string;
-    specifications: BDD_Espeficicacao[];
-    especificacao_atual: BDD_Espeficicacao;
-    evento_atual: BDD_Espeficicacao_Evento;
+    specifications: bdd.BDD_Espeficicacao[];
+    especificacao_atual: bdd.BDD_Espeficicacao;
+    evento_atual: bdd.BDD_Espeficicacao_Evento;
     garantia_atual: string;
     condicao_atual: string;
 
     // Quando compilar o documento
-    compila(arquivo: string): BDD_Espeficicacao[] {
+    compila(arquivo: string): bdd.BDD_Espeficicacao[] {
         this.specifications = [];
         var linhas = arquivo.split('\r\n');
         for (var i = 0; i < linhas.length; i++) { // Então cada
@@ -59,7 +61,7 @@
         {
             //Então o resto da linha deve ser a < Especificação >
             var especificacao = this.linha.substring(14).trim();;
-            var e = new BDD_Espeficicacao();
+            var e = new bdd.BDD_Espeficicacao();
             e.title = especificacao;
             //E deve - se considerar essa < Especificação > como a < Especificação atual >
             this.especificacao_atual = e;
@@ -81,7 +83,7 @@
         var con = s.substring(0, 7) == 'QUANDO ';
         if (con) {
             //Então a linha deverá ser considerada uma < condição> do <evento>
-            var evento = new BDD_Espeficicacao_Evento();
+            var evento = new bdd.BDD_Espeficicacao_Evento();
             var condicao = this.linha;
             // E o <evento> deverá ser adicionado <Especificação atual>.<eventos>
             this.especificacao_atual.events.push(evento);
@@ -153,16 +155,6 @@
         }
         return false;
     }
-}
-
-export class BDD_Espeficicacao {
-    title: string;
-    events: BDD_Espeficicacao_Evento[] = [];
-}
-
-export class BDD_Espeficicacao_Evento {
-    conditions: string[] = [];
-    ensures: string[] = [];
 }
 
 
