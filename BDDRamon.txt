@@ -102,7 +102,7 @@ Funcionalidade: Edição com replicação
 	  E realizo todos os cadastros
 	  Então os produtos estaram no sistema prontos para venda
 	  
-	  Exemplos:   
+	  Exemplos:        
 	  
 	  Produto   | Quantidade   
       Arroz     |   200Kg    	 
