@@ -16,8 +16,9 @@
             //deverá analizada por[[BDD_Compilador_de_espeficicacao_linha]]
             var valid = this.analiza_linha();
             // E se a linha linha for inválida deve-se mostrar um erro indicando o número da linha
-            if (!valid)
+            if (!valid) {
                 throw ("Linha invalida " + (i + 1));
+            }
         }
         return this.specifications;
     }
