@@ -1,0 +1,10 @@
+{
+  "name": "Chutzpah",
+  "version": "0.0.0",
+  "description": "Chutzpah",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}

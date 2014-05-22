@@ -1,5 +1,5 @@
 
-Especificação: BDD_Compilador_de_espeficicacao
+Especificação: qualiom/BDD_Compilador_de_espeficicacao
 
 #Objetivo: Transformar um texto de espeficicação BDD em um objeto javascript 
 
