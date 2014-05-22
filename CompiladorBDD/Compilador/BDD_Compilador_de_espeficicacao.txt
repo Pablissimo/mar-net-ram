@@ -30,6 +30,7 @@ Exemplo:
 	Quando compilar o documento
 	  Então cada linha deverá analizada por [[BDD_Compilador_de_espeficicacao_linha]]
 	  E se a linha linha for inválida deve-se mostrar um erro indicando o número da linha
+	  E se todas as linhas estiverem válidas deve retornar um objeto javascript como no exemplo
 
 Especificação: BDD_Compilador_de_espeficicacao_linha
     Quando a linha começar com "#"
@@ -51,6 +52,7 @@ Especificação: BDD_Compilador_de_espeficicacao_linha
 	  
 	Quando a linha começar com a palavra "Quando"
 	  Então a linha deverá ser considerada uma <condição> do <evento>
+	  E a <Especificação atual> for valida
 	  E o <evento> deverá ser adicionado <Especificação atual>.<eventos>
 	  E esse <evento> será o <evento atual>
 	  E a <condição> deverá ser adicionada <evento atual>.<conditions>

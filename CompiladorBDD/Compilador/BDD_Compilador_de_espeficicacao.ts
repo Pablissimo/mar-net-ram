@@ -1,18 +1,25 @@
-import bdd = require("qualiom.bdd");
-import bdd = require("qualiom.bdd");
+import bdd = require("./bdd");
+import comp = require("./CompiladorBDD");
 
-especificacao('BDD_Compilador_de_espeficicacao',
-
+bdd.especificacao('BDD_Compilador_de_espeficicacao', function() {
+    var topic: comp.BDD_Compilador_de_espeficicacao;
+    //Objetivo: Transformar um texto de espeficicação BDD em um objeto javascript 
+    var Exemplo1 =
+        {
+            Texto: "Especificação: Pilha\r\n" +
+            "Quando a pilha < P> for criada\r\n"+
+            "Então ela deverá estar vazia",
+        }
+}
 );
 
+/*
 
-#Objetivo: Transformar um texto de espeficicação BDD em um objeto javascript 
-
-Exemplo:
+Exemplo 1:
     Texto="""
-	Especificação: Pilha 
-	Quando a pilha <P> for criada 
-	Então ela deverá estar vazia 
+	
+	
+	 
 	"""
 	JSON="""
 	{specifications: [
@@ -82,3 +89,4 @@ Especificação: BDD_Compilador_de_espeficicacao_linha
 	  Então a linha deverá ser considerada como uma <garantia> que continua a <garantia atual>
 	  E a <garantia> deverá ser registrada no <evento atual>.<ensures>
 	  E a linha será válida
+*/

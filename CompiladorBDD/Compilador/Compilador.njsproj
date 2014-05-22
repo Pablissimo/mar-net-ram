@@ -37,10 +37,13 @@
     <Compile Include="TesteCompiladorBDD.js">
       <TestFramework>Default</TestFramework>
     </Compile>
+    <Content Include="BDD_Compilador_de_espeficicacao.ts" />
+    <Content Include="BDD_Compilador_de_espeficicacao.txt" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="bdd.ts" />
     <TypeScriptCompile Include="CompiladorBDD.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
