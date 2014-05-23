@@ -51,8 +51,15 @@
         var b = s.substring(0, 14) == 'ESPECIFICAÇÃO:' || s.substring(0, 14) == 'ESPECIFICACAO:';
         if (b) {
             //Então o resto da linha deve ser a < Especificação >
+<<<<<<< HEAD
             var e = new BDD_Espeficicacao();
             e.title = this.linha.substring(14).trim();
+=======
+            var especificacao = this.linha.substring(14).trim();
+            ;
+            var e = new BDD_Espeficicacao();
+            e.title = especificacao;
+>>>>>>> 9a4476f2cf7ed5fa87548c3f314a8892a5e04850
 
             //E deve - se considerar essa < Especificação > como a < Especificação atual >
             this.especificacao_atual = e;
