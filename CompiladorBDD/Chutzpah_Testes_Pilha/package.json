@@ -1,0 +1,10 @@
+{
+  "name": "Chutzpah_Testes_Pilha",
+  "version": "0.0.0",
+  "description": "Chutzpah_Testes_Pilha",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}

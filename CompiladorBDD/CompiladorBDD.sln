@@ -9,7 +9,7 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Neto_Charles", "Neto_Charle
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Teste_BDD_Vows", "Teste_BDD_Vows\Teste_BDD_Vows.njsproj", "{19E0A1C9-E01B-45F8-98B7-3816CE0934FE}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Chutzpah", "Chutzpah\Chutzpah.njsproj", "{BC50F470-009D-45DF-860F-56A9B0F931A5}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Chutzpah", "Chutzpah\Chutzpah.njsproj", "{F7BAAAB6-6CF5-4621-8970-A13CE69FC736}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{19E0A1C9-E01B-45F8-98B7-3816CE0934FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19E0A1C9-E01B-45F8-98B7-3816CE0934FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19E0A1C9-E01B-45F8-98B7-3816CE0934FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC50F470-009D-45DF-860F-56A9B0F931A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC50F470-009D-45DF-860F-56A9B0F931A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC50F470-009D-45DF-860F-56A9B0F931A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC50F470-009D-45DF-860F-56A9B0F931A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7BAAAB6-6CF5-4621-8970-A13CE69FC736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7BAAAB6-6CF5-4621-8970-A13CE69FC736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7BAAAB6-6CF5-4621-8970-A13CE69FC736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7BAAAB6-6CF5-4621-8970-A13CE69FC736}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

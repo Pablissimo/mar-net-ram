@@ -1,4 +1,4 @@
-﻿// Type definitions for Jasmine 1.3
+// Type definitions for Jasmine 1.3
 // Project: http://pivotal.github.com/jasmine/
 // Definitions by: Boris Yankov <https://github.com/borisyankov/>
 // DefinitelyTyped: https://github.com/borisyankov/DefinitelyTyped
@@ -145,12 +145,12 @@ declare module jasmine {
         passed(): boolean;
     }
 
-    interface MessageResult extends Result {
+    interface MessageResult extends Result  {
         values: any;
         trace: Trace;
     }
 
-    interface ExpectationResult extends Result {
+    interface ExpectationResult extends Result  {
         matcherName: string;
         passed(): boolean;
         expected: any;
