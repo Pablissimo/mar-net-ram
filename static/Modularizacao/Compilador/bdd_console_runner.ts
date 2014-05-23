@@ -42,46 +42,60 @@ class BDD_Console_Runner implements bdd.BDD_TestRunner {
     failcount: number = 0;
     inconclusivecount: number = 0;
 
-    log(s: string, color: string) {
+    log(s: string, color: string, ident= true) {
         if (color != '')
             s = styles[color][0] + s + styles[color][1];
-        for (var i = 0; i < this.ident; i++)
-            s = '  ' + s;
+        if (ident)
+            for (var i = 0; i < this.ident; i++)
+                s = '  ' + s;
         console.log(s);
     }
 
+    specification(title: string, func: () => void) {
+        this.invoke(title, func);
+    }
+
+    event(title: string, func: () => void) {
+        this.invoke(title, func);
+    }
+
+    ensure(title: string, func: () => void) {
+        this.invoke(title, func);
+    }
+
     invoke(line: string, func: () => void): void {
-        if (line != null) {
-            this.log(line, '');
-            this.ident++;
-        }
+        this.log(line, '');
+        this.ident++;
         try {
             func();
         }
         finally {
-            if (line != null)
-                this.ident--;
+            this.ident--;
         }
+    }
+
+    file(file: string, line: number): void {
+        this.log('  Local: ' + file + ':' + line.toString(), 'grey', false);
     }
 
     error(msg: string[], file: string, line: number): void {
         for (var i = 0; i < msg.length; i++)
             this.log(msg[i], 'magentaBG');
-        this.log(file + ':' + line.toString(), 'grey');
+        this.file(file, line);
         this.errorcount++;
     }
 
     fail(msg: string[], file: string, line: number): void {
         for (var i = 0; i < msg.length; i++)
             this.log(msg[i], 'redBG');
-        this.log(file + ':' + line.toString(), 'grey');
+        this.file(file, line);
         this.failcount++;
     }
 
     inconclusive(msg: string[], file: string, line: number): void {
         for (var i = 0; i < msg.length; i++)
             this.log(msg[i], 'yellow');
-        this.log(file + ':' + line.toString(), 'gray');
+        this.file(file, line);
         this.inconclusivecount++;
     }
 
@@ -98,14 +112,17 @@ class BDD_Console_Runner implements bdd.BDD_TestRunner {
         });
     }
 
-    summary(testCount: number): void {
-        this.log('Testes executados: '+testCount.toString(), '');
+    summary(assessionCount: number): void {
+        this.log('', '');
+        this.log('Testes executados: ' + assessionCount.toString(), '');
+        this.ident += 2;
         if (this.errorcount > 0)
-            this.log('    Erros encontrados: ' + this.errorcount.toString(), '');
+            this.log('Erros  encontrados: ' + this.errorcount.toString(), 'magentaBG');
         if (this.failcount > 0)
-            this.log('    Falhas encontrados: ' + this.failcount.toString(), '');
+            this.log('Falhas encontrados: ' + this.failcount.toString(), 'redBG');
         if (this.inconclusivecount > 0)
-            this.log('    Situações inconclusivas: ' + this.inconclusivecount.toString(), '');
+            this.log('Inconclusões      : ' + this.inconclusivecount.toString(), 'yellow');
+        this.ident -= 2;
     }
 }
 
