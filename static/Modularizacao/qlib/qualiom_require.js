@@ -16,8 +16,7 @@ function q_require(module_name, after_initialize) {
         modules[module_name] = modulo_exports;
         modinfo = { name: module_name, exports: modulo_exports, dependencias: null, func: null, inicializado: false, callbacks: [] };
         modules_info[module_name] = modinfo;
-        var arq_modulo = module_name + ".js";
-        IncludeJSSRC("js_mod_" + module_name, arq_modulo);
+        IncludeJSSRC(modinfo);
     }
 
     if (typeof after_initialize !== "undefined") {
@@ -29,7 +28,7 @@ function q_require(module_name, after_initialize) {
 }
 
 function define(module_name, dependencias, modulo_func) {
-    
+
     if ((typeof module_name !== 'string') || (typeof dependencias !== 'object') || (typeof modulo_func !== 'function'))
         throw 'Compilador Typescript não tem a adaptação para AMD';
 
@@ -84,19 +83,30 @@ function inicia_modulo(info) {
     if (!info.inicializado) {
         info.func.apply(info.func, argumentos);
         for (var i = 0; i < info.callbacks.length; i++)
-            (function(idx){
+            (function (idx) {
                 setTimeout(function () {
                     info.callbacks[idx](info.exports);
-                },1);
+                }, 1);
             })(i);
         info.inicializado = true;
     }
     return true;
 }
 
-function IncludeJSSRC(sId, fileUrl) {
-    if (typeof window === "undefined")
-        require(fileUrl);
+function IncludeJSSRC(modinfo) {
+    var fileUrl = modinfo.name;
+    var qualiom_module = fileUrl.substring(0, 3) == '../';
+    if (qualiom_module)
+        fileUrl += '.js';
+    if (typeof window === "undefined") {
+        var r = require(fileUrl);
+        if (!qualiom_module) {
+            modinfo.inicializado = true;
+            modinfo.exports = r;
+            modinfo.dependencias = [];
+            agenda_inicializacao_modulos();
+        }
+    }
     else {
         var oScript = document.createElement("script");
         oScript.language = "javascript";

@@ -60,7 +60,13 @@ class BDD_Console_Runner implements bdd.BDD_TestRunner {
     }
 
     ensure(title: string, func: () => void) {
-        this.invoke(title, func);
+        this.ident++;
+        try {
+            this.invoke(title, func);
+        }
+        finally {
+            this.ident--;
+        }
     }
 
     invoke(line: string, func: () => void): void {
