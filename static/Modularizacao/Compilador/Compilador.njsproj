@@ -40,6 +40,7 @@
     </Compile>
     <Compile Include="TesteVows.js" />
     <Content Include="BDD_Compilador_de_espeficicacao.txt" />
+    <Content Include="TestePilha.spec" />
     <TypeScriptCompile Include="bdd_console_runner.ts" />
     <Content Include="package.json" />
     <Content Include="Pilha.ts" />
