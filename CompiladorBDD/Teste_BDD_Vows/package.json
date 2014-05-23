@@ -1,0 +1,10 @@
+{
+  "name": "Teste_BDD_Vows",
+  "version": "0.0.0",
+  "description": "Teste_BDD_Vows",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}
