@@ -1,9 +1,11 @@
 ﻿
 export interface BDD_TestRunner {
     invoke(title: string, func: () => void);
-    error(msg: string): void;
-    fail(msg: string): void;
-    inconclusive(msg: string): void;
+    error(msg: string[], file: string, line: number): void;
+    fail(msg: string[], file: string, line: number): void;
+    inconclusive(msg: string[], file: string, line: number): void;
+    loadSpec(module_name: string, callback: (lines: string[]) => void): void;
+    summary(testCount: number): void;
 }
 
 export class BDD_Espeficicacao {
@@ -42,7 +44,7 @@ export function when(title: string, declaration: () => void): BDD_When_Declarati
     if (reseting_topic)
         return new BDD_When_Declaration();
     if (declaring_spec == null)
-        testRunner.fail("when fora de uma espeficicação");
+        testRunner.fail(["when fora de uma espeficicação"], declaring_spec.module_name, 0);
     var w = new BDD_When_Declaration();
     w.evento = new BDD_Espeficicacao_Evento();
     w.evento.conditions.push(title);
@@ -92,49 +94,99 @@ export class BDD_Expects {
 
     equals(expectedValue: any) {
         if (this.value != expectedValue)
-            testRunner.fail('Valor esperado= "' + new String(expectedValue) + ' encontrado="' + new String(this.value));
+            testRunner.fail(['esperado  ="' + new String(expectedValue) + '"', 'encontrado="' + new String(this.value) + '"'], specFilename, specRow);
     }
 }
 
 var testRunner: BDD_TestRunner;
+var specFilename: string;
+var specRow: number;
+var testCount: number = 0;
 
-export function RunTest(runner: BDD_TestRunner, testFile: string) {
+export function RunTest(runner: BDD_TestRunner, moduleName: string) {
     testRunner = runner;
-    q_require(testFile, function (t: any) {
-        for (var i = 0; i < all_spec.length; i++) {
-            var spec = all_spec[i];
-            run_spec_test(spec)
-        }
-    });
-}
 
-function run_spec_test(spec: BDD_Espeficicacao) {
-    var topic = null;
-    var first = true;
-    testRunner.invoke("Especificação: " + spec.title, () => {
-        var topic_ok = false;
-        testRunner.invoke(null, () => {
-            topic = Object.create(spec.func.prototype);
+    specFilename = moduleName + '.spec';
+    specRow = 0;
+    var specFile: string[];
+
+    runner.loadSpec(specFilename, function (lines: string[]) {
+        specFile = lines;
+        q_require(moduleName, function (t: any) {
             try {
-                if (first)
-                    declaring_spec = spec;
-                reseting_topic = !first;
-                topic.constructor();
-                topic_ok = true;
+                for (var i = 0; i < all_spec.length; i++) {
+                    var spec = all_spec[i];
+                    test_specification(spec)
+                }
+            }
+            catch (e) {
+                if (e !== 'abort')
+                    throw e;
             }
             finally {
-                declaring_spec = null;
+                runner.summary(testCount);
             }
         });
-        if (topic_ok) {
+    });
+
+    function invoke_spec(expected_line: string, func: () => void): void {
+        do {
+            if (specRow >= specFile.length) {
+                runner.error(['Diferença entre especificação e a implementação do teste', 'Espeficicação: -', 'Implementação: ' + expected_line], specFilename, specRow);
+                throw 'abort';
+            }
+            var line = specFile[specRow].trim();
+            specRow++;
+            var repete = (line == '') || (line.substr(0, 1) == '#');
+        } while (repete);
+        if (line != expected_line) {
+            runner.error(['Diferença entre especificação e a implementação do teste', 'Espeficicação: ' + line, 'Implementação: ' + expected_line], specFilename, specRow);
+            throw 'abort';
+        }
+        runner.invoke(line, func);
+    }
+
+    function test_specification(spec: BDD_Espeficicacao) {
+        var topic = null;
+
+        function prepare_topic() {
+            var topic_ok = false;
+            testRunner.invoke(null, () => {
+                topic = Object.create(spec.func.prototype);
+                try {
+                    if (!reseting_topic)
+                        declaring_spec = spec;
+                    topic.constructor();
+                    topic_ok = true;
+                }
+                catch (e) {
+                    testRunner.error(['Erro na implementação da especificação'], specFilename, specRow);
+                    throw e;
+                }
+                finally {
+                    declaring_spec = null;
+                }
+            });
+        }
+
+        invoke_spec("Especificação: " + spec.title, () => {
+            var first = true;
+            reseting_topic = false;
+            prepare_topic();
             for (var i = 0; i < spec.events.length; i++) {
+                if (first)
+                    first = false;
+                else {
+                    reseting_topic = true;
+                    prepare_topic();
+                }
                 var event = spec.events[i];
                 for (var j = 0; j < event.conditions.length; j++)
-                    testRunner.invoke(event.conditions[j], event.conditions_funcs[j]);
+                    invoke_spec(event.conditions[j], event.conditions_funcs[j]);
                 for (var k = 0; k < event.ensures.length; k++)
-                    testRunner.invoke(event.ensures[k], event.ensures_funcs[k]);
+                    invoke_spec(event.ensures[k], event.ensures_funcs[k]);
             }
-            first = false;
-        }
-    });
+        });
+    }
 }
+

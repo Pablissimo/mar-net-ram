@@ -51,6 +51,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="bdd.ts" />
     <TypeScriptCompile Include="CompiladorBDD.ts" />
+    <TypeScriptCompile Include="node.d.ts" />
     <TypeScriptCompile Include="TestePilha.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
