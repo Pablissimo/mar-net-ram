@@ -1,16 +1,16 @@
-﻿/// <reference path="lib/jasmine/jasmine.d.ts" />
+﻿/// <reference path="../../lib/jasmine/jasmine.d.ts" />
 
-import ColorCalculator = require("ColorCalculator");
+import ColorCalculator = require("../../services/colorcalculator");
 
-describe("ColorCalculator tests", () => {
+describe("ColorCalculator tests", ()=> {
     var calculator = null;
 
-    beforeEach(() => {
+    beforeEach(()=> {
         //ARRANGE
         calculator = new ColorCalculator();
     });
 
-    it("should calculate hex when passing all rbg factors", () => {
+    it("should calculate hex when passing all rbg factors", ()=> {
         //ACT
         var result = calculator.toHex(255, 255, 255);
 
@@ -18,7 +18,7 @@ describe("ColorCalculator tests", () => {
         expect(result).toBe("#FFFFFF");
     });
 
-    it("should always produce hex made of 6 signs", () => {
+    it("should always produce hex made of 6 signs", ()=> {
         //ACT
         var result = calculator.toHex(1, 1, 1);
 
