@@ -1,2 +1,2 @@
 ﻿var mod = require("./TesteCompiladorBDD");
-mod["Test 1"]();
+mod["Test 8"]();

@@ -110,6 +110,7 @@ function IncludeJSSRC(sId, fileUrl) {
 
 if (typeof global !== "undefined") {
     global.define = define;
+    global.q_require = q_require;
 }
 
 if (typeof exports !== "undefined") {
@@ -118,6 +119,7 @@ if (typeof exports !== "undefined") {
 
 if (typeof window !== "undefined") {
     window.require = q_require;
+    window.q_require = q_require;
     window.define = define;
     window.onload = function () {
         var data_main_ok = false;

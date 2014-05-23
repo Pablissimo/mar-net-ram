@@ -9,8 +9,8 @@ Exemplo:
 	Quando a pilha <P> for criada 
 	Então ela deverá estar vazia 
 	"""
-	JSON="""
-	{specifications: [
+	specifications={{{
+	 [
 	  {
 	    title:"Pilha", 
 	    events:[
@@ -25,10 +25,11 @@ Exemplo:
 	    ]
 	  }
 	  ]}
-	"""
+	}}}
 
-	Quando compilar o documento
-	  Então cada linha deverá analizada por [[BDD_Compilador_de_espeficicacao_linha]]
+	Quando compilar o <Texto> 
+	E cada linha for analizada por [[BDD_Compilador_de_espeficicacao_linha]]
+	  Então 
 	  E se a linha linha for inválida deve-se mostrar um erro indicando o número da linha
 	  E se todas as linhas estiverem válidas deve retornar um objeto javascript como no exemplo
 

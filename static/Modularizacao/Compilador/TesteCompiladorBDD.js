@@ -216,9 +216,16 @@ exports['Test 8'] = function (test) {
 
     var comp = new compilador.BDD_Compilador_de_espeficicacao();
 
-    var e = comp.compila(arquivo);
+    //try/catch/finally - throw
 
-    assert.equal(e[0], null);
+    var erro = "";
+    try {
+        comp.compila(arquivo);
+    }
+    catch (e) {
+        erro = e;
+    }
+    assert.equal("Linha invalida 1", erro);
 }
 
 
@@ -236,7 +243,9 @@ exports['Test 9'] = function (test) {
 
     var comp = new compilador.BDD_Compilador_de_espeficicacao();
 
-    var e = comp.compila(arquivo);
-
-    assert.equal(e[0].valid, false);
+    assert.throws(
+        function(){
+            comp.compila(arquivo);
+        }, "Linha invalida 3");   
+    
 }
