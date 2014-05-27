@@ -4,3 +4,4 @@ C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_
 C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_test\obj\Debug\testes\TestePilha.js
 C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_test\obj\Debug\bin\Microsoft.NodejsTools.WebRole.dll
 C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_test\obj\Debug\Chutzpah_AMD_test.njsprojResolveAssemblyReference.cache
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_test\obj\Debug\testes\TesteFila.js

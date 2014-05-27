@@ -33,6 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="testes\TesteFila.ts" />
     <TypeScriptCompile Include="testes\TestePilha.ts" />
     <Content Include="lib\jasmine\MIT.LICENSE" />
     <TypeScriptCompile Include="lib\jasmine\jasmine.d.ts" />
