@@ -1,9 +1,7 @@
 ﻿describe("Pilha", function () {
-
     it("Quando pilha for criada", function () {
-                
-        var pilha = new Array();
 
+        var pilha = new Array();
         var atual_PilhaCriada = pilha.length;
         var esperado_PilhaVazia = 0;
 
@@ -11,12 +9,12 @@
     });
 
     it("Quando um elemento é adicionado na pilha", function () {
-       
+
         var pilha = new Array();
 
         pilha.push("Ramon");
         pilha.push("Danillo");
-              
+
         var esperado_UltimoElemento = "Danillo";
         var atual_ElementoAdicionado = pilha[1];
 
@@ -31,7 +29,7 @@
         pilha.push("Danillo");
         pilha.push("Fernando");
         pilha.push("Neto");
-        pilha.push("Marcello");        
+        pilha.push("Marcello");
 
         var elementoE = pilha[4];
         var esperado_ElementoRemovido = elementoE;
@@ -42,13 +40,12 @@
             tamanhoAtualPilha: pilha.length
         };
 
-        var esperado_ElementoRemovido = "Marcello";
+        var esperado = "Marcello";
         var esperado_TamanhoAtualPilha = 4;
 
         expect(esperado_ElementoRemovido).toEqual(atual_ElementosPilha.elementoRemovido);
-        expect(esperado_TamanhoAtualPilha).toEqual(atual_ElementosPilha.tamanhoAtualPilha );
+        expect(esperado_TamanhoAtualPilha).toEqual(atual_ElementosPilha.tamanhoAtualPilha);
     });
-
 });
 
 
