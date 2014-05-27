@@ -1,4 +1,5 @@
-﻿define("TestePilha",["require", "exports", "../Compilador/bdd", "../Compilador/Pilha"], function(require, exports, bdd, p) {
+﻿ // adaptação qualiom 
+define("../Compilador/TestePilha",["require", "exports", "../Compilador/bdd", "../Compilador/Pilha"], function(require, exports, bdd, p) {
     bdd.specification("Pilha", function () {
         var pilha = new p.Pilha();
         var elemento = 1;

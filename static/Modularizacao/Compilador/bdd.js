@@ -1,4 +1,5 @@
-﻿define("bdd",["require", "exports"], function(require, exports) {
+﻿ // adaptação qualiom 
+define("../Compilador/bdd",["require", "exports"], function(require, exports) {
     var BDD_Espeficicacao = (function () {
         function BDD_Espeficicacao() {
             this.events = [];

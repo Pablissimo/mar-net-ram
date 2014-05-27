@@ -32,6 +32,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Compilador", "Compilador\Co
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Chutzpah_AMD", "Chutzpah_AMD\Chutzpah_AMD.njsproj", "{CF442018-21FE-41BE-A808-58173DFC6C54}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "KarmaProject", "..\..\Projetos_CompiladorBDD_Cumcumber_TesteBDD\KarmaProject\KarmaProject.njsproj", "{525B4743-2FFD-4A7B-B200-22F6FEAE0676}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,10 @@ Global
 		{CF442018-21FE-41BE-A808-58173DFC6C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF442018-21FE-41BE-A808-58173DFC6C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF442018-21FE-41BE-A808-58173DFC6C54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{525B4743-2FFD-4A7B-B200-22F6FEAE0676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{525B4743-2FFD-4A7B-B200-22F6FEAE0676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{525B4743-2FFD-4A7B-B200-22F6FEAE0676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{525B4743-2FFD-4A7B-B200-22F6FEAE0676}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

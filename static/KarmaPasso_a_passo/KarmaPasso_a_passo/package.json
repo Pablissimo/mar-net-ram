@@ -1,0 +1,11 @@
+{
+  "name": "KarmaPasso_a_passo",
+  "version": "0.0.0",
+  "description": "KarmaPasso_a_passo",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  },
+  "devDependencies": {}
+}

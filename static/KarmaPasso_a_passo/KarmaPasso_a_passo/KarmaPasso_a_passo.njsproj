@@ -3,16 +3,16 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>KarmaProject</Name>
-    <RootNamespace>KarmaProject</RootNamespace>
+    <Name>KarmaPasso_a_passo</Name>
+    <RootNamespace>KarmaPasso_a_passo</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>525b4743-2ffd-4a7b-b200-22f6feae0676</ProjectGuid>
+    <ProjectGuid>6ae7925b-50fb-4b8f-ab94-5d8cbe91614a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Testes\Jasmine_test_01.js</StartupFile>
+    <StartupFile>app.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -22,7 +22,7 @@
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <ProjectView>ShowAllFiles</ProjectView>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
-    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <TypeScriptModuleKind>amd</TypeScriptModuleKind>
     <EnableTypeScript>true</EnableTypeScript>
     <StartWebBrowser>false</StartWebBrowser>
   </PropertyGroup>
@@ -35,22 +35,14 @@
   <ItemGroup>
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <TypeScriptCompile Include="jasmine.d.ts" />
-    <TypeScriptCompile Include="Programas\Pilha.ts" />
+    <TypeScriptCompile Include="Jasmine_teste.ts" />
     <TypeScriptCompile Include="Scripts\typings\node\node.d.ts" />
-    <TypeScriptCompile Include="Testes\Jasmine_test_02.ts" />
+    <TypeScriptCompile Include="Pilha.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Programas\" />
-    <Folder Include="Testes\" />
     <Folder Include="Scripts\" />
     <Folder Include="Scripts\typings\" />
     <Folder Include="Scripts\typings\node\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="karma.conf.js" />
-    <Compile Include="Testes\Jasmine_test_01.js" />
-    <Compile Include="Testes\Jasmine_test_02.js" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>
