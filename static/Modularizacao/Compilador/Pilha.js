@@ -1,5 +1,4 @@
-﻿ // adaptação qualiom 
-define("../Compilador/Pilha",["require", "exports"], function(require, exports) {
+﻿define("Pilha",["require", "exports"], function(require, exports) {
     var Pilha = (function () {
         function Pilha() {
             this.items = [];

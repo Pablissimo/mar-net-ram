@@ -1,5 +1,4 @@
-﻿ // adaptação qualiom 
-define("../Compilador/CompiladorBDD",["require", "exports", "./bdd"], function(require, exports, bdd) {
+﻿define("CompiladorBDD",["require", "exports", "./bdd"], function(require, exports, bdd) {
     var BDD_Compilador_de_espeficicacao = (function () {
         function BDD_Compilador_de_espeficicacao() {
         }
