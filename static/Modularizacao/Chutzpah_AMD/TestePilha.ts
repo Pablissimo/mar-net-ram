@@ -1,6 +1,5 @@
 ﻿/// <reference path="../chutzpah_AMD/jasmine.d.ts" />
 
-
 import p = require("../Chutzpah_AMD/Pilha");
 
 describe("Pilha", function () {
@@ -8,6 +7,6 @@ describe("Pilha", function () {
     it("Quando a pilha for criada", function () {
         //ACT
 
-        expect(true).toBe(true);
+        expect(true).toBe(false);
     });
 });
