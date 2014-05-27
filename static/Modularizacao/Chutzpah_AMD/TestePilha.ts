@@ -1,12 +1,11 @@
 ﻿/// <reference path="../chutzpah_AMD/jasmine.d.ts" />
 
-import p = require("../Chutzpah_AMD/Pilha");
+import p = require("Pilha");
 
 describe("Pilha", function () {
    
     it("Quando a pilha for criada", function () {
-        //ACT
-
+        //ACT      
         expect(true).toBe(false);
     });
 });
