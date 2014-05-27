@@ -86,7 +86,10 @@
     })();
     exports.BDD_Then_Declaration = BDD_Then_Declaration;
 
+    var assessionCount = 0;
+
     function expects(value) {
+        assessionCount++;
         return new BDD_Expects(value);
     }
     exports.expects = expects;
@@ -106,7 +109,6 @@
     var testRunner;
     var specFilename;
     var specRow;
-    var testCount = 0;
 
     function RunTest(runner, moduleName) {
         testRunner = runner;
@@ -127,26 +129,41 @@
                     if (e !== 'abort')
                         throw e;
                 } finally {
-                    runner.summary(testCount);
+                    runner.summary(assessionCount);
                 }
             });
         });
 
-        function invoke_spec(expected_line, func) {
+        function testSpecLine(expected_line) {
             do {
                 if (specRow >= specFile.length) {
-                    runner.error(['Diferença entre especificação e a implementação do teste', 'Espeficicação: -', 'Implementação: ' + expected_line], specFilename, specRow);
+                    runner.error(['Diferença entre especificação e a implementação do teste', 'Espeficicação: Não especificado', 'Implementação: ' + expected_line], specFilename, specRow);
                     throw 'abort';
                 }
                 var line = specFile[specRow].trim();
                 specRow++;
-                var repete = (line == '') || (line.substr(0, 1) == '#');
+                var repete = ((line == '') || (line.substr(0, 1) == '#'));
             } while(repete);
             if (line != expected_line) {
                 runner.error(['Diferença entre especificação e a implementação do teste', 'Espeficicação: ' + line, 'Implementação: ' + expected_line], specFilename, specRow);
                 throw 'abort';
             }
-            runner.invoke(line, func);
+        }
+
+        function testSpecEOF() {
+            while (specRow < specFile.length) {
+                var s = specFile[specRow].trim();
+                if ((s != '') && (s.substr(0, 1) != '#')) {
+                    var msg = ['Especificações não implementadas:'];
+                    var row = specRow;
+                    while (specRow < specFile.length) {
+                        msg.push(specFile[specRow]);
+                        specRow++;
+                    }
+                    runner.error(msg, specFilename, row);
+                }
+                specRow++;
+            }
         }
 
         function test_specification(spec) {
@@ -154,23 +171,23 @@
 
             function prepare_topic() {
                 var topic_ok = false;
-                testRunner.invoke(null, function () {
-                    topic = Object.create(spec.func.prototype);
-                    try  {
-                        if (!reseting_topic)
-                            declaring_spec = spec;
-                        topic.constructor();
-                        topic_ok = true;
-                    } catch (e) {
-                        testRunner.error(['Erro na implementação da especificação'], specFilename, specRow);
-                        throw e;
-                    } finally {
-                        declaring_spec = null;
-                    }
-                });
+                topic = Object.create(spec.func.prototype);
+                try  {
+                    if (!reseting_topic)
+                        declaring_spec = spec;
+                    topic.constructor();
+                    topic_ok = true;
+                } catch (e) {
+                    testRunner.error(['Erro na implementação da especificação'], specFilename, specRow);
+                    throw e;
+                } finally {
+                    declaring_spec = null;
+                }
             }
 
-            invoke_spec("Especificação: " + spec.title, function () {
+            var s = "Especificação: " + spec.title;
+            testSpecLine(s);
+            runner.specification(s, function () {
                 var first = true;
                 reseting_topic = false;
                 prepare_topic();
@@ -182,11 +199,18 @@
                         prepare_topic();
                     }
                     var event = spec.events[i];
-                    for (var j = 0; j < event.conditions.length; j++)
-                        invoke_spec(event.conditions[j], event.conditions_funcs[j]);
-                    for (var k = 0; k < event.ensures.length; k++)
-                        invoke_spec(event.ensures[k], event.ensures_funcs[k]);
+                    for (var j = 0; j < event.conditions.length; j++) {
+                        s = event.conditions[j];
+                        testSpecLine(s);
+                        runner.event(s, event.conditions_funcs[j]);
+                    }
+                    for (var k = 0; k < event.ensures.length; k++) {
+                        var s = event.ensures[k];
+                        testSpecLine(s);
+                        runner.ensure(s, event.ensures_funcs[k]);
+                    }
                 }
+                testSpecEOF();
             });
         }
     }
