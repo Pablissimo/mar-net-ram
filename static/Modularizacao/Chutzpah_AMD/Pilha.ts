@@ -1,5 +1,5 @@
 ﻿export class Construtor {
-    pilha() {
+    pilha() {  
         var itens_pilha = null;
         return itens_pilha;
     }
