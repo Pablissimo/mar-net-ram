@@ -1,16 +1,17 @@
 ﻿/// <reference path="../lib/jasmine/jasmine.d.ts" />
 
-import p = require("../../Chutzpah_AMD_app/services/Pilha");
+import Pilha = require("../../Chutzpah_AMD_app/services/Pilha");
 
 describe("Pilha", () => {
-    var pilha = null;
+    var pilha: Pilha;
     beforeEach(() => {
         //ARRANGE
-        pilha = new p();
+
+        pilha = new Pilha();
     });
 
-    it("Quando a pilha for criada",() => {
+    it("Quando a pilha for criada", () => {
         //ACT      
-        expect(true).toBe(false);
+            expect(pilha.itens_na_pilha()).toBe(undefined);
     });
 });

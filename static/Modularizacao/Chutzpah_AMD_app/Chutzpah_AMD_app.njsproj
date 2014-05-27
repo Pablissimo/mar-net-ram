@@ -12,7 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f7428b46-dfdd-4d75-91ef-9b778e63f693</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>app.js</StartupFile>
+    <StartupFile>services\Pilha.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -23,6 +23,7 @@
     <ProjectView>ShowAllFiles</ProjectView>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
     <TypeScriptModuleKind>aMD</TypeScriptModuleKind>
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
     <EnableTypeScript>true</EnableTypeScript>
     <StartWebBrowser>false</StartWebBrowser>
   </PropertyGroup>
@@ -33,18 +34,13 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="README.md" />
     <TypeScriptCompile Include="lib\knockout.d.ts" />
     <TypeScriptCompile Include="lib\require.d.ts" />
     <TypeScriptCompile Include="services\Pilha.ts" />
-    <TypeScriptCompile Include="Scripts\typings\node\node.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lib\" />
     <Folder Include="services\" />
-    <Folder Include="Scripts\" />
-    <Folder Include="Scripts\typings\" />
-    <Folder Include="Scripts\typings\node\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="config.js" />
