@@ -5,9 +5,8 @@
    "TypeScriptModuleKind": "AMD",
    "References" : [
       { "Path": "Chutzpah_AMD_app/lib/require.js" },
-      { "Path": "Chutzpah_AMD_test/config.js" },
+	  { "Path": "Chutzpah_AMD_test/config.js" },
 	  { "Path": "Chutzpah_AMD_app/lib", "Include": "*.js", "IncludeInTestHarness": "false" },
-      { "Path": "Chutzpah_AMD_test/", "Include": "*.ts", "IncludeInTestHarness": "false" },
-      { "Path": "Chutzpah_AMD_test", "Include": "*.ts", "IncludeInTestHarness": "false" }
+      { "Path": "Chutzpah_AMD_app/", "Include": "*.ts", "IncludeInTestHarness": "false" },
     ]
 }

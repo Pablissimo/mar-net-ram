@@ -1,0 +1,5 @@
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_app\obj\Debug\config.js
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_app\obj\Debug\lib\knockout.js
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_app\obj\Debug\lib\require.js
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_app\obj\Debug\services\Pilha.js
+C:\Users\Qualiom\Documents\GitHub\mar-net-ram\static\Modularizacao\Chutzpah_AMD_app\obj\Debug\bin\Microsoft.NodejsTools.WebRole.dll
