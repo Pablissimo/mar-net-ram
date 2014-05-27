@@ -15,4 +15,4 @@
     }
 }
 
-export = ColorCalculator;
+export = ColorCalculator;   
