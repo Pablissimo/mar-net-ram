@@ -1,0 +1,10 @@
+{
+  "name": "Famous",
+  "version": "0.0.0",
+  "description": "Famous",
+  "main": "server.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}

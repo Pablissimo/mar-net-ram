@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <!-- module loader -->
+    <script type="text/javascript" src="http://code.famo.us/lib/require.js"></script>
+    <!-- famous -->
+    <link rel="stylesheet" type="text/css" href="http://code.famo.us/famous/0.2.0/famous.css" />
+    <script type="text/javascript" src="http://code.famo.us/famous/0.2.0/famous.min.js"></script>
+    
+    <script type="text/javascript">var Engine = require("famous/core/Engine");
+        var Surface = require("famous/core/Surface");
+
+        var mainContext = Engine.createContext();
+
+        var surface = new Surface({
+            size: [200, 200],
+            content: "Funcionou",
+            classes: ["red-bg"],
+            properties: {
+                lineHeight: "200px",
+                textAlign: "center"
+            }
+        });
+
+        mainContext.add(surface);
+</script>
+
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    teste
+</body>
+</html>
