@@ -20,7 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <TypeScriptToolsVersion>0.9</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
     <TypeScriptModuleKind>amd</TypeScriptModuleKind>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -53,6 +53,15 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="lib\knockout.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
