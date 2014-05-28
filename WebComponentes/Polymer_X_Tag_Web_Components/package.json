@@ -1,0 +1,10 @@
+{
+  "name": "Polymer_X_Tag_Web_Components",
+  "version": "0.0.0",
+  "description": "Polymer_X_Tag_Web_Components",
+  "main": "server.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}
