@@ -1,0 +1,8 @@
+﻿[
+  {
+    "ID": "1000",
+    "SQL": "select * from [RefURLCategory]  where  CONTAINS(URL, ?)",
+    "DB": "DB",
+	"ROLE" : ""
+  }
+]

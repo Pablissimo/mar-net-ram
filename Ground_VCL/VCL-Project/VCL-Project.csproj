@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{FBA8EF67-FD6E-43DC-A869-91CBC25083B5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <RootNamespace>VCL_Project</RootNamespace>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="main.ts" />
+    <Content Include="default.htm" />
+    <Content Include="PageHome.html" />
+    <TypeScriptCompile Include="Page.ts" />
+    <TypeScriptCompile Include="PageHome.ts" />
+    <Content Include="PageLogin.html" />
+    <TypeScriptCompile Include="PageLogin.ts" />
+    <Content Include="Config\pages.json" />
+    <Content Include="Config\users.json" />
+    <Content Include="Config\queries.json" />
+    <Content Include="VCL\Css\bootstrap-modal.css" />
+    <Content Include="VCL\Css\bootstrap-responsive.css" />
+    <Content Include="VCL\Css\bootstrap.css" />
+    <Content Include="VCL\Css\font-awesome.css" />
+    <Content Include="VCL\Css\font\fontawesome-webfont.svg" />
+    <Content Include="VCL\Css\images\animated-overlay.gif" />
+    <Content Include="VCL\Css\images\form.png" />
+    <Content Include="VCL\Css\images\glyphicons-halflings-white.png" />
+    <Content Include="VCL\Css\images\glyphicons-halflings.png" />
+    <Content Include="VCL\Css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="VCL\Css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="VCL\Css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="VCL\Css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="VCL\Css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="VCL\Css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="VCL\Css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="VCL\Css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="VCL\Css\images\ui-icons_222222_256x240.png" />
+    <Content Include="VCL\Css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="VCL\Css\images\ui-icons_454545_256x240.png" />
+    <Content Include="VCL\Css\images\ui-icons_888888_256x240.png" />
+    <Content Include="VCL\Css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="VCL\Css\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="VCL\Css\jquery.gridster.css" />
+    <Content Include="VCL\Css\vcl.css" />
+    <Content Include="VCL\LICENSE.txt" />
+    <Content Include="VCL\Scripts\async.js" />
+    <Content Include="VCL\Scripts\bootstrap-modal.js" />
+    <Content Include="VCL\Scripts\bootstrap-modalmanager.js" />
+    <Content Include="VCL\Scripts\bootstrap.js" />
+    <Content Include="VCL\Scripts\css.js" />
+    <Content Include="VCL\Scripts\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="VCL\Scripts\jquery.bulletchart.js" />
+    <Content Include="VCL\Scripts\jquery.fileDownload.js" />
+    <Content Include="VCL\Scripts\jquery.gridster.js" />
+    <Content Include="VCL\Scripts\jquery.js" />
+    <Content Include="VCL\Scripts\raphael.chart.js" />
+    <Content Include="VCL\Scripts\raphael.dot.js" />
+    <Content Include="VCL\Scripts\raphael.js" />
+    <Content Include="VCL\Scripts\require.js" />
+    <Content Include="VCL\Scripts\sammy.js" />
+    <Content Include="VCL\Scripts\sammy.json.js" />
+    <Content Include="VCL\Scripts\sammy.storage.js" />
+    <Content Include="VCL\Scripts\spin.js" />
+    <Content Include="VCL\Scripts\text.js" />
+    <Content Include="VCL\VCL-compress.js" />
+    <Content Include="VCL\VCLConfig.js" />
+    <Content Include="web.config" />
+    <TypeScriptCompile Include="VCL\Scripts\bootstrap.d.ts" />
+    <TypeScriptCompile Include="VCL\Scripts\d3.d.ts" />
+    <TypeScriptCompile Include="VCL\Scripts\d3.v3.ts" />
+    <TypeScriptCompile Include="VCL\Scripts\google.maps.d.ts" />
+    <TypeScriptCompile Include="VCL\Scripts\jquery.d.ts" />
+    <TypeScriptCompile Include="VCL\Scripts\require.d.ts" />
+    <TypeScriptCompile Include="VCL\Scripts\sammyjs.d.ts" />
+    <TypeScriptCompile Include="VCL\VCL.ts" />
+    <TypeScriptCompile Include="VCL\VXAlert.ts" />
+    <TypeScriptCompile Include="VCL\VXApplication.ts" />
+    <TypeScriptCompile Include="VCL\VXButton.ts" />
+    <TypeScriptCompile Include="VCL\VXChartBar.ts" />
+    <TypeScriptCompile Include="VCL\VXChartBarH.ts" />
+    <TypeScriptCompile Include="VCL\VXChartBase.ts" />
+    <TypeScriptCompile Include="VCL\VXChartDonut.ts" />
+    <TypeScriptCompile Include="VCL\VXChartDot.ts" />
+    <TypeScriptCompile Include="VCL\VXChartLine.ts" />
+    <TypeScriptCompile Include="VCL\VXCheckBox.ts" />
+    <TypeScriptCompile Include="VCL\VXCombo.ts" />
+    <TypeScriptCompile Include="VCL\VXComponent.ts" />
+    <TypeScriptCompile Include="VCL\VXConst.ts" />
+    <TypeScriptCompile Include="VCL\VXContainer.ts" />
+    <TypeScriptCompile Include="VCL\VXDataset.ts" />
+    <TypeScriptCompile Include="VCL\VXDateInput.ts" />
+    <TypeScriptCompile Include="VCL\VXDBGrid.ts" />
+    <TypeScriptCompile Include="VCL\VXGauge.ts" />
+    <TypeScriptCompile Include="VCL\VXGridSter.ts" />
+    <TypeScriptCompile Include="VCL\VXImage.ts" />
+    <TypeScriptCompile Include="VCL\VXInput.ts" />
+    <TypeScriptCompile Include="VCL\VXInputBase.ts" />
+    <TypeScriptCompile Include="VCL\VXListBox.ts" />
+    <TypeScriptCompile Include="VCL\VXMenu.ts" />
+    <TypeScriptCompile Include="VCL\VXModal.ts" />
+    <TypeScriptCompile Include="VCL\VXObject.ts" />
+    <TypeScriptCompile Include="VCL\VXOlapSSAS.ts" />
+    <TypeScriptCompile Include="VCL\VXPage.ts" />
+    <TypeScriptCompile Include="VCL\VXPopup.ts" />
+    <TypeScriptCompile Include="VCL\VXProgressBar.ts" />
+    <TypeScriptCompile Include="VCL\VXQuery.ts" />
+    <TypeScriptCompile Include="VCL\VXServer.ts" />
+    <TypeScriptCompile Include="VCL\VXSideBar.ts" />
+    <TypeScriptCompile Include="VCL\VXSparkLine.ts" />
+    <TypeScriptCompile Include="VCL\VXTab.ts" />
+    <TypeScriptCompile Include="VCL\VXText.ts" />
+    <TypeScriptCompile Include="VCL\VXTextBase.ts" />
+    <TypeScriptCompile Include="VCL\VXUtils.ts" />
+    <TypeScriptCompile Include="VCL\VXWell.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\VCL.JS.0.1.213\lib\Microsoft.AnalysisServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\VCL.JS.0.1.213\lib\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\VCL.JS.0.1.213\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VCL\Css\font\fontawesome-webfont.woff" />
+    <Content Include="VCL\Css\font\fontawesome-webfont.ttf" />
+    <Content Include="VCL\Css\font\fontawesome-webfont.eot" />
+    <Content Include="VCL\Css\font\FontAwesome.otf" />
+    <Content Include="packages.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="VCL\ServerSide\Plugins\iVCLPlugin.cs" />
+    <Compile Include="VCL\ServerSide\Plugins\Login.cs" />
+    <Compile Include="VCL\ServerSide\Plugins\Page.cs" />
+    <Compile Include="VCL\ServerSide\Plugins\Proxy.cs" />
+    <Compile Include="VCL\ServerSide\Plugins\Query.cs" />
+    <Compile Include="VCL\ServerSide\Plugins\RemoteQuery.cs" />
+    <Compile Include="VCL\ServerSide\Server.cs" />
+    <Compile Include="VCL\ServerSide\ServerUtils.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>TypeScriptHTMLApp1</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57244</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58487/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptIncludeComments>true</TypeScriptIncludeComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;NET40;CODE_ANALYSIS</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptIncludeComments>false</TypeScriptIncludeComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" />
+</Project>

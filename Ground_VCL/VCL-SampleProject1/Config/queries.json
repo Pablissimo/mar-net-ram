@@ -1,0 +1,8 @@
+﻿[
+  {
+    "ID": "top4Education",
+    "SQL": "Select top 6 Sum(SalesAmount)  as SalesAmount, ProductName from CustomerProducts where Education=? group by ProductName",
+    "DB": "DB",
+	"ROLE" : ""
+  }
+]
