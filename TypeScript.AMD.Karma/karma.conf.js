@@ -1,31 +1,50 @@
 // Karma configuration
-// Generated on Sun Oct 20 2013 07:28:56 GMT+0200 (CEST)
+// Generated on Wed May 28 2014 00:16:05 GMT-0300 (Hora oficial do Brasil)
 
 module.exports = function(config) {
   config.set({
+
+    // base path that will be used to resolve all patterns (eg. files, exclude)
+    basePath: '',
+
+
     // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
     frameworks: ['jasmine', 'requirejs'],
 
 
     // list of files / patterns to load in the browser
     files: [
-        //The configuration should allow only test-main.js to be included
-        { pattern: 'FrontEndTools.WebUI/**/*.js', included: false },
-        { pattern: 'FrontEndTools.WebUI/**/*.js.map', included: false },
-        { pattern: 'FrontEndTools.WebUI/**/*.ts', included: false },
-        'FrontEndTools.WebUI.Scripts.Test/test-main.js',
-        { pattern: 'FrontEndTools.WebUI.Scripts.Test/**/*.js', included: false },
-        { pattern: 'FrontEndTools.WebUI.Scripts.Test/**/*.js.map', included: false },
-        { pattern: 'FrontEndTools.WebUI.Scripts.Test/**/*.ts', included: false }
+      'This should be a script that bootstraps your test by configuring Require.js and kicking __karma__.start(), probably your test-main.js file.',
+      'Enter empty string to move to the next question.',
+      {pattern: 'Press tab to list possible options. Enter empty string to move to the next question.', included: false},
+      {pattern: '[1mWhat is the location of your source and test files ?[22mC:\Users\Ramon\Documents\GitHub\mar-net-ram\TypeScript.AMD.Karma\FrontEndTools.WebUI.Scripts.Test\Tests', included: false},
+      {pattern: '[1mWhat is the location of your source and test files ?[22mC:\Users\Ramon\Documents\GitHub\mar-net-ram\TypeScript.AMD.Karma\FrontEndTools.WebUI.Scripts.Test\Tests', included: false},
+      {pattern: 'Enter empty string to move to the next question.', included: false},
+      {pattern: 'You can use glob patterns, eg. "js/*.js" or "test/**/*Spec.js".', included: false},
+      {pattern: 'Chrome', included: false}
     ],
 
 
     // list of files to exclude
-    exclude: [],
+    exclude: [
+      'You can use glob patterns, eg. "js/*.js" or "test/**/*Spec.js".',
+      'Enter empty string to move to the next question.',
+      'You can use glob patterns, eg. "js/*.js" or "test/**/*Spec.js".',
+      'Enter empty string to move to the next question.'
+    ],
+
+
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {
+    
+    },
 
 
     // test results reporter to use
-    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress'],
 
 
@@ -46,23 +65,13 @@ module.exports = function(config) {
     autoWatch: true,
 
 
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
 
 
-    // If browser does not capture in given timeout [ms], kill it
-    captureTimeout: 60000,
-
-
     // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
+    // if true, Karma captures browsers, runs the tests and exits
     singleRun: false
   });
 };
