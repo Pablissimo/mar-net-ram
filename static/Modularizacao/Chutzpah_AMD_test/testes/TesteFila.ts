@@ -12,7 +12,8 @@ describe("Fila", () => {
 
     it("Quando a Fila for criada", () => {
         //ACT      
-            expect(fila.itens_na_fila()).toBe(undefined);
+        expect(fila.itens_na_fila()).toBe(undefined);
+
     });
 
     it("Quando a Fila estiver vazia", () => {
