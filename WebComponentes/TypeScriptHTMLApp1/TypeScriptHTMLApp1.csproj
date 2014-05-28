@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <ProjectGuid>{030405AA-AFEA-418E-9C20-3CC136C23C2E}</ProjectGuid>
+    <ProjectGuid>{172E4F9D-A954-4C85-92D2-57706FB778F8}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <OutputPath>bin</OutputPath>
@@ -18,37 +18,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
-    <Content Include="app.html" />
-    <Content Include="img\breakDancer.png" />
-    <Content Include="img\breakDancerHead.png" />
-    <Content Include="img\email.png" />
-    <Content Include="img\facebook.png" />
-    <Content Include="img\iphone.png" />
-    <Content Include="img\navbar.png" />
-    <Content Include="img\soccerPlayer.png" />
-    <Content Include="img\soccerPlayerHead.png" />
-    <Content Include="img\svelteMan.png" />
-    <Content Include="img\svelteManHead.png" />
-    <Content Include="img\swimmer.png" />
-    <Content Include="img\swimmerHead.png" />
     <Content Include="index.html" />
-    <Content Include="README.html" />
-    <Content Include="src\app\App.js" />
-    <Content Include="src\app\Page.js" />
-    <Content Include="src\app\PageSwipe.js" />
-    <Content Include="src\main.js" />
-    <Content Include="thumbnail.png" />
-    <Content Include="thumbnails\gallery1.png" />
-    <Content Include="thumbnails\gallery2.png" />
-    <Content Include="thumbnails\gallery3.png" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.ts" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="README.md" />
-    <Content Include="thumbnails\Thumbs.db" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -61,7 +37,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>WebComponentes</RootNamespace>
+    <RootNamespace>TypeScriptHTMLApp1</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -71,9 +47,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>59585</DevelopmentServerPort>
+          <DevelopmentServerPort>60923</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59585/</IISUrl>
+          <IISUrl>http://localhost:60923/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
