@@ -1,0 +1,39 @@
+﻿template p {
+    color: red;
+}
+x-qualiom h1, x-qualiom-button button h1{
+    border:1px dashed #00ffff;
+    padding:5px;
+    background-color:#ff6a00;
+    color:#ffffff;
+    width:380px;
+    margin:auto;
+}
+
+x-foo{
+    padding:10px;
+    background-color:rgba(128, 128, 128, 0.46);
+    boder:1px solid rgb(128, 128, 128);
+}
+
+app-panel {
+    display: flex;
+}
+ [is="x-item"] {
+    transition: opacity 400ms ease-in-out;
+    opacity: 0.3;
+    flex: 1;
+    text-align: center;
+    border-radius: 50%;
+    margin:auto;
+}
+[is="x-item"]:hover {
+    opacity: 1.0;
+    background: rgb(255, 0, 0);
+    color: white;
+}                            
+app-panel > [is="x-item"] {
+    padding: 5px;
+    list-style: none;
+    margin: 0 7px;
+}

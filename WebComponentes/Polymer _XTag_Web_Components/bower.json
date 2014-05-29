@@ -1,8 +1,6 @@
 {
-  "name": "polymer",
-  "private": true,
-  "dependencies": {
-    "platform": "Polymer/platform#master",
-    "core-component-page": "Polymer/core-component-page#master"
-  }
+  "name": "Polymer _XTag_Web_Components",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true
 }
