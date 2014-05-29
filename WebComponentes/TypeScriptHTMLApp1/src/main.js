@@ -20,6 +20,7 @@
 
         var background = new Surface({
             properties: {
+                size: [undefined, 150],
                 backgroundColor: '#FA5C4F'
             }
         });
