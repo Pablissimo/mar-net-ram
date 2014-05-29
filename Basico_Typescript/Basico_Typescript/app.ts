@@ -13,6 +13,7 @@ var tipo_string: string = 'neto';
 
 //criação de Variavel tipo Array
 var tipo_array: number[] = [1, 0, 10];
+tipo_array.add1();
 
 //criação de Variavel tipo Enum
 enum Cores { Vermelho, Amarelo, Azul };
