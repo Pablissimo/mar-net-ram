@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <ProjectGuid>{172E4F9D-A954-4C85-92D2-57706FB778F8}</ProjectGuid>
+    <ProjectGuid>{2E2ECE11-F5AE-4863-987E-AFBB21446789}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <OutputPath>bin</OutputPath>
@@ -17,14 +17,31 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
+    <Content Include="app.html" />
+    <Content Include="css\app.css" />
+    <Content Include="css\device.css" />
+    <Content Include="img\airBnb_demo_background.png" />
+    <Content Include="img\airBnb_demo_background_wo_menubar.png" />
+    <Content Include="img\iphone.png" />
+    <Content Include="img\listing.png" />
+    <Content Include="img\listing_wo_menubar.png" />
+    <Content Include="img\profile_pic.png" />
     <Content Include="index.html" />
+    <Content Include="src\app\AppView.js" />
+    <Content Include="src\app\CoverView.js" />
+    <Content Include="src\app\DiagonalLinearGradientBackground.js" />
+    <Content Include="src\app\MenuItemView.js" />
+    <Content Include="src\app\ModifiedScrollView.js" />
+    <Content Include="src\app\PreviewNavigationController.js" />
+    <Content Include="src\main.js" />
+    <Content Include="thumbnails\gallery1.png" />
+    <Content Include="thumbnails\gallery2.png" />
+    <Content Include="thumbnails\gallery3.png" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.ts" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="thumbnails\Thumbs.db" />
+    <Content Include="img\Thumbs.db" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -32,12 +49,13 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>TypeScriptHTMLApp1</RootNamespace>
+    <RootNamespace>Famous_pagina_Neto_Ramon</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -47,9 +65,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>60923</DevelopmentServerPort>
+          <DevelopmentServerPort>55534</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60923/</IISUrl>
+          <IISUrl>http://localhost:55534/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
