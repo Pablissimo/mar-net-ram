@@ -18,10 +18,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="layout.html" />
+    <Content Include="polymer.html" />
+    <Content Include="polymer.js" />
     <Content Include="web.config" />
     <Content Include="xTag.js" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bower.json" />
+    <Content Include="build.log" />
+    <Content Include="polymer.js.map" />
+    <Content Include="README.md" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
