@@ -1,0 +1,15 @@
+﻿core-toolbar
+{
+    background-color:#4b0b57;
+    color:#e0dcdc;
+}
+
+core-submenu
+{
+  color:#4b0b57;
+  font-weight:bold;  
+}
+core-submenu core-item {
+  margin-left: 20px;
+  font-weight:normal;
+}

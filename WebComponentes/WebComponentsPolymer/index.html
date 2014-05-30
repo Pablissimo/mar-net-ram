@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Qualiom Polymer</title>
+    <script src="Teste/platform/platform.js"></script>
+    <link rel="import" href="Teste/polymer/polymer.html">
+    <link rel="import" href="Teste/core-component-page/core-component-page.html">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <core-toolbar>
+        <div flex>Qualiom Polymer</div>
+    </core-toolbar>
+    <core-menu selected="0">
+        
+        <core-submenu icon="settings" label="Topics">
+            <core-item label="Topic 1"></core-item>
+            <core-item label="Topic 2"></core-item>
+        </core-submenu>
+
+        <core-submenu icon="settings" label="Favorites">
+            <core-item label="Favorite 1"></core-item>
+            <core-item label="Favorite 2"></core-item>
+            <core-item label="Favorite 3"></core-item>
+        </core-submenu>
+
+    </core-menu>
+
+    <button on-click="{{toggle}}">toggle collapse</button>
+
+    <core-collapse id="collapse"></core-collapse>
+        Testes com collapse.
+    </core-collapse>
+    <script>
+        toggle: function() {
+            this.$.collapse.toggle();
+        }
+    </script>
+</body>
+</html>
