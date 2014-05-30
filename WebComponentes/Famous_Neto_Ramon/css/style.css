@@ -1,0 +1,71 @@
+﻿body{
+    background-color: black; 
+    width: 100%;   
+}
+
+.header_top {
+    background-color: red;
+    width: 100%;
+    position: absolute;
+    padding:5px;
+    height:50px !important;
+}
+.article {
+    background-color:blue;
+    width: 69.5%!important;
+    margin-left: 10px !important;
+    margin-top: 60px !important;
+    height: 500px !important;
+    color:white;
+    text-align: center;
+}
+
+.nav_top {
+    background-color: yellow;
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0.002, 1) !important;
+    width: 90% !important;
+    height: 33px !important;
+    margin-top: 8px;
+    margin-left: 5%;
+    text-align:center;
+    line-height:33px;
+    color:red;
+}
+
+.section {
+    margin-left: 65px !important;
+    margin-top: 124px !important;
+    width: 65% !important;
+    height: 450px !important;
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0.7, 1) !important;
+    color:white;
+}
+
+.section_1{
+    margin: -27px;
+    position: initial;
+    text-align:center;
+    line-height:50px;
+}
+.aside_left {
+    background-color: blueviolet;
+    margin-right: 10px !important;
+    margin-top: 60px !important;
+    width: 28% !important;
+    position: initial;
+    float: right;
+    height: 500px !important;
+    text-align:center;
+    line-height:500px;
+    color:white;
+}
+.footer_down {
+        background-color:orange;
+        height:80px !important;
+        bottom:0px;
+        position:fixed;
+        -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 200, 1) !important;
+        text-align:center;
+        line-height:80px;
+        color:white;
+}
