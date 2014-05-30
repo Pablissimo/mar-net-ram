@@ -24,6 +24,7 @@
     <Content Include="shadowDOM.js" />
     <Content Include="template.html" />
     <Content Include="web.config" />
+    <Content Include="webcomponent_hello_world.html" />
     <Content Include="xTag.js" />
   </ItemGroup>
   <ItemGroup>

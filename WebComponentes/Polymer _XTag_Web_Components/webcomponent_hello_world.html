@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <template id="jogador">
+        <li>
+            <span class="nome"></span>
+            <button>Excluir</button>
+        </li>
+    </template>
+
+    <script>
+        var tpl = document.querySelector('#jogador');
+
+        function cadastra(nome) {
+            var clone = document.importNode(tpl.content, true);
+            clone.querySelector('.nome').textContent = nome;
+            document.body.appendChild(clone);
+        }
+        
+        cadastra('Ana');
+        cadastra('Maria');
+
+    </script>
+
+    <jogador nome="Ana">
+    </jogador>
+    <jogador nome="Maria">
+    </jogador>
+</body>
+</html>
