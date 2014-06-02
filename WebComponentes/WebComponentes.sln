@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Famous_pagina_Modularizacao
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Famous_Neto_Ramon", "Famous_Neto_Ramon\Famous_Neto_Ramon.csproj", "{4C42DCBF-C268-4D99-9CB0-2037F3F76D29}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "AppPolymer", "AppPolymer\AppPolymer.njsproj", "{F8C904ED-7B82-44C1-9A40-71E1B5B0964C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebComponentsPolymer", "WebComponentsPolymer\WebComponentsPolymer.csproj", "{4594C849-CA18-4AD9-AF4A-0579A45D9690}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{4C42DCBF-C268-4D99-9CB0-2037F3F76D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C42DCBF-C268-4D99-9CB0-2037F3F76D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C42DCBF-C268-4D99-9CB0-2037F3F76D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8C904ED-7B82-44C1-9A40-71E1B5B0964C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8C904ED-7B82-44C1-9A40-71E1B5B0964C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8C904ED-7B82-44C1-9A40-71E1B5B0964C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8C904ED-7B82-44C1-9A40-71E1B5B0964C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4594C849-CA18-4AD9-AF4A-0579A45D9690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4594C849-CA18-4AD9-AF4A-0579A45D9690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4594C849-CA18-4AD9-AF4A-0579A45D9690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4594C849-CA18-4AD9-AF4A-0579A45D9690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

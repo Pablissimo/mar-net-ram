@@ -1,0 +1,10 @@
+{
+  "name": "AppPolymer",
+  "version": "0.0.0",
+  "description": "AppPolymer",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}
