@@ -1,0 +1,8 @@
+b-bar {
+  /* b-bar will get a border */
+  border: 1px solid #ccc;
+}
+
+b-bar:hover {
+  border-color: red;
+}
