@@ -17,6 +17,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "AppPolymer", "AppPolymer\Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebComponentsPolymer", "WebComponentsPolymer\WebComponentsPolymer.csproj", "{4594C849-CA18-4AD9-AF4A-0579A45D9690}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X-Tag_Ramon_Neto", "X-Tag_Ramon_Neto\X-Tag_Ramon_Neto.csproj", "{BCB8EA48-FD00-4812-8D6D-DC330799DCCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{4594C849-CA18-4AD9-AF4A-0579A45D9690}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4594C849-CA18-4AD9-AF4A-0579A45D9690}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4594C849-CA18-4AD9-AF4A-0579A45D9690}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCB8EA48-FD00-4812-8D6D-DC330799DCCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB8EA48-FD00-4812-8D6D-DC330799DCCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB8EA48-FD00-4812-8D6D-DC330799DCCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB8EA48-FD00-4812-8D6D-DC330799DCCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
