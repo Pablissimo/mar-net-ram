@@ -27,7 +27,7 @@ define(function(require, exports, module) {
         }.bind(this));	
         this._add(backgroundSurface);
     }
-
+    //teste
     module.exports = CoverView;
 });
 

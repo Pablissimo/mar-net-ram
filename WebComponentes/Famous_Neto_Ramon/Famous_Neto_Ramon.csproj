@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <ProjectGuid>{C21567A3-5B78-47FA-BD25-80F2FF0E83AA}</ProjectGuid>
+    <ProjectGuid>{4C42DCBF-C268-4D99-9CB0-2037F3F76D29}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <OutputPath>bin</OutputPath>
@@ -17,20 +17,19 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Folder.css" />
+    <Content Include="css\style.css" />
     <Content Include="index.html" />
-    <Content Include="layout.html" />
-    <Content Include="Main.js" />
-    <Content Include="shadowDOM.js" />
-    <Content Include="template.html" />
+    <Content Include="src\app\appview.js" />
+    <Content Include="src\app\article.js" />
+    <Content Include="src\app\aside.js" />
+    <Content Include="src\app\footer.js" />
+    <Content Include="src\app\header.js" />
+    <Content Include="src\app\nav.js" />
+    <Content Include="src\app\section.js" />
+    <Content Include="src\main.js" />
     <Content Include="web.config" />
-    <Content Include="webcomponent_hello_world.html" />
-    <Content Include="xTag.js" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="build.log" />
-    <Content Include="README.md" />
-    <Content Include="bower.json" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -38,12 +37,15 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
-    <RootNamespace>Polymer__XTag_Web_Components</RootNamespace>
+    <RootNamespace>Famous_Neto_Ramon</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
@@ -53,9 +55,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52685</DevelopmentServerPort>
+          <DevelopmentServerPort>55599</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52685/</IISUrl>
+          <IISUrl>http://localhost:55599/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
