@@ -11,5 +11,20 @@
     <x-qualiom></x-qualiom>
     <x-qualiom-button></x-qualiom-button>
     <x-foo>x-foo</x-foo>
+    <polymer-element name="x-default" attributes="settings">
+        <script>
+            Polymer('x-default', {
+                created: function() {
+                    // create a default settings object for this instance
+                    this.settings = {
+                        textColor : 'blue'
+                };
+            }
+            });
+        </script>
+    </polymer-element>
+
+    <x-default></x-default>
+
 </body>
 </html>

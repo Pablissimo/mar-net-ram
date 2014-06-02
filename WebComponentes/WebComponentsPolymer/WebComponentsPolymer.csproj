@@ -149,6 +149,7 @@
     <Content Include="Teste\polymer\build.log" />
     <Content Include="Teste\polymer\polymer.js.map" />
     <Content Include="Teste\polymer\README.md" />
+    <Content Include="teste.html" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
