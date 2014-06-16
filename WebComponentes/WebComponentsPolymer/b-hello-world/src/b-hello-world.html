@@ -1,0 +1,112 @@
+    <!--************************* Exemplo Styling Shadow DOM markup from inside ****************************-->
+<!--<element name="c-bar">
+    <style>
+        p.warning {
+            color: red;
+        }
+    </style>
+    <template>
+        <p class="warning">Bla bla</p>
+    </template>
+</element>--> 
+
+   
+    <!--************************* Exemplo Shadow DOM with the <content> element ****************************-->
+
+<element name="b-bar">
+    <style>
+        :host {
+            /* b-bar will get a border */
+            border: 1px solid #ccc;
+        }
+
+            :host:hover {
+                border-color: red;
+            }
+    </style>
+    <template>
+       Teste template
+    </template>
+</element>
+
+    <!--************************* Exemplo Shadow DOM with the <content> element ****************************-->
+<element name="b-hello-world">
+    <style>
+
+    </style>
+    <template>
+        <div class="title">
+            <content select="h3"></content>
+        </div>
+        <content></content>
+    </template>
+    <script>
+        ({
+            createdCallback: function () {
+                var root = this.createShadowRoot();
+                root.appendChild(this.template.content.cloneNode(true));
+            }
+        });
+    </script>
+</element>
+  
+    <!--******************************** Exemplo Templates *******************************
+
+<element name="b-hello-world">
+    <style>
+
+    </style>
+    <template>
+        <h3>Hello, world!</h3>
+        <p>Lorem ipsum</p>
+    </template>
+    <script>
+        ({
+            createdCallback: function () {
+                var root = this.createShadowRoot();
+                root.appendChild(this.template.content.cloneNode(true));
+            }
+        });
+    </script>
+</element>
+  
+    ******************************** Exemplo Templates *******************************
+    
+    <element name="b-hello-world">
+    <style>
+
+    </style>
+    <template>
+        <h3>Hello, world!</h3>
+        <p>Lorem ipsum</p>
+    </template>
+    <script>
+        ({
+            createdCallback: function () {
+                this.appendChild(this.template.content.cloneNode(true));
+            }
+        });
+    </script>
+</element>-->
+<!--
+
+  *********************** Exemplo simples. *************************
+    
+    <element name="b-hello-world">
+    <style>
+        
+    </style>
+    <template>
+        
+    </template>
+    <script>
+        ({
+            //sayHello: function () {
+            //   alert('Hello');
+            //}
+            createdCallback: function () {
+                this.textContent = 'Hello';
+            }
+        });
+    </script>
+</element>-->
