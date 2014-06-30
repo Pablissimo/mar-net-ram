@@ -5,7 +5,7 @@ var timeout_load_module;
 
 function q_require(module_name, after_initialize) {
     if (typeof module_name !== 'string')
-        throw 'Require sÛ suporta um mÛdulo';
+        throw 'Require s√≥ suporta um m√≥dulo';
 
     var mod = modules[module_name];
     var modinfo = modules_info[module_name];
@@ -30,7 +30,7 @@ function q_require(module_name, after_initialize) {
 function define(module_name, dependencias, modulo_func) {
 
     if ((typeof module_name !== 'string') || (typeof dependencias !== 'object') || (typeof modulo_func !== 'function'))
-        throw 'Compilador Typescript n„o tem a adaptaÁ„o para AMD';
+        throw 'Compilador Typescript n√£o tem a adapta√ß√£o para AMD';
 
     modules_info[module_name].dependencias = dependencias;
     modules_info[module_name].func = modulo_func;
@@ -143,7 +143,7 @@ if (typeof window !== "undefined") {
             }
         }
         if (!data_main_ok)
-            throw "Faltou data-main na inclusao do mÛdulo"
+            throw "Faltou data-main na inclusao do m√≥dulo"
         var oHead = document.getElementsByTagName('HEAD').item(0);
     }
 }
