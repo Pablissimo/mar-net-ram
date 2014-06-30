@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AprendendoDoisActivity</string>
+    <string name="title_activity_meu_primeiro">MeuPrimeiroActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_meu_segundo_activity">Meu_segundo_activity</string>
+    <string name="Hello2">hello2</string>
+    <string name="abriratividadedois">Abrir atividade dois</string>
+
+</resources>

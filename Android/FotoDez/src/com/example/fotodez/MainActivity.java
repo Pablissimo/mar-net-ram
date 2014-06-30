@@ -1,5 +1,7 @@
 package com.example.fotodez;
 
+import com.qualiom.fotoonze.CameraAutoScan;
+
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -19,7 +21,7 @@ public class MainActivity extends ActionBarActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		camera = new CameraAutoScan(this, R.id.surfaceView1);
+		// camera = new CameraAutoScan(this, R.id.surfaceView1);
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
@@ -28,10 +30,13 @@ public class MainActivity extends ActionBarActivity {
 
 	@Override
 	protected void onDestroy() {
-		camera.dispose();
-		camera=null;
+		if (camera != null) {
+			camera.dispose();
+			camera = null;
+		}
 		super.onDestroy();
 	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 

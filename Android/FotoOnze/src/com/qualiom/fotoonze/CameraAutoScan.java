@@ -1,24 +1,26 @@
-package com.example.fotodez;
+package com.qualiom.fotoonze;
 
 import java.io.Closeable;
 import java.io.IOException;
 
 import android.app.Activity;
-import android.content.res.Configuration;
 import android.hardware.Camera;
+import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 
 public class CameraAutoScan implements SurfaceHolder.Callback {
 	private Camera camera;
-	private SurfaceView view;
+	private SurfaceView surface;
 	private Activity activity;
+private int cameraId=0;
 
-	CameraAutoScan(Activity activity, int surfaceViewId) {
+	CameraAutoScan(Activity activity, SurfaceView surface) {
 		this.activity=activity;
-		camera = Camera.open();
-		view = (SurfaceView) (activity.findViewById(surfaceViewId));
-		view.getHolder().addCallback(this);
+		camera = Camera.open(cameraId);
+		this.surface=surface; 
+		surface.getHolder().addCallback(this);
 	}
 
 	@Override
@@ -64,4 +66,26 @@ public class CameraAutoScan implements SurfaceHolder.Callback {
 		
 	}
 
+	public  void ajustCameraDisplayOrientation() {
+	     android.hardware.Camera.CameraInfo info =new android.hardware.Camera.CameraInfo();
+	     android.hardware.Camera.getCameraInfo(cameraId, info);
+	     int rotation = activity.getWindowManager().getDefaultDisplay()
+	             .getRotation();
+	     int degrees = 0;
+	     switch (rotation) {
+	         case Surface.ROTATION_0: degrees = 90; break;
+	         case Surface.ROTATION_90: degrees = 90; break;
+	         case Surface.ROTATION_180: degrees = 180; break;
+	         case Surface.ROTATION_270: degrees = 270; break;
+	     }
+
+	     int result;
+	     if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+	         result = (info.orientation + degrees) % 360;
+	         result = (360 - result) % 360;  // compensate the mirror
+	     } else {  // back-facing
+	         result = (info.orientation - degrees + 360) % 360;
+	     }
+	     camera.setDisplayOrientation(result);
+	 }
 }
