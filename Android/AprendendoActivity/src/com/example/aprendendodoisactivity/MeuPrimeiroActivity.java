@@ -17,8 +17,8 @@ import android.widget.LinearLayout;
 public class MeuPrimeiroActivity extends Activity {
 
 	public static int fragmento_usar = 1;
-	private MeuFragmento1 fragment1=new MeuFragmento1();
-	private MeuFragmento2 fragment2=new MeuFragmento2();
+	private Placas_a_fotografar_Fragmento fragmento_Placa_a_fotogracar=new Placas_a_fotografar_Fragmento();
+	//private MeuFragmento2 fragment2=new MeuFragmento2();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MeuPrimeiroActivity extends Activity {
 		
 		getFragmentManager().beginTransaction()
 
-		 .replace(R.id.lugar_do_fragmento, fragment1).commit();
+		 .replace(R.id.lugar_do_fragmento, fragmento_Placa_a_fotogracar).commit();
 		
 		//lnr.add
 		//getFragmentManager().beginTransaction().
@@ -43,7 +43,7 @@ public class MeuPrimeiroActivity extends Activity {
 	}
 
 	public void clicou_no_botao(View v) {
-	FragmentTransaction tran = getFragmentManager().beginTransaction();
+	/*FragmentTransaction tran = getFragmentManager().beginTransaction();
 		if (fragmento_usar == 1) {
 			fragmento_usar = 2;
 			tran.replace(R.id.lugar_do_fragmento, fragment2).addToBackStack(null);
@@ -51,7 +51,7 @@ public class MeuPrimeiroActivity extends Activity {
 			fragmento_usar = 1;
 			tran.replace(R.id.lugar_do_fragmento, fragment1);
 		}
-		tran.commit();
+		tran.commit();*/
 		// Intent intent = new Intent(this, Meu_segundo_activity.class);
 		// startActivity(intent);
 	}
