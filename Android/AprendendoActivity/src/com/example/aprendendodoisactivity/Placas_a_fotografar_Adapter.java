@@ -8,8 +8,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.LinearLayout;
+import android.widget.GridLayout;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
@@ -21,7 +20,7 @@ public class Placas_a_fotografar_Adapter implements ListAdapter {
 		veiculos[0] = new Veiculo();
 		veiculos[0].placa = "KDX-1234";
 		veiculos[0].modelo = "LOGAN";
-		veiculos[0].proprietario = "ANA MARIA";
+		veiculos[0].proprietario = "ANA MARIAbvxcbxcvbzdxvbzxdvbzdb";
 		veiculos[1] = new Veiculo();
 		veiculos[1].placa = "OAP-5678";
 		veiculos[1].modelo = "FERRARI";
@@ -108,36 +107,33 @@ class Veiculo {
 	String proprietario;
 }
 
-class VeiculoItemView extends LinearLayout {
+class VeiculoItemView extends GridLayout {
 	TextView placa;
 	TextView modelo;
 	TextView proprietario;
 
 	public VeiculoItemView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-
-		this.setLayoutParams(new LayoutParams(
-				LinearLayout.LayoutParams.MATCH_PARENT,
-				LinearLayout.LayoutParams.MATCH_PARENT));		
-
+		
+		//this.setLayoutParams(new LayoutParams(
+				//GridLayout.LayoutParams.MATCH_PARENT,
+				//GridLayout.LayoutParams.MATCH_PARENT));
 		placa = new TextView(context);
-		placa.setTextSize(25);
-		placa.setLayoutParams(new LayoutParams(
-				LinearLayout.LayoutParams.WRAP_CONTENT,
-				LinearLayout.LayoutParams.WRAP_CONTENT));
+		placa.setTextSize(25);	
+		LayoutParams layout_placa = new GridLayout.LayoutParams(GridLayout.spec(0),GridLayout.spec(0)); 
+		placa.setLayoutParams(layout_placa);
 		// placa.setTextAppearance(context, R.id);
 		// android:textAppearance="?android:attr/textAppearanceLarge" />
 
 		modelo = new TextView(context);
-		placa.setTextSize(20);
-		modelo.setLayoutParams(new LayoutParams(
-				LinearLayout.LayoutParams.WRAP_CONTENT,
-				LinearLayout.LayoutParams.WRAP_CONTENT));
+		modelo.setTextSize(20);
+		LayoutParams layout_modelo = new GridLayout.LayoutParams(GridLayout.spec(0),GridLayout.spec(1));
+		modelo.setLayoutParams(layout_modelo);
 
 		proprietario = new TextView(context);
-		proprietario.setLayoutParams(new LayoutParams(
-				LinearLayout.LayoutParams.WRAP_CONTENT,
-				LinearLayout.LayoutParams.WRAP_CONTENT));
+		LayoutParams layout_proprietario = new GridLayout.LayoutParams(GridLayout.spec(1),GridLayout.spec(0,2));
+
+		proprietario.setLayoutParams(layout_proprietario);
 
 		this.addView(placa);
 		this.addView(modelo);
