@@ -22,7 +22,7 @@ function init()
       count++;
       msg.innerHTML='Opcao 1 - ok - '+count;
   };
-      
+  
   function posicionaCamera() 
   {
       count++;
@@ -32,11 +32,10 @@ function init()
 	  var w=cam.offsetWidth*window.devicePixelRatio;
 	  var h=cam.offsetHeight*window.devicePixelRatio;
  	  AutoScan.posicionaCamera(x,y,w,h); 
-  };
-  
+  }; 
   window.AutoScan_onCameraPreview=posicionaCamera;
 
-  
+
   
   document.getElementById('ativaCamera').onclick=function()
   {
