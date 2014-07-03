@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.OrientationEventListener;
 import android.view.Surface;
 import android.view.SurfaceHolder;
@@ -63,11 +64,16 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 			cameraView = new SurfaceView(this);
 			cameraView.setVisibility(View.INVISIBLE);
 			cameraView.getHolder().addCallback(this);
+			cameraView.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					execJS("window.AutoScan_onCameraTap();");
+				}
+			});
 			container.addView(web);
 			container.addView(cameraView);
 			autoScan = new AutoScan();
 
-		web.setWebViewClient(new MyBrowser());
+			web.setWebViewClient(new MyBrowser());
 			web.setWebChromeClient(new MyBrowser2());
 			web.loadUrl("http://192.168.0.15:3000/teste.html");
 
@@ -78,9 +84,9 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 			orientationListener = new OrientationEventListener(this,
 					SensorManager.SENSOR_DELAY_UI) {
 				public void onOrientationChanged(int orientation) {
-					if (autoScan.initOk)
-						execJS("window.log('onOrientationChanged');");
-					forcarReapresentacaoCamera();
+					// if (autoScan.initOk)
+					// execJS("window.log('onOrientationChanged');");
+					//forcarReapresentacaoCamera();
 				}
 			};
 
@@ -100,8 +106,12 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 		runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				cameraView.invalidate();
+				// cameraView.invalidate();
+				if (autoScan.initOk)
+					execJS("window.log('forcandoReapresentacaoCamera');");
 				forcandoReapresentacaoCamera = false;
+				autoScan.cameraPreviewOn(cameraView.getHolder(),
+						getWindowManager().getDefaultDisplay().getRotation());
 				// cameraView.refreshDrawableState();
 			}
 		});
@@ -169,14 +179,13 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 		});
 	}
 
-	
 	class MyBrowser extends WebViewClient {
 
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			view.loadUrl(url);
-			//String data = readFile("teste.html");
-			//view.loadData(data.toString(), "text/html", null);
+			// String data = readFile("teste.html");
+			// view.loadData(data.toString(), "text/html", null);
 			return true;
 		}
 
@@ -196,7 +205,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 			} catch (IOException e) {
 				return "<html><body>" + e.getMessage() + "</body></html>";
 			}
-		} 
+		}
 	}
 
 	class MyBrowser2 extends WebChromeClient {

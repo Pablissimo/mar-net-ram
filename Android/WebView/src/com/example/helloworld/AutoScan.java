@@ -27,8 +27,7 @@ public class AutoScan {
 	public boolean initOk = false;
 
 	@JavascriptInterface
-	public void InitOK()
-	{
+	public void InitOK() {
 		initOk = true;
 	}
 
@@ -91,6 +90,11 @@ public class AutoScan {
 				}
 			});
 		}
+	}
+
+	@JavascriptInterface
+	public void tirarFoto(String fileName) {
+		mainActivity.execJS("window.log('tirouFoto: " + fileName + "');");
 	}
 
 	public void cameraPreviewOn(SurfaceHolder holder, int rotation) {

@@ -45,7 +45,7 @@ function init()
   };
   
   msg.innerHTML='Init - ok4'; 
-  window.AutoScan_onCameraPreview=posicionaCamera; 
+  window.AutoScan_onCameraPreview=posicionaCamera;
   
   document.getElementById('ativaCamera').onclick=function()
   {
@@ -61,6 +61,16 @@ function init()
 	  AutoScan.desativaCamera();
       msg.innerHTML='Opcao desativa camera - '+count;
   };
+ 
+  function tirarFoto()
+  {
+      count++;
+	  AutoScan.tirarFoto(count);
+      msg.innerHTML='tirar Foto - '+count;
+  }; 
+  
+  document.getElementById('tirarFoto').onclick=tirarFoto;
+  window.AutoScan_onCameraTap=tirarFoto; 
   
   if (typeof AutoScan === 'undefined')
   {
