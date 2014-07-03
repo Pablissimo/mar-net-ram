@@ -22,8 +22,8 @@ function init()
       count++;
       msg.innerHTML='Opcao 1 - ok - '+count;
   };
-  
-  qualiom_events={AutoScan_onCameraPreview:function() 
+      
+  function posicionaCamera() 
   {
       count++;
       msg.innerHTML='AutoScan_onCameraPreview - '+count;
@@ -32,8 +32,12 @@ function init()
 	  var w=cam.offsetWidth*window.devicePixelRatio;
 	  var h=cam.offsetHeight*window.devicePixelRatio;
  	  AutoScan.posicionaCamera(x,y,w,h); 
-  }
   };
+  
+  window.AutoScan_onCameraPreview=posicionaCamera;
+  body.onresize=posicionaCamera;
+  body.onscroll=posicionaCamera;
+  
   
   document.getElementById('ativaCamera').onclick=function()
   {

@@ -113,8 +113,13 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 		super.onPause();
 	}
 
-	public void execJS(String script) {
-		web.loadUrl("javascript:" + script);
+	public void execJS(final String script) {
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				web.loadUrl("javascript:" + script);
+			}
+		});
 	}
 
 	class MyBrowser extends WebViewClient {
@@ -149,12 +154,11 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 	class MyBrowser2 extends WebChromeClient {
 		@Override
 		public boolean onConsoleMessage(ConsoleMessage cm) {
-			
-			String msg=cm.message() + " -- From line "
-                    + cm.lineNumber() + " of "
-                    + cm.sourceId();
-			Log.e("web.console", msg );
-			
+
+			String msg = cm.message() + " -- From line " + cm.lineNumber()
+					+ " of " + cm.sourceId();
+			Log.e("web.console", msg);
+
 			return super.onConsoleMessage(cm);
 		}
 
