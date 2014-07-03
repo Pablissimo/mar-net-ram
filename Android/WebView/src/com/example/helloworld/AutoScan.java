@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.hardware.Camera;
+import android.hardware.SensorManager;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -18,12 +19,18 @@ import android.widget.RelativeLayout;
 
 @SuppressLint("NewApi")
 public class AutoScan {
-
 	private Camera cameraHardware;
 	private SurfaceView cameraView;
 	private MainActivity mainActivity;
 	private int cameraId = 0;
 	private int currLeft = -1, currTop, currWidth, currHeight;
+	public boolean initOk = false;
+
+	@JavascriptInterface
+	public void InitOK()
+	{
+		initOk = true;
+	}
 
 	@JavascriptInterface
 	public void ativaCamera() {
@@ -64,6 +71,7 @@ public class AutoScan {
 		}
 	}
 
+	@JavascriptInterface
 	public void desativaCamera() {
 		if (cameraHardware != null) {
 			try {
@@ -97,13 +105,13 @@ public class AutoScan {
 			int degrees = 0;
 			switch (rotation) {
 			case Surface.ROTATION_0:
-				degrees = 90;
+				degrees = 0;
 				break;
 			case Surface.ROTATION_90:
 				degrees = 90;
 				break;
 			case Surface.ROTATION_180:
-				degrees = 180;
+				degrees = 0;
 				break;
 			case Surface.ROTATION_270:
 				degrees = 270;
