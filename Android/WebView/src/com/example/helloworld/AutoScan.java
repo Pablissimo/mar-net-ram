@@ -29,7 +29,7 @@ public class AutoScan {
 	public void ativaCamera() {
 		if (cameraHardware == null) {
 			cameraHardware = Camera.open(cameraId);
-			mainActivity.execJS("window.AutoScan_onCameraPreview();");
+			mainActivity.execJS("qualiom_events.AutoScan_onCameraPreview();");
 		}
 	}
 
@@ -88,7 +88,7 @@ public class AutoScan {
 	public void cameraPreviewOn(SurfaceHolder holder, int rotation) {
 		if (cameraHardware == null)
 			return;
-		mainActivity.execJS("AutoScan.onCameraPreview();");
+		mainActivity.execJS("qualiom_events.AutoScan_onCameraPreview();");
 		cameraPreviewOff();
 		try {
 
