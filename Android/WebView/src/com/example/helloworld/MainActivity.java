@@ -66,7 +66,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 			cameraView.getHolder().addCallback(this);
 			cameraView.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v) {
-					execJS("window.AutoScan_onCameraTap();");
+					execJS("window.AutoScan_onCameraClick();");
 				}
 			});
 			container.addView(web);

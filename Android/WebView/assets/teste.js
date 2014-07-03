@@ -70,7 +70,12 @@ function init()
   }; 
   
   document.getElementById('tirarFoto').onclick=tirarFoto;
-  window.AutoScan_onCameraTap=tirarFoto; 
+  window.AutoScan_onCameraClick=tirarFoto;
+  window.AutoScan_onCameraShot=function(id)
+  {
+      count++;
+      msg.innerHTML='tirou Foto '+id+' - '+count;
+  } 
   
   if (typeof AutoScan === 'undefined')
   {
