@@ -10,22 +10,7 @@
 
 function init()  
 {
-//  if (typeof AutoScan === 'undefined')
-//  {
-    //window.AutoScan={
-//	ativaCamera: function()
-	//{
-//	  alert('ativou camera');
-//	},
-//	desativaCamera: function()
-//	{
-	  //alert('desativou camera');
-//	},
-//	posicionaCamera: function(left,top,width,height)
-//	{
-//	}
-//	};
-//  }
+
   var msg=document.getElementById('msg');
   var cam=document.getElementById('cam');
   var count=0;
@@ -36,29 +21,16 @@ function init()
       msg.innerHTML='Opcao 1 - ok - '+count;
   };
   
-   document.getElementById('somar').onclick=function()
+  window.AutoScan_onCameraPreview=function() {};
   {
       count++;
-	  var ret=Calculadora.somar(1,3);
-      msg.innerHTML='Opcao somar - '+ret+' - '+count;
-  };
-
-  window.AutoScan_onerror=function(msg)
-  {
-      count++;
-      msg.innerHTML='ERRO do autoscan - '+msg;
-  };
-  
-  window.AutoScan_onCameraPreview=function()
-  {
-      count++;
-      msg.innerHTML='ERRO do autoscan - '+msg;
+      msg.innerHTML='AutoScan_onCameraPreview - '+count;
 	  var x=cam.offsetLeft*window.devicePixelRatio;
 	  var y=cam.offsetTop*window.devicePixelRatio;
 	  var w=cam.offsetWidth*window.devicePixelRatio;
 	  var h=cam.offsetHeight*window.devicePixelRatio;
- 	  AutoScan.posicionaCamera(x,y,w,h);
-  };
+ 	  AutoScan.posicionaCamera(x,y,w,h); 
+  }; 
   
   document.getElementById('ativaCamera').onclick=function()
   {
@@ -77,6 +49,9 @@ function init()
 
 </script>
 <body onload="init()">
+3 
+<hr/>
+
 <div id="msg">-</div>
 <button id="op1"> Opcao 1 </button>
 <button id="somar"> somar </button><br>
