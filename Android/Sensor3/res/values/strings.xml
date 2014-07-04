@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Sensor3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main">TODO</string>
+	<string name="value0">Dado1</string>
+	<string name="value1">Dado2</string>
+	<string name="value2">Dado3</string>
+</resources>
