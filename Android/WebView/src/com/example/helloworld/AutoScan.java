@@ -97,7 +97,7 @@ public class AutoScan {
 			int degrees = 0;
 			switch (rotation) {
 			case Surface.ROTATION_0:
-				degrees = 90;
+				degrees = 0;
 				break;
 			case Surface.ROTATION_90:
 				degrees = 90;
