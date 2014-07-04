@@ -75,7 +75,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 
 			web.setWebViewClient(new MyBrowser());
 			web.setWebChromeClient(new MyBrowser2());
-			web.loadUrl("http://192.168.0.15:3000/teste.html");
+			web.loadUrl("http://192.168.0.21:3000/teste.html");
 
 			WebSettings webSettings = web.getSettings();
 			webSettings.setJavaScriptEnabled(true);
