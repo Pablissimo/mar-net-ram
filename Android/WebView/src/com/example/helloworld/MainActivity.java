@@ -9,11 +9,21 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.hardware.Camera;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.media.MediaDrm.OnEventListener;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.OrientationEventListener;
+import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -27,6 +37,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements SurfaceHolder.Callback {
 
@@ -34,6 +45,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 	ViewGroup container;
 	SurfaceView cameraView;
 	AutoScan autoScan;
+	private OrientationEventListener orientationListener;
 
 	@SuppressLint("SetJavaScriptEnabled")
 	@Override
@@ -52,21 +64,57 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 			cameraView = new SurfaceView(this);
 			cameraView.setVisibility(View.INVISIBLE);
 			cameraView.getHolder().addCallback(this);
+			cameraView.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					execJS("window.AutoScan_onCameraClick();");
+				}
+			});
 			container.addView(web);
 			container.addView(cameraView);
 			autoScan = new AutoScan();
 
 			web.setWebViewClient(new MyBrowser());
 			web.setWebChromeClient(new MyBrowser2());
-			web.loadUrl("http://www.google.com/");
+			web.loadUrl("http://192.168.0.15:3000/teste.html");
 
 			WebSettings webSettings = web.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			addObjectCalculadora();
+
+			orientationListener = new OrientationEventListener(this,
+					SensorManager.SENSOR_DELAY_UI) {
+				public void onOrientationChanged(int orientation) {
+					// if (autoScan.initOk)
+					// execJS("window.log('onOrientationChanged');");
+					//forcarReapresentacaoCamera();
+				}
+			};
+
 		}
 		autoScan.setCameraView(this, cameraView);
 
 		setContentView(container);
+
+	}
+
+	boolean forcandoReapresentacaoCamera = false;
+
+	private void forcarReapresentacaoCamera() {
+		if (forcandoReapresentacaoCamera)
+			return;
+		forcandoReapresentacaoCamera = true;
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				// cameraView.invalidate();
+				if (autoScan.initOk)
+					execJS("window.log('forcandoReapresentacaoCamera');");
+				forcandoReapresentacaoCamera = false;
+				autoScan.cameraPreviewOn(cameraView.getHolder(),
+						getWindowManager().getDefaultDisplay().getRotation());
+				// cameraView.refreshDrawableState();
+			}
+		});
 
 	}
 
@@ -98,6 +146,8 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int arg1, int arg2,
 			int arg3) {
+		if (autoScan.initOk)
+			execJS("window.log('surfaceChanged');");
 		autoScan.cameraPreviewOn(holder, getWindowManager().getDefaultDisplay()
 				.getRotation());
 	}
@@ -108,7 +158,14 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 	}
 
 	@Override
+	public void onResume() {
+		super.onResume();
+		orientationListener.enable();
+	}
+
+	@Override
 	protected void onPause() {
+		orientationListener.disable();
 		autoScan.cameraPreviewOff();
 		super.onPause();
 	}
@@ -126,8 +183,9 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
-			String data = readFile("teste.html");
-			view.loadData(data.toString(), "text/html", null);
+			view.loadUrl(url);
+			// String data = readFile("teste.html");
+			// view.loadData(data.toString(), "text/html", null);
 			return true;
 		}
 
@@ -148,7 +206,6 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 				return "<html><body>" + e.getMessage() + "</body></html>";
 			}
 		}
-
 	}
 
 	class MyBrowser2 extends WebChromeClient {
@@ -163,5 +220,4 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 		}
 
 	}
-
 }

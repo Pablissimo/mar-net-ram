@@ -1,0 +1,13 @@
+﻿{
+  "name": "ServerForAndroid",
+  "version": "0.0.0",
+  "description": "ServerForAndroid",
+  "main": "app.js",
+  "author": {
+    "name": "SãoAzul",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4"
+  }
+}

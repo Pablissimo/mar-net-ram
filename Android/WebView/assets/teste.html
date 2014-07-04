@@ -1,67 +1,26 @@
 ﻿<html>
 <style>
-#cam{
+#cam, video{
   background-color: red;
   width: 300px;
   height: 150px;
 }
 </style>
-<script>
 
-var qualiom_events={};
+<script src="teste.js"></script>
 
-function init()  
-{
-
-  var msg=document.getElementById('msg');
-  var cam=document.getElementById('cam');
-  var count=0;
-  msg.innerHTML='Init - ok';
-  document.getElementById('op1').onclick=function()
-  {
-      count++;
-      msg.innerHTML='Opcao 1 - ok - '+count;
-  };
-  
-  function posicionaCamera() 
-  {
-      count++;
-      msg.innerHTML='AutoScan_onCameraPreview - '+count;
-	  var x=cam.offsetLeft*window.devicePixelRatio;
-	  var y=cam.offsetTop*window.devicePixelRatio;
-	  var w=cam.offsetWidth*window.devicePixelRatio;
-	  var h=cam.offsetHeight*window.devicePixelRatio;
- 	  AutoScan.posicionaCamera(x,y,w,h); 
-  }; 
-  window.AutoScan_onCameraPreview=posicionaCamera;
-  /*body.onresize=posicionaCamera;
-    body.onscroll=posicionaCamera;*/
-  
-  document.getElementById('ativaCamera').onclick=function()
-  {
-      count++;
-	  AutoScan.ativaCamera();
-      msg.innerHTML='Opcao abrir camera - '+count;
-  };
-  
-  document.getElementById('desativaCamera').onclick=function()
-  {
-      count++;	 
-	  AutoScan.desativaCamera();
-      msg.innerHTML='Opcao desativa camera - '+count;
-  };
-}
-
-</script>
 <body onload="init()">
-3 
-<hr/>
 
 <div id="msg">-</div>
+<div id="log_1">-</div>
+<div id="log_2">-</div>
+<div id="log_3">-</div>
+<div id="log_4">-</div>
+<div id="log_5">-</div>
 <button id="op1"> Opcao 1 </button>
-<button id="somar"> somar </button><br>
 <button id="ativaCamera"> ativa camera </button>
 <button id="desativaCamera"> desativa camera </button><br>
+<button id="tirarFoto"> tirar foto </button><br>
 <input type="text" name="text" size="20">
 <div id="cam"></div>
 </body>

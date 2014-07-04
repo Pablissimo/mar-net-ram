@@ -1,5 +1,8 @@
 package com.example.helloworld;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import android.R.bool;
@@ -7,6 +10,9 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.hardware.Camera;
+import android.hardware.Camera.PictureCallback;
+import android.hardware.SensorManager;
+import android.os.Environment;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -24,6 +30,12 @@ public class AutoScan {
 	private MainActivity mainActivity;
 	private int cameraId = 0;
 	private int currLeft = -1, currTop, currWidth, currHeight;
+	public boolean initOk = false;
+
+	@JavascriptInterface
+	public void InitOK() {
+		initOk = true;
+	}
 
 	@JavascriptInterface
 	public void ativaCamera() {
@@ -64,6 +76,7 @@ public class AutoScan {
 		}
 	}
 
+	@JavascriptInterface
 	public void desativaCamera() {
 		if (cameraHardware != null) {
 			try {
@@ -85,6 +98,40 @@ public class AutoScan {
 		}
 	}
 
+	@JavascriptInterface
+	public void tirarFoto(final int idFoto) {
+		cameraHardware.takePicture(null, null, new PictureCallback() {
+
+			@Override
+			public void onPictureTaken(byte[] data, Camera camera) {
+
+				File externalStoragePublicDirectory = Environment
+						.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+				String pastaFotos = externalStoragePublicDirectory.getAbsolutePath();
+				String pastaFotosAutoScan = pastaFotos+ "/AutoScan/";
+				File folderFotosAutoScan=new File(pastaFotosAutoScan);
+				if (!folderFotosAutoScan.exists())
+					folderFotosAutoScan.mkdirs();
+				String arq = pastaFotosAutoScan + idFoto + ".jpg";
+
+				FileOutputStream outStream = null;
+				try {
+					outStream = new FileOutputStream(arq);
+					outStream.write(data);
+					outStream.close();
+					mainActivity.execJS("window.AutoScan_onCameraShot("
+							+ idFoto + ");");
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} finally {
+				}
+				cameraHardware.startPreview();
+			}
+		});
+	}
+
 	public void cameraPreviewOn(SurfaceHolder holder, int rotation) {
 		if (cameraHardware == null)
 			return;
@@ -103,7 +150,7 @@ public class AutoScan {
 				degrees = 90;
 				break;
 			case Surface.ROTATION_180:
-				degrees = 180;
+				degrees = 0;
 				break;
 			case Surface.ROTATION_270:
 				degrees = 270;
