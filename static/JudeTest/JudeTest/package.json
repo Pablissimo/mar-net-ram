@@ -1,0 +1,15 @@
+{
+  "name": "JudeTest",
+  "version": "0.0.0",
+  "description": "JudeTest",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}
