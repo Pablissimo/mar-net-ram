@@ -1,0 +1,10 @@
+{
+  "name": "Projetos_CompiladorBDD_Cumcumber_TesteBDD",
+  "version": "0.0.0",
+  "description": "Projetos_CompiladorBDD_Cumcumber_TesteBDD",
+  "main": "app.js",
+  "author": {
+    "name": "Qualiom",
+    "email": ""
+  }
+}

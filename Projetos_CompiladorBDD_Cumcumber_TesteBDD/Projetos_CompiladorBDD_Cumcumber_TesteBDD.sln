@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30324.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "KarmaProject", "KarmaProject\KarmaProject.njsproj", "{525B4743-2FFD-4A7B-B200-22F6FEAE0676}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEndTools.WebUI", "..\static\TypeScript.AMD.Karma\FrontEndTools.WebUI\FrontEndTools.WebUI.csproj", "{C0369B2C-3BF5-4B01-904D-F217627625DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontEndTools.WebUI.Scripts.Test", "..\static\TypeScript.AMD.Karma\FrontEndTools.WebUI.Scripts.Test\FrontEndTools.WebUI.Scripts.Test.csproj", "{C640283C-1C51-40ED-8F01-319CCEE189D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{525B4743-2FFD-4A7B-B200-22F6FEAE0676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{525B4743-2FFD-4A7B-B200-22F6FEAE0676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{525B4743-2FFD-4A7B-B200-22F6FEAE0676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{525B4743-2FFD-4A7B-B200-22F6FEAE0676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0369B2C-3BF5-4B01-904D-F217627625DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0369B2C-3BF5-4B01-904D-F217627625DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0369B2C-3BF5-4B01-904D-F217627625DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0369B2C-3BF5-4B01-904D-F217627625DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C640283C-1C51-40ED-8F01-319CCEE189D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C640283C-1C51-40ED-8F01-319CCEE189D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C640283C-1C51-40ED-8F01-319CCEE189D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C640283C-1C51-40ED-8F01-319CCEE189D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
