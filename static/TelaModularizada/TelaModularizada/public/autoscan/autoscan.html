@@ -36,9 +36,16 @@
                 
                 conteudo.html(data);
                 var jsconteudo = document.getElementById('jsConteudo');
-                if (jsconteudo)
+                var cssconteudo = document.getElementById('cssConteudo');
+
+                if (jsconteudo && cssconteudo) {
                     jsconteudo.parentNode.removeChild(jsconteudo);
+                    cssconteudo.parentNode.removeChild(cssconteudo);
+                }
+
                 loadjscssfile('jsConteudo', nome + ".js", 'js')
+                loadjscssfile('cssConteudo', nome + ".css", 'css')
+
                 //jsconteudo = $('<script>');
                 //jsconteudo.attr('id', 'jsConteudo');
                 //jsconteudo.attr("src", nome +".js");

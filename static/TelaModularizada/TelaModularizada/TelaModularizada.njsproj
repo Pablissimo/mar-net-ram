@@ -32,12 +32,16 @@
   <ItemGroup>
     <Compile Include="app.js" />
     <Compile Include="public\autoscan\abertura.js" />
+    <Compile Include="public\cadastro\cadastro.js" />
     <Compile Include="public\escolhe_placa\escolhe_placa.js" />
     <Content Include="package.json" />
+    <Content Include="public\autoscan\abertura.css" />
     <Content Include="public\autoscan\abertura.html" />
     <Content Include="public\autoscan\autoscan.html" />
     <Content Include="public\autoscan\autoscan.html" />
+    <Content Include="public\cadastro\cadastro.css" />
     <Content Include="public\cadastro\cadastro.html" />
+    <Content Include="public\escolhe_placa\escolhe_placa.css" />
     <Content Include="public\escolhe_placa\escolhe_placa.html" />
   </ItemGroup>
   <ItemGroup>
