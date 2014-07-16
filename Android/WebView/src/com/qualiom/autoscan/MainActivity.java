@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.qualiom.autoscan;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,6 +29,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
+import android.view.Window;
 import android.webkit.ConsoleMessage;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
@@ -75,8 +76,8 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 
 			web.setWebViewClient(new MyBrowser());
 			web.setWebChromeClient(new MyBrowser2());
-			web.loadUrl("http://192.168.0.21:3000/teste.html");
-
+			// web.loadUrl("http://www.bpmos.org/autoscan/autoscan.html");
+			web.loadUrl("http://192.168.0.21:8080/autoscan/autoscan.html");
 			WebSettings webSettings = web.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			addObjectCalculadora();
@@ -86,13 +87,12 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 				public void onOrientationChanged(int orientation) {
 					// if (autoScan.initOk)
 					// execJS("window.log('onOrientationChanged');");
-					//forcarReapresentacaoCamera();
+					// forcarReapresentacaoCamera();
 				}
 			};
-
 		}
 		autoScan.setCameraView(this, cameraView);
-
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(container);
 
 	}
@@ -160,11 +160,19 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback {
 	@Override
 	public void onResume() {
 		super.onResume();
+		try {
+			execJS("retomarConteudo();");
+		} catch (Exception e) {
+		}
 		orientationListener.enable();
 	}
 
 	@Override
 	protected void onPause() {
+		try {
+			execJS("pausarConteudo();");
+		} catch (Exception e) {
+		}
 		orientationListener.disable();
 		autoScan.cameraPreviewOff();
 		super.onPause();

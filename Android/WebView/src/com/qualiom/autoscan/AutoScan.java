@@ -1,4 +1,4 @@
-package com.example.helloworld;
+package com.qualiom.autoscan;
 
 import java.io.File;
 import java.io.FileNotFoundException;
